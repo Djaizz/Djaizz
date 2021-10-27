@@ -1,0 +1,208 @@
+# python.org/dev/peps/pep-0621
+
+
+[project]
+name = "DjAI"
+version = "0.0.0.dev0"
+
+description = "Artificial Intelligence in Django Applications"
+readme = "README.md"
+
+requires-python = ">= 3.9"
+license = {file = "LICENSE"}
+
+authors = [
+  {name = "STEAM for Vietnam Foundation: AI & Robotics Educational Initiative"}
+]
+maintainers = [
+  {name = "STEAM for Vietnam Foundation: AI & Robotics Educational Initiative"}
+]
+
+keywords = [
+  "Django",
+  "Artificial Intelligence",
+  "AI"
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Environment :: MacOS X",
+  "Environment :: Win32 (MS Windows)",
+  "Framework :: Django",
+  "Framework :: Django :: 3.2",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Intended Audience :: Healthcare Industry",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: Legal Industry",
+  "Intended Audience :: Manufacturing",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: System Administrators",
+  "Intended Audience :: Telecommunications Industry",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: Microsoft",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: Microsoft :: Windows :: Windows 7",
+  "Operating System :: Microsoft :: Windows :: Windows 8",
+  "Operating System :: Microsoft :: Windows :: Windows 8.1",
+  "Operating System :: Microsoft :: Windows :: Windows 10",
+  "Operating System :: OS Independent",
+  "Operating System :: Other OS",
+  "Operating System :: POSIX",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Education",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "Topic :: Scientific/Engineering :: Image Recognition",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Scientific/Engineering :: Visualization",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+dependencies = [
+  # DATA PROCESSING
+  "NumPy >= 1.20.2",
+  "Pandas >= 1.2.4",
+  "PyArrow >= 4.0.0",
+
+  # MACHINE LEARNING
+  "Auto-SKLearn >= 0.12.5; python_version < '3.9'",
+  "SciKit-Learn >= 0.24.2",
+  "Keras >= 2.4.3",
+  "Torch >= 1.8.1",
+
+  # DJANGO
+  "Django >= 3.2.2",
+
+  # Django Polymorphic Models
+  "Django-Polymorphic >= 3.0.0",
+
+  # Django Admin Themes
+  "Django-Grappelli >= 2.14.4",
+  "Django-Jazzmin >= 2.4.6",
+
+  # Django-AutoComplete-Light & related
+  "Django-AutoComplete-Light >= 3.8.2",
+  "Django-Generic-M2M >= 0.3.1",
+  "Django-GM2M >= 1.1.1",
+  "Django-QuerySetSequence >= 0.14",
+  "Django-Tagging >= 0.5.0",
+  "Django-Taggit >= 1.4.0",
+
+  # Django REST Framework
+  "DjangoRESTFramework >= 3.12.4",
+  "CoreAPI >= 2.3.3",
+    # closely related to Django REST Framework
+  # "DjangoRESTFramework-JSONAPI >= 4.1.0",
+    # djangorestframework-jsonapi 4.1.0 depends on django<3.2 and >=2.2
+
+  # Django Filtering
+  "Django-Filter >= 2.4.0",
+  "DjangoRESTFramework-Filters == 1.0.0.dev2",
+
+  # Django Model Query Optimization
+  "Django-Model-Query-Graphs >= 0.0.5",
+
+  # Django Query Profiling
+  "Django-Silk >= 4.1.0",
+
+  # Django Extensions & Utilities
+  "Django-Extensions >= 3.1.3",
+  "Django-Model-Utils >= 4.1.1",
+  "Django-Storages >= 1.11.1",
+
+  # Django CORS Headers
+  "Django-CORS-Headers >= 3.7.0",
+
+  # ASYNCHRONOUS SERVER GATEWAY INTERFACE (ASGI)
+  "Daphne >= 3.0.2",
+  "Hypercorn >= 0.11.2",
+  "Uvicorn >= 0.13.4",
+  "HTTPTools >= 0.2.0; python_version < '3.9'",
+    # required by Uvicorn
+  "Uvloop >= 0.15.2",
+    # required by Uvicorn
+
+  # DATABASE CONNECTORS/DRIVERS
+  "MySQLClient >= 2.0.3; python_version < '3.9'",
+  "PsycoPG2-binary >= 2.8.6",
+
+  # ML MODEL SERDE
+  "JobLib >= 1.0.1",
+
+  # OTHER
+  "CLICK >= 7.1.2",
+  "GitPython >= 3.1.14",
+  "Ruamel.YAML >= 0.17.4",
+  "Tqdm >= 4.60.0",
+
+  # CLOUD
+  # AWS Elastic Beanstalk
+  "AWSEBCLI >= 3.19.4"
+]
+
+[project.optional-dependencies]
+all = []
+
+doc = [
+  # Sphinx & related
+  "Sphinx >= 3.5.4",
+  "Sphinx-AutoBuild >= 2021.3.14",
+  "SphinxContrib-JSMath >= 1.0.1",
+
+  # Markdown
+  "CommonMark >= 0.9.1",
+  "MyST-Parser >= 0.14.0",
+  "ReCommonMark >= 0.7.1"
+]
+
+lint = [
+  "Bandit >= 1.7.0",
+  "Flake8 >= 3.9.1",
+  "MyPy >= 0.812",
+  # "Prospector >= 1.3.1",
+    # prospector 1.3.1 depends on pylint==2.5.3
+  "PyCodeStyle >= 2.7.0",
+  "PyDocStyle >= 6.0.0",
+  "PyLama >= 7.7.1",
+  "PyLint >= 2.8.2"
+]
+
+pkg = [
+  "Flit >= 3.2.0",
+  "PIP >= 21.1.1",
+  "PIPEnv >= 2020.11.15",
+  "Poetry >= 1.1.6",
+  # "PyEnv >= 0.0.1",
+    # not installable with pip
+  "SetUpTools >= 56.1.0",
+  "TOML >= 0.10.2",
+  "VirtualEnv >= 20.4.6",
+  "Wheel >= 0.36.2"
+]
+
+
+[project.urls]
+homepage = "GitHub.com/Django-AI/DjAI"
+documentation = "GitHub.com/Django-AI/DjAI"
+repository = "GitHub.com/Django-AI/DjAI"
+
+
+[project.scripts]
+djai = "djai.util.cli:djai"
+
+[project.gui-scripts]
+
+[project.entry-points."spam.magical"]
