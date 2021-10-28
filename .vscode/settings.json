@@ -9,6 +9,7 @@
   },
 
   "python.analysis.diagnosticSeverityOverrides": {
+    "reportUndefinedVariable" : "none",
   },
 
   "python.linting.enabled": true,
@@ -22,7 +23,7 @@
   "python.linting.flake8Args": [
   ],
 
-  "python.linting.mypyEnabled": true,
+  "python.linting.mypyEnabled": false,
 
   "python.linting.pydocstyleEnabled": true,
 
@@ -38,5 +39,6 @@
 
   "python.linting.banditEnabled": true,
   "python.linting.banditArgs": [
+    "--skip B101",
   ],
 }
