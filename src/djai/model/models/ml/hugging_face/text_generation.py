@@ -51,7 +51,7 @@ class PreTrainedHuggingFaceTextGenerator(PreTrainedHuggingFaceTransformer):
                 prefix: Optional[str] = None,
                 **generate_kwargs) \
             -> Union[TextGenerationOutputType, list[TextGenerationOutputType]]:
-        # pylint: disable=arguments-differ
+        # pylint: disable=arguments-differ,too-many-arguments
         """Generate Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 

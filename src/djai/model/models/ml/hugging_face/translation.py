@@ -54,7 +54,7 @@ class PreTrainedHuggingFaceTranslator(PreTrainedHuggingFaceTransformer):
                 tgt_lang: Optional[str] = None,
                 **generate_kwargs) \
             -> Union[TranslationOutputType, list[TranslationOutputType]]:
-        # pylint: disable=arguments-differ
+        # pylint: disable=arguments-differ,too-many-arguments
         """Translate Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 

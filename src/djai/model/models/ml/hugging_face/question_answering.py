@@ -55,7 +55,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
                 max_question_len: int = 64,
                 handle_impossible_answer: bool = False) \
             -> Union[QuestionAnswerOutputType, list[QuestionAnswerOutputType]]:
-        # pylint: disable=arguments-differ
+        # pylint: disable=arguments-differ,too-many-arguments
         """Answer Question(s) based on Text(s)."""
         if not isinstance(question, (str, list)):
             question: list[QuestionAnswerInputType] = list(question)

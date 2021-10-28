@@ -19,6 +19,7 @@
     "--disable", "fixme",
     "--disable", "no-member",
     "--disable", "protected-access",
+    "--disable", "redundant-keyword-arg",
   ],
 
   "python.linting.flake8Enabled": true,

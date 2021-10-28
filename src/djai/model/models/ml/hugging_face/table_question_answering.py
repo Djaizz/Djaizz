@@ -55,7 +55,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
                 truncation: Union[bool, str] = False) \
             -> Union[TableQuestionAnswerOutputType,
                      list[TableQuestionAnswerOutputType]]:
-        # pylint: disable=arguments-differ
+        # pylint: disable=arguments-differ,too-many-arguments
         """Answer Question(s) on a Tabular Data Set."""
         self.load()
 
