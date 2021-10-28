@@ -11,6 +11,8 @@ from .ml import (
     KerasModel,
     PreTrainedKerasImageNetClassifier,
 
+    TorchModel,
+
     PreTrainedHuggingFaceTransformer,
     PreTrainedHuggingFaceAudioClassifier,
     PreTrainedHuggingFaceImageClassifier,
@@ -36,6 +38,8 @@ __all__: Sequence[str] = (
 
     'KerasModel',
     'PreTrainedKerasImageNetClassifier',
+
+    'TorchModel',
 
     'PreTrainedHuggingFaceTransformer',
     'PreTrainedHuggingFaceAudioClassifier',

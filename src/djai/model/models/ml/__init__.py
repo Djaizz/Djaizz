@@ -11,6 +11,10 @@ from .keras import (
     PreTrainedKerasImageNetClassifier,
 )
 
+from .torch import (
+    TorchModel,
+)
+
 from .hugging_face import (
     PreTrainedHuggingFaceTransformer,
 
@@ -36,6 +40,8 @@ __all__: Sequence[str] = (
 
     'KerasModel',
     'PreTrainedKerasImageNetClassifier',
+
+    'TorchModel',
 
     'PreTrainedHuggingFaceTransformer',
     'PreTrainedHuggingFaceAudioClassifier',
