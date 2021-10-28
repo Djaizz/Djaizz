@@ -123,7 +123,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
 
         # construct 4D array of images' data fitted into standardized size
         fitted_img_batch_arr: numpy.ndarray = \
-            numpy.vstack([self.image_to_4d_array(image=img) for img in imgs])
+            numpy.vstack([self._image_to_4d_array(image=img) for img in imgs])
 
         # preprocess
         preprocessed_fitted_img_batch_arr: numpy.ndarray = \
