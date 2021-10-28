@@ -15,6 +15,7 @@
 
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
+    "--disable", "no-member",
   ],
 
   "python.linting.flake8Enabled": true,
