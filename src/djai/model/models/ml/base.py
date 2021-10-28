@@ -6,8 +6,9 @@ from typing import Any
 
 from django.db.models.fields import CharField
 
-from djai.model.models.base import _AIModelWithArtifactFilesABC
 from djai.util import import_obj
+
+from ..base import _AIModelWithArtifactFilesABC
 
 
 __all__: Sequence[str] = ('_PreTrainedMLModelABC',)
