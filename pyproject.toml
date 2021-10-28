@@ -2,14 +2,15 @@
 
 
 [project]
-name = "DjAI"
-version = "0.0.0.dev0"
+name = 'DjAI'
+version = '0.0.0.dev0'
 
-description = "Artificial Intelligence in Django Applications"
-readme = "README.md"
+description = 'Artificial Intelligence (AI) in Django Applications'
+readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
 
-requires-python = ">= 3.9"
-license = {file = "LICENSE"}
+requires-python = '>= 3.9'
+
+license = {file = 'LICENSE'}
 
 authors = [
   {name = "STEAM for Vietnam Foundation: AI & Robotics Educational Initiative"}
@@ -54,8 +55,6 @@ classifiers = [
   "Operating System :: POSIX :: Linux",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Topic :: Education",
@@ -71,138 +70,246 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 
-dependencies = [
-  # DATA PROCESSING
-  "NumPy >= 1.20.2",
-  "Pandas >= 1.2.4",
-  "PyArrow >= 4.0.0",
 
-  # MACHINE LEARNING
-  "Auto-SKLearn >= 0.12.5; python_version < '3.9'",
-  "SciKit-Learn >= 0.24.2",
-  "Keras >= 2.4.3",
-  "Torch >= 1.8.1",
+[project.urls]
+Homepage = 'GitHub.com/Django-AI/DjAI'
+GitHub = 'GitHub.com/Django-AI/DjAI'
+Documentation = 'GitHub.com/Django-AI/DjAI'
 
-  # DJANGO
-  "Django >= 3.2.2",
 
-  # Django Polymorphic Models
-  "Django-Polymorphic >= 3.0.0",
+[project.dependencies]
+# DATA MANAGEMENT & PROCESSING
+# ============================
+# NumPy = '^1.x.y'   # let higher dependencies figure
+Pandas = '^1.3.4'
+PyArrow = '^6.0.0'
+PySpark = '^3.2.0'
+Ray = {extras = ['tune'], version = '^1.7.1'}
 
-  # Django Admin Themes
-  "Django-Grappelli >= 2.14.4",
-  "Django-Jazzmin >= 2.4.6",
+Pillow = '^8.4.0'   # image processing
+# Pillow-SIMD = '^7.0.0'   # complex to install
 
-  # Django-AutoComplete-Light & related
-  "Django-AutoComplete-Light >= 3.8.2",
-  "Django-Generic-M2M >= 0.3.1",
-  "Django-GM2M >= 1.1.1",
-  "Django-QuerySetSequence >= 0.14",
-  "Django-Tagging >= 0.5.0",
-  "Django-Taggit >= 1.4.0",
 
-  # Django REST Framework
-  "DjangoRESTFramework >= 3.12.4",
-  "CoreAPI >= 2.3.3",
-    # closely related to Django REST Framework
-  # "DjangoRESTFramework-JSONAPI >= 4.1.0",
-    # djangorestframework-jsonapi 4.1.0 depends on django<3.2 and >=2.2
+# MACHINE LEARNING / DEEP LEARNING & RELATED
+# ==========================================
 
-  # Django Filtering
-  "Django-Filter >= 2.4.0",
-  "DjangoRESTFramework-Filters == 1.0.0.dev2",
+# SciKit-Learn & related
+Auto-SKLearn = '^0.14.0'
+# SciKit-Learn = '^x.y.z'   # let Auto-SKLearn figure
 
-  # Django Model Query Optimization
-  "Django-Model-Query-Graphs >= 0.0.5",
+# TensorFlow & related
+TensorFlow = '^2.6.0'
+TensorFlow-DataSets = '^4.4.0'
+TensorFlow-Hub = '^0.12.0'
 
-  # Django Query Profiling
-  "Django-Silk >= 4.1.0",
+# Torch & related
+Torch = '^1.10.0'
+Torch-Model-Archiver = '^0.4.2'
+TorchServe = '^0.4.2'
 
-  # Django Extensions & Utilities
-  "Django-Extensions >= 3.1.3",
-  "Django-Model-Utils >= 4.1.1",
-  "Django-Storages >= 1.11.1",
+TorchAudio = '^0.10.0'
+TorchText = '^0.11.0'
+TorchVision = '^0.11.1'
 
-  # Django CORS Headers
-  "Django-CORS-Headers >= 3.7.0",
+# Hugging Face & related
+DataSets = '^1.14.0'
+HuggingFace-Hub = '^0.0.19'
+Transformers = '^4.12.0'
 
-  # ASYNCHRONOUS SERVER GATEWAY INTERFACE (ASGI)
-  "Daphne >= 3.0.2",
-  "Hypercorn >= 0.11.2",
-  "Uvicorn >= 0.13.4",
-  "HTTPTools >= 0.2.0; python_version < '3.9'",
-    # required by Uvicorn
-  "Uvloop >= 0.15.2",
-    # required by Uvicorn
+SentencePiece = '^0.1.96'   # Translation
+TIMM = '^0.4.12'   # for Object Detection
+Torch-Scatter = '^2.0.9'   # Table Question Answering
 
-  # DATABASE CONNECTORS/DRIVERS
-  "MySQLClient >= 2.0.3; python_version < '3.9'",
-  "PsycoPG2-binary >= 2.8.6",
+# Topological Data Analysis (TDA) & related
+GUDHI = '^3.4.1'
 
-  # ML MODEL SERDE
-  "JobLib >= 1.0.1",
+# Cloud AI/ML Services
+Google-Cloud-Translate = '^3.6.0'
+GoogleTrans = '^4.0.0rc1'
 
-  # OTHER
-  "CLICK >= 7.1.2",
-  "GitPython >= 3.1.14",
-  "Ruamel.YAML >= 0.17.4",
-  "Tqdm >= 4.60.0",
+# Hyper-Parameter Tuning & related
+Bayesian-Optimization = '^1.2.0'
+ConfigSpace = '^0.4.20'
+Hpbandster = '^0.7.4'
+Tabulate = '^0.8.9'
 
-  # CLOUD
-  # AWS Elastic Beanstalk
-  "AWSEBCLI >= 3.19.4"
-]
+# ML Model Explainability & related
+LIME = '^0.2.0.1'
+SHAP = '^0.40.0'
+
+
+# NON-ML MODELING
+# ===============
+
+# Fuzzy Logic
+SciKit-Fuzzy = '^0.4.2'
+
+
+# MODEL REPOSITORY & RELATED
+# ==========================
+CloudPickle = '^2.0.0'
+JobLib = '^1.1.0'
+S3FS = '^2021.10.1'
+
+
+# DJANGO & RELATED APPLICATION DEVELOPMENT
+# ========================================
+
+# Django Core
+Django = '^3.2.8'
+
+# Django Polymorphic Models
+Django-Polymorphic = '^3.0.0'
+
+# Django Admin Themes
+Django-ForestAdmin = '^1.0.5'
+Django-Grappelli = '^2.15.3'
+Django-Jazzmin = '^2.4.8'
+
+# Django-AutoComplete-Light & related
+Django-Autocomplete-Light = '^3.8.2'
+Django-Generic-M2M = '^0.3.1'
+Django-GM2M = '^1.1.1'
+Django-QuerySetSequence = '^0.14'
+Django-Tagging = '^0.5.0'
+Django-Taggit = '^1.5.1'
+
+# Django GraphQL
+# Ariadne = '^0.13.0'   # ariadne 0.13.0 depends on graphql-core>=3.1.0
+                        # graphene-django 2.15.0 depends on graphql-core<3
+Django-RESTQL = '^0.15.1'
+Graphene-Django = '^2.15.0'
+Py-GQL = '^0.6.1'
+# Strawberry-GraphQL = '^0.84.3'   # conflicts with Graphene-Django
+
+# Django REST Framework
+DjangoRESTFramework = '^3.12.4'
+DRFPasswordless = '^1.5.7'
+CoreAPI = '^2.3.3'   # closely related to Django REST Framework
+
+DjangoRESTFramework-JSONAPI = '^4.2.1'
+
+# Django Filtering
+Django-Filter = '^21.1'
+DjangoRESTFramework-Filters = '1.0.0.dev2'
+
+# Django Object-Level Permissions
+Django-Guardian = '^2.4.0'
+Rules = '^3.0'
+
+# Django Model Query Optimization
+Django-Model-Query-Graphs = '^0.0.5'
+
+# Django Debugging & Query Profiling
+Django-Debug-Toolbar = '^3.2.2'
+Django-Query-Profiler = '^0.8'
+Django-Silk = '^4.2.0'
+Kolo = '^1.1.3'
+
+# Django Extensions & Utilities
+Django-Compressor = '2.4.1'
+Django-Environ = '^0.8.1'
+Django-Extensions = '^3.1.3'
+Django-Model-Utils = '^4.2.0'
+Django-Storages = '^1.12.2'
+
+# Django CORS Headers
+Django-CORS-Headers = '*'   # let higher dependencies figure
+
+# Application UIs
+Django-HTMX = '^1.6.0'
+Django-Plotly-Dash = '^1.6.6'
+Gradio = '^2.4.0'
+Streamlit = '^1.1.0'
+Watchdog = '^2.1.6'   # better performance for Streamlit
+
+# Database Connectors/Drivers
+MySQLClient = '^2.0.3'
+PsycoPG2-binary = '^2.9.1'
+
+# ASGI Web Servers
+Channels = '^3.0.4'
+Daphne = '^3.0.2'
+GUnicorn = '^20.1.0'
+Hypercorn = '^0.11.2'
+Starlette = '^0.16.0'
+Uvicorn = '^0.15.0'
+
+
+# COMMAND-LINE INTERFACE (CLI)
+# ============================
+CLICK = '^7.1.2'   # aligned with Streamlit
+Colored = '^1.4.3'
+
+
+# JUPYTER
+# =======
+Jupyter = '^1.0.0'
+
+
+# OTHER
+# =====
+Cython = '^0.29.24'
+GitPython = '^3.1.24'
+'Ruamel.YAML' = '^0.17.16'
+PSUtil = '^5.8.0'
+Python-DotEnv = '^0.19.1'
+Requests = '*'   # let higher dependencies figure
+Tqdm = '^4.62.3'
+
+
+# CLOUD
+# =====
+AWSEBCLI = '^3.20.2'
+
 
 [project.optional-dependencies]
-all = []
-
 doc = [
   # Sphinx & related
-  "Sphinx >= 3.5.4",
-  "Sphinx-AutoBuild >= 2021.3.14",
-  "SphinxContrib-JSMath >= 1.0.1",
+  'Sphinx >= 4.2.0',
+  'Sphinx-AutoBuild >= 2021.3.14',
+  'SphinxContrib-JSMath >= 1.0.1',
 
   # Markdown
-  "CommonMark >= 0.9.1",
-  "MyST-Parser >= 0.14.0",
-  "ReCommonMark >= 0.7.1"
+  'CommonMark >= 0.9.1',
+  'MyST-Parser >= 0.15.2',
+  'ReCommonMark >= 0.7.1'
 ]
 
 lint = [
-  "Bandit >= 1.7.0",
-  "Flake8 >= 3.9.1",
-  "MyPy >= 0.812",
-  # "Prospector >= 1.3.1",
-    # prospector 1.3.1 depends on pylint==2.5.3
-  "PyCodeStyle >= 2.7.0",
-  "PyDocStyle >= 6.0.0",
-  "PyLama >= 7.7.1",
-  "PyLint >= 2.8.2"
+  'Bandit >= 1.7.0',
+  'Flake8 >= 4.0.1',
+  'MyPy >= 0.910',
+  'Prospector >= 1.5.1',
+  'PyCodeStyle >= 2.8.0',
+  'PyDocStyle >= 6.1.1',
+  'PyLama >= 7.7.1',
+  'PyLint >= 2.11.1'
 ]
 
 pkg = [
-  "Flit >= 3.2.0",
-  "PIP >= 21.1.1",
-  "PIPEnv >= 2020.11.15",
-  "Poetry >= 1.1.6",
-  # "PyEnv >= 0.0.1",
-    # not installable with pip
-  "SetUpTools >= 56.1.0",
-  "TOML >= 0.10.2",
-  "VirtualEnv >= 20.4.6",
-  "Wheel >= 0.36.2"
+  'Flit >= 3.4.0',
+  'PIP >= 21.3.1',
+  'PIPEnv >= 2021.5.29',
+  'Poetry >= 1.1.11',
+  # 'PyEnv >= 0.0.1',   # not installable with pip
+  'SetUpTools >= 58.3.0',
+  'VirtualEnv >= 20.9.0',
+  'Wheel >= 0.37.2'
 ]
 
 
-[project.urls]
-homepage = "GitHub.com/Django-AI/DjAI"
-documentation = "GitHub.com/Django-AI/DjAI"
-repository = "GitHub.com/Django-AI/DjAI"
+# [project.scripts]
+# djai = "djai.util.cli:djai"
+
+# [project.gui-scripts]
+
+# [project.entry-points."spam.magical"]
 
 
-[project.scripts]
-djai = "djai.util.cli:djai"
-
-[project.gui-scripts]
-
-[project.entry-points."spam.magical"]
+[build-system]
+requires = [
+  'SetUpTools >= 58.3.0',
+  'Wheel >= 0.37.0'
+]
+build-backend = 'setuptools.build_meta'
