@@ -67,6 +67,11 @@ class AIModel(PolymorphicModel,
 
         default_related_name: str = 'ai_models'
 
+    @abstractmethod
+    def predict(self, **kwargs) -> Any:
+        """Predict."""
+        raise NotImplementedError
+
     @classproperty
     def _subclasses(cls) -> Generator[PolymorphicModelBase, None, None]:   # noqa: E501,N805
         # pylint: disable=no-self-argument

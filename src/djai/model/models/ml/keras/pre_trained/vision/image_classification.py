@@ -15,10 +15,11 @@ from gradio.outputs import Label as LabelOutput
 import numpy
 from PIL import Image, ImageOps
 from tensorflow.python.keras.applications.imagenet_utils import \
-    decode_predictions
+    decode_predictions   # pylint: disable=no-name-in-module
 
-from .......util import PGSQL_IDENTIFIER_MAX_LEN, import_obj
-from ......apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN, import_obj
+
 from ....base import _PreTrainedMLModelABC
 
 
@@ -71,7 +72,8 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
     @property
     def img_dim_size(self) -> int:
         """(Square) Image Dimension Size."""
-        return self.params['img_dim_size']
+        return self.params[   # pylint: disable=unsubscriptable-object
+            'img_dim_size']
 
     def _image_to_4d_array(self, image: ImageClassificationInputType) \
             -> numpy.ndarray:
@@ -109,6 +111,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
                 n_labels: int = 5) \
             -> Union[ImageClassificationOutputType,
                      list[ImageClassificationOutputType]]:
+        # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_img: bool = isinstance(image_or_images, (str, BytesIO,
                                                         Image.Image,
@@ -145,6 +148,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=cls.predict,
