@@ -1,10 +1,13 @@
 """DjAI base AIModel class."""
 
 
+from abc import abstractmethod
 from collections.abc import Generator, Sequence
 from json.decoder import JSONDecoder
+from typing import Any, Optional
 
 from django.core.serializers.json import DjangoJSONEncoder
+from django.db.models.fields import CharField
 from django.db.models.fields.json import JSONField
 from django.utils.functional import classproperty
 
@@ -16,14 +19,15 @@ from gradio.outputs import JSON as JSONOutputComponent   # noqa: N811
 
 from djai.model.apps import DjAIModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
-from djai.util.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps
+from djai.util.models import \
+    _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
 
 
 __all__: Sequence[str] = ('AIModel',)
 
 
 class AIModel(PolymorphicModel,
-              _ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps):
+              _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC):
     """DjAI base AIModel class."""
 
     params: JSONField = \
@@ -49,7 +53,7 @@ class AIModel(PolymorphicModel,
             # validators=None
         )
 
-    class Meta(_ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps.Meta):
+    class Meta(_ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC.Meta):
         # pylint: disable=too-few-public-methods
         """Django Model Class Metadata."""
 
@@ -259,3 +263,65 @@ class AIModel(PolymorphicModel,
             # a queue instead of with parallel threads.
             # Required for longer inference times (> 1min) to prevent timeout.
         )
+
+
+class _AIModelWithArtifactFilesABC(AIModel):
+    artifact_global_url: CharField = \
+        CharField(
+            verbose_name='Model Artifact Global URL',
+            help_text='Model Artifact Global URL',
+
+            max_length=255,
+
+            null=True,
+            blank=True,
+            choices=None,
+            db_column=None,
+            db_index=True,
+            db_tablespace=None,
+            default=None,
+            editable=True,
+            # error_messages=None,
+            primary_key=False,
+            unique=True,
+            unique_for_date=None, unique_for_month=None, unique_for_year=None,
+            # validators=None
+        )
+
+    artifact_local_path: CharField = \
+        CharField(
+            verbose_name='Model Artifact Local Path',
+            help_text='Model Artifact Local Path',
+
+            max_length=255,
+
+            null=True,
+            blank=True,
+            choices=None,
+            db_column=None,
+            db_index=True,
+            db_tablespace=None,
+            default=None,
+            editable=True,
+            # error_messages=None,
+            primary_key=False,
+            unique=False,
+            unique_for_date=None, unique_for_month=None, unique_for_year=None,
+            # validators=None
+        )
+
+    native_obj: Optional[Any] = None
+
+    class Meta(AIModel.Meta):   # pylint: disable=too-few-public-methods
+        """Django Model Class Metadata."""
+
+        abstract = True
+
+    @abstractmethod
+    def load(self) -> None:
+        """Load the Model's native object from its artifact file(s)."""
+        raise NotImplementedError
+
+    def unload(self) -> None:
+        """Unload the Model's native object to free up memory."""
+        self.native_obj = None

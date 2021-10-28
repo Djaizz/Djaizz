@@ -16,11 +16,13 @@ from django.utils.functional import classproperty
 from model_utils.models import TimeStampedModel
 
 
-__all__: Sequence[str] = ('_ModelWithUUIDPK',
-                          '_ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps')
+__all__: Sequence[str] = (
+    '_ModelWithUUIDPKABC',
+    '_ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC'
+)
 
 
-class _ModelWithUUIDPK(Model):
+class _ModelWithUUIDPKABC(Model):
     uuid: UUIDField = \
         UUIDField(
             # docs.djangoproject.com/en/dev/ref/models/fields/#field-options
@@ -152,9 +154,12 @@ class _ModelWithUUIDPK(Model):
         # docs.djangoproject.com/en/dev/ref/models/options/#verbose-name-plural
         # verbose_name_plural: str  = ...
 
+    def __str__(self) -> str:
+        return f'{type(self).__name__} #{self.uuid}'
 
-class _ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps(_ModelWithUUIDPK,
-                                                         TimeStampedModel):
+
+class _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC(
+        _ModelWithUUIDPKABC, TimeStampedModel):
     name: CharField = \
         CharField(
             verbose_name='(optional) Unique Name',
@@ -177,7 +182,7 @@ class _ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps(_ModelWithUUIDPK,
             # validators=None
         )
 
-    class Meta(_ModelWithUUIDPK.Meta):
+    class Meta(_ModelWithUUIDPKABC.Meta):
         # pylint: disable=too-few-public-methods
         """Django Model Class Metadata."""
 
@@ -190,7 +195,7 @@ class _ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps(_ModelWithUUIDPK,
     def __str__(self) -> str:
         return (f'{type(self).__name__} "{self.name}"'
                 if self.name
-                else f'{type(self).__name__} #{self.uuid}')
+                else super().__str__())
 
     @property
     def name_or_uuid(self) -> str:
@@ -206,7 +211,7 @@ class _ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps(_ModelWithUUIDPK,
 
     @classmethod
     def get_by_name_or_uuid(cls, name_or_uuid: str) \
-            -> _ModelWithUUIDPKAndOptionalUniqueNameAndTimestamps:
+            -> _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC:
         """Get Object by Name (if applicable) or UUID."""
         try:   # try looking up object by UUID
             _uuid: UUID = UUID(hex=name_or_uuid, version=4)
