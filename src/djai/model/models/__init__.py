@@ -5,6 +5,10 @@ from collections.abc import Sequence
 
 from .base import AIModel
 
+from .cloud_ai_svc import (
+    CloudAIService,
+)
+
 from .ml import (
     SKLModel,
 
@@ -33,6 +37,8 @@ from .ml import (
 
 __all__: Sequence[str] = (
     'AIModel',
+
+    'CloudAIService',
 
     'SKLModel',
 

@@ -6,6 +6,8 @@ from collections.abc import Sequence
 from djai.model.models import (
     AIModel,
 
+    CloudAIService,
+
     SKLModel,
 
     KerasModel,
@@ -33,6 +35,8 @@ from djai.model.models import (
 
 __all__: Sequence[str] = (
     'AIModel',
+
+    'CloudAIService',
 
     'SKLModel',
 
