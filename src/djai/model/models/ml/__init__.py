@@ -7,7 +7,27 @@ from .skl import SKLModel
 
 from .keras import (
     KerasModel,
+
     PreTrainedKerasImageNetClassifier,
+)
+
+from .hugging_face import (
+    PreTrainedHuggingFaceTransformer,
+
+    PreTrainedHuggingFaceAudioClassifier,
+    PreTrainedHuggingFaceImageClassifier,
+    PreTrainedHuggingFaceMaskFiller,
+    PreTrainedHuggingFaceObjectDetector,
+    PreTrainedHuggingFaceQuestionAnswerer,
+    PreTrainedHuggingFaceSpeechRecognizer,
+    PreTrainedHuggingFaceTableQuestionAnswerer,
+    PreTrainedHuggingFaceTextClassifier,
+    PreTrainedHuggingFaceTextGenerator,
+    PreTrainedHuggingFaceText2TextGenerator,
+    PreTrainedHuggingFaceTextSummarizer,
+    PreTrainedHuggingFaceTokenClassifier,
+    PreTrainedHuggingFaceTranslator,
+    PreTrainedHuggingFaceZeroShotClassifier,
 )
 
 
@@ -16,4 +36,20 @@ __all__: Sequence[str] = (
 
     'KerasModel',
     'PreTrainedKerasImageNetClassifier',
+
+    'PreTrainedHuggingFaceTransformer',
+    'PreTrainedHuggingFaceAudioClassifier',
+    'PreTrainedHuggingFaceImageClassifier',
+    'PreTrainedHuggingFaceMaskFiller',
+    'PreTrainedHuggingFaceObjectDetector',
+    'PreTrainedHuggingFaceQuestionAnswerer',
+    'PreTrainedHuggingFaceSpeechRecognizer',
+    'PreTrainedHuggingFaceTableQuestionAnswerer',
+    'PreTrainedHuggingFaceTextClassifier',
+    'PreTrainedHuggingFaceTextGenerator',
+    'PreTrainedHuggingFaceText2TextGenerator',
+    'PreTrainedHuggingFaceTextSummarizer',
+    'PreTrainedHuggingFaceTokenClassifier',
+    'PreTrainedHuggingFaceTranslator',
+    'PreTrainedHuggingFaceZeroShotClassifier',
 )

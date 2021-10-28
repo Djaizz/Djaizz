@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='PreTrainedKerasImageNetClassifier',
 
-            fields=[
+            fields=(
                 ('aimodel_ptr',
                  models.OneToOneField(
                     auto_created=True,
@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
                     help_text='Preprocessor (module.dot.qualname)',
                     max_length=255,
                     verbose_name='Preprocessor (module.dot.qualname)'))
-            ],
+            ),
 
             options={
                 'verbose_name': 'Pre-Trained Keras ImageNet Classifier',

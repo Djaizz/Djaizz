@@ -1,135 +1,82 @@
-"""DjAI base AIModel class."""
+"""DjAI Pre-Trained Hugging Face Token Classifier Model class."""
 
 
-from abc import abstractmethod
-from collections.abc import Generator, Sequence
-from json.decoder import JSONDecoder
-from typing import Any, Optional
+from collections.abc import Sequence
+from typing import Union
 
-from django.core.serializers.json import DjangoJSONEncoder
-from django.db.models.fields import CharField
-from django.db.models.fields.json import JSONField
 from django.utils.functional import classproperty
 
-from polymorphic.base import PolymorphicModelBase
-from polymorphic.models import PolymorphicModel
-
 from gradio.interface import Interface
+from gradio.inputs import Textbox as TextboxInput
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
-from djai.model.apps import DjAIModelModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
-from djai.util.models import \
-    _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
+from .....util import PGSQL_IDENTIFIER_MAX_LEN
+from ....apps import DjAIModelModuleConfig
+from .base import PreTrainedHuggingFaceTransformer
 
 
-__all__: Sequence[str] = ('AIModel',)
+__all__: Sequence[str] = ('PreTrainedHuggingFaceTokenClassifier',)
 
 
-class AIModel(PolymorphicModel,
-              _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC):
-    """DjAI base AIModel class."""
+TokenClassificationInputType = str
+TokenClassificationOutputType = list[dict]
 
-    params: JSONField = \
-        JSONField(
-            verbose_name='Model Parameters',
-            help_text='Model Parameters',
 
-            encoder=DjangoJSONEncoder,
-            decoder=JSONDecoder,
+class PreTrainedHuggingFaceTokenClassifier(PreTrainedHuggingFaceTransformer):
+    """DjAI Pre-Trained Hugging Face Token Classifier Model class."""
 
-            null=True,
-            blank=True,
-            choices=None,
-            db_column=None,
-            db_index=False,
-            db_tablespace=None,
-            default=None,
-            editable=True,
-            # error_messages=None,
-            primary_key=False,
-            unique=False,
-            unique_for_date=None, unique_for_month=None, unique_for_year=None,
-            # validators=None
-        )
-
-    class Meta(_ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC.Meta):
+    class Meta(PreTrainedHuggingFaceTransformer.Meta):
         # pylint: disable=too-few-public-methods
         """Django Model Class Metadata."""
 
-        verbose_name: str = 'AI Model'
-        verbose_name_plural: str = 'AI Models'
+        verbose_name: str = 'Pre-Trained Hugging Face Token Classifier'
+        verbose_name_plural: str = 'Pre-Trained Hugging Face Token Classifiers'
 
         db_table: str = (f'{DjAIModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')
 
-        default_related_name: str = 'ai_models'
+        default_related_name: str = 'pretrained_hugging_face_token_classifiers'
+
+    def predict(self,
+                text_or_texts: Union[TokenClassificationInputType,
+                                     Sequence[TokenClassificationInputType]]) \
+            -> Union[TokenClassificationOutputType,
+                     Sequence[TokenClassificationOutputType]]:
+        """Classify Tokens in Text(s)."""
+        single_text: bool = isinstance(text_or_texts, str)
+
+        if not (single_text or isinstance(text_or_texts, list)):
+            text_or_texts: list[TokenClassificationInputType] = \
+                list(text_or_texts)
+
+        self.load()
+
+        output = self.native_model_obj(inputs=text_or_texts)
+
+        return ([{k: (float(v) if k == 'score' else v) for k, v in d.items()}
+                 for d in output]
+                if single_text
+                else [[{k: (float(v) if k == 'score' else v)
+                        for k, v in d.items()}
+                       for d in result]
+                      for result in output])
 
     @classproperty
-    def _subclasses(cls) -> Generator[PolymorphicModelBase, None, None]:   # noqa: E501,N805
-        # pylint: disable=no-self-argument
-        """Generate AIModel class's subclasses."""
-        for subclass in cls.__subclasses__():
-            yield subclass
-            yield from subclass._subclasses  # pylint: disable=protected-access
-
-    @classproperty
-    def subclasses(cls) -> list[PolymorphicModelBase]:   # noqa: N805
-        # pylint: disable=no-self-argument
-        """List of AIModel class's subclasses."""
-        return list(cls._subclasses)
-
-    @classproperty
-    def subclass_names(cls) -> list[str]:   # noqa: N805
-        # pylint: disable=no-self-argument
-        """List of AIModel class's subclasses' names."""
-        return [s.__name__
-                for s in cls._subclasses   # pylint: disable=not-an-iterable
-                ]
-
-    @classproperty
-    def subclasses_by_name(cls) -> dict[str, PolymorphicModelBase]:   # noqa: E501,N805
-        # pylint: disable=no-self-argument
-        """Return AIModel class's subclass-by-name dictionary.
-
-        Dictionary mapping from AIModel class's subclasses' names
-        to such subclasses.
-        """
-        return {s.__name__: s
-                for s in cls._subclasses   # pylint: disable=not-an-iterable
-                }
-
-    @classproperty
-    def subclass_full_qual_names(cls) -> list[str]:   # noqa: N805
-        # pylint: disable=no-self-argument
-        """List of AIModel class's subclasses' fully-qualified names."""
-        return [full_qual_name(s)
-                for s in cls._subclasses   # pylint: disable=not-an-iterable
-                ]
-
-    @classproperty
-    def subclasses_by_full_qual_name(cls) -> dict[str, PolymorphicModelBase]:   # noqa: E501,N805
-        # pylint: disable=no-self-argument
-        """Return AIModel class's subclass-by-fully-qualified name dict.
-
-        Dictionary mapping from AIModel class's subclasses'
-        fully-qualified names to such subclasses.
-        """
-        return {full_qual_name(s): s
-                for s in cls._subclasses   # pylint: disable=not-an-iterable
-                }
-
-    @classproperty
-    def gradio_ui(cls) -> Interface:   # noqa: E501,N805
-        # pylint: disable=no-self-argument
-        """Return the AIModel class's Gradio Interface."""
+    def gradio_ui(cls) -> Interface:   # noqa: N805
+        """Gradio Interface."""
         return Interface(
             fn=cls.predict,
             # (Callable) - the function to wrap an interface around.
 
-            inputs=[],
+            inputs=TextboxInput(lines=10,
+                                placeholder=('Text from which '
+                                             'to Recognize Tokens'),
+                                default='',
+                                numeric=False,
+                                type='str',
+                                label=('Text from which to Recognize Tokens')),
             # (Union[str, List[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
@@ -138,7 +85,7 @@ class AIModel(PolymorphicModel,
             # The number of input components should match
             # the number of parameters in fn.
 
-            outputs=JSONOutput(label='AI Model Output'),
+            outputs=JSONOutput(label='Recognized Tokens'),
             # (Union[str, List[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
@@ -207,7 +154,8 @@ class AIModel(PolymorphicModel,
             # (str) - a title for the interface;
             # if provided, appears above the input and output components.
 
-            description='An AI Model',
+            description=('A pre-trained Hugging Face model '
+                         'to extract and recognize text tokens'),
             # (str) - a description for the interface;
             # if provided, appears above the input and output components.
 
@@ -263,65 +211,3 @@ class AIModel(PolymorphicModel,
             # a queue instead of with parallel threads.
             # Required for longer inference times (> 1min) to prevent timeout.
         )
-
-
-class _AIModelWithArtifactFilesABC(AIModel):
-    artifact_global_url: CharField = \
-        CharField(
-            verbose_name='Model Artifact Global URL',
-            help_text='Model Artifact Global URL',
-
-            max_length=255,
-
-            null=True,
-            blank=True,
-            choices=None,
-            db_column=None,
-            db_index=True,
-            db_tablespace=None,
-            default=None,
-            editable=True,
-            # error_messages=None,
-            primary_key=False,
-            unique=True,
-            unique_for_date=None, unique_for_month=None, unique_for_year=None,
-            # validators=None
-        )
-
-    artifact_local_path: CharField = \
-        CharField(
-            verbose_name='Model Artifact Local Path',
-            help_text='Model Artifact Local Path',
-
-            max_length=255,
-
-            null=True,
-            blank=True,
-            choices=None,
-            db_column=None,
-            db_index=True,
-            db_tablespace=None,
-            default=None,
-            editable=True,
-            # error_messages=None,
-            primary_key=False,
-            unique=False,
-            unique_for_date=None, unique_for_month=None, unique_for_year=None,
-            # validators=None
-        )
-
-    native_obj: Optional[Any] = None
-
-    class Meta(AIModel.Meta):   # pylint: disable=too-few-public-methods
-        """Django Model Class Metadata."""
-
-        abstract = True
-
-    @abstractmethod
-    def load(self) -> None:
-        """Load the Model's native object from its artifact file(s)."""
-        raise NotImplementedError
-
-    def unload(self) -> None:
-        """Unload the Model's native object to free up memory."""
-        self.native_obj = None
