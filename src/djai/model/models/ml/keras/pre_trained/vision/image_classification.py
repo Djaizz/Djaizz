@@ -9,9 +9,8 @@ from django.db.models.fields import CharField
 from django.utils.functional import classproperty
 
 from gradio.interface import Interface
-from gradio.inputs import (Image as ImageInputComponent,
-                           Slider as SliderInputComponent)
-from gradio.outputs import Label as LabelOutputComponent
+from gradio.inputs import Image as ImageInput, Slider as SliderInput
+from gradio.outputs import Label as LabelOutput
 
 import numpy
 from PIL import Image, ImageOps
@@ -151,19 +150,17 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             fn=cls.predict,
             # (Callable) - the function to wrap an interface around.
 
-            inputs=[ImageInputComponent(shape=None,
-                                        image_mode='RGB',
-                                        invert_colors=False,
-                                        source='upload',
-                                        tool='editor',
-                                        type='pil',
-                                        label='Upload an Image to Classify',
-                                        optional=False),
+            inputs=[ImageInput(shape=None,
+                               image_mode='RGB',
+                               invert_colors=False,
+                               source='upload',
+                               tool='editor',
+                               type='pil',
+                               label='Upload an Image to Classify',
+                               optional=False),
 
-                    SliderInputComponent(minimum=3, maximum=10, step=1,
-                                         default=5,
-                                         label=('No. of ImageNet Labels '
-                                                'to Return'))],
+                    SliderInput(minimum=3, maximum=10, step=1, default=5,
+                                label=('No. of ImageNet Labels to Return'))],
             # (Union[str, List[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
@@ -172,9 +169,9 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             # The number of input components should match
             # the number of parameters in fn.
 
-            outputs=LabelOutputComponent(num_top_classes=10,
-                                         type='auto',
-                                         label='Likely ImageNet Labels'),
+            outputs=LabelOutput(num_top_classes=10,
+                                type='auto',
+                                label='Likely ImageNet Labels'),
             # (Union[str, List[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
