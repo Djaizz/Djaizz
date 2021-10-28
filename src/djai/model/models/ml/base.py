@@ -1,0 +1,57 @@
+"""DjAI Machine Learning Model base classes."""
+
+
+from collections.abc import Sequence
+from typing import Any
+
+from django.db.models.fields import CharField
+
+from djai.model.models.base import _AIModelWithArtifactFilesABC
+from djai.util import import_obj
+
+
+__all__: Sequence[str] = ('_PreTrainedMLModelABC',)
+
+
+class _PreTrainedMLModelABC(_AIModelWithArtifactFilesABC):
+    loader_module_and_qualname: CharField = \
+        CharField(
+            verbose_name='Pre-Trained ML Model Loader (module.qualname)',
+            help_text='Pre-Trained ML Model Loader (module.qualname)',
+
+            max_length=255,
+
+            null=False,
+            blank=False,
+            choices=None,
+            db_column=None,
+            db_index=True,
+            db_tablespace=None,
+            default=None,
+            editable=True,
+            # error_messages=None,
+            primary_key=False,
+            unique=False,
+            unique_for_date=None, unique_for_month=None, unique_for_year=None,
+            # validators=None
+        )
+
+    class Meta(_AIModelWithArtifactFilesABC.Meta):
+        # pylint: disable=too-few-public-methods
+        """Django Model Class Metadata."""
+
+        abstract = True
+
+    @property
+    def loader(self) -> callable:
+        """Loader method to load the Model's native object."""
+        return import_obj(self.loader_module_and_qualname)
+
+    @property
+    def init_params(self) -> dict[str, Any]:
+        """Extract initialization parameters from in-database params JSON."""
+        return ({} if self.params is None else self.params).get('__init__', {})
+
+    def load(self) -> None:
+        if not self.native_obj:
+            self.native_obj = self.loader(**self.init_params)
