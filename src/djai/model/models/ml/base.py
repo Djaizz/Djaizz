@@ -17,8 +17,8 @@ __all__: Sequence[str] = ('_PreTrainedMLModelABC',)
 class _PreTrainedMLModelABC(_AIModelWithArtifactFilesABC):
     loader_module_and_qualname: CharField = \
         CharField(
-            verbose_name='Pre-Trained ML Model Loader (module.qualname)',
-            help_text='Pre-Trained ML Model Loader (module.qualname)',
+            verbose_name='Pre-Trained ML Model Loader (module.dot.qualname)',
+            help_text='Pre-Trained ML Model Loader (module.dot.qualname)',
 
             max_length=255,
 

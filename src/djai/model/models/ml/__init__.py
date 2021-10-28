@@ -7,6 +7,7 @@ from .skl import SKLModel
 
 from .keras import (
     KerasModel,
+    PreTrainedKerasImageNetClassifier,
 )
 
 
@@ -14,4 +15,5 @@ __all__: Sequence[str] = (
     'SKLModel',
 
     'KerasModel',
+    'PreTrainedKerasImageNetClassifier',
 )
