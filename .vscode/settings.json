@@ -17,6 +17,7 @@
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
     "--disable", "no-member",
+    "--disable", "protected-access",
   ],
 
   "python.linting.flake8Enabled": true,
