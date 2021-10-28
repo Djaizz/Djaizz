@@ -8,6 +8,8 @@ from djai.model.models import (
 
     CloudAIService,
 
+    GoogleTranslate,
+
     SKLModel,
 
     KerasModel,
@@ -37,6 +39,8 @@ __all__: Sequence[str] = (
     'AIModel',
 
     'CloudAIService',
+
+    'GoogleTranslate',
 
     'SKLModel',
 

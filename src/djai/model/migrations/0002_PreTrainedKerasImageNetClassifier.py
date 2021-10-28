@@ -1,3 +1,6 @@
+# pylint: disable=invalid-name
+
+
 """DjAI PreTrainedKerasImageNetClassifier model class."""
 
 

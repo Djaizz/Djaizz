@@ -7,6 +7,8 @@ from .base import AIModel
 
 from .cloud_ai_svc import (
     CloudAIService,
+
+    GoogleTranslate,
 )
 
 from .ml import (
@@ -39,6 +41,8 @@ __all__: Sequence[str] = (
     'AIModel',
 
     'CloudAIService',
+
+    'GoogleTranslate',
 
     'SKLModel',
 

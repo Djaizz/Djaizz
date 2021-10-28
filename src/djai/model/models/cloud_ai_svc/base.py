@@ -15,8 +15,7 @@ __all__: Sequence[str] = ('CloudAIService',)
 class CloudAIService(AIModel):   # pylint: disable=abstract-method
     """DjAI Cloud AI Service model class."""
 
-    class Meta(AIModel.Meta):
-        # pylint: disable=too-few-public-methods
+    class Meta(AIModel.Meta):   # pylint: disable=too-few-public-methods
         """Django Model Class Metadata."""
 
         verbose_name: str = 'Cloud AI Service'
