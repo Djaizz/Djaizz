@@ -26,12 +26,26 @@ class KerasModel(_AIModelWithArtifactFilesABC):
 
     def load(self) -> None:
         """Load the Model's native object from it artifact file."""
-        artifact_local_path = str(Path(self.artifact_local_path).expanduser())
+        if not self.native_obj:
+            artifact_local_path = str(Path(self.artifact_local_path)
+                                      .expanduser())
 
-        self.native_obj = \
-            load_model(filepath=(h5py.File(name=artifact_local_path, mode='r')
-                                 if artifact_local_path.endswith('.h5')
-                                 else artifact_local_path),
-                       custom_objects=None,
-                       compile=True,
-                       options=None)
+            self.native_obj = \
+                load_model(filepath=(h5py.File(name=artifact_local_path,
+                                               mode='r',
+                                               driver=None,
+                                               libver=None,
+                                               userblock_size=None,
+                                               swmr=False,
+                                               rdcc_nslots=None,
+                                               rdcc_nbytes=None,
+                                               rdcc_w0=None,
+                                               track_order=None,
+                                               fs_strategy=None,
+                                               fs_persist=False,
+                                               fs_threshold=1)
+                                     if artifact_local_path.endswith('.h5')
+                                     else artifact_local_path),
+                           custom_objects=None,
+                           compile=True,
+                           options=None)
