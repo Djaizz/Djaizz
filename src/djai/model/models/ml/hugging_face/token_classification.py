@@ -53,7 +53,7 @@ class PreTrainedHuggingFaceTokenClassifier(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(inputs=text_or_texts)
+        output = self.native_obj(inputs=text_or_texts)
 
         return ([{k: (float(v) if k == 'score' else v) for k, v in d.items()}
                  for d in output]

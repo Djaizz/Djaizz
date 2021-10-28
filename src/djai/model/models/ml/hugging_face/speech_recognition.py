@@ -59,7 +59,7 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(inputs=speech_or_speeches)
+        output = self.native_obj(inputs=speech_or_speeches)
 
         return (output['text']
                 if single_speech

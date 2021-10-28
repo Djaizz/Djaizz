@@ -53,9 +53,9 @@ class PreTrainedHuggingFaceTextClassifier(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(text_or_texts,
-                                       return_all_scores=True,
-                                       function_to_apply=None)
+        output = self.native_obj(text_or_texts,
+                                 return_all_scores=True,
+                                 function_to_apply=None)
 
         return ({i['label']: i['score'] for i in output[0]}
                 if single_text

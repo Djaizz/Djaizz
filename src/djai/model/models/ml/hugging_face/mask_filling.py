@@ -55,9 +55,9 @@ class PreTrainedHuggingFaceMaskFiller(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(text_or_texts,
-                                       targets=targets,
-                                       top_k=n_labels)
+        output = self.native_obj(text_or_texts,
+                                 targets=targets,
+                                 top_k=n_labels)
 
         return ({i['token_str']: i['score'] for i in output}
                 if single_text or (len(text_or_texts) == 1)

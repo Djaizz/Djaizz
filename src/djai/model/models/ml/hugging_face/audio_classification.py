@@ -58,7 +58,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(inputs=audio_or_audios, top_k=n_labels)
+        output = self.native_obj(inputs=audio_or_audios, top_k=n_labels)
 
         return ({i['label']: i['score'] for i in output}
                 if single_audio

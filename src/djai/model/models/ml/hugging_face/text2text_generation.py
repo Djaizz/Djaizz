@@ -60,7 +60,7 @@ class PreTrainedHuggingFaceText2TextGenerator(
 
         self.load()
 
-        output = self.native_model_obj(
+        output = self.native_obj(
             text_or_texts,
             return_tensors=return_tensors,
             return_text=return_text,

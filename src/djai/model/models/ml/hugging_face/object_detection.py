@@ -56,8 +56,8 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        return self.native_model_obj(inputs=image_or_images,   # images=?
-                                     threshold=threshold)
+        return self.native_obj(inputs=image_or_images,   # images=?
+                               threshold=threshold)
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805

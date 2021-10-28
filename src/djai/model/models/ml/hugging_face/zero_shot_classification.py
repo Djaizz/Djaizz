@@ -61,10 +61,10 @@ class PreTrainedHuggingFaceZeroShotClassifier(
 
         self.load()
 
-        output = self.native_model_obj(sequences=text_or_texts,
-                                       candidate_labels=candidate_labels,
-                                       hypothesis_template=hypothesis_template,
-                                       multi_label=multi_label)
+        output = self.native_obj(sequences=text_or_texts,
+                                 candidate_labels=candidate_labels,
+                                 hypothesis_template=hypothesis_template,
+                                 multi_label=multi_label)
 
         return (dict(zip(output['labels'], output['scores']))
                 if single_text

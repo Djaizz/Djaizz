@@ -133,8 +133,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
         self.load()
 
         pred_prob_arr: numpy.ndarray = \
-            self.native_model_obj.predict(
-                x=preprocessed_fitted_img_batch_arr)
+            self.native_obj.predict(x=preprocessed_fitted_img_batch_arr)
 
         # decode predictions & return JSON-serializable dict
         decoded_preds: list[dict[str, float]] = [{tup[1]: float(tup[2])

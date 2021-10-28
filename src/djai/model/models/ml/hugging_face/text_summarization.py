@@ -58,7 +58,7 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(
+        output = self.native_obj(
             inputs=text_or_texts,   # documents=?
             return_text=return_text,
             return_tensors=return_tensors,

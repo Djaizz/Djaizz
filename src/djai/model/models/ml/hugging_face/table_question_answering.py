@@ -57,9 +57,9 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
         """Answer Question(s) on a Tabular Data Set."""
         self.load()
 
-        return self.native_model_obj(table=table, query=queries,
-                                     sequential=sequential,
-                                     padding=padding, truncation=truncation)
+        return self.native_obj(table=table, query=queries,
+                               sequential=sequential,
+                               padding=padding, truncation=truncation)
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805

@@ -63,7 +63,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        return self.native_model_obj(
+        return self.native_obj(
             question=question, context=context, top_k=top_k,
             doc_stride=doc_stride,
             max_answer_len=max_answer_len,

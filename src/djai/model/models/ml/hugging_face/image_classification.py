@@ -57,7 +57,7 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(images=image_or_images, top_k=n_labels)
+        output = self.native_obj(images=image_or_images, top_k=n_labels)
 
         return ({i['label']: i['score'] for i in output}
                 if single_img

@@ -61,7 +61,7 @@ class PreTrainedHuggingFaceTranslator(PreTrainedHuggingFaceTransformer):
 
         self.load()
 
-        output = self.native_model_obj(
+        output = self.native_obj(
             inputs=text_or_texts,   # documents=?
             return_tensors=return_tensors,
             return_text=return_text,
