@@ -19,11 +19,10 @@ from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
 from djai.model.apps import DjAIModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
-from djai.util.models import \
-    _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
+from djai.util.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC   # noqa: E501
 
 
-__all__: Sequence[str] = ('AIModel',)
+__all__: Sequence[str] = 'AIModel', '_AIModelWithArtifactFilesABC'
 
 
 class AIModel(PolymorphicModel,
@@ -66,6 +65,11 @@ class AIModel(PolymorphicModel,
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')
 
         default_related_name: str = 'ai_models'
+
+    @abstractmethod
+    def fit(self, **kwargs) -> Any:
+        """Fit."""
+        raise NotImplementedError
 
     @abstractmethod
     def predict(self, **kwargs) -> Any:
