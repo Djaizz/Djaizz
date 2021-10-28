@@ -16,6 +16,7 @@
 
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
+    "--disable", "fixme",
     "--disable", "no-member",
     "--disable", "protected-access",
   ],

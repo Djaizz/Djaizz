@@ -13,8 +13,9 @@ from gradio.outputs import Label as LabelOutput
 
 import numpy
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -49,6 +50,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
                 n_labels: int = 5) \
             -> Union[AudioClassificationOutputType,
                      list[AudioClassificationOutputType]]:
+        # pylint: disable=arguments-differ
         """Classify Audio(s)."""
         single_audio: bool = isinstance(audio_or_audios, (numpy.ndarray, str))
 
@@ -67,6 +69,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         def _predict(self,
                      sampling_rate_and_double_channel_audio_array:

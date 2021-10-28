@@ -14,8 +14,9 @@ from gradio.outputs import (Image as ImageOutput,   # noqa: N811
 
 from PIL.Image import Image
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -49,6 +50,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
                 threshold: float = 0.9) \
             -> Union[ObjectDetectionOutputType,
                      Sequence[ObjectDetectionOutputType]]:
+        # pylint: disable=arguments-differ
         """Detect Objects from Image(s)."""
         if not isinstance(image_or_images, (str, Image, list)):
             image_or_images: list[ObjectDetectionInputType] = \
@@ -61,6 +63,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         BoundingBoxType = tuple[str, int, int, int, int]   # noqa: N806
 

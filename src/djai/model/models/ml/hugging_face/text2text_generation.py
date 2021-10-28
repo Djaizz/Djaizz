@@ -11,8 +11,9 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Checkbox as CheckboxInput)
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -51,6 +52,7 @@ class PreTrainedHuggingFaceText2TextGenerator(
                 **generate_kwargs) \
             -> Union[Text2TextGenerationOutputType,
                      list[Text2TextGenerationOutputType]]:
+        # pylint: disable=arguments-differ
         """Generate Text-to-Text."""
         single_text: bool = isinstance(text_or_texts, str)
 
@@ -85,6 +87,7 @@ class PreTrainedHuggingFaceText2TextGenerator(
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=cls.predict,

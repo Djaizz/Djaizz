@@ -13,8 +13,9 @@ from gradio.outputs import Textbox as TextboxOutput
 
 import numpy
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -49,6 +50,7 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
                           Sequence[SpeechRecognitionInputType]]) \
             -> Union[SpeechRecognitionOutputType,
                      list[SpeechRecognitionOutputType]]:
+        # pylint: disable=arguments-differ
         """Recognize Speech(es)."""
         single_speech: bool = isinstance(speech_or_speeches, (numpy.ndarray,
                                                               str))
@@ -67,6 +69,7 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         def _predict(self, speech_file: NamedTemporaryFile) -> str:
             return cls.predict(self, speech_or_speeches=speech_file.name)

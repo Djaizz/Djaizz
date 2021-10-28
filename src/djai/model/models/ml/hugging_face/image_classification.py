@@ -13,8 +13,9 @@ from gradio.outputs import Label as LabelOutput
 
 from PIL.Image import Image
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -48,6 +49,7 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
                 n_labels: int = 5) \
             -> Union[ImageClassificationOutputType,
                      list[ImageClassificationOutputType]]:
+        # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_img: bool = isinstance(image_or_images, (str, Image))
 
@@ -66,6 +68,7 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=cls.predict,

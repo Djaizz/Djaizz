@@ -12,8 +12,9 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Slider as SliderInput)
 from gradio.outputs import Label as LabelOutput
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -47,6 +48,7 @@ class PreTrainedHuggingFaceMaskFiller(PreTrainedHuggingFaceTransformer):
                 targets: Optional[list[str]] = None,
                 n_labels: int = 5) \
             -> Union[MaskFillingOutputType, list[MaskFillingOutputType]]:
+        # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
@@ -66,6 +68,7 @@ class PreTrainedHuggingFaceMaskFiller(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         def _predict(self,
                      text: str,

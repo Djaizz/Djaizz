@@ -10,8 +10,9 @@ from gradio.interface import Interface
 from gradio.inputs import Textbox as TextboxInput
 from gradio.outputs import Label as LabelOutput
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -44,6 +45,7 @@ class PreTrainedHuggingFaceTextClassifier(PreTrainedHuggingFaceTransformer):
                                      Sequence[TextClassificationInputType]]) \
             -> Union[TextClassificationOutputType,
                      Sequence[TextClassificationOutputType]]:
+        # pylint: disable=arguments-differ
         """Classify Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
@@ -64,6 +66,7 @@ class PreTrainedHuggingFaceTextClassifier(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=cls.predict,

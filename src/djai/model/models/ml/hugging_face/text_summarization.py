@@ -11,8 +11,9 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Checkbox as CheckboxInput)
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -49,6 +50,7 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
                 **generate_kwargs) \
             -> Union[TextSummarizationOutputType,
                      list[TextSummarizationOutputType]]:
+        # pylint: disable=arguments-differ
         """Summarize Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
@@ -82,6 +84,7 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=cls.predict,

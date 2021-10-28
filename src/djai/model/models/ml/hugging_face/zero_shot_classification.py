@@ -12,8 +12,9 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Checkbox as CheckboxInput)
 from gradio.outputs import Label as LabelOutput
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -52,6 +53,7 @@ class PreTrainedHuggingFaceZeroShotClassifier(
                 multi_label: bool = False) \
             -> Union[ZeroShotClassificationOutputType,
                      list[ZeroShotClassificationOutputType]]:
+        # pylint: disable=arguments-differ
         """Zero-Shot Classification of Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
@@ -73,6 +75,7 @@ class PreTrainedHuggingFaceZeroShotClassifier(
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=lambda self, text, candidates, hypothesis_tpl, multi_labels:

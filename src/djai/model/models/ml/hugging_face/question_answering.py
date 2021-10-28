@@ -12,8 +12,9 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Checkbox as CheckboxInput)
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -54,6 +55,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
                 max_question_len: int = 64,
                 handle_impossible_answer: bool = False) \
             -> Union[QuestionAnswerOutputType, list[QuestionAnswerOutputType]]:
+        # pylint: disable=arguments-differ
         """Answer Question(s) based on Text(s)."""
         if not isinstance(question, (str, list)):
             question: list[QuestionAnswerInputType] = list(question)
@@ -73,6 +75,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=lambda self, question, context, top_k,

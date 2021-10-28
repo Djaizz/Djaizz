@@ -14,8 +14,9 @@ from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
 from pandas import DataFrame
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.model.apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+
 from .base import PreTrainedHuggingFaceTransformer
 
 
@@ -54,6 +55,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
                 truncation: Union[bool, str] = False) \
             -> Union[TableQuestionAnswerOutputType,
                      list[TableQuestionAnswerOutputType]]:
+        # pylint: disable=arguments-differ
         """Answer Question(s) on a Tabular Data Set."""
         self.load()
 
@@ -63,6 +65,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Gradio Interface."""
         return Interface(
             fn=cls.predict,
