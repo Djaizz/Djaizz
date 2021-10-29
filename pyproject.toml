@@ -288,8 +288,8 @@ lint = [
 ]
 
 
-# [project.scripts]
-# djai = "djai.util.cli:djai"
+[project.scripts]
+djai = 'djai.util.cli:djai'
 
 # [project.gui-scripts]
 
