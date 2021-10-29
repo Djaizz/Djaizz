@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# this scripts needs to be called from the Project's root dir
+
+
+DOC_DIR=doc
+DOC_BUILD_DIR=$DOC_DIR/_build
+DOC_BUILD_DOCTREES_DIR=$DOC_BUILD_DIR/.doctrees
+DOC_BUILD_IMAGES_DIR=$DOC_BUILD_DIR/_images
+DOC_BUILD_SOURCES_DIR=$DOC_BUILD_DIR/_sources
+
+
+rm $DOC_DIR/*.rst
+rm $DOC_BUILD_DIR/*.html
+rm $DOC_BUILD_DOCTREES_DIR/*.doctree
+rm $DOC_BUILD_IMAGES_DIR/*
+rm $DOC_BUILD_SOURCES_DIR/*.txt
+
+
+$DOC_DIR/parse-docstr
+
+
+sphinx-autobuild $DOC_DIR $DOC_BUILD_DIR
