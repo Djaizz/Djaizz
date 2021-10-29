@@ -62,3 +62,6 @@ class DjAIModelModuleConfig(AppConfig):
     # as the primary key type for third party applications.
     # By default, this is the value of DEFAULT_AUTO_FIELD.
     default_auto_field: str = 'django.db.models.fields.AutoField'
+
+    def ready(self) -> None:
+        """Run tasks to initialize module."""
