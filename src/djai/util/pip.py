@@ -14,7 +14,13 @@ def get_python_dependencies() -> dict[str, Optional[str]]:
     """Get Python Dependencies."""
     d: dict[str, Optional[str]] = {}
 
-    for deps_and_vers in freeze():
+    for deps_and_vers in freeze(requirement=None,
+                                local_only=False,
+                                user_only=False,
+                                paths=None,
+                                isolated=False,
+                                exclude_editable=False,
+                                skip=()):
         ls: list[str] = deps_and_vers.split('==')
 
         if len(ls) == 2:
