@@ -10,10 +10,11 @@ from django.db.models.fields.json import JSONField
 from djai.data.apps import DjAIDataModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
-from .base import DataSet
+from .base import DataSet, _FileDataSetABC
 
 
-__all__: Sequence[str] = ('InDBJSONDataSet',)
+__all__: Sequence[str] = ('InDBJSONDataSet', 'JSONDataSet',
+                          '_FileDataSetWithInDBJSONCacheABC')
 
 
 class InDBJSONDataSet(DataSet):
@@ -54,3 +55,25 @@ class InDBJSONDataSet(DataSet):
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')
 
         default_related_name = 'in_db_json_data_sets'
+
+
+class _FileDataSetWithInDBJSONCacheABC(InDBJSONDataSet, _FileDataSetABC):
+    # pylint: disable=abstract-method,too-many-ancestors
+    """DjAI File DataSet with In-Database JSON Cache."""
+
+    class Meta(DataSet.Meta):
+        # pylint: disable=too-few-public-methods
+        """Django Model Class Metadata."""
+
+        abstract = True
+
+
+class JSONDataSet(_FileDataSetWithInDBJSONCacheABC):
+    # pylint: disable=abstract-method,too-many-ancestors
+    """DjAI JSON DataSet class."""
+
+    class Meta(DataSet.Meta):
+        # pylint: disable=too-few-public-methods
+        """Django Model Class Metadata."""
+
+        abstract = True
