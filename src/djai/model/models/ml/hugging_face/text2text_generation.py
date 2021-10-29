@@ -26,6 +26,7 @@ Text2TextGenerationOutputType = Union[str, list[int]]
 
 class PreTrainedHuggingFaceText2TextGenerator(
         PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Text-to-Text Generator Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

@@ -82,7 +82,7 @@ class AIModel(PolymorphicModel,
         """Generate AIModel class's subclasses."""
         for subclass in cls.__subclasses__():
             yield subclass
-            yield from subclass._subclasses  # pylint: disable=protected-access
+            yield from subclass._subclasses
 
     @classproperty
     def subclasses(cls) -> list[PolymorphicModelBase]:   # noqa: N805

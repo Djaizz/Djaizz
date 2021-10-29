@@ -26,6 +26,7 @@ QuestionAnswerOutputType = dict
 
 
 class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Question Answerer Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

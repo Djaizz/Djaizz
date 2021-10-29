@@ -27,6 +27,7 @@ ZeroShotClassificationOutputType = dict[str, float]
 
 class PreTrainedHuggingFaceZeroShotClassifier(
         PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Zero-Shot Classifier Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

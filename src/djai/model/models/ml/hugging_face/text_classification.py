@@ -24,6 +24,7 @@ TextClassificationOutputType = dict[str, float]
 
 
 class PreTrainedHuggingFaceTextClassifier(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Text Classifier Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

@@ -28,6 +28,7 @@ ObjectDetectionOutputType = list[dict]
 
 
 class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Object Detector Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):
@@ -108,7 +109,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
             # the number of parameters in fn.
 
             outputs=[ImageOutput(type='pil',
-                                 labeled_segments=True,
+                                 # labeled_segments=True,   # TODO: fix
                                  label='Detected Objects'),
 
                      JSONOutput(label='Detected Objects')],

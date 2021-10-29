@@ -24,6 +24,7 @@ TokenClassificationOutputType = list[dict]
 
 
 class PreTrainedHuggingFaceTokenClassifier(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Token Classifier Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

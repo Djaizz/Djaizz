@@ -26,6 +26,7 @@ MaskFillingOutputType = dict[str, float]
 
 
 class PreTrainedHuggingFaceMaskFiller(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Mask Filler Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

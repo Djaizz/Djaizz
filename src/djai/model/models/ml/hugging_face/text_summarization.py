@@ -25,6 +25,7 @@ TextSummarizationOutputType = Union[str, list[int]]
 
 
 class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Text Summarizer Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

@@ -28,6 +28,7 @@ TranslationOutputType = Union[str, list[int]]
 
 
 class PreTrainedHuggingFaceTranslator(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Translator Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

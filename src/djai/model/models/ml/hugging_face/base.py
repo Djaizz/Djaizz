@@ -3,8 +3,9 @@
 
 from collections.abc import Sequence
 
-from .....util import PGSQL_IDENTIFIER_MAX_LEN
-from ....apps import DjAIModelModuleConfig
+from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+from djai.model.apps import DjAIModelModuleConfig
+
 from ..base import _PreTrainedMLModelABC
 
 
@@ -12,6 +13,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceTransformer',)
 
 
 class PreTrainedHuggingFaceTransformer(_PreTrainedMLModelABC):
+    # pylint: disable=abstract-method
     """DjAI Pre-Trained Hugging Face Transformer Model class."""
 
     class Meta(_PreTrainedMLModelABC.Meta):

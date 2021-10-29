@@ -27,6 +27,7 @@ ImageClassificationOutputType = dict[str, float]
 
 
 class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Image Classifier Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):

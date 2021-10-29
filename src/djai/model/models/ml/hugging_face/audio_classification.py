@@ -27,6 +27,7 @@ AudioClassificationOutputType = dict[str, float]
 
 
 class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Hugging Face Audio Classifier Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):
