@@ -10,7 +10,10 @@ description = 'Artificial Intelligence (AI) in Django Applications'
 license = 'MIT'
 
 authors = [
-  'STEAM for Vietnam Foundation: AI & Robotics Educational Initiative <Edu.AI@STEAMforVietNam.org>'
+  'STEAM for Vietnam Foundation AI & Robotics Educational Initiative <Edu.AI@STEAMforVietNam.org>'
+]
+maintainers = [
+  'STEAM for Vietnam Foundation AI & Robotics Educational Initiative <Edu.AI@STEAMforVietNam.org>'
 ]
 
 readme = 'README.md'
