@@ -61,7 +61,7 @@ class _FileDataSetWithInDBJSONCacheABC(InDBJSONDataSet, _FileDataSetABC):
     # pylint: disable=abstract-method,too-many-ancestors
     """DjAI File DataSet with In-Database JSON Cache."""
 
-    class Meta(DataSet.Meta):
+    class Meta(InDBJSONDataSet.Meta):
         # pylint: disable=too-few-public-methods
         """Django Model Class Metadata."""
 
@@ -72,7 +72,7 @@ class JSONDataSet(_FileDataSetWithInDBJSONCacheABC):
     # pylint: disable=abstract-method,too-many-ancestors
     """DjAI JSON DataSet class."""
 
-    class Meta(DataSet.Meta):
+    class Meta(_FileDataSetWithInDBJSONCacheABC.Meta):
         # pylint: disable=too-few-public-methods
         """Django Model Class Metadata."""
 
