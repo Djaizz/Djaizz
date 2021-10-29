@@ -1,6 +1,7 @@
 """DjAI base DataSchema & DataSet classes."""
 
 
+from collections.abc import Sequence
 from json.decoder import JSONDecoder   # pylint: disable=import-error
 
 from django.core.serializers.json import DjangoJSONEncoder
@@ -13,6 +14,9 @@ from polymorphic.models import PolymorphicModel
 from djai.data.apps import DjAIDataModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 from djai.util.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC   # noqa: E501
+
+
+__all__: Sequence[str] = 'DataSchema', 'DataSet'
 
 
 class DataSchema(PolymorphicModel,
