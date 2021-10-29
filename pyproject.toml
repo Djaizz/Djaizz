@@ -8,7 +8,7 @@ version = '0.0.0.dev0'
 description = 'Artificial Intelligence (AI) in Django Applications'
 readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
 
-# requires-python = '>= 3.9'
+requires-python = '>= 3.9'
 
 license = {file = 'LICENSE'}
 
@@ -254,13 +254,13 @@ GitPython = '^3.1.24'
 'Ruamel.YAML' = '^0.17.16'
 PSUtil = '^5.8.0'
 Python-DotEnv = '^0.19.1'
-Requests = '*'   # let higher dependencies figure
+Requests = '~2.25'   # let higher dependencies figure
 Tqdm = '^4.62.3'
 
 
 # CLOUD
 # =====
-AWSEBCLI = '^3.20.2'
+# AWSEBCLI = '^3.20.2'
 
 
 [project.optional-dependencies]
@@ -287,17 +287,6 @@ lint = [
   'PyLint >= 2.11.1'
 ]
 
-pkg = [
-  'Flit >= 3.4.0',
-  'PIP >= 21.3.1',
-  'PIPEnv >= 2021.5.29',
-  'Poetry >= 1.1.11',
-  # 'PyEnv >= 0.0.1',   # not installable with pip
-  'SetUpTools >= 58.3.0',
-  'VirtualEnv >= 20.9.0',
-  'Wheel >= 0.37.2'
-]
-
 
 # [project.scripts]
 # djai = "djai.util.cli:djai"
@@ -310,6 +299,12 @@ pkg = [
 [build-system]
 requires = [
   'SetUpTools >= 58.3.0',
-  'Wheel >= 0.37.0'
+  'Wheel >= 0.37.0',
+
+  'Flit >= 3.4.0',
+  'PIP >= 21.3.1',
+  'PIPEnv >= 2021.5.29',
+  'Poetry >= 1.1.11',
+  # 'PyEnv >= 0.0.1',   # not installable with pip
 ]
 build-backend = 'setuptools.build_meta'
