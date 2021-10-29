@@ -299,13 +299,6 @@ djai = 'djai.util.cli:djai'
 [build-system]
 requires = [
   'SetUpTools >= 58.3.0',
-  'Wheel >= 0.37.0',
-
-  'Flit >= 3.4.0',
-  'PIP >= 21.3.1',
-  'PIPEnv >= 2021.5.29',
-  'PIP-Tools >= 6.4.0',
-  'Poetry >= 1.1.11',
-  # 'PyEnv >= 0.0.1',   # not installable with pip
+  'Wheel >= 0.37.0'
 ]
 build-backend = 'setuptools.build_meta'
