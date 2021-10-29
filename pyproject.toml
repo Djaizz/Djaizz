@@ -304,6 +304,7 @@ requires = [
   'Flit >= 3.4.0',
   'PIP >= 21.3.1',
   'PIPEnv >= 2021.5.29',
+  'PIP-Tools >= 6.4.0',
   'Poetry >= 1.1.11',
   # 'PyEnv >= 0.0.1',   # not installable with pip
 ]
