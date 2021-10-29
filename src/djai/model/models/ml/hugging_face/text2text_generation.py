@@ -34,7 +34,7 @@ class PreTrainedHuggingFaceText2TextGenerator(
         """Django Model Class Metadata."""
 
         verbose_name: str = 'Pre-Trained Hugging Face Text-to-Text Generator'
-        verbose_name_plural = \
+        verbose_name_plural: str = \
             'Pre-Trained Hugging Face Text-to-Text Generators'
 
         db_table: str = (f'{DjAIModelModuleConfig.label}_'
