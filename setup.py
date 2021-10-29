@@ -7,4 +7,10 @@
 from setuptools import setup
 
 
-setup()
+setup(name='DjAI',
+      version='0.0.0.dev0',
+      packages=['djai'],
+      package_dir={'': 'src'},
+      include_package_data=True,
+      zip_safe=False,
+      namespace_packages=[])
