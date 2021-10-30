@@ -91,7 +91,7 @@ Python = '^3.9'
 
 # DATA MANAGEMENT & PROCESSING
 # ============================
-# NumPy = '^1.x.y'   # let higher dependencies figure
+NumPy = '^1.19.5'   # let higher dependencies figure
 Pandas = '^1.3.4'
 PyArrow = '^6.0.0'
 PySpark = '^3.2.0'
@@ -125,11 +125,11 @@ TorchVision = '^0.11.1'
 # Hugging Face & related
 DataSets = '^1.14.0'
 HuggingFace-Hub = '^0.0.19'
-Transformers = '^4.12.0'
+Transformers = '^4.12.2'
 
 SentencePiece = '^0.1.96'   # Translation
 TIMM = '^0.4.12'   # for Object Detection
-Torch-Scatter = '^2.0.9'   # Table Question Answering
+# Torch-Scatter = '^2.0.9'   # Table Question Answering - requires Torch first
 
 # Topological Data Analysis (TDA) & related
 GUDHI = '^3.4.1'
@@ -215,17 +215,17 @@ Django-Model-Query-Graphs = '^0.0.5'
 Django-Debug-Toolbar = '^3.2.2'
 Django-Query-Profiler = '^0.8'
 Django-Silk = '^4.2.0'
-Kolo = '^1.1.3'
+Kolo = '^1.2.1'
 
 # Django Extensions & Utilities
 Django-Compressor = '2.4.1'
 Django-Environ = '^0.8.1'
 Django-Extensions = '^3.1.3'
 Django-Model-Utils = '^4.2.0'
-Django-Storages = '^1.12.2'
+Django-Storages = '^1.12.3'
 
 # Django CORS Headers
-Django-CORS-Headers = '*'   # let higher dependencies figure
+Django-CORS-Headers = '^3.7.0'   # let higher dependencies figure
 
 # Application UIs
 Django-HTMX = '^1.6.0'
@@ -265,7 +265,7 @@ GitPython = '^3.1.24'
 'Ruamel.YAML' = '^0.17.16'
 PSUtil = '^5.8.0'
 Python-DotEnv = '^0.19.1'
-Requests = '~2.25'   # let higher dependencies figure
+Requests = '^2.25.1'   # let higher dependencies figure
 Tqdm = '^4.62.3'
 
 
