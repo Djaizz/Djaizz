@@ -136,7 +136,7 @@ def deploy(aws_eb_env_name: Optional[str] = None,
         dirs_exist_ok=False)
     assert os.path.isdir(_PLATFORM_DIR_NAME)
 
-    profile = input('AWS IAM Profile (default: "default") = ')
+    profile = input('AWS CLI Profile (default: "default") = ')
     if not profile.strip():
         profile = 'default'
 
@@ -150,13 +150,13 @@ def deploy(aws_eb_env_name: Optional[str] = None,
         if not instance_type.strip():
             instance_type = 'c5.large'
 
-        run_cmd(command=(f'eb create --region {region} --vpc.id {vpc}'
+        run_cmd(command=(f'eb create --profile {profile}'
+                         f' --region {region}'
+                         f' --vpc.id {vpc} --vpc.publicip'
                          f' --vpc.dbsubnets {subnets}'
                          f' --vpc.ec2subnets {subnets}'
                          f' --vpc.elbsubnets {subnets} --vpc.elbpublic'
-                         ' --vpc.publicip'
                          f' --instance_type {instance_type}'
-                         f' --profile {profile}'
                          f" {aws_eb_env_name if aws_eb_env_name else ''}"),
                 copy_standard_files=True,
                 asgi=asgi)
