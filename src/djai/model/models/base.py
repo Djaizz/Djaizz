@@ -1,10 +1,15 @@
 """DjAI base AIModel class."""
 
 
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Generator, Sequence
+else:
+    from typing import Generator, Sequence
+
 from typing import Dict, List   # Py3.9+: use generic types
 
 from abc import abstractmethod
-from collections.abc import Generator, Sequence
 from json.decoder import JSONDecoder
 from typing import Any, Optional
 
