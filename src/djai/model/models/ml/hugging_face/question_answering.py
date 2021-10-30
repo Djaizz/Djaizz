@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Question Answerer Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -55,14 +62,14 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
                 max_seq_len: int = 384,
                 max_question_len: int = 64,
                 handle_impossible_answer: bool = False) \
-            -> Union[QuestionAnswerOutputType, list[QuestionAnswerOutputType]]:
+            -> Union[QuestionAnswerOutputType, List[QuestionAnswerOutputType]]:
         # pylint: disable=arguments-differ,too-many-arguments
         """Answer Question(s) based on Text(s)."""
         if not isinstance(question, (str, list)):
-            question: list[QuestionAnswerInputType] = list(question)
+            question: List[QuestionAnswerInputType] = list(question)
 
         if not isinstance(context, (str, list)):
-            context: list[QuestionAnswerInputType] = list(context)
+            context: List[QuestionAnswerInputType] = list(context)
 
         self.load()
 

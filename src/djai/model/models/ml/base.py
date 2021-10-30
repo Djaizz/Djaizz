@@ -1,7 +1,14 @@
 """DjAI Machine Learning Model base classes."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import Dict   # Py3.9+: use generic types
+
 from typing import Any
 
 from django.db.models.fields import CharField
@@ -49,7 +56,7 @@ class _PreTrainedMLModelABC(_AIModelWithArtifactFilesABC):
         return import_obj(self.loader_module_and_qualname)
 
     @property
-    def init_params(self) -> dict[str, Any]:
+    def init_params(self) -> Dict[str, Any]:
         """Extract initialization parameters from in-database params JSON."""
         return ({} if self.params is None else self.params).get('__init__', {})
 

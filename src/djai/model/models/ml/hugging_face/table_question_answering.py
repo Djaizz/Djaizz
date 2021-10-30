@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Table Question Answerer Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -55,7 +62,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
                 padding: Union[bool, str] = False,
                 truncation: Union[bool, str] = False) \
             -> Union[TableQuestionAnswerOutputType,
-                     list[TableQuestionAnswerOutputType]]:
+                     List[TableQuestionAnswerOutputType]]:
         # pylint: disable=arguments-differ,too-many-arguments
         """Answer Question(s) on a Tabular Data Set."""
         self.load()

@@ -1,7 +1,12 @@
 """DjAI Utilities."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
 from importlib import import_module
 from typing import Any
 

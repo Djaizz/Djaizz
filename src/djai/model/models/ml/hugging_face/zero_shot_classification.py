@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Zero-Shot Classifier Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import Dict, List   # Py3.9+: use generic types
+
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -22,7 +29,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceZeroShotClassifier',)
 
 
 ZeroShotClassificationInputType = str
-ZeroShotClassificationOutputType = dict[str, float]
+ZeroShotClassificationOutputType = Dict[str, float]
 
 
 class PreTrainedHuggingFaceZeroShotClassifier(
@@ -49,17 +56,17 @@ class PreTrainedHuggingFaceZeroShotClassifier(
                 text_or_texts:
                     Union[ZeroShotClassificationInputType,
                           Sequence[ZeroShotClassificationInputType]],
-                candidate_labels: list[str],
+                candidate_labels: List[str],
                 hypothesis_template: str = 'This example is {}.',
                 multi_label: bool = False) \
             -> Union[ZeroShotClassificationOutputType,
-                     list[ZeroShotClassificationOutputType]]:
+                     List[ZeroShotClassificationOutputType]]:
         # pylint: disable=arguments-differ
         """Zero-Shot Classification of Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: list[ZeroShotClassificationInputType] = \
+            text_or_texts: List[ZeroShotClassificationInputType] = \
                 list(text_or_texts)
 
         self.load()

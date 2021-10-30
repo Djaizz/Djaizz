@@ -1,7 +1,14 @@
 """DjAI PIP-related Utilities."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import Dict, List   # Py3.9+: use generic types
+
 from typing import Optional
 
 from pip._internal.operations.freeze import freeze
@@ -10,9 +17,9 @@ from pip._internal.operations.freeze import freeze
 __all__: Sequence[str] = ('get_python_dependencies',)
 
 
-def get_python_dependencies() -> dict[str, Optional[str]]:
+def get_python_dependencies() -> Dict[str, Optional[str]]:
     """Get Python Dependencies."""
-    d: dict[str, Optional[str]] = {}
+    d: Dict[str, Optional[str]] = {}
 
     for deps_and_vers in freeze(requirement=None,
                                 local_only=False,
@@ -21,7 +28,7 @@ def get_python_dependencies() -> dict[str, Optional[str]]:
                                 isolated=False,
                                 exclude_editable=False,
                                 skip=()):
-        ls: list[str] = deps_and_vers.split('==')
+        ls: List[str] = deps_and_vers.split('==')
 
         if len(ls) == 2:
             d[ls[0]] = ls[1]

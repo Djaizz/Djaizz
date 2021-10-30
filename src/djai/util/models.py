@@ -3,7 +3,14 @@
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from typing import Union
 from uuid import UUID, uuid4
 
@@ -203,7 +210,7 @@ class _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC(
         return self.name if self.name else self.uuid
 
     @classproperty
-    def names_or_uuids(cls) -> list[str]:   # noqa: N805
+    def names_or_uuids(cls) -> List[str]:   # noqa: N805
         # pylint: disable=no-self-argument
         """Class's Objects' Names (where applicable) or UUIDs."""
         return [(name if name else uuid)

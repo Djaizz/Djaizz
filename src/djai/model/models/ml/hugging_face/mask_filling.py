@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Mask Filler Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import Dict, List   # Py3.9+: use generic types
+
 from typing import Optional, Union
 
 from django.utils.functional import classproperty
@@ -22,7 +29,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceMaskFiller',)
 
 
 MaskFillingInputType = str
-MaskFillingOutputType = dict[str, float]
+MaskFillingOutputType = Dict[str, float]
 
 
 class PreTrainedHuggingFaceMaskFiller(PreTrainedHuggingFaceTransformer):
@@ -46,15 +53,15 @@ class PreTrainedHuggingFaceMaskFiller(PreTrainedHuggingFaceTransformer):
     def predict(self,
                 text_or_texts: Union[MaskFillingInputType,
                                      Sequence[MaskFillingInputType]],
-                targets: Optional[list[str]] = None,
+                targets: Optional[List[str]] = None,
                 n_labels: int = 5) \
-            -> Union[MaskFillingOutputType, list[MaskFillingOutputType]]:
+            -> Union[MaskFillingOutputType, List[MaskFillingOutputType]]:
         # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: list[MaskFillingInputType] = list(text_or_texts)
+            text_or_texts: List[MaskFillingInputType] = list(text_or_texts)
 
         self.load()
 
@@ -73,10 +80,10 @@ class PreTrainedHuggingFaceMaskFiller(PreTrainedHuggingFaceTransformer):
         """Gradio Interface."""
         def _predict(self,
                      text: str,
-                     targets: Optional[list[str]] = None,
-                     n_labels: int = 5) -> dict[str, float]:
+                     targets: Optional[List[str]] = None,
+                     n_labels: int = 5) -> Dict[str, float]:
             if targets:
-                targets: list[str] = [s for s in targets if s]
+                targets: List[str] = [s for s in targets if s]
 
             return cls.predict(self,
                                text_or_texts=text,

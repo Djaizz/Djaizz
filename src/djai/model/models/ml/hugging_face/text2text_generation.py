@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Text-to-Text Generator Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -21,7 +28,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceText2TextGenerator',)
 
 
 Text2TextGenerationInputType = str
-Text2TextGenerationOutputType = Union[str, list[int]]
+Text2TextGenerationOutputType = Union[str, List[int]]
 
 
 class PreTrainedHuggingFaceText2TextGenerator(
@@ -52,13 +59,13 @@ class PreTrainedHuggingFaceText2TextGenerator(
                 clean_up_tokenization_spaces: bool = True,
                 **generate_kwargs) \
             -> Union[Text2TextGenerationOutputType,
-                     list[Text2TextGenerationOutputType]]:
+                     List[Text2TextGenerationOutputType]]:
         # pylint: disable=arguments-differ
         """Generate Text-to-Text."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: list[Text2TextGenerationInputType] = \
+            text_or_texts: List[Text2TextGenerationInputType] = \
                 list(text_or_texts)
 
         self.load()

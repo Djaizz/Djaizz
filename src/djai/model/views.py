@@ -1,6 +1,8 @@
 """DjAI Model Views."""
 
 
+from typing import Dict, List   # Py3.9+: use generic types
+
 from inspect import isclass
 from typing import Union
 
@@ -17,7 +19,7 @@ def gradio_ui(request, model_class_or_instance_name_or_uuid: str) \
         -> Union[Http404, HttpResponseRedirect]:
     # pylint: disable=unused-argument
     """Launch AI Model class/instance's Gradio UI."""
-    model_subclasses_by_name: dict[str, PolymorphicModelBase] = \
+    model_subclasses_by_name: Dict[str, PolymorphicModelBase] = \
         AIModel.subclasses_by_name
 
     # pylint: disable=unsupported-membership-test
@@ -26,7 +28,7 @@ def gradio_ui(request, model_class_or_instance_name_or_uuid: str) \
         model: PolymorphicModelBase = \
             model_subclasses_by_name[model_class_or_instance_name_or_uuid]
 
-        model_names_or_uuids: list[str] = model.names_or_uuids
+        model_names_or_uuids: List[str] = model.names_or_uuids
 
         if not model_names_or_uuids:
             return Http404('*** MODEL CLASS ' +
@@ -43,7 +45,7 @@ def gradio_ui(request, model_class_or_instance_name_or_uuid: str) \
                            model_class_or_instance_name_or_uuid +
                            ' NOT FOUND ***')
 
-        model_names_or_uuids: list[str] = model.names_or_uuids
+        model_names_or_uuids: List[str] = model.names_or_uuids
 
     gradio_interface: Interface = model.gradio_ui
 

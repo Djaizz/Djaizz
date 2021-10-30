@@ -1,7 +1,14 @@
 """DjAI Google Cloud AI Translation Service model classes."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -49,7 +56,7 @@ class GoogleTranslate(CloudAIService):
 
     def predict(self,
                 text_or_texts: Union[str, Sequence[str]],
-                src: str = 'auto', dest: str = 'en') -> Union[str, list[str]]:
+                src: str = 'auto', dest: str = 'en') -> Union[str, List[str]]:
         # pylint: disable=arguments-differ
         """Translate."""
         self.load()

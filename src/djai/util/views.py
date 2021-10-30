@@ -1,7 +1,12 @@
 """DjAI Django views-related utilities."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
 from typing import Union
 from uuid import UUID
 

@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Keras Image Classification Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import Dict, List   # Py3.9+: use generic types
+
 from io import BytesIO
 from typing import Union
 
@@ -27,7 +34,7 @@ __all__: Sequence[str] = ('PreTrainedKerasImageNetClassifier',)
 
 
 ImageClassificationInputType = Union[str, BytesIO, Image.Image, numpy.ndarray]
-ImageClassificationOutputType = dict[str, float]
+ImageClassificationOutputType = Dict[str, float]
 
 
 class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
@@ -110,14 +117,14 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
                                        Sequence[ImageClassificationInputType]],
                 n_labels: int = 5) \
             -> Union[ImageClassificationOutputType,
-                     list[ImageClassificationOutputType]]:
+                     List[ImageClassificationOutputType]]:
         # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_img: bool = isinstance(image_or_images, (str, BytesIO,
                                                         Image.Image,
                                                         numpy.ndarray))
 
-        imgs: list[ImageClassificationInputType] = ([image_or_images]
+        imgs: List[ImageClassificationInputType] = ([image_or_images]
                                                     if single_img
                                                     else image_or_images)
 
@@ -136,7 +143,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             self.native_obj.predict(x=preprocessed_fitted_img_batch_arr)
 
         # decode predictions & return JSON-serializable dict
-        decoded_preds: list[dict[str, float]] = [{tup[1]: float(tup[2])
+        decoded_preds: List[Dict[str, float]] = [{tup[1]: float(tup[2])
                                                   for tup in decoded_pred}
                                                  for decoded_pred in
                                                  decode_predictions(

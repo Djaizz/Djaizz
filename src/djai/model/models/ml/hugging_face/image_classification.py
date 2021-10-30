@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Image Classifier Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import Dict, List   # Py3.9+: use generic types
+
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -23,7 +30,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceImageClassifier',)
 
 
 ImageClassificationInputType = Union[str, Image]
-ImageClassificationOutputType = dict[str, float]
+ImageClassificationOutputType = Dict[str, float]
 
 
 class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
@@ -49,13 +56,13 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
                                        Sequence[ImageClassificationInputType]],
                 n_labels: int = 5) \
             -> Union[ImageClassificationOutputType,
-                     list[ImageClassificationOutputType]]:
+                     List[ImageClassificationOutputType]]:
         # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_img: bool = isinstance(image_or_images, (str, Image))
 
         if not (single_img or isinstance(image_or_images, list)):
-            image_or_images: list[ImageClassificationInputType] = \
+            image_or_images: List[ImageClassificationInputType] = \
                 list(image_or_images)
 
         self.load()

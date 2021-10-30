@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Translator Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from typing import Optional, Union
 
 from django.utils.functional import classproperty
@@ -24,7 +31,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceTranslator',)
 
 
 TranslationInputType = str
-TranslationOutputType = Union[str, list[int]]
+TranslationOutputType = Union[str, List[int]]
 
 
 class PreTrainedHuggingFaceTranslator(PreTrainedHuggingFaceTransformer):
@@ -54,13 +61,13 @@ class PreTrainedHuggingFaceTranslator(PreTrainedHuggingFaceTransformer):
                 src_lang: Optional[str] = None,
                 tgt_lang: Optional[str] = None,
                 **generate_kwargs) \
-            -> Union[TranslationOutputType, list[TranslationOutputType]]:
+            -> Union[TranslationOutputType, List[TranslationOutputType]]:
         # pylint: disable=arguments-differ,too-many-arguments
         """Translate Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: list[TranslationInputType] = list(text_or_texts)
+            text_or_texts: List[TranslationInputType] = list(text_or_texts)
 
         self.load()
 

@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Speech Recognizer Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from tempfile import NamedTemporaryFile
 from typing import Union
 
@@ -50,14 +57,14 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
                     Union[SpeechRecognitionInputType,
                           Sequence[SpeechRecognitionInputType]]) \
             -> Union[SpeechRecognitionOutputType,
-                     list[SpeechRecognitionOutputType]]:
+                     List[SpeechRecognitionOutputType]]:
         # pylint: disable=arguments-differ
         """Recognize Speech(es)."""
         single_speech: bool = isinstance(speech_or_speeches, (numpy.ndarray,
                                                               str))
 
         if not (single_speech or isinstance(speech_or_speeches, list)):
-            speech_or_speeches: list[SpeechRecognitionInputType] = \
+            speech_or_speeches: List[SpeechRecognitionInputType] = \
                 list(speech_or_speeches)
 
         self.load()

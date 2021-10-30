@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Object Detector Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import Dict, List   # Py3.9+: use generic types
+
 from typing import Any, Union
 
 from django.utils.functional import classproperty
@@ -24,7 +31,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceObjectDetector',)
 
 
 ObjectDetectionInputType = Union[str, Image]
-ObjectDetectionOutputType = list[dict]
+ObjectDetectionOutputType = List[dict]
 
 
 class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
@@ -54,7 +61,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
         # pylint: disable=arguments-differ
         """Detect Objects from Image(s)."""
         if not isinstance(image_or_images, (str, Image, list)):
-            image_or_images: list[ObjectDetectionInputType] = \
+            image_or_images: List[ObjectDetectionInputType] = \
                 list(image_or_images)
 
         self.load()
@@ -69,11 +76,11 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
         BoundingBoxType = tuple[str, int, int, int, int]   # noqa: N806
 
         def _predict(self, img: Image, threshold: float = 0.9) \
-                -> tuple[Image, list[BoundingBoxType]]:
-            detected_objs: list[dict[str, Any]] = \
+                -> tuple[Image, List[BoundingBoxType]]:
+            detected_objs: List[Dict[str, Any]] = \
                 cls.predict(self, image_or_images=img, threshold=threshold)
 
-            bounding_boxes: list[BoundingBoxType] = []
+            bounding_boxes: List[BoundingBoxType] = []
             for i in detected_objs:
                 box_coords = i['box']
                 bounding_boxes.append((i['label'],

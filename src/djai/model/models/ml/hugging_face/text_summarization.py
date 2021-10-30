@@ -1,7 +1,14 @@
 """DjAI Pre-Trained Hugging Face Text Summarizer Model class."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
+from typing import List   # Py3.9+: use generic types
+
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -21,7 +28,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceTextSummarizer',)
 
 
 TextSummarizationInputType = str
-TextSummarizationOutputType = Union[str, list[int]]
+TextSummarizationOutputType = Union[str, List[int]]
 
 
 class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
@@ -50,13 +57,13 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
                 clean_up_tokenization_spaces: bool = True,
                 **generate_kwargs) \
             -> Union[TextSummarizationOutputType,
-                     list[TextSummarizationOutputType]]:
+                     List[TextSummarizationOutputType]]:
         # pylint: disable=arguments-differ
         """Summarize Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: list[TextSummarizationInputType] = \
+            text_or_texts: List[TextSummarizationInputType] = \
                 list(text_or_texts)
 
         self.load()

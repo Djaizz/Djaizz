@@ -1,7 +1,12 @@
 """DjAI JSON DataSet classes."""
 
 
-from collections.abc import Sequence
+import sys
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
 from json.decoder import JSONDecoder   # pylint: disable=import-error
 
 from django.core.serializers.json import DjangoJSONEncoder

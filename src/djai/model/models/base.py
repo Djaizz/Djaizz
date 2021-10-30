@@ -1,6 +1,8 @@
 """DjAI base AIModel class."""
 
 
+from typing import Dict, List   # Py3.9+: use generic types
+
 from abc import abstractmethod
 from collections.abc import Generator, Sequence
 from json.decoder import JSONDecoder
@@ -85,13 +87,13 @@ class AIModel(PolymorphicModel,
             yield from subclass._subclasses
 
     @classproperty
-    def subclasses(cls) -> list[PolymorphicModelBase]:   # noqa: N805
+    def subclasses(cls) -> List[PolymorphicModelBase]:   # noqa: N805
         # pylint: disable=no-self-argument
         """List of AIModel class's subclasses."""
         return list(cls._subclasses)
 
     @classproperty
-    def subclass_names(cls) -> list[str]:   # noqa: N805
+    def subclass_names(cls) -> List[str]:   # noqa: N805
         # pylint: disable=no-self-argument
         """List of AIModel class's subclasses' names."""
         return [s.__name__
@@ -99,7 +101,7 @@ class AIModel(PolymorphicModel,
                 ]
 
     @classproperty
-    def subclasses_by_name(cls) -> dict[str, PolymorphicModelBase]:   # noqa: E501,N805
+    def subclasses_by_name(cls) -> Dict[str, PolymorphicModelBase]:   # noqa: E501,N805
         # pylint: disable=no-self-argument
         """Return AIModel class's subclass-by-name dictionary.
 
@@ -111,7 +113,7 @@ class AIModel(PolymorphicModel,
                 }
 
     @classproperty
-    def subclass_full_qual_names(cls) -> list[str]:   # noqa: N805
+    def subclass_full_qual_names(cls) -> List[str]:   # noqa: N805
         # pylint: disable=no-self-argument
         """List of AIModel class's subclasses' fully-qualified names."""
         return [full_qual_name(s)
@@ -119,7 +121,7 @@ class AIModel(PolymorphicModel,
                 ]
 
     @classproperty
-    def subclasses_by_full_qual_name(cls) -> dict[str, PolymorphicModelBase]:   # noqa: E501,N805
+    def subclasses_by_full_qual_name(cls) -> Dict[str, PolymorphicModelBase]:   # noqa: E501,N805
         # pylint: disable=no-self-argument
         """Return AIModel class's subclass-by-fully-qualified name dict.
 
