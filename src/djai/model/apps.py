@@ -69,13 +69,3 @@ class DjAIModelModuleConfig(AppConfig):
 
     def ready(self) -> None:
         """Run tasks to initialize module."""
-        # pylint: disable=import-outside-toplevel
-        from djai.model.scripts import (
-            setup_google_cloud_ai_svcs,
-            setup_pretrained_huggingface_models,
-            setup_pretrained_keras_models,
-        )
-
-        setup_google_cloud_ai_svcs.run()
-        setup_pretrained_huggingface_models.run()
-        setup_pretrained_keras_models.run()
