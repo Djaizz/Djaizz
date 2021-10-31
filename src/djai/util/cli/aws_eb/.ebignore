@@ -1,2 +1,6 @@
-# this file is needed for deploying uncommitted files:
-# https://docs.amazonaws.cn/en_us/elasticbeanstalk/latest/dg/eb3-deploy.html
+# this file is needed for deploying uncommitted files
+# and for excluding files that break deployment
+# docs.amazonaws.cn/en_us/elasticbeanstalk/latest/dg/eb3-deploy.html
+
+# Mac OSX hidden files
+.DS_Store
