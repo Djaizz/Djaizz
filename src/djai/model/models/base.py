@@ -23,6 +23,10 @@ from polymorphic.models import PolymorphicModel
 
 from django_plotly_dash import DjangoDash
 
+# from dash.dependencies import Input, Output
+# import dash_core_components as dcc
+import dash_html_components as html
+
 from gradio.interface import Interface
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
@@ -142,7 +146,19 @@ class AIModel(PolymorphicModel,
     @classproperty
     def dash_ui(cls) -> DjangoDash:   # noqa: N805
         """Return the AIModel class's Dash Interface."""
-        return NotImplemented
+        app = DjangoDash(name=cls.__name__,
+                         serve_locally=False,
+                         add_bootstrap_links=True,
+                         suppress_callback_exceptions=False,
+                         external_stylesheets=None,
+                         external_scripts=None)
+
+        app.layout = html.Div([
+            'Please override the `dash_ui` classproperty to create a Dash UI '
+            f'for the "{cls._meta.verbose_name}" AI model class'
+        ])
+
+        return app
 
     @classproperty
     def gradio_ui(cls) -> Interface:   # noqa: N805
@@ -230,7 +246,9 @@ class AIModel(PolymorphicModel,
             # (str) - a title for the interface;
             # if provided, appears above the input and output components.
 
-            description='An AI Model',
+            description=('Please override the `gradio_ui` classproperty '
+                         'to create a Gradio UI for '
+                         f'the "{cls._meta.verbose_name}" AI model class'),
             # (str) - a description for the interface;
             # if provided, appears above the input and output components.
 
