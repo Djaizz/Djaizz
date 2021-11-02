@@ -21,6 +21,8 @@ from django.utils.functional import classproperty
 from polymorphic.base import PolymorphicModelBase
 from polymorphic.models import PolymorphicModel
 
+from django_plotly_dash import DjangoDash
+
 from gradio.interface import Interface
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
@@ -138,7 +140,12 @@ class AIModel(PolymorphicModel,
                 }
 
     @classproperty
-    def gradio_ui(cls) -> Interface:   # noqa: E501,N805
+    def dash_ui(cls) -> DjangoDash:   # noqa: N805
+        """Return the AIModel class's Dash Interface."""
+        return NotImplemented
+
+    @classproperty
+    def gradio_ui(cls) -> Interface:   # noqa: N805
         # pylint: disable=no-self-argument
         """Return the AIModel class's Gradio Interface."""
         return Interface(
