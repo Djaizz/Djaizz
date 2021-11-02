@@ -98,7 +98,7 @@ def model_ui(request: HttpRequest,
                      default=(model_names_or_uuids[0]
                               if isclass(model)
                               else model.name_or_uuid),
-                     label='H1st Model Name or UUID'))
+                     label='AI Model Name or UUID'))
 
         _gradio_app, _gradio_path_to_local_server, gradio_share_url = \
             gradio_interface.launch(

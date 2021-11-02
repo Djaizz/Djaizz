@@ -95,7 +95,7 @@ NumPy = '^1.19.5'   # let higher dependencies figure
 Pandas = '^1.3.4'
 PyArrow = '^6.0.0'
 PySpark = '^3.2.0'
-Ray = {extras = ['tune'], version = '^1.7.1'}
+Ray = {extras = ['tune'], version = '^1.8.0'}
 
 Pillow = '^8.4.0'   # image processing
 # Pillow-SIMD = '^7.0.0'   # complex to install
@@ -109,7 +109,7 @@ Auto-SKLearn = '^0.14.0'
 # SciKit-Learn = '^x.y.z'   # let Auto-SKLearn figure
 
 # TensorFlow & related
-TensorFlow = '^2.6.0'
+TensorFlow = '^2.6.1'
 TensorFlow-DataSets = '^4.4.0'
 TensorFlow-Hub = '^0.12.0'
 
@@ -124,7 +124,7 @@ TorchVision = '^0.11.1'
 
 # Hugging Face & related
 DataSets = '^1.14.0'
-HuggingFace-Hub = '^0.0.19'
+HuggingFace-Hub = '^0.1.0'
 Transformers = '^4.12.2'
 
 SentencePiece = '^0.1.96'   # Translation
@@ -167,7 +167,7 @@ S3FS = '^2021.10.1'
 # ========================================
 
 # Django Core
-Django = '^3.2.8'
+Django = '^3.2.9'
 
 # Django Polymorphic Models
 Django-Polymorphic = '^3.0.0'
