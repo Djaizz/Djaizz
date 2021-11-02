@@ -229,8 +229,15 @@ Django-CORS-Headers = '^3.7.0'   # let higher dependencies figure
 
 # Application UIs
 Django-HTMX = '^1.6.0'
+
 Django-Plotly-Dash = '^1.6.6'
+Dash-Bootstrap-Components = '^0.13.1'
+DPD-Static-Support = '^0.0.5'
+Django-Bootstrap4 = '^3.0.1'
+WhiteNoise = '^5.3.0'
+
 Gradio = '^2.4.1'
+
 Streamlit = '^1.1.0'
 Watchdog = '^2.1.6'   # better performance for Streamlit
 
