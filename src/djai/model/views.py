@@ -38,9 +38,9 @@ def model_ui(request: HttpRequest,
         model_names_or_uuids: List[str] = model.names_or_uuids
 
         if not model_names_or_uuids:
-            return Http404('*** MODEL CLASS ' +
-                           model_class_or_instance_name_or_uuid +
-                           ' HAS NO INSTANCES ***')
+            raise Http404('*** MODEL CLASS ' +
+                          model_class_or_instance_name_or_uuid +
+                          ' HAS NO INSTANCES ***')
 
     else:
         try:
@@ -48,9 +48,9 @@ def model_ui(request: HttpRequest,
                 name_or_uuid=model_class_or_instance_name_or_uuid)
 
         except AIModel.DoesNotExist:
-            return Http404('*** MODEL INSTANCE ' +
-                           model_class_or_instance_name_or_uuid +
-                           ' NOT FOUND ***')
+            raise Http404('*** MODEL INSTANCE ' +
+                          model_class_or_instance_name_or_uuid +
+                          ' NOT FOUND ***')
 
         model_names_or_uuids: List[str] = model.names_or_uuids
 
@@ -58,12 +58,13 @@ def model_ui(request: HttpRequest,
         dash_ui: DjangoDash = model.dash_ui
 
         if not isinstance(dash_ui, DjangoDash):
-            return Http404(f'*** {model} DOES NOT HAVE A DASH UI ***')
+            raise Http404(f'*** {model} DOES NOT HAVE A DASH UI ***')
 
         django_dash_stateless_app: StatelessApp = \
             StatelessApp.objects.get_or_create(
                 app_name=model_class_or_instance_name_or_uuid)[0]
-        django_dash_stateless_app.as_dash_app = lambda self: dash_ui
+        # insert `dash_ui` into `django_dash_stateless_app`'s internals
+        django_dash_stateless_app._stateless_dash_app_instance = dash_ui
 
         django_dash_app: DashApp = \
             DashApp.objects.get_or_create(
@@ -75,11 +76,11 @@ def model_ui(request: HttpRequest,
                       context=dict(django_dash_app=django_dash_app),
                       content_type=None, status=None, using=None)
 
-    elif ui_type == 'gradio':
+    if ui_type == 'gradio':
         gradio_interface: Interface = model.gradio_ui
 
         if not isinstance(gradio_interface, Interface):
-            return Http404(f'*** {model} DOES NOT HAVE A GRADIO UI ***')
+            raise Http404(f'*** {model} DOES NOT HAVE A GRADIO UI ***')
 
         assert isinstance(gradio_interface.predict, list), \
             TypeError(f'*** {gradio_interface.predict} NOT A LIST ***')
@@ -134,5 +135,4 @@ def model_ui(request: HttpRequest,
 
         return redirect(to=gradio_share_url, permanent=False)
 
-    else:
-        return Http404('*** ui_type MUST BE EITHER "dash" or "gradio" ***')
+    raise Http404('*** ui_type MUST BE EITHER "dash" or "gradio" ***')
