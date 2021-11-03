@@ -1,18 +1,18 @@
 """DjAI Model URLs."""
 
 
-import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 from functools import partial
+import sys
 
 from django.urls.conf import path
 from django.urls.resolvers import URLPattern
 
 from djai.model.views import model_ui
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('urlpatterns',)

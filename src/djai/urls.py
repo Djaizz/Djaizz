@@ -2,16 +2,17 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 from django.urls.conf import include, path
 from django.urls.resolvers import URLPattern
 
 from .data import urls as data_urls
 from .model import urls as model_urls
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('urlpatterns',)

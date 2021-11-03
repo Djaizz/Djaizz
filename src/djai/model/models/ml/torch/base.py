@@ -2,14 +2,15 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 from torch.serialization import load
 
 from ...base import _AIModelWithArtifactFilesABC
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('TorchModel',)

@@ -2,10 +2,6 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 from djai.data.models import (
     DataSchema, DataSet,
@@ -25,6 +21,11 @@ from djai.data.models import (
 
     LiveAPIDataSource,
 )
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = (

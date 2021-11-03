@@ -2,10 +2,6 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 from .base import DataSchema, DataSet
 
@@ -24,6 +20,11 @@ from .tfrecord import TFRecordDataSet
 from .video import VideoDataSet
 
 from .live_api import LiveAPIDataSource
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = (

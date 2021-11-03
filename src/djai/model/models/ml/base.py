@@ -2,13 +2,7 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 from typing import Dict   # Py3.9+: use generic types
-
 from typing import Any
 
 from django.db.models.fields import CharField
@@ -17,11 +11,17 @@ from djai.util import import_obj
 
 from ..base import _AIModelWithArtifactFilesABC
 
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
 
 __all__: Sequence[str] = ('_PreTrainedMLModelABC',)
 
 
 class _PreTrainedMLModelABC(_AIModelWithArtifactFilesABC):
+    # pylint: disable=abstract-method
     loader_module_and_qualname: CharField = \
         CharField(
             verbose_name='Pre-Trained ML Model Loader (module.dot.qualname)',

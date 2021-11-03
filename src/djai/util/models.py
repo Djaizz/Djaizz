@@ -4,13 +4,7 @@
 from __future__ import annotations
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 from typing import List   # Py3.9+: use generic types
-
 from typing import Union
 from uuid import UUID, uuid4
 
@@ -21,6 +15,11 @@ from django.db.models.indexes import Index
 from django.utils.functional import classproperty
 
 from model_utils.models import TimeStampedModel
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = (

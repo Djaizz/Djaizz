@@ -1,13 +1,13 @@
 """DjAI package."""
 
 
+from importlib.metadata import version
 import sys
+
 if sys.version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
-
-from importlib.metadata import version
 
 
 __all__: Sequence[str] = ('__version__',)

@@ -1,14 +1,14 @@
 """DjAI Utilities."""
 
 
+from importlib import import_module
 import sys
+from typing import Any
+
 if sys.version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
-
-from importlib import import_module
-from typing import Any
 
 
 __all__: Sequence[str] = (

@@ -1,23 +1,24 @@
 """DjAI SciKit-Learn Machine Learning Model class."""
 
 
-import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 import pickle
+import sys
 
 import joblib
 
 from ..base import _AIModelWithArtifactFilesABC
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('SKLModel',)
 
 
 class SKLModel(_AIModelWithArtifactFilesABC):
+    # pylint: disable=abstract-method
     """DjAI SciKit-Learn Machine Learning Model class."""
 
     class Meta(_AIModelWithArtifactFilesABC.Meta):

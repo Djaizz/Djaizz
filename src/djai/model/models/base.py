@@ -1,17 +1,11 @@
 """DjAI base AIModel class."""
 
 
-import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Generator, Sequence
-else:
-    from typing import Generator, Sequence
-
-from typing import Dict, List   # Py3.9+: use generic types
-
 from abc import abstractmethod
 from json.decoder import JSONDecoder
+import sys
 from typing import Any, Optional
+from typing import Dict, List   # Py3.9+: use generic types
 
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models.fields import CharField
@@ -33,6 +27,11 @@ from gradio.outputs import JSON as JSONOutput   # noqa: N811
 from djai.model.apps import DjAIModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
 from djai.util.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC   # noqa: E501
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Generator, Sequence
+else:
+    from typing import Generator, Sequence
 
 
 __all__: Sequence[str] = 'AIModel', '_AIModelWithArtifactFilesABC'
@@ -145,6 +144,7 @@ class AIModel(PolymorphicModel,
 
     @classproperty
     def dash_ui(cls) -> DjangoDash:   # noqa: N805
+        # pylint: disable=no-self-argument
         """Return the AIModel class's Dash Interface."""
         app = DjangoDash(name=cls.__name__,
                          serve_locally=False,
@@ -373,8 +373,7 @@ class AIModel(PolymorphicModel,
                       Input(component_id='ai-model-dropdown',
                             component_property='value'))
         def update_ai_model_dropdown_output(value):
-            if value:
-                return f'{value} selected'
+            return f'{value} selected' if value else None
 
         return app
 

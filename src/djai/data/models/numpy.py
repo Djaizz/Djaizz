@@ -2,12 +2,13 @@
 
 
 import sys
+
+from .json import _FileDataSetWithInDBJSONCacheABC
+
 if sys.version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
-
-from .json import _FileDataSetWithInDBJSONCacheABC
 
 
 __all__: Sequence[str] = ('NumPyArray',)

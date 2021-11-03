@@ -1,13 +1,8 @@
 """DjAI JSON DataSet classes."""
 
 
-import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 from json.decoder import JSONDecoder   # pylint: disable=import-error
+import sys
 
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models.fields.json import JSONField
@@ -16,6 +11,11 @@ from djai.data.apps import DjAIDataModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import DataSet, _FileDataSetABC
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('InDBJSONDataSet', 'JSONDataSet',

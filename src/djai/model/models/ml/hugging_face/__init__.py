@@ -2,10 +2,6 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 from .base import PreTrainedHuggingFaceTransformer
 from .audio_classification import PreTrainedHuggingFaceAudioClassifier
@@ -23,6 +19,11 @@ from .text_summarization import PreTrainedHuggingFaceTextSummarizer
 from .token_classification import PreTrainedHuggingFaceTokenClassifier
 from .translation import PreTrainedHuggingFaceTranslator
 from .zero_shot_classification import PreTrainedHuggingFaceZeroShotClassifier
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = (

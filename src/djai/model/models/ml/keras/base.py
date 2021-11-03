@@ -1,19 +1,19 @@
 """DjAI TensorFlow.Keras Deep Learning Model class."""
 
 
-import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 from pathlib import Path
+import sys
 
 import h5py
 from tensorflow.python.keras.saving.save import \
     load_model   # pylint: disable=no-name-in-module
 
 from ...base import _AIModelWithArtifactFilesABC
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('KerasModel',)

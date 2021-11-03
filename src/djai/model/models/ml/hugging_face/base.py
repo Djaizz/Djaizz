@@ -2,15 +2,16 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 from djai.model.apps import DjAIModelModuleConfig
 
 from ..base import _PreTrainedMLModelABC
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('PreTrainedHuggingFaceTransformer',)

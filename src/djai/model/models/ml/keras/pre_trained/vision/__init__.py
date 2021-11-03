@@ -2,12 +2,13 @@
 
 
 import sys
+
+from .image_classification import PreTrainedKerasImageNetClassifier
+
 if sys.version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
-
-from .image_classification import PreTrainedKerasImageNetClassifier
 
 
 __all__: Sequence[str] = (

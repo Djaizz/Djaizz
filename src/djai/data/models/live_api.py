@@ -2,12 +2,13 @@
 
 
 import sys
+
+from .base import DataSet
+
 if sys.version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
-
-from .base import DataSet
 
 
 __all__: Sequence[str] = ('LiveAPIDataSource',)

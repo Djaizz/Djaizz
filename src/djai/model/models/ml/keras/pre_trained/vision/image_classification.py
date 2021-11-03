@@ -1,16 +1,10 @@
 """DjAI Pre-Trained Keras Image Classification Model class."""
 
 
-import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
-from typing import Dict, List   # Py3.9+: use generic types
-
 from io import BytesIO
+import sys
 from typing import Union
+from typing import Dict, List   # Py3.9+: use generic types
 
 from django.db.models.fields import CharField
 from django.utils.functional import classproperty
@@ -29,6 +23,11 @@ from djai.util import PGSQL_IDENTIFIER_MAX_LEN, import_obj
 
 from ....base import _PreTrainedMLModelABC
 
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
 
 __all__: Sequence[str] = ('PreTrainedKerasImageNetClassifier',)
 
@@ -38,6 +37,7 @@ ImageClassificationOutputType = Dict[str, float]
 
 
 class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
+    # pylint: disable=abstract-method,too-many-ancestors
     """DjAI Pre-Trained Keras Image Classification Model class."""
 
     preprocessor_module_and_qualname: CharField = \

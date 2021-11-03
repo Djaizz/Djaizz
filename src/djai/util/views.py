@@ -2,11 +2,6 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 from typing import Union
 from uuid import UUID
 
@@ -14,6 +9,11 @@ from django.db.models.base import Model
 from django.db.models.query import QuerySet
 from django.http.response import Http404
 from django.shortcuts import get_object_or_404
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = ('LookUpByUniqueNameOrUUIDMixin',)

@@ -2,10 +2,6 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 from .skl import SKLModel
 
@@ -37,6 +33,11 @@ from .hugging_face import (
     PreTrainedHuggingFaceTranslator,
     PreTrainedHuggingFaceZeroShotClassifier,
 )
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = (

@@ -2,14 +2,8 @@
 
 
 import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
-from typing import List   # Py3.9+: use generic types
-
 from typing import Union
+from typing import List   # Py3.9+: use generic types
 
 from django.utils.functional import classproperty
 
@@ -25,6 +19,11 @@ from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .. import CloudAIService
 
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
+
 
 __all__: Sequence[str] = (
     'GoogleTranslate',
@@ -32,6 +31,7 @@ __all__: Sequence[str] = (
 
 
 class GoogleTranslate(CloudAIService):
+    # pylint: disable=abstract-method
     """Google Translate Service."""
 
     client = None

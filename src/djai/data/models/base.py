@@ -2,13 +2,8 @@
 
 
 from abc import abstractmethod
-import sys
-if sys.version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
-
 from json.decoder import JSONDecoder   # pylint: disable=import-error
+import sys
 from typing import Any, Optional
 
 from django.core.serializers.json import DjangoJSONEncoder
@@ -22,6 +17,11 @@ from polymorphic.models import PolymorphicModel
 from djai.data.apps import DjAIDataModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, dir_path_with_end_slash
 from djai.util.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC   # noqa: E501
+
+if sys.version_info >= (3, 9):
+    from collections.abc import Sequence
+else:
+    from typing import Sequence
 
 
 __all__: Sequence[str] = 'DataSchema', 'DataSet', '_FileDataSetABC'

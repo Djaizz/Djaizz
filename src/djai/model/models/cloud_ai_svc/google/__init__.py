@@ -2,12 +2,13 @@
 
 
 import sys
+
+from .translation import GoogleTranslate
+
 if sys.version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
-
-from .translation import GoogleTranslate
 
 
 __all__: Sequence[str] = (
