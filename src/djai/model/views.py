@@ -50,6 +50,10 @@ def model_ui(request: HttpRequest,
         if not isinstance(dash_ui := model.dash_ui, DjangoDash):
             raise Http404(f'*** {model} DOES NOT HAVE A DASH UI ***')
 
+        # if `model` is an AIModel instance, then render the view for its class
+        if isinstance(model, AIModel):
+            model_class_or_instance_name_or_uuid = type(model).__name__
+
         ((django_dash_stateless_app :=
           StatelessApp.objects.get_or_create(
             app_name=model_class_or_instance_name_or_uuid)[0])
