@@ -1,10 +1,9 @@
 """DjAI Model Views."""
 
 
-from typing import Dict, List   # Py3.9+: use generic types
-
 from inspect import isclass
 from typing import Literal, Union
+from typing import Dict, List   # Py3.9+: use generic types
 
 from django.http.request import HttpRequest
 from django.http.response import Http404, HttpResponse, HttpResponseRedirect
@@ -47,10 +46,10 @@ def model_ui(request: HttpRequest,
             model: AIModel = AIModel.get_by_name_or_uuid(
                 name_or_uuid=model_class_or_instance_name_or_uuid)
 
-        except AIModel.DoesNotExist:
+        except AIModel.DoesNotExist as ai_model_does_not_exist:
             raise Http404('*** MODEL INSTANCE ' +
                           model_class_or_instance_name_or_uuid +
-                          ' NOT FOUND ***')
+                          ' NOT FOUND ***') from ai_model_does_not_exist
 
         model_names_or_uuids: List[str] = model.names_or_uuids
 
