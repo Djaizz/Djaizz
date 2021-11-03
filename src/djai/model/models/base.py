@@ -24,6 +24,7 @@ from polymorphic.models import PolymorphicModel
 from django_plotly_dash import DjangoDash
 
 from dash.dependencies import Input, Output
+import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 
@@ -150,12 +151,13 @@ class AIModel(PolymorphicModel,
                          serve_locally=False,
                          add_bootstrap_links=True,
                          suppress_callback_exceptions=False,
-                         external_stylesheets=None,
+                         external_stylesheets=[dbc.themes.SUPERHERO],
                          external_scripts=None)
 
-        app.layout = html.Div([
-            'Please override the `dash_ui` classproperty to create a Dash UI '
-            f'for the "{cls._meta.verbose_name}" AI model class',
+        app.layout = html.Div(children=[
+            html.H1(
+                'Override the `dash_ui` classproperty to create a Dash UI for '
+                f'{cls._meta.verbose_name_plural}'),
 
             dcc.Dropdown(
                 id='ai-model-dropdown',
@@ -164,7 +166,7 @@ class AIModel(PolymorphicModel,
                 # used to identify dash components in callbacks.
                 # The ID needs to be unique across all of the app's components.
 
-                className=None,
+                className='dropdown',
                 # (string; optional): className of the dropdown element.
 
                 clearable=True,
@@ -188,13 +190,13 @@ class AIModel(PolymorphicModel,
                 # - is_loading (boolean; optional):
                 #     Determines if the component is loading or not.
                 # - prop_name (string; optional):
-                # Holds which property is loading.
+                #     Holds which property is loading.
 
                 multi=False,
                 # (boolean; default False):
                 # If True, the user can select multiple values.
 
-                optionHeight=35,
+                optionHeight=48,
                 # (number; default 35): height of each option.
                 # Can be increased when label lengths would wrap around.
 
@@ -210,8 +212,8 @@ class AIModel(PolymorphicModel,
                 # - title (string; optional):
                 #     The HTML 'title' attribute for the option.
                 #     Allows for information on hover.
-                #     For more information on this attribute,
-                #     see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title.
+                #     For more information on this attribute, see
+                # developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title.
                 # - value (string | number; required):
                 #     The value of the dropdown.
                 #     This value corresponds to the items specified
@@ -272,7 +274,100 @@ class AIModel(PolymorphicModel,
             ),
 
             html.Div(id='ai-model-dropdown-output-container')
-        ])
+            ],
+            # (list of or a singular dash component, string or number;
+            # optional): The children of this component.
+
+            # id=...,
+            # (string; optional): The ID of this component,
+            # used to identify dash components in callbacks.
+            # The ID needs to be unique across all of the components in an app.
+
+            accessKey=None,
+            # (string; optional):
+            # Keyboard shortcut to activate or add focus to the element.
+
+            # aria-* (string; optional): A wildcard aria attribute.
+
+            className=None,
+            # (string; optional):
+            # Often used with CSS to style elements with common properties.
+
+            contentEditable=True,
+            # (string; optional):
+            # Indicates whether the element's content is editable.
+
+            contextMenu=None,
+            # (string; optional):
+            # Defines the ID of a <menu> element
+            # which will serve as the element's context menu.
+
+            # data-* (string; optional): A wildcard data attribute.
+
+            dir='ltr',
+            # (string; optional): Defines the text direction.
+            # Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left).
+
+            draggable=True,
+            # (string; optional): Defines whether the element can be dragged.
+
+            hidden=False,
+            # (a value equal to: 'hidden' or 'HIDDEN' | boolean; optional):
+            # Prevents rendering of given element,
+            # while keeping child elements, e.g. script elements, active.
+
+            key=None,
+            # (string; optional): A unique identifier for the component,
+            # used to improve performance by React.js while rendering
+            # components. See https://reactjs.org/docs/lists-and-keys.html
+            # for more info.
+
+            lang='en',
+            # (string; optional): Defines the language used in the element.
+
+            loading_state=None,
+            # (dict; optional):
+            # Object that holds the loading state object
+            # coming from dash-renderer.
+            # loading_state is a dict with keys:
+            # - component_name (string; optional):
+            #     Holds the name of the component that is loading.
+            # - is_loading (boolean; optional):
+            #     Determines if the component is loading or not.
+            # - prop_name (string; optional):
+            # Holds which property is loading.
+
+            n_clicks=0,
+            # (number; default 0):
+            # An integer that represents the number of times that
+            # this element has been clicked on.
+
+            n_clicks_timestamp=-1,
+            # (number; default -1):
+            # An integer that represents the time (in ms since 1970)
+            # at which n_clicks changed.
+            # This can be used to tell which button was changed most recently.
+
+            role=None,
+            # (string; optional): The ARIA role attribute.
+
+            spellCheck=True,
+            # (string; optional):
+            # Indicates whether spell checking is allowed for the element.
+
+            style={'width': '88vh', 'height': '88vh'},
+            # (dict; optional):
+            # Defines CSS styles which will override styles previously set.
+
+            tabIndex=None,
+            # (string; optional):
+            # Overrides the browser's default tab order and
+            # follows the one specified instead.
+
+            title=None
+            # (string; optional):
+            # Text to be displayed in a tooltip when hovering over the element.
+        )
 
         @app.callback(Output('ai-model-dropdown-output-container', 'children'),
                       Input('ai-model-dropdown', 'value'))
@@ -367,9 +462,8 @@ class AIModel(PolymorphicModel,
             # (str) - a title for the interface;
             # if provided, appears above the input and output components.
 
-            description=('Please override the `gradio_ui` classproperty '
-                         'to create a Gradio UI for '
-                         f'the "{cls._meta.verbose_name}" AI model class'),
+            description=('Cverride the `gradio_ui` classproperty to create a '
+                         f'Gradio UI for {cls._meta.verbose_name_plural}'),
             # (str) - a description for the interface;
             # if provided, appears above the input and output components.
 
