@@ -77,6 +77,12 @@ class DjAIModelModuleConfig(AppConfig):
             setup_pretrained_keras_models,
         )
 
+        msg = ('SETTING UP CLOUD AI SERVICES & '
+               'PRE-TRAINED DEEP LEARNING MODELS...')
+        print(f'\n{msg}\n')
+
         setup_google_cloud_ai_svcs.run()
         setup_pretrained_huggingface_models.run()
         setup_pretrained_keras_models.run()
+
+        print(f'\n{msg} done!\n')

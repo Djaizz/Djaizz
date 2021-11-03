@@ -54,8 +54,6 @@ from tensorflow.python.keras.applications.xception import (
     Xception, TF_WEIGHTS_PATH as XCEPTION_URL,
     preprocess_input as xception_preprocess_input)
 
-from tqdm import tqdm
-
 from djai.model.models.ml.keras import PreTrainedKerasImageNetClassifier
 from djai.util import full_qual_name
 
@@ -181,8 +179,8 @@ def run():
     """Run this script."""
     model_name_prefix = f'{PreTrainedKerasImageNetClassifier.__name__}-'
 
-    for keras_loader, preproc, img_dim_size, \
-            global_url, local_file_name in tqdm(MODEL_SPECS):
+    for keras_loader, preproc, img_dim_size, global_url, local_file_name in \
+            MODEL_SPECS:
         try:
             print(PreTrainedKerasImageNetClassifier.objects.update_or_create(
                 name=model_name_prefix + keras_loader.__name__,
