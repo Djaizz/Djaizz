@@ -23,8 +23,8 @@ from polymorphic.models import PolymorphicModel
 
 from django_plotly_dash import DjangoDash
 
-# from dash.dependencies import Input, Output
-# import dash_core_components as dcc
+from dash.dependencies import Input, Output
+import dash_core_components as dcc
 import dash_html_components as html
 
 from gradio.interface import Interface
@@ -155,8 +155,129 @@ class AIModel(PolymorphicModel,
 
         app.layout = html.Div([
             'Please override the `dash_ui` classproperty to create a Dash UI '
-            f'for the "{cls._meta.verbose_name}" AI model class'
+            f'for the "{cls._meta.verbose_name}" AI model class',
+
+            dcc.Dropdown(
+                id='ai-model-dropdown',
+                # (string; optional):
+                # The ID of this component,
+                # used to identify dash components in callbacks.
+                # The ID needs to be unique across all of the app's components.
+
+                className=None,
+                # (string; optional): className of the dropdown element.
+
+                clearable=True,
+                # (boolean; default True):
+                # Whether or not the dropdown is "clearable",
+                # that is, whether or not a small "x" appears on the right
+                # of the dropdown that removes the selected value.
+
+                disabled=False,
+                # (boolean; default False):
+                # If True, this dropdown is disabled and the selection
+                # cannot be changed.
+
+                loading_state=None,
+                # (dict; optional):
+                # Object that holds the loading state object
+                # coming from dash-renderer.
+                # loading_state is a dict with keys:
+                # - component_name (string; optional):
+                #     Holds the name of the component that is loading.
+                # - is_loading (boolean; optional):
+                #     Determines if the component is loading or not.
+                # - prop_name (string; optional):
+                # Holds which property is loading.
+
+                multi=False,
+                # (boolean; default False):
+                # If True, the user can select multiple values.
+
+                optionHeight=35,
+                # (number; default 35): height of each option.
+                # Can be increased when label lengths would wrap around.
+
+                options=[dict(disabled=False, label=i, title=i, value=i)
+                         for i in cls.names_or_uuids],
+                # (list of dicts; optional): An array of options
+                # {label: [string|number], value: [string|number]},
+                # an optional disabled field can be used for each option.
+                # options is a list of dicts with keys:
+                # - disabled (boolean; optional):
+                #     If True, this option is disabled and cannot be selected.
+                # - label (string | number; required): The dropdown's label.
+                # - title (string; optional):
+                #     The HTML 'title' attribute for the option.
+                #     Allows for information on hover.
+                #     For more information on this attribute,
+                #     see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title.
+                # - value (string | number; required):
+                #     The value of the dropdown.
+                #     This value corresponds to the items specified
+                #     in the value property.
+
+                persisted_props=['value'],
+                # (list of values equal to: 'value'; default ['value']):
+                # Properties whose user interactions will persist
+                # after refreshing the component or the page. Since only value
+                # is allowed this prop can normally be ignored.
+
+                persistence=True,
+                # (boolean | string | number; optional):
+                # Used to allow user interactions in this component
+                # to be persisted when the component - or the page -
+                # is refreshed. If persisted is truthy and hasn't changed
+                # from its previous value, a value that the user has changed
+                # while using the app will keep that change,
+                # as long as the new value also matches what was given
+                # originally. Used in conjunction with persistence_type.
+
+                persistence_type='session',
+                # (a value equal to: 'local', 'session' or 'memory';
+                # default 'local'):
+                # Where persisted user changes will be stored:
+                # - memory: only kept in memory, reset on page refresh.
+                # - local: window.localStorage,
+                #          data is kept after the browser quit.
+                # - session: window.sessionStorage,
+                #            data is cleared once the browser quit.
+
+                placeholder='AI Model Name or UUID',
+                # (string; optional):
+                # The grey, default text shown when no option is selected.
+
+                search_value=None,
+                # (string; optional):
+                # The value typed in the DropDown for searching.
+
+                searchable=True,
+                # (boolean; default True):
+                # Whether to enable the searching feature or not.
+
+                style=None,
+                # (dict; optional):
+                # Defines CSS styles which will override styles previously set.
+
+                value=None,
+                # (string | number | list of strings | numbers; optional):
+                # The value of the input.
+                # If multi is False (the default) then value is
+                # just a string that corresponds to the values provided
+                # in the options property.
+                # If multi is True,
+                # then multiple values can be selected at once,
+                # and value is an array of items with values corresponding
+                # to those in the options prop.
+            ),
+
+            html.Div(id='ai-model-dropdown-output-container')
         ])
+
+        @app.callback(Output('ai-model-dropdown-output-container', 'children'),
+                      Input('ai-model-dropdown', 'value'))
+        def update_ai_model_dropdown_output(value):
+            return f'You have selected "{value}"'
 
         return app
 
