@@ -78,7 +78,7 @@ class DjAIModelModuleConfig(AppConfig):
         )
 
         msg = ('SETTING UP CLOUD AI SERVICES & '
-               'PRE-TRAINED DEEP LEARNING MODELS...')
+               'PRE-TRAINED DEEP LEARNING MODELS/PIPELINES...')
         print(f'\n{msg}\n')
 
         setup_google_cloud_ai_svcs.run()
