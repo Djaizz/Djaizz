@@ -3,12 +3,11 @@
 
 from inspect import isclass
 from typing import Literal, Union
-from typing import Dict, List   # Py3.9+: use generic types
+from typing import List   # Py3.9+: use generic types
 
 from django.http.request import HttpRequest
 from django.http.response import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
-from polymorphic.base import PolymorphicModelBase
 
 from django_plotly_dash.dash_wrapper import DjangoDash
 from django_plotly_dash.models import DashApp, StatelessApp
@@ -25,18 +24,12 @@ def model_ui(request: HttpRequest,
         -> Union[Http404, HttpResponse, HttpResponseRedirect]:
     # pylint: disable=unused-argument
     """Launch AI Model class/instance's Dash or Gradio UI."""
-    model_subclasses_by_name: Dict[str, PolymorphicModelBase] = \
-        AIModel.subclasses_by_name
-
-    # pylint: disable=unsupported-membership-test
-    if model_class_or_instance_name_or_uuid in model_subclasses_by_name:
-        # pylint: disable=unsubscriptable-object
-        model: PolymorphicModelBase = \
-            model_subclasses_by_name[model_class_or_instance_name_or_uuid]
-
-        model_names_or_uuids: List[str] = model.names_or_uuids
-
-        if not model_names_or_uuids:
+    if model_class_or_instance_name_or_uuid in \
+            (model_subclasses_by_name := AIModel.subclasses_by_name):
+        # pylint: disable=trailing-whitespace,unsubscriptable-object
+        if not (model_names_or_uuids :=   # noqa: W291
+                (model := model_subclasses_by_name[
+                    model_class_or_instance_name_or_uuid]).names_or_uuids):
             raise Http404('*** MODEL CLASS ' +
                           model_class_or_instance_name_or_uuid +
                           ' HAS NO INSTANCES ***')
@@ -54,31 +47,25 @@ def model_ui(request: HttpRequest,
         model_names_or_uuids: List[str] = model.names_or_uuids
 
     if ui_type == 'dash':
-        dash_ui: DjangoDash = model.dash_ui
-
-        if not isinstance(dash_ui, DjangoDash):
+        if not isinstance(dash_ui := model.dash_ui, DjangoDash):
             raise Http404(f'*** {model} DOES NOT HAVE A DASH UI ***')
 
-        django_dash_stateless_app: StatelessApp = \
-            StatelessApp.objects.get_or_create(
-                app_name=model_class_or_instance_name_or_uuid)[0]
-        # insert `dash_ui` into `django_dash_stateless_app`'s internals
-        django_dash_stateless_app._stateless_dash_app_instance = dash_ui
+        ((django_dash_stateless_app :=
+          StatelessApp.objects.get_or_create(
+            app_name=model_class_or_instance_name_or_uuid)[0])
+         ._stateless_dash_app_instance) = dash_ui
 
-        django_dash_app: DashApp = \
-            DashApp.objects.get_or_create(
-                stateless_app=django_dash_stateless_app,
-                instance_name=model_class_or_instance_name_or_uuid)[0]
-
-        return render(request=request,
-                      template_name='DjAI-Model-Dash-App.html',
-                      context=dict(django_dash_app=django_dash_app),
-                      content_type=None, status=None, using=None)
+        return render(
+            request=request, template_name='DjAI-Model-Dash-App.html',
+            context={'django_dash_app':
+                     DashApp.objects.get_or_create(
+                        stateless_app=django_dash_stateless_app,
+                        instance_name=model_class_or_instance_name_or_uuid)[0]
+                     },
+            content_type=None, status=None, using=None)
 
     if ui_type == 'gradio':
-        gradio_interface: Interface = model.gradio_ui
-
-        if not isinstance(gradio_interface, Interface):
+        if not isinstance(gradio_interface := model.gradio_ui, Interface):
             raise Http404(f'*** {model} DOES NOT HAVE A GRADIO UI ***')
 
         assert isinstance(gradio_interface.predict, list), \
