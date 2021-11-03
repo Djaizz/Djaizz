@@ -369,10 +369,13 @@ class AIModel(PolymorphicModel,
             # Text to be displayed in a tooltip when hovering over the element.
         )
 
-        @app.callback(Output('ai-model-dropdown-output-container', 'children'),
-                      Input('ai-model-dropdown', 'value'))
+        @app.callback(Output(component_id='ai-model-dropdown-output-container',
+                             component_property='children'),
+                      Input(component_id='ai-model-dropdown',
+                            component_property='value'))
         def update_ai_model_dropdown_output(value):
-            return f'You have selected "{value}"'
+            if value:
+                return f'{value} selected'
 
         return app
 
