@@ -109,7 +109,7 @@ Auto-SKLearn = {version = '^0.14.0', markers = "python_version < '3.10'"}
 SciKit-Learn = {version = '^0.24.2', markers = "python_version < '3.10'"}   # let Auto-SKLearn figure
 
 # TensorFlow & related
-TensorFlow = {version = '^2.6.1', markers = "python_version < '3.10'"}
+TensorFlow = {version = '^2.7.0', markers = "python_version < '3.10'"}
 TensorFlow-DataSets = '^4.4.0'
 TensorFlow-Hub = '^0.12.0'
 
@@ -124,8 +124,8 @@ TorchVision = {version = '^0.11.1', markers = "python_version < '3.10'"}
 
 # Hugging Face & related
 DataSets = '^1.15.1'
-HuggingFace-Hub = '^0.1.0'
-Transformers = {version = '^4.12.2', markers = "python_version < '3.10'"}
+HuggingFace-Hub = '^0.1.1'
+Transformers = {version = '^4.12.3', markers = "python_version < '3.10'"}
 
 SentencePiece = '^0.1.96'   # Translation
 TIMM = {version = '^0.4.12', markers = "python_version < '3.10'"}   # for Object Detection
@@ -135,7 +135,7 @@ TIMM = {version = '^0.4.12', markers = "python_version < '3.10'"}   # for Object
 GUDHI = {version = '^3.4.1', markers = "python_version < '3.10'"}
 
 # Cloud AI/ML Services
-Google-Cloud-Translate = '^3.6.0'
+Google-Cloud-Translate = '^3.6.1'
 GoogleTrans = '^4.0.0rc1'
 
 # Hyper-Parameter Tuning & related
@@ -160,7 +160,7 @@ SciKit-Fuzzy = {version = '^0.4.2', markers = "python_version < '3.10'"}
 # ==========================
 CloudPickle = '^2.0.0'
 JobLib = '^1.1.0'
-S3FS = '^2021.10.1'
+S3FS = '^2021.11.0'
 
 
 # DJANGO & RELATED APPLICATION DEVELOPMENT
@@ -233,10 +233,10 @@ Django-HTMX = '^1.6.0'
 Django-Plotly-Dash = '^1.6.6'
 Dash-Bootstrap-Components = '*'   # let Django-Plotly-Dash figure
 DPD-Static-Support = '^0.0.5'
-Django-Bootstrap4 = '^3.0.1'
+Django-Bootstrap4 = '^21.1'
 WhiteNoise = '^5.3.0'
 
-Gradio = '^2.4.1'
+Gradio = '^2.4.2'
 
 Streamlit = '^1.1.0'
 Watchdog = '^2.1.6'   # better performance for Streamlit
@@ -250,7 +250,7 @@ Channels = '^3.0.4'
 Daphne = '^3.0.2'
 GUnicorn = '^20.1.0'
 Hypercorn = '^0.11.2'
-Starlette = '^0.16.0'
+Starlette = '^0.17.0'
 Uvicorn = '^0.15.0'
 
 
