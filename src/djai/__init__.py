@@ -13,4 +13,4 @@ else:
 __all__: Sequence[str] = ('__version__',)
 
 
-__version__ = version(distribution_name='DjAI')
+__version__: str = version(distribution_name='DjAI')
