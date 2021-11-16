@@ -3,4 +3,4 @@
 
 source /var/app/venv/*/bin/activate
 
-python -m django migrate --settings settings
+python manage.py migrate

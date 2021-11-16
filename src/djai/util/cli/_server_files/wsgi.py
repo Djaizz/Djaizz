@@ -8,12 +8,17 @@ https://docs.djangoproject.com/en/dev/howto/deployment/wsgi
 """
 
 
+# ref: django-configurations.readthedocs.io
+
+
 import os
 
-from django.core.wsgi import get_wsgi_application
+# from django.core.wsgi import get_wsgi_application
+from configurations.wsgi import get_wsgi_application
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+os.environ.setdefault('DJANGO_CONFIGURATION', 'Default')
 
 
 application = get_wsgi_application()

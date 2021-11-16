@@ -3,4 +3,4 @@
 
 source /var/app/venv/*/bin/activate
 
-python -m django collectstatic --clear --no-input --settings settings
+python manage.py collectstatic --clear --no-input
