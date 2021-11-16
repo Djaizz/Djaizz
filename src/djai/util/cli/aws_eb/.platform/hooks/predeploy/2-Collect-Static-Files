@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+
+source /var/app/venv/*/bin/activate
+
+python -m django collectstatic --clear --no-input --settings settings
