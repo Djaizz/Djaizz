@@ -1,0 +1,8 @@
+# Sphinx Documentation
+_build/
+*.rst
+
+
+# Databases / Data Files
+*.sqlite3
+*.sqlite3-journal

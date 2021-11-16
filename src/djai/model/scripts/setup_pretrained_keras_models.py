@@ -192,5 +192,5 @@ def run():
                     params=dict(img_dim_size=img_dim_size)))[0])
 
         except Exception as err:   # pylint: disable=broad-except
-            print(f'{PreTrainedKerasImageNetClassifier.__name__} model'
+            print(f'{PreTrainedKerasImageNetClassifier.__name__} model '
                   f'not set up: {err}')

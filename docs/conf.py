@@ -16,8 +16,6 @@ from importlib.metadata import metadata
 import os
 import sys
 
-from recommonmark.parser import CommonMarkParser
-
 import django
 
 import djai
@@ -76,7 +74,9 @@ extensions = [
 
     'sphinx.ext.napoleon',   # Support for NumPy and Google style docstrings
     'sphinx.ext.todo',   # Support for todo items
-    'sphinx.ext.viewcode'   # Add links to highlighted source code
+    'sphinx.ext.viewcode',   # Add links to highlighted source code
+
+    'myst_parser',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -105,8 +105,4 @@ html_math_renderer = 'mathjax'
 
 
 # Source Parsers
-source_parsers = {
-    '.md': CommonMarkParser
-}
-
-source_suffix = '.md', '.rst'
+source_suffix = {'.md': 'markdown', '.rst': 'restructuredtext'}
