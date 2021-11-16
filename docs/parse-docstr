@@ -4,7 +4,7 @@
 
 
 MODULE=src/djai
-DOC_DIR=doc
+DOCS_DIR=docs
 
 
 # generate .rst files from module code & docstrings
@@ -17,11 +17,11 @@ sphinx-apidoc \
     --separate \
     --implicit-namespaces \
     --module-first \
-    --output-dir $DOC_DIR $MODULE \
+    --output-dir $DOCS_DIR $MODULE \
     *migrations*
 
 
 # get rid of undocumented members
-# grep -C2 ":undoc-members:" $DOC_DIR/$MODULE*.rst
-sed -e /:undoc-members:/d -i .orig $DOC_DIR/$MODULE*.rst
-rm $DOC_DIR/*.orig
+# grep -C2 ":undoc-members:" $DOCS_DIR/$MODULE*.rst
+sed -e /:undoc-members:/d -i .orig $DOCS_DIR/$MODULE*.rst
+rm $DOCS_DIR/*.orig

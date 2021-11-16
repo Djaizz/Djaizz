@@ -11,5 +11,10 @@ docs/_build/
 *.rst
 
 
+# Databases / Data Files
+*.sqlite3
+*.sqlite3-journal
+
+
 # Visual Studio Code
 *.code-workspace

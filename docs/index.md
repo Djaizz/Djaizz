@@ -1,1 +1,1 @@
-# `DjAI`: Artificial Intelligence in Django Apps
+# `DjAI`: Artificial Intelligence (AI) in Django Applications

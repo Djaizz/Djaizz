@@ -301,7 +301,7 @@ Tqdm = '^4.62.3'
 [project.optional-dependencies]
 doc = [
   # Sphinx & related
-  'Sphinx >= 4.2.0',
+  'Sphinx >= 4.3.0',
   'Sphinx-AutoBuild >= 2021.3.14',
   'SphinxContrib-JSMath >= 1.0.1',
 
@@ -312,7 +312,7 @@ doc = [
 ]
 
 lint = [
-  'Bandit >= 1.7.0',
+  'Bandit >= 1.7.1',
   'Flake8 >= 4.0.1',
   'MyPy >= 0.910',
   'Prospector >= 1.5.1',

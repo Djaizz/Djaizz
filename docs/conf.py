@@ -1,21 +1,26 @@
+"""DjAI Sphinx Documentation Configurations."""
+
+
+# pylint: disable=invalid-name,redefined-builtin
+
+
 # Configuration file for the Sphinx documentation builder.
 
 # This file only contains a selection of the most common options.
 # For a full list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+# www.sphinx-doc.org/en/master/usage/configuration.html
 
 
 from datetime import date
-import django
+from importlib.metadata import metadata
 import os
 import sys
+
 from recommonmark.parser import CommonMarkParser
 
+import django
+
 import djai
-from djai.util.config import (
-    _DJAI_CONFIG_FILE_PATH_ENVVAR_NAME,
-    _DJAI_CONFIG_TEMPLATE_FILE_PATH
-)
 
 
 # -- Path setup --------------------------------------------------------------
@@ -25,17 +30,17 @@ from djai.util.config import (
 # If the directory is relative to the documentation root,
 # use os.path.abspath to make it absolute, like shown here.
 
-os.environ[_DJAI_CONFIG_FILE_PATH_ENVVAR_NAME] = \
-    _DJAI_CONFIG_TEMPLATE_FILE_PATH
-os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
-sys.path.insert(0, os.path.abspath(path='../src'))
+os.environ['DJANGO_SETTINGS_MODULE'] = '_django_project_settings'
+sys.path.append(os.path.dirname(__file__))
 django.setup()
 
 
 # -- Project information -----------------------------------------------------
 
-project = djai.metadata.PACKAGE
-author = djai.metadata.AUTHOR
+METADATA = metadata(distribution_name='DjAI')
+
+project = METADATA['Name']
+author = METADATA['Author']
 copyright = f'{date.today().year}, {author}'
 
 # The full version, including alpha/beta/rc tags
