@@ -99,8 +99,8 @@ classifiers = [
 [project.urls]
 Homepage = 'https://GitHub.com/Django-AI/DjAI'
 Repository = 'https://GitHub.com/Django-AI/DjAI'
-Documentation = 'https://GitHub.com/Django-AI/DjAI'
 GitHub = 'https://GitHub.com/Django-AI/DjAI'
+Documentation = 'https://Django-AI.GitHub.io/DjAI'
 
 
 [project.dependencies]

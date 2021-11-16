@@ -20,7 +20,7 @@ readme = 'README.md'
 
 homepage = 'https://GitHub.com/Django-AI/DjAI'
 repository = 'https://GitHub.com/Django-AI/DjAI'
-documentation = 'https://GitHub.com/Django-AI/DjAI'
+documentation = 'https://Django-AI.GitHub.io/DjAI'
 
 keywords = [
   'Django',
