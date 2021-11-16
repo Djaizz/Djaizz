@@ -100,6 +100,10 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+for _html_static_path in html_static_path:
+    os.makedirs(name=_html_static_path, exist_ok=True)
+
+
 # math renderer
 html_math_renderer = 'mathjax'
 

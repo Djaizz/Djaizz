@@ -2,11 +2,15 @@
 
 
 DOCS_DIR=docs
+DOCS_STATIC_DIR=$DOCS_DIR/_static
+
 DOCS_BUILD_DIR=$DOCS_DIR/_build
+DOCS_BUILD_STATIC_DIR=$DOCS_BUILD_DIR/_static
 
 
 rm $DOCS_DIR/*.html
 cp $DOCS_BUILD_DIR/*.html $DOCS_DIR/
+rsync --delete $DOCS_BUILD_STATIC_DIR/ $DOCS_STATIC_DIR/
 
 
 git add $DOCS_DIR/*.html
