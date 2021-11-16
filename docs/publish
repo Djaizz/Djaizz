@@ -1,3 +1,14 @@
 #!/usr/bin/env bash
 
 
+DOCS_DIR=docs
+DOCS_BUILD_DIR=$DOCS_DIR/_build
+
+
+rm $DOCS_DIR/*.html
+cp $DOCS_BUILD_DIR/*.html $DOCS_DIR/
+
+
+git add $DOCS_DIR/*.html
+git commit -m "update documentation"
+git push origin main
