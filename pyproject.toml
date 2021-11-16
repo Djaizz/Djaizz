@@ -18,9 +18,9 @@ maintainers = [
 
 readme = 'README.md'
 
-homepage = 'GitHub.com/Django-AI/DjAI'
-repository = 'GitHub.com/Django-AI/DjAI'
-documentation = 'GitHub.com/Django-AI/DjAI'
+homepage = 'https://GitHub.com/Django-AI/DjAI'
+repository = 'https://GitHub.com/Django-AI/DjAI'
+documentation = 'https://GitHub.com/Django-AI/DjAI'
 
 keywords = [
   'Django',
@@ -348,7 +348,7 @@ lint = [
 
 
 [tool.poetry.urls]
-GitHub = 'GitHub.com/Django-AI/DjAI'
+GitHub = 'https://GitHub.com/Django-AI/DjAI'
 
 
 [build-system]
