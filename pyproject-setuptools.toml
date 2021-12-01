@@ -109,7 +109,7 @@ Documentation = 'https://Django-AI.GitHub.io/DjAI'
 
 # DATA MANAGEMENT & PROCESSING
 # ============================
-NumPy = '^1.19.5'   # let higher dependencies figure
+NumPy = '*'   # let higher dependencies figure
 Pandas = '^1.3.4'
 PyArrow = '^6.0.1'
 PySpark = '^3.2.0'
@@ -117,14 +117,19 @@ Ray = {version = '^1.8.0', markers = "python_version < '3.10'"}
 
 Pillow = '^8.4.0'   # image processing
 # Pillow-SIMD = '^7.0.0'   # complex to install
+SciKit-Image = '0.18.3'
+
+Kedro = {version = '^0.17.5', markers = "python_version < '3.9'"}
 
 
 # MACHINE LEARNING / DEEP LEARNING & RELATED
 # ==========================================
 
+StatsModels = '^0.13.1'
+
 # SciKit-Learn & related
-Auto-SKLearn = {version = '^0.14.2', markers = "python_version < '3.10'"}
-SciKit-Learn = {version = '^0.24.2', markers = "python_version < '3.10'"}   # let Auto-SKLearn figure
+Auto-SKLearn = '^0.14.2'
+SciKit-Learn = '*'   # let Auto-SKLearn figure
 
 # TensorFlow & related
 TensorFlow = {version = '^2.7.0', markers = "python_version < '3.10'"}
@@ -133,16 +138,16 @@ TensorFlow-Hub = '^0.12.0'
 
 # Torch & related
 Torch = {version = '^1.10.0', markers = "python_version < '3.10'"}
-Torch-Model-Archiver = '^0.4.2'
-TorchServe = '^0.4.2'
+Torch-Model-Archiver = '^0.5.0'
+TorchServe = '^0.5.0'
 
 TorchAudio = {version = '^0.10.0', markers = "python_version < '3.10'"}
 TorchText = {version = '^0.11.0', markers = "python_version < '3.10'"}
 TorchVision = {version = '^0.11.1', markers = "python_version < '3.10'"}
 
 # Hugging Face & related
-DataSets = '^1.15.1'
-HuggingFace-Hub = '^0.1.2'
+DataSets = '^1.16.1'
+HuggingFace-Hub = '^0.2.0'
 Transformers = {version = '^4.12.5', markers = "python_version < '3.10'"}
 
 SentencePiece = '^0.1.96'   # Translation
@@ -158,13 +163,13 @@ Google-Cloud-Translate = '^3.6.1'
 GoogleTrans = '^4.0.0rc1'
 
 # Hyper-Parameter Tuning & related
-Bayesian-Optimization = {version = '^1.2.0', markers = "python_version < '3.10'"}
+Bayesian-Optimization = '^1.2.0'
 ConfigSpace = '^0.4.20'
-Hpbandster = {version = '^0.7.4', markers = "python_version < '3.10'"}
+Hpbandster = '^0.7.4'
 Tabulate = '^0.8.9'
 
 # ML Model Explainability & related
-LIME = {version = '^0.2.0.1', markers = "python_version < '3.10'"}
+LIME = '^0.2.0.1'
 SHAP = {version = '^0.40.0', markers = "python_version < '3.10'"}
 
 
@@ -172,14 +177,14 @@ SHAP = {version = '^0.40.0', markers = "python_version < '3.10'"}
 # ===============
 
 # Fuzzy Logic
-SciKit-Fuzzy = {version = '^0.4.2', markers = "python_version < '3.10'"}
+SciKit-Fuzzy = '^0.4.2'
 
 
 # MODEL REPOSITORY & RELATED
 # ==========================
 CloudPickle = '^2.0.0'
 JobLib = '^1.1.0'
-S3FS = '^2021.11.0'
+S3FS = '^2021.11.1'
 
 
 # DJANGO & RELATED APPLICATION DEVELOPMENT
@@ -189,7 +194,7 @@ S3FS = '^2021.11.0'
 Django = '^3.2.9'
 
 # Django Polymorphic Models
-Django-Polymorphic = '^3.0.0'
+Django-Polymorphic = '^3.1.0'
 
 # Django Admin Themes
 Django-ForestAdmin = '^1.0.5'
@@ -197,7 +202,7 @@ Django-Grappelli = '^2.15.3'
 Django-Jazzmin = '^2.4.8'
 
 # Django-AutoComplete-Light & related
-Django-Autocomplete-Light = '^3.9.0rc1'
+Django-Autocomplete-Light = '^3.9.0rc5'
 Django-Generic-M2M = '^0.3.1'
 Django-GM2M = '^1.1.1'
 Django-QuerySetSequence = '^0.14'
@@ -234,10 +239,10 @@ Django-Model-Query-Graphs = '^0.0.5'
 Django-Debug-Toolbar = '^3.2.2'
 Django-Query-Profiler = '^0.8'
 Django-Silk = '^4.2.0'
-Kolo = '^1.3.0'
+Kolo = '^1.3.1'
 
 # Django Extensions & Utilities
-Django-Compressor = {version = '2.4.1', markers = "python_version < '3.10'"}
+Django-Compressor = '^2.4.1'
 Django-Configurations = '^2.3.1'
 Django-Environ = '^0.8.1'
 Django-Extensions = '^3.1.5'
@@ -256,13 +261,13 @@ DPD-Static-Support = '^0.0.5'
 Django-Bootstrap4 = '^21.1'
 WhiteNoise = '^5.3.0'
 
-Gradio = '^2.4.5'
+Gradio = '^2.4.6'
 
 Streamlit = '^1.2.0'
 Watchdog = '^2.1.6'   # better performance for Streamlit
 
 # Database Connectors/Drivers
-MySQLClient = '^2.0.3'
+MySQLClient = '^2.1.0'
 PsycoPG2-binary = '^2.9.2'
 
 # ASGI Web Servers
@@ -276,7 +281,7 @@ Uvicorn = '^0.15.0'
 
 # COMMAND-LINE INTERFACE (CLI)
 # ============================
-CLICK = '^7.1.2'   # aligned with Streamlit
+CLICK = '*'   # let Streamlit figure
 Colored = '^1.4.3'
 
 
@@ -285,13 +290,13 @@ Colored = '^1.4.3'
 Jupyter = '^1.0.0'
 
 
-# OTHER
-# =====
+# MISC / OTHER
+# ============
 GitPython = '^3.1.24'
 'Ruamel.YAML' = '^0.17.17'
 PSUtil = '^5.8.0'
 Python-DotEnv = '^0.19.2'
-Requests = '^2.25.1'   # let higher dependencies figure
+Requests = '*'   # let higher dependencies figure
 Tqdm = '^4.62.3'
 
 

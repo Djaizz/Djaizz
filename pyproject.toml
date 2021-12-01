@@ -127,6 +127,8 @@ Pillow = '^8.4.0'   # image processing
 # Pillow-SIMD = '^7.0.0'   # complex to install
 SciKit-Image = '0.18.3'
 
+Kedro = {version = '^0.17.5', markers = "python_version < '3.9'"}
+
 
 # MACHINE LEARNING / DEEP LEARNING & RELATED
 # ==========================================
