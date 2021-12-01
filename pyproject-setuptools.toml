@@ -308,7 +308,7 @@ Tqdm = '^4.62.3'
 [project.optional-dependencies]
 doc = [
   # Sphinx & related
-  'Sphinx >= 4.3.0',
+  'Sphinx >= 4.3.1',
   'Sphinx-AutoBuild >= 2021.3.14',
   'SphinxContrib-JSMath >= 1.0.1',
 
@@ -322,13 +322,13 @@ lint = [
   'Bandit >= 1.7.1',
   'Flake8 >= 4.0.1',
   'MyPy >= 0.910',
-  'Prospector >= 1.5.1',
+  'Prospector >= 1.5.2',
   'PyCodeStyle >= 2.8.0',
   'PyDocStyle >= 6.1.1',
-  'PyLama >= 7.7.1',
-  'PyLint >= 2.11.1',
+  'PyLama >= 8.2.1',
+  'PyLint >= 2.12.1',
 
-  'Black >= 21.10',
+  'Black >= 21.11',
 ]
 
 
@@ -342,7 +342,7 @@ djai = 'djai.util.cli:djai'
 
 [build-system]
 requires = [
-  'SetUpTools >= 59.2.0',
+  'SetUpTools >= 59.4.0',
   'Wheel >= 0.37.0'
 ]
 build-backend = 'setuptools.build_meta'
