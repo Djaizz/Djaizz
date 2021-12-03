@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+
+source /var/app/venv/*/bin/activate
+
+python -m pip install --upgrade AWSCLI Boto3
