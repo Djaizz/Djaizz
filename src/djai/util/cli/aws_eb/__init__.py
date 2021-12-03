@@ -146,9 +146,10 @@ def deploy(aws_eb_env_name: Optional[str] = None,
         subnets = input('AWS Subnets = ')
         assert region and vpc and subnets
 
-        instance_type = input('AWS EC2 Instance Type (default: c5.xlarge) = ')
+        instance_type = input('AWS EC2 Instance Type '
+                              '(default: c5n.2xlarge; min: c5.xlarge) = ')
         if not instance_type.strip():
-            instance_type = 'c5.xlarge'   # c5.large sometimes memory-insuff
+            instance_type = 'c5n.2xlarge'   # c5.large sometimes memory-insuff
 
         run_cmd(command=(f'eb create --profile {profile}'
                          f' --region {region}'
