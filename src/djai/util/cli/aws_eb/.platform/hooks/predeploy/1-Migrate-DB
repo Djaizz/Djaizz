@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 
+# ensure DB schema is up-to-date
+
+
 source /var/app/venv/*/bin/activate
 
 python manage.py migrate

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 
+# collect static files for serving
+
+
 source /var/app/venv/*/bin/activate
 
 python manage.py collectstatic --clear --no-input

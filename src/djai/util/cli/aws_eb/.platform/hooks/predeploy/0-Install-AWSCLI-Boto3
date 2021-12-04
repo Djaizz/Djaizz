@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+# install Boto3, which often conflicts with other deps and is hard to resolve
+
+
+source /var/app/venv/*/bin/activate
+
+python -m pip install AWSCLI Boto3 --upgrade
