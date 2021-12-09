@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>djai.model.models.base module &#8212; djai 0.0.0.dev0 documentation</title>
+    <title>djai.model.models.base module &#8212; DjAI 0.0.0.dev0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -66,6 +66,13 @@ relation.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="djai.model.models.base.AIModel.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#djai.model.models.base.AIModel.created" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="djai.model.models.base.AIModel.dash_ui">
 <span class="sig-name descname"><span class="pre">dash_ui</span></span><a class="headerlink" href="#djai.model.models.base.AIModel.dash_ui" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that converts a method with a single cls argument into a property
@@ -104,6 +111,20 @@ that can be accessed directly from the class.</p>
 <dd></dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="djai.model.models.base.AIModel.modified">
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#djai.model.models.base.AIModel.modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="djai.model.models.base.AIModel.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">CharField</span></em><a class="headerlink" href="#djai.model.models.base.AIModel.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="djai.model.models.base.AIModel.params">
 <span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">django.db.models.fields.json.JSONField</span></em><a class="headerlink" href="#djai.model.models.base.AIModel.params" title="Permalink to this definition">¶</a></dt>
 <dd><p>A wrapper for a deferred-loading field. When the value is read from this
@@ -115,6 +136,11 @@ object the first time, the query is executed.</p>
 <span class="sig-name descname"><span class="pre">polymorphic_ctype</span></span><a class="headerlink" href="#djai.model.models.base.AIModel.polymorphic_ctype" title="Permalink to this definition">¶</a></dt>
 <dd><p>The model field that stores the <code class="xref py py-class docutils literal notranslate"><span class="pre">ContentType</span></code> reference to the actual class.</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="djai.model.models.base.AIModel.polymorphic_ctype_id">
+<span class="sig-name descname"><span class="pre">polymorphic_ctype_id</span></span><a class="headerlink" href="#djai.model.models.base.AIModel.polymorphic_ctype_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="djai.model.models.base.AIModel.polymorphic_primary_key_name">
@@ -183,6 +209,13 @@ relation.</p>
 <span class="sig-name descname"><span class="pre">subclasses_by_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'CloudAIService':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.cloud_ai_svc.base.CloudAIService'&gt;,</span> <span class="pre">'GoogleTranslate':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.cloud_ai_svc.google.translation.GoogleTranslate'&gt;,</span> <span class="pre">'KerasModel':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.keras.base.KerasModel'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceAudioClassifier':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.audio_classification.PreTrainedHuggingFaceAudioClassifier'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceImageClassifier':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.image_classification.PreTrainedHuggingFaceImageClassifier'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceMaskFiller':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.mask_filling.PreTrainedHuggingFaceMaskFiller'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceObjectDetector':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.object_detection.PreTrainedHuggingFaceObjectDetector'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceQuestionAnswerer':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.question_answering.PreTrainedHuggingFaceQuestionAnswerer'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceSpeechRecognizer':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.speech_recognition.PreTrainedHuggingFaceSpeechRecognizer'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceTableQuestionAnswerer':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.table_question_answering.PreTrainedHuggingFaceTableQuestionAnswerer'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceText2TextGenerator':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.text2text_generation.PreTrainedHuggingFaceText2TextGenerator'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceTextClassifier':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.text_classification.PreTrainedHuggingFaceTextClassifier'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceTextGenerator':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.text_generation.PreTrainedHuggingFaceTextGenerator'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceTextSummarizer':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.text_summarization.PreTrainedHuggingFaceTextSummarizer'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceTokenClassifier':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.token_classification.PreTrainedHuggingFaceTokenClassifier'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceTransformer':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.base.PreTrainedHuggingFaceTransformer'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceTranslator':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.translation.PreTrainedHuggingFaceTranslator'&gt;,</span> <span class="pre">'PreTrainedHuggingFaceZeroShotClassifier':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.hugging_face.zero_shot_classification.PreTrainedHuggingFaceZeroShotClassifier'&gt;,</span> <span class="pre">'PreTrainedKerasImageNetClassifier':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.keras.pre_trained.vision.image_classification.PreTrainedKerasImageNetClassifier'&gt;,</span> <span class="pre">'SKLModel':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.skl.SKLModel'&gt;,</span> <span class="pre">'TorchModel':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.torch.base.TorchModel'&gt;,</span> <span class="pre">'_AIModelWithArtifactFilesABC':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.base._AIModelWithArtifactFilesABC'&gt;,</span> <span class="pre">'_PreTrainedMLModelABC':</span> <span class="pre">&lt;class</span> <span class="pre">'djai.model.models.ml.base._PreTrainedMLModelABC'&gt;}</span></em><a class="headerlink" href="#djai.model.models.base.AIModel.subclasses_by_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="djai.model.models.base.AIModel.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">UUIDField</span></em><a class="headerlink" href="#djai.model.models.base.AIModel.uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -194,7 +227,7 @@ relation.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">djai</a></h1>
+<h1 class="logo"><a href="index.html">DjAI</a></h1>
 
 
 
@@ -235,10 +268,10 @@ relation.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2021, STEAM for Vietnam Foundation AI & Robotics Educational Initiative.
+      &copy;2021, STEAM for Vietnam Foundation: AI & Robotics Educational Initiative.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
