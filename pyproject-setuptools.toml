@@ -108,11 +108,13 @@ Documentation = 'https://Django-AI.GitHub.io/DjAI'
 
 # DATA MANAGEMENT & PROCESSING
 # ============================
+NumBa = '*'   # let higher dependencies figure
 NumPy = '*'   # let higher dependencies figure
 Pandas = '^1.3.4'
 PyArrow = '^6.0.1'
 PySpark = '^3.2.0'
 Ray = {version = '^1.9.0', markers = "python_version < '3.10'"}
+SciPy = '*'   # let higher dependencies figure
 
 Pillow = '^8.4.0'   # image processing
 # Pillow-SIMD = '^7.0.0'   # complex to install
@@ -195,7 +197,9 @@ Django = '^4.0'
 # Django Polymorphic Models
 Django-Polymorphic = '^3.1.0'
 
-# Django Admin Themes
+# Django Admin-related
+Django-Admin-HStore-Widget = '^1.1.0'
+Django-Admin-Relation-Links = '^0.2.5'
 Django-ForestAdmin = '^1.0.5'
 Django-Grappelli = '^2.15.3'
 Django-Jazzmin = '^2.4.8'
@@ -208,20 +212,48 @@ Django-QuerySetSequence = '^0.14'
 Django-Tagging = '^0.5.0'
 Django-Taggit = '^2.0.0'
 
-# Django GraphQL
+# GraphQL
 # Ariadne = '^0.13.0'   # ariadne 0.13.0 depends on graphql-core>=3.1.0
                         # graphene-django 2.15.0 depends on graphql-core<3
+Django-GraphQL-Extensions = '^0.1.0'
 Django-RESTQL = '^0.15.1'
-Graphene-Django = '^2.15.0'
+# GQL = '^2.0.0'   # conflicts with other deps
+Graphene = '^3.0'
+Graphene-Django = '^3.0.0b7'
+# Graphene-Django-Extras = '^0.5.2'   # conflicts with other deps
+# Graphene-Django-Optimizer = '^0.9.1'
+# Graphene-Django-Subscriptions = '^0.0.9'
+# Graphene-Django-Tools = '^0.21.0'
+# Graphene-Mongo = '^0.2.13'
+# Graphene-SQLAlchemy = '^2.3.0'
+GraphQLClient = '^0.2.4'
+GraphQL-Core = '^3.1.6'
+GraphQL-Relay = '^3.1.0'
 Py-GQL = '^0.6.1'
+SGQLC = '^14.1'
 # Strawberry-GraphQL = '^0.93.3'   # conflicts with other deps
 
-# Django REST Framework
+# Django REST Framework & other API-related
 DjangoRESTFramework = '^3.12.4'
 DRFPasswordless = '^1.5.7'
+DRF-Writable-Nested = '^0.6.3'
 CoreAPI = '^2.3.3'   # closely related to Django REST Framework
+CoreAPI-CLI = '^1.0.9'
+Markdown = '^3.3.6'   # Markdown support for the browsable API
 
 # DjangoRESTFramework-JSONAPI = '^4.2.1'   # conflicts with other deps
+DRF-Nested-Routers = '^0.93.4'
+Django-PolyModels = '^1.7.0'
+Django-Typed-Models = '^0.11.1'
+
+HAL-Codec = '^1.0.2'
+JSONHyperSchema-Codec = '^1.0.3'
+OpenAPI-Codec = '^1.3.2'
+
+JSONSchema = '^4.2.1'
+Pydantic = '^1.8.2'
+
+HTTPie = '^2.6.0'
 
 # Django Filtering
 Django-Filter = '^21.1'
@@ -241,11 +273,17 @@ Django-Silk = '^4.2.0'
 Kolo = '^1.3.1'
 
 # Django Extensions & Utilities
+Django-Annoying = '^0.10.6'
+Django-Choices = '^1.7.2'
 Django-Compressor = '^2.4.1'
 Django-Configurations = '^2.3.1'
+Django-Crispy-Forms = '^1.13.0'   # improved HTML display for filtering
 Django-Environ = '^0.8.1'
 Django-Extensions = '^3.1.5'
+Django-JSON-Widget = '^1.1.1'
+Django-LocalFlavor = '^3.1'
 Django-Model-Utils = '^4.2.0'
+Django-Nested-InLines = '^0.1'
 Django-Storages = '^1.12.3'
 
 # Django CORS Headers
@@ -265,15 +303,21 @@ Gradio = '^2.4.6'
 Streamlit = '^1.2.0'
 Watchdog = '^2.1.6'   # better performance for Streamlit
 
-# Database Connectors/Drivers
+# Database Adapters/Backends/Connectors/Drivers
+MariaDB-DynCol = '^3.4.0'
+Django-MySQL = '^4.3.0'
 MySQLClient = '^2.1.0'
+MySQL-Connector-Python = '^8.0.27'
 PsycoPG2-binary = '^2.9.2'
 
-# ASGI Web Servers
+# ASGI Web Servers & related
+ASGIRef = '*'   # let higher dependencies figure
 Channels = '^3.0.4'
 Daphne = '^3.0.2'
 GUnicorn = '^20.1.0'
+# H11 = '^0.12.0'   # conflicts with other deps
 Hypercorn = '^0.12.0'
+Quart = '^0.16.1'
 Starlette = '^0.17.1'
 Uvicorn = '^0.16.0'
 
@@ -294,7 +338,9 @@ Jupyter = '^1.0.0'
 GitPython = '^3.1.24'
 'Ruamel.YAML' = '^0.17.17'
 PSUtil = '^5.8.0'
+Python-DateUtil = '*'   # let higher dependencies figure
 Python-DotEnv = '^0.19.2'
+PyTZ = '^2021.3'
 Requests = '*'   # let higher dependencies figure
 Tqdm = '^4.62.3'
 
@@ -328,6 +374,23 @@ lint = [
   'PyLint >= 2.12.2',
 
   'Black >= 21.12',
+]
+
+test = [
+  'Nose >= 1.3.7',
+  'Nose2 >= 0.10.0',
+  'PyTest >= 6.2.5',
+  'UnitTest2 >= 1.1.0',
+]
+
+viz = [
+  'Altair >= 4.1.0',
+  'Bokeh >= 2.4.2',
+  'Dash >= 2.0.0',
+  'Dash-DAQ >= 0.5.0',
+  'PlotLy >= 5.4.0',
+  'PlotNine >= 0.8.0',
+  'Seaborn >= 0.11.2',
 ]
 
 
