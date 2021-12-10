@@ -2,5 +2,39 @@
 # and for excluding files that break deployment
 # docs.amazonaws.cn/en_us/elasticbeanstalk/latest/dg/eb3-deploy.html
 
+
+# GIT
+# ===
+.git/
+.gitignore
+
+
+# PYTHON & related
+# ================
+__pycache__/
+pyproject.toml
+
+.mypy_cache/
+.prospector.yaml
+.pylintrc
+
+.pytest_cache/
+
+
+# READMEs & likes
+# ===============
+LICENSE*
+README*
+
+
+# VISUAL STUDIO CODE
+# ==================
+.vscode/
+*.code-workspace
+
+
+# MISC / OTHER
+# ============
+
 # Mac OSX hidden files
 .DS_Store
