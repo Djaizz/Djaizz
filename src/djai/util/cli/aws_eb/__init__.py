@@ -146,10 +146,14 @@ def deploy(aws_eb_env_name: Optional[str] = None,
         subnets = input('AWS Subnets = ')
         assert region and vpc and subnets
 
+        # AWS EC2 Instance Type: by default, pick a
+        # Compute-optimized instance type
+        # with good Networking performance and sufficient Memory
+        # (note: Graviton (g) instances not compatible with DjAI dependencies)
         instance_type = input('AWS EC2 Instance Type '
-                              '(default: c5n.2xlarge; min: c5.xlarge) = ')
+                              '(default: c5n.2xlarge; min: c5n.large) = ')
         if not instance_type.strip():
-            instance_type = 'c5n.2xlarge'   # c5.large sometimes memory-insuff
+            instance_type = 'c5n.2xlarge'
 
         run_cmd(command=(f'eb create --profile {profile}'
                          f' --region {region}'
