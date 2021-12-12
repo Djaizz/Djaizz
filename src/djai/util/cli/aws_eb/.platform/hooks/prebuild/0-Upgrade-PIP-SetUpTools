@@ -6,4 +6,4 @@
 
 source /var/app/venv/*/bin/activate
 
-python -m pip install PIP SetUpTools --upgrade
+python -m pip install PEP517 PIP SetUpTools Wheel --upgrade
