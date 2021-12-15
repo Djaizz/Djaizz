@@ -55,7 +55,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             db_tablespace=None,
             default=None,
             editable=True,
-            # error_messages=None,
+            # error_messages={},
             primary_key=False,
             unique=False,
             unique_for_date=None, unique_for_month=None, unique_for_year=None,
