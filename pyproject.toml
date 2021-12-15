@@ -271,9 +271,6 @@ DjangoRESTFramework-Filters = '1.0.0.dev2'
 Django-Guardian = '^2.4.0'
 Rules = '^3.0'
 
-# Django Query Optimization
-Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
-
 # Django Debugging & Query Profiling
 Django-Debug-Toolbar = '^3.2.2'
 Django-Query-Profiler = '^0.8'
