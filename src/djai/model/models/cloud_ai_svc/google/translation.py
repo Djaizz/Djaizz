@@ -1,7 +1,7 @@
 """DjAI Google Cloud AI Translation Service model classes."""
 
 
-import sys
+from sys import version_info
 from typing import Union
 from typing import List   # Py3.9+: use generic types
 
@@ -19,7 +19,7 @@ from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .. import CloudAIService
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

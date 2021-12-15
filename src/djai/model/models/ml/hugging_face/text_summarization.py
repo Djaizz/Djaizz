@@ -1,7 +1,7 @@
 """DjAI Pre-Trained Hugging Face Text Summarizer Model class."""
 
 
-import sys
+from sys import version_info
 from typing import List   # Py3.9+: use generic types
 from typing import Union
 
@@ -17,10 +17,10 @@ from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import PreTrainedHuggingFaceTransformer
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
-    from typing import Sequence
+    from typing import Sequence   # pylint: disable=ungrouped-imports
 
 
 __all__: Sequence[str] = ('PreTrainedHuggingFaceTextSummarizer',)

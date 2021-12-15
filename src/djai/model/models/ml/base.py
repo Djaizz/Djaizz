@@ -1,7 +1,7 @@
 """DjAI Machine Learning Model base classes."""
 
 
-import sys
+from sys import version_info
 from typing import Dict   # Py3.9+: use generic types
 from typing import Any
 
@@ -11,7 +11,7 @@ from djai.util import import_obj
 
 from ..base import _AIModelWithArtifactFilesABC
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

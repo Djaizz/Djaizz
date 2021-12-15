@@ -1,7 +1,7 @@
 """DjAI Pre-Trained Hugging Face Model classes."""
 
 
-import sys
+from sys import version_info
 
 from .base import PreTrainedHuggingFaceTransformer
 from .audio_classification import PreTrainedHuggingFaceAudioClassifier
@@ -20,7 +20,7 @@ from .token_classification import PreTrainedHuggingFaceTokenClassifier
 from .translation import PreTrainedHuggingFaceTranslator
 from .zero_shot_classification import PreTrainedHuggingFaceZeroShotClassifier
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

@@ -2,13 +2,13 @@
 
 
 from importlib import import_module
-import sys
+from sys import version_info
 from typing import Any
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
-    from typing import Sequence
+    from typing import Sequence   # pylint: disable=ungrouped-imports
 
 
 __all__: Sequence[str] = (

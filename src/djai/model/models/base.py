@@ -3,7 +3,7 @@
 
 from abc import abstractmethod
 from json.decoder import JSONDecoder
-import sys
+from sys import version_info
 from typing import Any, Optional
 from typing import Dict, List   # Py3.9+: use generic types
 
@@ -24,11 +24,12 @@ import dash_html_components as html
 from gradio.interface import Interface
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
+from djutil.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
+
 from djai.model.apps import DjAIModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
-from djai.util.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC   # noqa: E501
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Generator, Sequence
 else:
     from typing import Generator, Sequence

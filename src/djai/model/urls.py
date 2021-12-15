@@ -2,14 +2,14 @@
 
 
 from functools import partial
-import sys
+from sys import version_info
 
 from django.urls.conf import path
 from django.urls.resolvers import URLPattern
 
 from djai.model.views import model_ui
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

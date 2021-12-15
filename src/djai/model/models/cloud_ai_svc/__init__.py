@@ -1,7 +1,7 @@
 """DjAI Cloud AI Service model classes."""
 
 
-import sys
+from sys import version_info
 
 from .base import CloudAIService
 
@@ -9,7 +9,7 @@ from .google import (
     GoogleTranslate,
 )
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

@@ -2,13 +2,13 @@
 
 
 import pickle
-import sys
+from sys import version_info
 
 import joblib
 
 from ..base import _AIModelWithArtifactFilesABC
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

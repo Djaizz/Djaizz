@@ -1,17 +1,17 @@
 """DjAI PIP-related Utilities."""
 
 
-import sys
+from sys import version_info
 from typing import Optional
 from typing import Dict, List   # Py3.9+: use generic types
 
 from pip._internal.operations.freeze import (   # pylint: disable=import-error
     freeze)
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
-    from typing import Sequence
+    from typing import Sequence   # pylint: disable=ungrouped-imports
 
 
 __all__: Sequence[str] = ('get_python_dependencies',)

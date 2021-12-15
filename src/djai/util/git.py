@@ -2,16 +2,16 @@
 
 
 from pathlib import Path
-import sys
+from sys import version_info
 from typing import Optional
 
 from git.exc import InvalidGitRepositoryError   # pylint: disable=import-error
 from git.repo.base import Repo   # pylint: disable=import-error
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
-    from typing import Sequence
+    from typing import Sequence   # pylint: disable=ungrouped-imports
 
 
 __all__: Sequence[str] = ('get_git_repo_head_commit_hash',)

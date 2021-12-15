@@ -1,7 +1,7 @@
 """DjAI DataSet/DataSource Model classes."""
 
 
-import sys
+from sys import version_info
 
 from .base import DataSchema, DataSet
 
@@ -21,7 +21,7 @@ from .video import VideoDataSet
 
 from .live_api import LiveAPIDataSource
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

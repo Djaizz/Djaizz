@@ -1,13 +1,13 @@
 """DjAI Torch Deep Learning Model class."""
 
 
-import sys
+from sys import version_info
 
 from torch.serialization import load
 
 from ...base import _AIModelWithArtifactFilesABC
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

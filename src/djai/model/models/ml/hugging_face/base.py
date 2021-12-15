@@ -1,14 +1,14 @@
 """DjAI Pre-Trained Hugging Face Transformer Model class."""
 
 
-import sys
+from sys import version_info
 
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 from djai.model.apps import DjAIModelModuleConfig
 
 from ..base import _PreTrainedMLModelABC
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

@@ -2,7 +2,7 @@
 
 
 from json.decoder import JSONDecoder   # pylint: disable=import-error
-import sys
+from sys import version_info
 
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models.fields.json import JSONField
@@ -12,7 +12,7 @@ from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import DataSet, _FileDataSetABC
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

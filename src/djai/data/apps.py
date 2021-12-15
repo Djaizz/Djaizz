@@ -1,11 +1,11 @@
 """DjAI Data Module Config."""
 
 
-import sys
+from sys import version_info
 
 from django.apps.config import AppConfig
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

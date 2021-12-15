@@ -2,7 +2,7 @@
 
 
 from pathlib import Path
-import sys
+from sys import version_info
 
 import h5py
 from tensorflow.python.keras.saving.save import \
@@ -10,7 +10,7 @@ from tensorflow.python.keras.saving.save import \
 
 from ...base import _AIModelWithArtifactFilesABC
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

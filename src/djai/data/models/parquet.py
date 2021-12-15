@@ -1,11 +1,11 @@
 """DjAI Parquet DataSet class."""
 
 
-import sys
+from sys import version_info
 
 from .base import _FileDataSetABC
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence

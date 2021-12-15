@@ -1,7 +1,7 @@
 """DjAI Data API."""
 
 
-import sys
+from sys import version_info
 
 from djai.data.models import (
     DataSchema, DataSet,
@@ -22,7 +22,7 @@ from djai.data.models import (
     LiveAPIDataSource,
 )
 
-if sys.version_info >= (3, 9):
+if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
     from typing import Sequence
