@@ -26,7 +26,7 @@ from ....base import _PreTrainedMLModelABC
 if version_info >= (3, 9):
     from collections.abc import Sequence
 else:
-    from typing import Sequence
+    from typing import Sequence   # pylint: disable=ungrouped-imports
 
 
 __all__: Sequence[str] = ('PreTrainedKerasImageNetClassifier',)

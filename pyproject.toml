@@ -290,7 +290,6 @@ Django-Environ = '^0.8.1'
 Django-Extensions = '^3.1.5'
 Django-JSON-Widget = '^1.1.1'
 Django-LocalFlavor = '^3.1'
-Django-Model-Utils = '^4.2.0'
 Django-Nested-InLines = '^0.1'
 Django-Storages = '^1.12.3'
 
