@@ -116,13 +116,13 @@ Python = '^3.8'
 
 # DATA MANAGEMENT & PROCESSING
 # ============================
-NumBa = '*'   # let higher dependencies figure
-NumPy = '*'   # let higher dependencies figure
+NumBa = '^0.54.1'   # let higher dependencies figure
+NumPy = '^1.20.3'   # let higher dependencies figure
 Pandas = '^1.3.4'
 PyArrow = '^6.0.1'
 PySpark = '^3.2.0'
 Ray = {version = '^1.9.0', markers = "python_version < '3.10'"}
-SciPy = '*'   # let higher dependencies figure
+SciPy = '^1.7.3'   # let higher dependencies figure
 
 Pillow = '^8.4.0'   # image processing
 # Pillow-SIMD = '^7.0.0'   # complex to install
@@ -138,7 +138,7 @@ StatsModels = '^0.13.1'
 
 # SciKit-Learn & related
 Auto-SKLearn = '^0.14.2'
-SciKit-Learn = '*'   # let Auto-SKLearn figure
+SciKit-Learn = '^0.24.2'   # let Auto-SKLearn figure
 
 # TensorFlow & related
 TensorFlow = {version = '^2.7.0', markers = "python_version < '3.10'"}
@@ -318,7 +318,7 @@ MySQL-Connector-Python = '^8.0.27'
 PsycoPG2-binary = '^2.9.2'
 
 # ASGI Web Servers & related
-ASGIRef = '*'   # let higher dependencies figure
+ASGIRef = '^3.4.1'   # let higher dependencies figure
 Channels = '^3.0.4'
 Daphne = '^3.0.2'
 GUnicorn = '^20.1.0'
@@ -331,7 +331,7 @@ Uvicorn = '^0.16.0'
 
 # COMMAND-LINE INTERFACE (CLI)
 # ============================
-CLICK = '*'   # let Streamlit figure
+CLICK = '^7.1.2'   # let Streamlit figure
 Colored = '^1.4.3'
 
 
@@ -345,10 +345,10 @@ Jupyter = '^1.0.0'
 GitPython = '^3.1.24'
 'Ruamel.YAML' = '^0.17.17'
 PSUtil = '^5.8.0'
-Python-DateUtil = '*'   # let higher dependencies figure
+Python-DateUtil = '^2.8.1'   # let higher dependencies figure
 Python-DotEnv = '^0.19.2'
 PyTZ = '^2021.3'
-Requests = '*'   # let higher dependencies figure
+Requests = '^2.25.1'   # let higher dependencies figure
 Tqdm = '^4.62.3'
 
 
