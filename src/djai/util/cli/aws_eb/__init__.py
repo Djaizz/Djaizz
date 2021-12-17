@@ -79,31 +79,8 @@ def init():
               expose_value=True,
               is_eager=False,
               envvar=None)
-@click.option('--create',
-              cls=click.Option,
-              show_default=True,
-              prompt=False,
-              confirmation_prompt=False,
-              hide_input=False,
-              is_flag=True,
-              flag_value=True,
-              multiple=False,
-              count=False,
-              allow_from_autoenv=False,
-              type=bool,
-              help='whether to create a new AWS Elastic Beanstalk environment',
-              show_choices=True,
-              default=False,
-              required=False,
-              callback=None,
-              nargs=None,
-              metavar='CREATE',
-              expose_value=True,
-              is_eager=False,
-              envvar=None)
 def deploy(aws_eb_env_name: Optional[str] = None,
-           asgi: Optional[str] = None,
-           create: bool = False):
+           asgi: Optional[str] = None):
     """Deploy DjAI onto AWS Elastic Beanstalk."""
     assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
     shutil.copytree(
@@ -140,7 +117,12 @@ def deploy(aws_eb_env_name: Optional[str] = None,
     if not profile.strip():
         profile = 'default'
 
-    if create:
+    if aws_eb_env_name:
+        run_cmd(command=f'eb deploy --profile {profile} {aws_eb_env_name}',
+                copy_standard_files=True,
+                asgi=asgi)
+
+    else:
         region = input('AWS Region = ')
         vpc = input('AWS VPC = ')
         subnets = input('AWS Subnets = ')
@@ -161,14 +143,7 @@ def deploy(aws_eb_env_name: Optional[str] = None,
                          f' --vpc.dbsubnets {subnets}'
                          f' --vpc.ec2subnets {subnets}'
                          f' --vpc.elbsubnets {subnets} --vpc.elbpublic'
-                         f' --instance_type {instance_type}'
-                         f" {aws_eb_env_name if aws_eb_env_name else ''}"),
-                copy_standard_files=True,
-                asgi=asgi)
-
-    else:
-        run_cmd(command=(f'eb deploy --profile {profile}'
-                         f" {aws_eb_env_name if aws_eb_env_name else ''}"),
+                         f' --instance_type {instance_type}'),
                 copy_standard_files=True,
                 asgi=asgi)
 
