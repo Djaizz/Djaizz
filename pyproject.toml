@@ -130,7 +130,7 @@ SciPy = '^1.7.3'   # let higher dependencies figure
 
 Pillow = '^8.4.0'   # image processing
 # Pillow-SIMD = '^7.0.0'   # complex to install
-SciKit-Image = '^0.19.0'
+SciKit-Image = '^0.19.1'
 
 Kedro = {version = '^0.17.5', markers = "python_version < '3.9'"}
 
@@ -239,7 +239,7 @@ Graphene-Django = '^3.0.0b7'
 # Graphene-Mongo = '^0.2.13'
 # Graphene-SQLAlchemy = '^2.3.0'
 GraphQLClient = '^0.2.4'
-GraphQL-Core = '^3.1.6'
+GraphQL-Core = '^3.1.7'
 GraphQL-Relay = '^3.1.0'
 Py-GQL = '^0.6.1'
 SGQLC = '^14.1'
@@ -328,7 +328,7 @@ Daphne = '^3.0.2'
 GUnicorn = '^20.1.0'
 # H11 = '^0.12.0'   # conflicts with other deps
 Hypercorn = '^0.12.0'
-Quart = '^0.16.1'
+Quart = '^0.16.2'
 Starlette = '^0.16'   # let higher dependencies figure
 Uvicorn = '^0.16.0'
 
