@@ -3812,11 +3812,11 @@ six = "*"
 
 [[package]]
 name = "pympler"
-version = "0.9"
+version = "1.0"
 description = "A development tool to measure, monitor and analyze the memory behavior of Python objects."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6"
 
 [[package]]
 name = "pynacl"
@@ -5503,7 +5503,7 @@ viz = []
 [metadata]
 lock-version = "1.1"
 python-versions = '>= 3.8, < 3.11'
-content-hash = "5eec27d5685cef83a2e666b37000fdeaa36632abcc43d47de2a402c1fbaed8d8"
+content-hash = "a18b4852745c1925a55ea394ae28d4662e778e855b0b2a42c0d1cc698ca2a1ac"
 
 [metadata.files]
 absl-py = [
@@ -7810,7 +7810,8 @@ pyjwkest = [
     {file = "pyjwkest-1.4.2.tar.gz", hash = "sha256:5560fd5ba08655f29ff6ad1df1e15dc05abc9d976fcbcec8d2b5167f49b70222"},
 ]
 pympler = [
-    {file = "Pympler-0.9.tar.gz", hash = "sha256:f2cbe7df622117af890249f2dea884eb702108a12d729d264b7c5983a6e06e47"},
+    {file = "Pympler-1.0-py3-none-any.whl", hash = "sha256:ca09ce58074a374a76328c27f0bb8a4e8d3964db1cbd1f9d3fd4c0d0746a9d16"},
+    {file = "Pympler-1.0.tar.gz", hash = "sha256:f2e82c3e33835d0378ed95fffabc00806f4070f00decaa38b340ca99b1aca25c"},
 ]
 pynacl = [
     {file = "PyNaCl-1.4.0-cp27-cp27m-macosx_10_10_x86_64.whl", hash = "sha256:ea6841bc3a76fa4942ce00f3bda7d436fda21e2d91602b9e21b7ca9ecab8f3ff"},
