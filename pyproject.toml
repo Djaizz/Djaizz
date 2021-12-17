@@ -325,7 +325,7 @@ GUnicorn = '^20.1.0'
 # H11 = '^0.12.0'   # conflicts with other deps
 Hypercorn = '^0.12.0'
 Quart = '^0.16.1'
-Starlette = '^0.17.1'
+Starlette = '^0.16'   # let higher dependencies figure
 Uvicorn = '^0.16.0'
 
 
