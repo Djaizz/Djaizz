@@ -425,6 +425,7 @@ GitHub = 'https://GitHub.com/Django-AI/DjAI'
 
 [build-system]
 requires = [
-  'Poetry-Core >= 1.0.7'
+  'Poetry-Core >= 1.0.7',
+  'SetUpTools >= 60.1.0',   # *** TEMP FIX per github.com/pypa/pip/issues/10743#issuecomment-998321115 ***
 ]
 build-backend = 'poetry.core.masonry.api'
