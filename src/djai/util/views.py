@@ -23,6 +23,7 @@ __all__: Sequence[str] = ('LookUpByUniqueNameOrUUIDMixin',)
 # - django-rest-framework.org/api-guide/generic-views/#creating-custom-mixins
 # - stackoverflow.com/questions/38461366
 class LookUpByUniqueNameOrUUIDMixin:
+    # pylint: disable=too-few-public-methods
     """A mix-in to look up Django model object by UUID or Unique Name."""
 
     def get_object(self) -> Union[Model, Http404]:
