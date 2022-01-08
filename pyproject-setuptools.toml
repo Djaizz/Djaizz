@@ -354,7 +354,13 @@ Tqdm = '^4.62.3'
 
 # CLOUD
 # =====
-# AWSEBCLI = '^3.20.2'
+
+# AWS
+AWSCLI = '^1.21'   # let higher dependencies figure
+Boto3 = '^1.19'   # let higher dependencies figure
+
+AWSEBCLI = '^3.2'   # let higher dependencies figure
+AWSWrangler = '^0.0.8'   # too often conflicts with other deps
 
 
 [project.optional-dependencies]
@@ -411,7 +417,7 @@ djai = 'djai.util.cli:djai'
 
 [build-system]
 requires = [
-  'SetUpTools >= 60.1.0',
+  'SetUpTools >= 60.3.1',
   'Wheel >= 0.37.1',
 ]
 build-backend = 'setuptools.build_meta'
