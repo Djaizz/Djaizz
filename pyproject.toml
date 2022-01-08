@@ -364,7 +364,7 @@ Tqdm = '^4.62.3'
 # =====
 
 # AWS
-# AWSCLI = '~1.21'   # let higher dependencies figure
+AWSCLI = '~1.21'   # let higher dependencies figure
 Boto3 = '~1.19'   # let higher dependencies figure
 
 AWSEBCLI = '~3.2'   # let higher dependencies figure
