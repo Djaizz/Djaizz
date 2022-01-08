@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-# install Boto3, which often conflicts with other deps and is hard to resolve
+# install AWS deps which often conflict with other deps and are hard to resolve
 
 
 source /var/app/venv/*/bin/activate

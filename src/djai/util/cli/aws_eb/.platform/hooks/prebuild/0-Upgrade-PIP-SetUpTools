@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-
-# ensure PIP & SetUpTools is up-to-date before installing Python dependencies
-
-
-source /var/app/venv/*/bin/activate
-
-python -m pip install PEP517 PIP SetUpTools Wheel --upgrade

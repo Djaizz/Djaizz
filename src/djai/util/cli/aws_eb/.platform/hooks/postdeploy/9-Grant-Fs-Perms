@@ -4,4 +4,4 @@
 # grant write permissions to certain directories on file system
 
 
-chmod a+rw /tmp/
+chmod -R a+rw . /tmp/
