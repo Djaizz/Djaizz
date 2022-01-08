@@ -6,6 +6,8 @@ __pycache__/
 .pytest_cache/
 .ropeproject/
 
+# Poetry
+poetry.lock
 
 # Visual Studio Code
 *.code-workspace
