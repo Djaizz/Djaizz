@@ -418,7 +418,7 @@ djai = 'djai.util.cli:djai'
 
 [build-system]
 requires = [
-  'SetUpTools >= 60.3.1',
+  'SetUpTools >= 60.5.0',
   'Wheel >= 0.37.1',
 ]
 build-backend = 'setuptools.build_meta'
