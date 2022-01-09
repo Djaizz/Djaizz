@@ -365,7 +365,7 @@ Tqdm = '^4.62.3'
 
 # AWS deps: to install separately as they are notoriously hard to install alongside others
 # --------
-# AWSCLI = '~1.21'
+AWSCLI = '~1.21'
 Boto3 = '~1.19'
 
 # AWSEBCLI = '~3.2'   # too outdated
