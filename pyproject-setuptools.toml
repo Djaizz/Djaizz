@@ -355,9 +355,10 @@ Tqdm = '^4.62.3'
 # CLOUD
 # =====
 
-# AWS
-AWSCLI = '~1.21'   # let higher dependencies figure
-Boto3 = '~1.19'   # let higher dependencies figure
+# AWS deps: to install separately as they are notoriously hard to install alongside others
+# --------
+# AWSCLI = '~1.21'
+# Boto3 = '~1.19'
 
 # AWSEBCLI = '~3.2'   # too outdated
 # AWSWrangler = '^0.0.8'   # too outdated
