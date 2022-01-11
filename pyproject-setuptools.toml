@@ -112,13 +112,15 @@ Documentation = 'https://Django-AI.GitHub.io/DjAI'
 
 # DATA MANAGEMENT & PROCESSING
 # ============================
-MetaFlow = '^2.4.7'
+Dask = '^2021.12.0'
+Distributed = '^2021.12.0'
+MetaFlow = '^2.4.8'
 NumBa = '^0.55.0rc1'   # let higher dependencies figure
-NumPy = '^1.20.3'   # let higher dependencies figure
+NumPy = '^1.21.5'   # let higher dependencies figure
 Pandas = '^1.3.5'
 PyArrow = '^6.0.1'
 PySpark = '^3.2.0'
-Ray = {version = '^1.9.1', markers = "python_version < '3.10'"}
+Ray = {version = '^1.9.2', markers = "python_version < '3.10'"}
 SciPy = '^1.7.3'   # let higher dependencies figure
 
 Pillow = '^9.0.0'   # image processing
@@ -134,7 +136,7 @@ Kedro = {version = '^0.17.6', markers = "python_version < '3.9'"}
 StatsModels = '^0.13.1'
 
 # SciKit-Learn & related
-Auto-SKLearn = '^0.14.2'
+Auto-SKLearn = '^0.14.3'
 SciKit-Learn = '^0.24.2'   # let Auto-SKLearn figure
 
 # TensorFlow & related
@@ -153,7 +155,7 @@ TorchVision = {version = '^0.11.2', markers = "python_version < '3.10'"}
 
 # Hugging Face & related
 DataSets = '^1.17.0'
-HuggingFace-Hub = '^0.2.1'
+HuggingFace-Hub = '^0.4.0'
 Transformers = {version = '^4.15.0', markers = "python_version < '3.10'"}
 
 SentencePiece = '^0.1.96'   # Translation
@@ -297,7 +299,7 @@ Dj-Util = {url = 'https://GitHub.com/Django-AI/Dj-Util/archive/main.zip'}
 Django-CORS-Headers = '^3.7.0'   # let higher dependencies figure
 
 # Application UIs
-Django-HTMX = '^1.6.0'
+Django-HTMX = '^1.8.0'
 
 Django-Plotly-Dash = '^1.6.6'
 Dash-Bootstrap-Components = '*'   # let Django-Plotly-Dash figure
@@ -311,8 +313,8 @@ Streamlit = '^1.3.1'
 Watchdog = '^2.1.6'   # better performance for Streamlit
 
 # Database Adapters/Backends/Connectors/Drivers
-MariaDB-DynCol = '^3.4.0'
-Django-MySQL = '^4.3.0'
+MariaDB-DynCol = '^3.5.0'
+Django-MySQL = '^4.4.0'
 MySQLClient = '^2.1.0'
 MySQL-Connector-Python = '^8.0.27'
 PsycoPG2-binary = '^2.9.3'
@@ -342,7 +344,7 @@ Jupyter = '^1.0.0'
 
 # MISC / OTHER
 # ============
-GitPython = '^3.1.25'
+GitPython = '^3.1.26'
 'Ruamel.YAML' = '^0.17.17'
 PSUtil = '^5.9.0'
 Python-DateUtil = '^2.8.1'   # let higher dependencies figure
@@ -384,7 +386,7 @@ lint = [
   'Prospector >= 1.5.3.1',
   'PyCodeStyle >= 2.8.0',
   'PyDocStyle >= 6.1.1',
-  'PyLama >= 8.3.6',
+  'PyLama >= 8.3.7',
   'PyLint >= 2.12.2',
 
   'Black >= 21.12',
