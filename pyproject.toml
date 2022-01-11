@@ -120,9 +120,11 @@ Python = '>= 3.8, < 3.11'
 
 # DATA MANAGEMENT & PROCESSING
 # ============================
+Dask = '^2021.12.0'
+Distributed = '^2021.12.0'
 MetaFlow = '^2.4.8'
 NumBa = '^0.55.0rc1'   # let higher dependencies figure
-NumPy = '^1.20.3'   # let higher dependencies figure
+NumPy = '^1.21.5'   # let higher dependencies figure
 Pandas = '^1.3.5'
 PyArrow = '^6.0.1'
 PySpark = '^3.2.0'
