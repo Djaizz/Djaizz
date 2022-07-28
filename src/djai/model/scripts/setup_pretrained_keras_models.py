@@ -2,12 +2,12 @@
 
 
 # pylint: disable=no-name-in-module
-from tensorflow.python.keras.applications.densenet import (
+from tensorflow.keras.applications.densenet import (
     DenseNet121, DENSENET121_WEIGHT_PATH as DENSENET121_URL,
     DenseNet169, DENSENET169_WEIGHT_PATH as DENSENET169_URL,
     DenseNet201, DENSENET201_WEIGHT_PATH as DENSENET201_URL,
     preprocess_input as densenet_preprocess_input)
-from tensorflow.python.keras.applications.efficientnet import (
+from tensorflow.keras.applications.efficientnet import (
     EfficientNetB0,
     EfficientNetB1,
     EfficientNetB2,
@@ -18,39 +18,39 @@ from tensorflow.python.keras.applications.efficientnet import (
     EfficientNetB7,
     BASE_WEIGHTS_PATH as EFFICIENTNET_BASE_URL,
     preprocess_input as efficientnet_preprocess_input)
-from tensorflow.python.keras.applications.inception_v3 import (
+from tensorflow.keras.applications.inception_v3 import (
     InceptionV3, WEIGHTS_PATH as INCEPTION_URL,
     preprocess_input as inception_preprocess_input)
-from tensorflow.python.keras.applications.inception_resnet_v2 import (
+from tensorflow.keras.applications.inception_resnet_v2 import (
     InceptionResNetV2, BASE_WEIGHT_URL as INCEPTION_RESNET_BASE_URL,
     preprocess_input as inception_resnet_preprocess_input)
-from tensorflow.python.keras.applications.mobilenet import (
+from tensorflow.keras.applications.mobilenet import (
     MobileNet, BASE_WEIGHT_PATH as MOBILENET_V1_BASE_URL,
     preprocess_input as mobilenet_v1_preprocess_input)
-from tensorflow.python.keras.applications.mobilenet_v2 import (
+from tensorflow.keras.applications.mobilenet_v2 import (
     MobileNetV2, BASE_WEIGHT_PATH as MOBILENET_V2_BASE_URL,
     preprocess_input as mobilenet_v2_preprocess_input)
-from tensorflow.python.keras.applications.mobilenet_v3 import (
+from tensorflow.keras.applications.mobilenet_v3 import (
     MobileNetV3Large, MobileNetV3Small,
     BASE_WEIGHT_PATH as MOBILENET_V3_BASE_URL,
     preprocess_input as mobilenet_v3_preprocess_input)
-from tensorflow.python.keras.applications.nasnet import (
+from tensorflow.keras.applications.nasnet import (
     NASNetLarge, NASNET_LARGE_WEIGHT_PATH as NASNET_LARGE_URL,
     NASNetMobile, NASNET_MOBILE_WEIGHT_PATH as NASNET_MOBILE_URL,
     preprocess_input as nasnet_preprocess_input)
-from tensorflow.python.keras.applications.resnet import (
+from tensorflow.keras.applications.resnet import (
     ResNet50, ResNet101, ResNet152,
     BASE_WEIGHTS_PATH as RESNET_BASE_URL,
     preprocess_input as resnet_v1_preprocess_input)
-from tensorflow.python.keras.applications.resnet_v2 import (
+from tensorflow.keras.applications.resnet_v2 import (
     ResNet50V2, ResNet101V2, ResNet152V2,
     preprocess_input as resnet_v2_preprocess_input)
-from tensorflow.python.keras.applications.vgg16 import (
+from tensorflow.keras.applications.vgg16 import (
     VGG16, WEIGHTS_PATH as VGG16_URL,
     preprocess_input as vgg_preprocess_input)
-from tensorflow.python.keras.applications.vgg19 import (
+from tensorflow.keras.applications.vgg19 import (
     VGG19, WEIGHTS_PATH as VGG19_URL)
-from tensorflow.python.keras.applications.xception import (
+from tensorflow.keras.applications.xception import (
     Xception, TF_WEIGHTS_PATH as XCEPTION_URL,
     preprocess_input as xception_preprocess_input)
 

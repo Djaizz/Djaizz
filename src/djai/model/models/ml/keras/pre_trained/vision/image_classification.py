@@ -15,7 +15,7 @@ from gradio.outputs import Label as LabelOutput
 
 import numpy
 from PIL import Image, ImageOps
-from tensorflow.python.keras.applications.imagenet_utils import \
+from tensorflow.keras.applications.imagenet_utils import \
     decode_predictions   # pylint: disable=no-name-in-module
 
 from djai.model.apps import DjAIModelModuleConfig
