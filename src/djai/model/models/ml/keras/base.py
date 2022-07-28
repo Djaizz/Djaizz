@@ -5,8 +5,7 @@ from pathlib import Path
 from sys import version_info
 
 import h5py
-from tensorflow.keras.saving.save import \
-    load_model   # pylint: disable=no-name-in-module
+from tensorflow.python.keras.saving.save import load_model
 
 from ...base import _AIModelWithArtifactFilesABC
 

@@ -3,7 +3,7 @@
 
 [tool.poetry]
 name = 'DjAI'
-version = '0.0.0.dev1'
+version = '0.0.0.dev2'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
 
