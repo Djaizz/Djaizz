@@ -1,0 +1,25 @@
+branch-defaults:
+  default:
+    environment: DjAI
+    group_suffix: null
+  main:
+    environment: DjAI
+    group_suffix: null
+  master:
+    environment: DjAI
+    group_suffix: null
+
+global:
+  application_name: DjAI
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Python 3.8 running on 64bit Amazon Linux 2
+  default_region: us-west-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: default
+  repository: null
+  sc: git
+  workspace_type: Application
