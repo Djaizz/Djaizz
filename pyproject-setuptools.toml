@@ -3,7 +3,7 @@
 
 [project]
 name = 'DjAI'
-version = '0.0.0.dev3'
+version = '0.0.0.dev4'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
 readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
@@ -115,8 +115,8 @@ Documentation = 'https://Django-AI.GitHub.io/DjAI'
 Dask = '^2022.7.1'
 Distributed = '^2022.7.1'
 MetaFlow = '^2.7.2'
-NumBa = '^0.55.0rc1'   # let higher dependencies figure
-NumPy = '^1.21.5'   # let higher dependencies figure
+NumBa = '^0.56.0'
+NumPy = '^1.21.6'   # let higher dependencies figure
 Pandas = '^1.4.3'
 PyArrow = '^8.0.0'
 PySpark = '^3.3.0'
@@ -124,7 +124,7 @@ Ray = '^1.13.0'
 SciPy = '^1.8.1'   # let higher dependencies figure
 
 Pillow = '^9.2.0'   # image processing
-# Pillow-SIMD = '^9.0.0'   # complex to install
+# *** Pillow-SIMD = '^9.0.0'   # complex to install
 SciKit-Image = '^0.19.3'
 
 # *** Kedro = '^0.18.2'   # kedro 0.18.2 depends on fsspec<=2022.1 and >=2021.4
@@ -159,8 +159,8 @@ HuggingFace-Hub = '^0.8.1'
 Transformers = '^4.21.0'
 
 SentencePiece = '^0.1.96'   # Translation
-TIMM = '^0.6.7'   # for Object Detection
-# Torch-Scatter = '^2.0.9'   # Table Question Answering - requires Torch first
+TIMM = '^0.6.7'   # Object Detection
+Torch-Scatter = '^2.0.9'   # Table Question Answering
 
 # Topological Data Analysis (TDA) & related
 Giotto-TDA = {version = '^0.5.1', markers = "python_version < '3.10'"}
@@ -223,25 +223,24 @@ Django-Tagging = '^0.5.0'
 Django-Taggit = '^3.0.0'
 
 # GraphQL
-# Ariadne = '^0.13.0'   # ariadne 0.13.0 depends on graphql-core>=3.1.0
-                        # graphene-django 2.15.0 depends on graphql-core<3
+Ariadne = '^0.15.1'
 Django-GraphQL-Extensions = '^0.1.0'
 Django-RESTQL = '^0.15.2'
-# GQL = '^2.0.0'   # conflicts with other deps
+GQL = '^3.4.0'
 Graphene = '^3.1'
 Graphene-Django = '^3.0.0b7'
-# Graphene-Django-Extras = '^0.5.2'   # conflicts with other deps
-# Graphene-Django-Optimizer = '^0.9.1'
-# Graphene-Django-Subscriptions = '^0.0.9'
-# Graphene-Django-Tools = '^0.21.0'
-# Graphene-Mongo = '^0.2.13'
-# Graphene-SQLAlchemy = '^2.3.0'
+# *** Graphene-Django-Extras = '^0.5.2'   # conflicting/long-resolving dependencies
+Graphene-Django-Optimizer = '^0.9.1'
+# *** Graphene-Django-Subscriptions = '^0.0.9'   # conflicting/long-resolving dependencies
+# *** Graphene-Django-Tools = '^0.21.0'   # conflicting/long-resolving dependencies
+# *** Graphene-Mongo = '^0.2.14'   # conflicting/long-resolving dependencies
+# *** Graphene-SQLAlchemy = '^2.3.0'   # conflicting/long-resolving dependencies
 GraphQLClient = '^0.2.4'
 GraphQL-Core = '^3.2.1'
 GraphQL-Relay = '^3.2.0'
 Py-GQL = '^0.6.1'
 SGQLC = '^16.0'
-# Strawberry-GraphQL = '^0.93.3'   # conflicts with other deps
+Strawberry-GraphQL = '^0.121.1'
 
 # Django REST Framework & other API-related
 DjangoRESTFramework = '^3.13.1'
@@ -251,7 +250,7 @@ CoreAPI = '^2.3.3'   # closely related to Django REST Framework
 CoreAPI-CLI = '^1.0.9'
 Markdown = '^3.4.1'   # Markdown support for the browsable API
 
-# DjangoRESTFramework-JSONAPI = '^4.2.1'   # conflicts with other deps
+DjangoRESTFramework-JSONAPI = '^5.0.0'
 DRF-Nested-Routers = '^0.93.4'
 Django-PolyModels = '^1.7.0'
 Django-Typed-Models = '^0.11.1'
@@ -292,8 +291,8 @@ Django-LocalFlavor = '^3.1'
 Django-Nested-InLines = '^0.1'
 Django-Storages = '^1.12.3'
 
-Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
-Dj-Util = {url = 'https://GitHub.com/Django-AI/Dj-Util/archive/main.zip'}
+# Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
+# Dj-Util = {url = 'https://GitHub.com/Django-AI/Dj-Util/archive/main.zip'}
 
 # Django CORS Headers
 Django-CORS-Headers = '^3.10.1'   # let higher dependencies figure
@@ -301,13 +300,13 @@ Django-CORS-Headers = '^3.10.1'   # let higher dependencies figure
 # Application UIs
 Django-HTMX = '^1.12.0'
 
-Django-Plotly-Dash = '^1.6.5'   # let higher dependencies figure
-Dash-Bootstrap-Components = '^1.2.0'   # let Django-Plotly-Dash figure
+Django-Plotly-Dash = '^1.6.5'   # compatible with other dependencies
+Dash-Bootstrap-Components = '^1.2.0'
 DPD-Static-Support = '^0.0.5'
 Django-Bootstrap4 = '^22.1'
 WhiteNoise = '^6.2.0'
 
-Gradio = '>= 3.0.24'   # let higher dependencies figure
+Gradio = '>= 3.0.24'   # compatible with other dependencies
 
 Streamlit = '^1.11.1'
 Watchdog = '^2.1.9'   # better performance for Streamlit
@@ -320,11 +319,11 @@ MySQL-Connector-Python = '^8.0.30'
 PsycoPG2-binary = '^2.9.3'
 
 # ASGI Web Servers & related
-ASGIRef = '^3.4.1'   # let higher dependencies figure
+ASGIRef = '^3.5.2'
 Channels = '^3.0.5'
 Daphne = '^3.0.2'
 GUnicorn = '^20.1.0'
-# H11 = '^0.12.0'   # conflicts with other deps
+H11 = '>= 0.9.0'   # let higher dependencies figure
 Hypercorn = '^0.13.2'
 Quart = '^0.18.0'
 Starlette = '^0.17.1'   # let higher dependencies figure
@@ -359,11 +358,11 @@ Tqdm = '^4.64.0'
 
 # AWS deps: to install separately as they are notoriously hard to install alongside others
 # --------
-# AWSCLI = '~1.21'
-# Boto3 = '~1.19'
+# *** AWSCLI = '~1.21'
+# *** Boto3 = '~1.19'
 
-# AWSEBCLI = '~3.2'   # too outdated
-# AWSWrangler = '^0.0.8'   # too outdated
+# *** AWSEBCLI = '~3.2'   # too outdated
+# *** AWSWrangler = '^0.0.8'   # too outdated
 
 
 [project.optional-dependencies]
