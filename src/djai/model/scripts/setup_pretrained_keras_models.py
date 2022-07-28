@@ -1,7 +1,7 @@
 """Set up pre-trained Keras models."""
 
 
-# pylint: disable=import-error,ungrouped-imports
+# pylint: disable=import-error,no-name-in-module,ungrouped-imports
 from tensorflow.keras.applications.densenet import (
     DenseNet121, DenseNet169, DenseNet201,
     preprocess_input as densenet_preprocess_input)
