@@ -160,7 +160,7 @@ Transformers = '^4.21.0'
 
 SentencePiece = '^0.1.96'   # Translation
 TIMM = '^0.6.7'   # Object Detection
-Torch-Scatter = '^2.0.9'   # Table Question Answering
+# *** Torch-Scatter = '^2.0.9'   # Table Question Answering - requires Torch first
 
 # Topological Data Analysis (TDA) & related
 Giotto-TDA = {version = '^0.5.1', markers = "python_version < '3.10'"}
