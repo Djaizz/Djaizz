@@ -299,8 +299,8 @@ Django-LocalFlavor = '^3.1'
 Django-Nested-InLines = '^0.1'
 Django-Storages = '^1.12.3'
 
-# Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
-# Dj-Util = {url = 'https://GitHub.com/Django-AI/Dj-Util/archive/main.zip'}
+Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
+Dj-Util = {url = 'https://GitHub.com/Django-AI/Dj-Util/archive/main.zip'}
 
 # Django CORS Headers
 Django-CORS-Headers = '^3.10.1'   # let higher dependencies figure
