@@ -1,12 +1,15 @@
 """Set up pre-trained Keras models."""
 
 
-# pylint: disable=no-name-in-module
+# pylint: disable=import-error,ungrouped-imports
 from tensorflow.keras.applications.densenet import (
-    DenseNet121, DENSENET121_WEIGHT_PATH as DENSENET121_URL,
-    DenseNet169, DENSENET169_WEIGHT_PATH as DENSENET169_URL,
-    DenseNet201, DENSENET201_WEIGHT_PATH as DENSENET201_URL,
+    DenseNet121, DenseNet169, DenseNet201,
     preprocess_input as densenet_preprocess_input)
+from keras.applications.densenet import (
+    DENSENET121_WEIGHT_PATH as DENSENET121_URL,
+    DENSENET169_WEIGHT_PATH as DENSENET169_URL,
+    DENSENET201_WEIGHT_PATH as DENSENET201_URL,
+)
 from tensorflow.keras.applications.efficientnet import (
     EfficientNetB0,
     EfficientNetB1,
@@ -16,43 +19,72 @@ from tensorflow.keras.applications.efficientnet import (
     EfficientNetB5,
     EfficientNetB6,
     EfficientNetB7,
-    BASE_WEIGHTS_PATH as EFFICIENTNET_BASE_URL,
     preprocess_input as efficientnet_preprocess_input)
+from keras.applications.efficientnet import (
+    BASE_WEIGHTS_PATH as EFFICIENTNET_BASE_URL,
+)
 from tensorflow.keras.applications.inception_v3 import (
-    InceptionV3, WEIGHTS_PATH as INCEPTION_URL,
+    InceptionV3,
     preprocess_input as inception_preprocess_input)
+from keras.applications.inception_v3 import (
+    WEIGHTS_PATH as INCEPTION_URL,
+)
 from tensorflow.keras.applications.inception_resnet_v2 import (
-    InceptionResNetV2, BASE_WEIGHT_URL as INCEPTION_RESNET_BASE_URL,
+    InceptionResNetV2,
     preprocess_input as inception_resnet_preprocess_input)
+from keras.applications.inception_resnet_v2 import (
+    BASE_WEIGHT_URL as INCEPTION_RESNET_BASE_URL,
+)
 from tensorflow.keras.applications.mobilenet import (
-    MobileNet, BASE_WEIGHT_PATH as MOBILENET_V1_BASE_URL,
+    MobileNet,
     preprocess_input as mobilenet_v1_preprocess_input)
+from keras.applications.mobilenet import (
+    BASE_WEIGHT_PATH as MOBILENET_V1_BASE_URL,
+)
 from tensorflow.keras.applications.mobilenet_v2 import (
-    MobileNetV2, BASE_WEIGHT_PATH as MOBILENET_V2_BASE_URL,
+    MobileNetV2,
     preprocess_input as mobilenet_v2_preprocess_input)
+from keras.applications.mobilenet_v2 import (
+    BASE_WEIGHT_PATH as MOBILENET_V2_BASE_URL,
+)
 from tensorflow.keras.applications.mobilenet_v3 import (
+    preprocess_input as mobilenet_v3_preprocess_input)
+from keras.applications.mobilenet_v3 import (
     MobileNetV3Large, MobileNetV3Small,
     BASE_WEIGHT_PATH as MOBILENET_V3_BASE_URL,
-    preprocess_input as mobilenet_v3_preprocess_input)
+)
 from tensorflow.keras.applications.nasnet import (
-    NASNetLarge, NASNET_LARGE_WEIGHT_PATH as NASNET_LARGE_URL,
-    NASNetMobile, NASNET_MOBILE_WEIGHT_PATH as NASNET_MOBILE_URL,
+    NASNetLarge, NASNetMobile,
     preprocess_input as nasnet_preprocess_input)
+from keras.applications.nasnet import (
+    NASNET_LARGE_WEIGHT_PATH as NASNET_LARGE_URL,
+    NASNET_MOBILE_WEIGHT_PATH as NASNET_MOBILE_URL,
+)
 from tensorflow.keras.applications.resnet import (
     ResNet50, ResNet101, ResNet152,
-    BASE_WEIGHTS_PATH as RESNET_BASE_URL,
     preprocess_input as resnet_v1_preprocess_input)
+from keras.applications.resnet import (
+    BASE_WEIGHTS_PATH as RESNET_BASE_URL,
+)
 from tensorflow.keras.applications.resnet_v2 import (
     ResNet50V2, ResNet101V2, ResNet152V2,
     preprocess_input as resnet_v2_preprocess_input)
 from tensorflow.keras.applications.vgg16 import (
-    VGG16, WEIGHTS_PATH as VGG16_URL,
+    VGG16,
     preprocess_input as vgg_preprocess_input)
-from tensorflow.keras.applications.vgg19 import (
-    VGG19, WEIGHTS_PATH as VGG19_URL)
+from keras.applications.vgg16 import (
+    WEIGHTS_PATH as VGG16_URL,
+)
+from tensorflow.keras.applications.vgg19 import VGG19
+from keras.applications.vgg19 import (
+    WEIGHTS_PATH as VGG19_URL,
+)
 from tensorflow.keras.applications.xception import (
-    Xception, TF_WEIGHTS_PATH as XCEPTION_URL,
+    Xception,
     preprocess_input as xception_preprocess_input)
+from keras.applications.xception import (
+    TF_WEIGHTS_PATH as XCEPTION_URL,
+)
 
 from djai.model.models.ml.keras import PreTrainedKerasImageNetClassifier
 from djai.util import full_qual_name

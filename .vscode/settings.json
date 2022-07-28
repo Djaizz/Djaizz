@@ -10,6 +10,7 @@
   },
 
   "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports" : "none",
     "reportUndefinedVariable" : "none",
   },
 
