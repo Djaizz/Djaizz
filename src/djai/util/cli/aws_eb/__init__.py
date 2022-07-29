@@ -39,9 +39,19 @@ class ConfigFilesHandling(AbstractContextManager):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Remove config/extension files."""
-        for path in self.config_dir_path.rglob(pattern='*'):
+        paths: List[Path] = reversed(sorted(self.config_dir_path.rglob(pattern='*')))   # noqa: E501
+
+        for path in paths:
             if path.is_file():
                 os.remove(path=path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))   # noqa: E501
+
+        # remove empty directories
+        for path in paths:
+            if path.is_dir() and \
+                    (not any((dir_path :=
+                              path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))
+                             .iterdir())):
+                dir_path.rmdir()
 
 
 class EBIgnoreHandling(AbstractContextManager):
