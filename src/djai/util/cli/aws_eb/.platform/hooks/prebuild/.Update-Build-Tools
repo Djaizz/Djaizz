@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+# update build tools to make dependency resolution fastest possible
+
+
+source /var/app/venv/*/bin/activate
+
+python -m pip install PIP SetUpTools --upgrade
