@@ -16,10 +16,9 @@ from polymorphic.base import PolymorphicModelBase
 from polymorphic.models import PolymorphicModel
 
 from django_plotly_dash import DjangoDash
+from dash import dcc, html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
 
 from gradio.interface import Interface
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
@@ -32,7 +31,7 @@ from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
 if version_info >= (3, 9):
     from collections.abc import Generator, Sequence
 else:
-    from typing import Generator, Sequence
+    from typing import Generator, Sequence  # pylint: disable=ungrouped-imports
 
 
 __all__: Sequence[str] = 'AIModel', '_AIModelWithArtifactFilesABC'
@@ -273,8 +272,8 @@ class AIModel(PolymorphicModel,
                 # to those in the options prop.
             ),
 
-            html.Div(id='ai-model-dropdown-output-container')
-            ],
+            html.Div(id='ai-model-dropdown-output-container'),
+            ],   # noqa: E123
             # (list of or a singular dash component, string or number;
             # optional): The children of this component.
 
