@@ -1,6 +1,7 @@
 """DjAI AWS Elastic Beanstalk CLI."""
 
 
+from contextlib import AbstractContextManager
 import os
 from pathlib import Path
 import shutil
@@ -12,9 +13,88 @@ from ..run_cmd import run_cmd
 
 
 _DJAI_AWS_EB_CLI_UTIL_DIR_PATH = Path(__file__).parent
+
 _EB_EXTENSIONS_DIR_NAME = '.ebextensions'
+_EB_EXTENSIONS_FILE_PATHS = (_DJAI_AWS_EB_CLI_UTIL_DIR_PATH /
+                             _EB_EXTENSIONS_DIR_NAME).rglob(pattern='*')
+
 _EB_IGNORE_FILE_NAME = '.ebignore'
+
 _PLATFORM_DIR_NAME = '.platform'
+_PLATFORM_FILE_PATHS = (_DJAI_AWS_EB_CLI_UTIL_DIR_PATH /
+                        _PLATFORM_DIR_NAME).rglob(pattern='*')
+
+
+class HandleEBExtensions(AbstractContextManager):
+    """Handle `.ebextensions/` files."""
+
+    def __enter__(self):
+        """Add `.ebextensions/` files, if applicable."""
+        # pylint: disable=attribute-defined-outside-init
+        assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
+        shutil.copytree(
+            src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_EXTENSIONS_DIR_NAME,
+            dst=_EB_EXTENSIONS_DIR_NAME,
+            symlinks=False,
+            ignore=None,
+            ignore_dangling_symlinks=False,
+            dirs_exist_ok=False)
+        assert os.path.isdir(_EB_EXTENSIONS_DIR_NAME)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Remove `.ebextensions/` files, if applicable."""
+        shutil.rmtree(path=_EB_EXTENSIONS_DIR_NAME,
+                      ignore_errors=False,
+                      onerror=None)
+        assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
+
+
+class HandleEBIgnore(AbstractContextManager):
+    """Handle `.ebignore` file."""
+
+    def __enter__(self):
+        """Add `.ebignore` file, if applicable."""
+        # pylint: disable=attribute-defined-outside-init
+        self._eb_ignore_exists = os.path.exists(path=_EB_IGNORE_FILE_NAME)
+
+        if self._eb_ignore_exists:
+            assert os.path.isfile(_EB_IGNORE_FILE_NAME)
+
+        else:
+            shutil.copyfile(
+                src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_IGNORE_FILE_NAME,
+                dst=_EB_IGNORE_FILE_NAME)
+            assert os.path.isfile(_EB_IGNORE_FILE_NAME)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Remove `.ebignore` file, if applicable."""
+        if not self._eb_ignore_exists:
+            os.remove(_EB_IGNORE_FILE_NAME)
+            assert not os.path.exists(path=_EB_IGNORE_FILE_NAME)
+
+
+class HandlePlatformHooks(AbstractContextManager):
+    """Handle `.platform/hooks/` files."""
+
+    def __enter__(self):
+        """Add `.platform/hooks/` files, if applicable."""
+        # pylint: disable=attribute-defined-outside-init
+        assert not os.path.exists(path=_PLATFORM_DIR_NAME)
+        shutil.copytree(
+            src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _PLATFORM_DIR_NAME,
+            dst=_PLATFORM_DIR_NAME,
+            symlinks=False,
+            ignore=None,
+            ignore_dangling_symlinks=False,
+            dirs_exist_ok=False)
+        assert os.path.isdir(_PLATFORM_DIR_NAME)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Remove `.platform/hooks/` files, if applicable."""
+        shutil.rmtree(path=_PLATFORM_DIR_NAME,
+                      ignore_errors=False,
+                      onerror=None)
+        assert not os.path.exists(path=_PLATFORM_DIR_NAME)
 
 
 @click.command(name='init',
@@ -82,84 +162,38 @@ def init():
 def deploy(aws_eb_env_name: Optional[str] = None,
            asgi: Optional[str] = None):
     """Deploy DjAI onto AWS Elastic Beanstalk."""
-    assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
-    shutil.copytree(
-        src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_EXTENSIONS_DIR_NAME,
-        dst=_EB_EXTENSIONS_DIR_NAME,
-        symlinks=False,
-        ignore=None,
-        ignore_dangling_symlinks=False,
-        dirs_exist_ok=False)
-    assert os.path.isdir(_EB_EXTENSIONS_DIR_NAME)
-
-    _eb_ignore_exists = os.path.exists(path=_EB_IGNORE_FILE_NAME)
-
-    if _eb_ignore_exists:
-        assert os.path.isfile(_EB_IGNORE_FILE_NAME)
-
-    else:
-        shutil.copyfile(
-            src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_IGNORE_FILE_NAME,
-            dst=_EB_IGNORE_FILE_NAME)
-        assert os.path.isfile(_EB_IGNORE_FILE_NAME)
-
-    assert not os.path.exists(path=_PLATFORM_DIR_NAME)
-    shutil.copytree(
-        src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _PLATFORM_DIR_NAME,
-        dst=_PLATFORM_DIR_NAME,
-        symlinks=False,
-        ignore=None,
-        ignore_dangling_symlinks=False,
-        dirs_exist_ok=False)
-    assert os.path.isdir(_PLATFORM_DIR_NAME)
-
     profile = input('AWS CLI Profile (if not default) = ')
     if not profile.strip():
         profile = 'default'
 
-    if aws_eb_env_name:
-        run_cmd(command=f'eb deploy --profile {profile} {aws_eb_env_name}',
-                asgi=asgi)
+    with HandleEBExtensions(), HandleEBIgnore(), HandlePlatformHooks():
+        if aws_eb_env_name:
+            run_cmd(command=f'eb deploy --profile {profile} {aws_eb_env_name}',
+                    asgi=asgi)
 
-    else:
-        region = input('AWS Region = ')
-        vpc = input('AWS VPC = ')
-        subnets = input('AWS Subnets = ')
-        assert region and vpc and subnets
+        else:
+            region = input('AWS Region = ')
+            vpc = input('AWS VPC = ')
+            subnets = input('AWS Subnets = ')
+            assert region and vpc and subnets
 
-        # AWS EC2 Instance Type: by default, pick a
-        # Compute-optimized instance type
-        # with good Networking performance and sufficient Memory
-        # (note: Graviton (g) instances not compatible with DjAI dependencies)
-        instance_type = input('AWS EC2 Instance Type '
-                              '(default: c5n.2xlarge; min: c5n.large) = ')
-        if not instance_type.strip():
-            instance_type = 'c5n.2xlarge'
+            # AWS EC2 Instance Type: by default, pick a
+            # Compute-optimized instance type
+            # with good Networking performance and sufficient Memory
+            # (note: Graviton (g) instances not compatible with DjAI deps)
+            instance_type = input('AWS EC2 Instance Type '
+                                  '(default: c5n.2xlarge; min: c5n.large) = ')
+            if not instance_type.strip():
+                instance_type = 'c5n.2xlarge'
 
-        run_cmd(command=(f'eb create --profile {profile}'
-                         f' --region {region}'
-                         f' --vpc.id {vpc} --vpc.publicip'
-                         f' --vpc.dbsubnets {subnets}'
-                         f' --vpc.ec2subnets {subnets}'
-                         f' --vpc.elbsubnets {subnets} --vpc.elbpublic'
-                         f' --instance_type {instance_type}'),
-                asgi=asgi)
-
-    shutil.rmtree(
-        path=_EB_EXTENSIONS_DIR_NAME,
-        ignore_errors=False,
-        onerror=None)
-    assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
-
-    if not _eb_ignore_exists:
-        os.remove(_EB_IGNORE_FILE_NAME)
-        assert not os.path.exists(path=_EB_IGNORE_FILE_NAME)
-
-    shutil.rmtree(
-        path=_PLATFORM_DIR_NAME,
-        ignore_errors=False,
-        onerror=None)
-    assert not os.path.exists(path=_PLATFORM_DIR_NAME)
+            run_cmd(command=(f'eb create --profile {profile}'
+                             f' --region {region}'
+                             f' --vpc.id {vpc} --vpc.publicip'
+                             f' --vpc.dbsubnets {subnets}'
+                             f' --vpc.ec2subnets {subnets}'
+                             f' --vpc.elbsubnets {subnets} --vpc.elbpublic'
+                             f' --instance_type {instance_type}'),
+                    asgi=asgi)
 
 
 @click.group(name='aws-eb',
