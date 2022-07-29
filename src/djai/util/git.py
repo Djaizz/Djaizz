@@ -20,7 +20,7 @@ __all__: Sequence[str] = ('get_git_repo_head_commit_hash',)
 _GIT_HASH_FILE_NAME: str = '.git-hash'
 
 
-def get_git_repo_head_commit_hash(path: Optional[str] = None) -> str:
+def get_git_repo_head_commit_hash(path: Optional[str] = None) -> Optional[str]:
     """Get Git Repo Head Commit Hash."""
     try:
         repo: Repo = Repo(path=path,
