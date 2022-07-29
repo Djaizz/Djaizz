@@ -6,95 +6,105 @@ import os
 from pathlib import Path
 import shutil
 from typing import Optional
+from typing import List   # Py3.9+: use built-in
 
 import click
 
 from ..run_cmd import run_cmd
 
 
-_DJAI_AWS_EB_CLI_UTIL_DIR_PATH = Path(__file__).parent
-
-_EB_EXTENSIONS_DIR_NAME = '.ebextensions'
-_EB_EXTENSIONS_FILE_PATHS = (_DJAI_AWS_EB_CLI_UTIL_DIR_PATH /
-                             _EB_EXTENSIONS_DIR_NAME).rglob(pattern='*')
-
-_EB_IGNORE_FILE_NAME = '.ebignore'
-
-_PLATFORM_DIR_NAME = '.platform'
-_PLATFORM_FILE_PATHS = (_DJAI_AWS_EB_CLI_UTIL_DIR_PATH /
-                        _PLATFORM_DIR_NAME).rglob(pattern='*')
+_DJAI_AWS_EB_CLI_UTIL_DIR_PATH: Path = Path(__file__).parent
 
 
-class HandleEBExtensions(AbstractContextManager):
-    """Handle `.ebextensions/` files."""
+_EB_EXTENSIONS_DIR_NAME: str = '.ebextensions'
+_PLATFORM_DIR_NAME: str = '.platform'
+
+
+class ConfigFilesHandling(AbstractContextManager):
+    """Handle config/extension files, e.g., `.ebextensions`/`.platform`."""
+
+    def __init__(self, config_dir_name: str, /):
+        """Initialize context manager."""
+        self.config_dir_name: str = config_dir_name
+        self.config_dir_path: Path = _DJAI_AWS_EB_CLI_UTIL_DIR_PATH / config_dir_name   # noqa: E501
 
     def __enter__(self):
-        """Add `.ebextensions/` files, if applicable."""
-        # pylint: disable=attribute-defined-outside-init
-        assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
-        shutil.copytree(
-            src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_EXTENSIONS_DIR_NAME,
-            dst=_EB_EXTENSIONS_DIR_NAME,
-            symlinks=False,
-            ignore=None,
-            ignore_dangling_symlinks=False,
-            dirs_exist_ok=False)
-        assert os.path.isdir(_EB_EXTENSIONS_DIR_NAME)
+        """Add config/extension files."""
+        shutil.copytree(src=self.config_dir_path,
+                        dst=self.config_dir_name,
+                        symlinks=False,
+                        ignore=None,
+                        ignore_dangling_symlinks=False,
+                        dirs_exist_ok=True)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        """Remove `.ebextensions/` files, if applicable."""
-        shutil.rmtree(path=_EB_EXTENSIONS_DIR_NAME,
-                      ignore_errors=False,
-                      onerror=None)
-        assert not os.path.exists(path=_EB_EXTENSIONS_DIR_NAME)
+        """Remove config/extension files."""
+        for path in self.config_dir_path.rglob(pattern='*'):
+            if path.is_file():
+                os.remove(path=path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))   # noqa: E501
 
 
-class HandleEBIgnore(AbstractContextManager):
+class EBIgnoreHandling(AbstractContextManager):
     """Handle `.ebignore` file."""
+
+    _EB_IGNORE_FILE_NAME: str = '.ebignore'
+
+    def __init__(self):
+        """Initialize context manager."""
+        self.eb_ignore_exists: bool = Path(self._EB_IGNORE_FILE_NAME).exists()
+
+        if self.eb_ignore_exists:
+            with open(self._EB_IGNORE_FILE_NAME,
+                      mode='rt',
+                      buffering=-1,
+                      encoding='utf-8',
+                      errors='strict',
+                      newline=None,
+                      closefd=True,
+                      opener=None) as eb_ignore_file:
+                self.eb_ignore_content: List[str] = eb_ignore_file.readlines()
 
     def __enter__(self):
         """Add `.ebignore` file, if applicable."""
-        # pylint: disable=attribute-defined-outside-init
-        self._eb_ignore_exists = os.path.exists(path=_EB_IGNORE_FILE_NAME)
-
-        if self._eb_ignore_exists:
-            assert os.path.isfile(_EB_IGNORE_FILE_NAME)
+        if self.eb_ignore_exists:
+            with (open(self._EB_IGNORE_FILE_NAME,
+                       mode='at',
+                       buffering=-1,
+                       encoding='utf-8',
+                       errors='strict',
+                       newline=None,
+                       closefd=True,
+                       opener=None) as dst,
+                  open(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self._EB_IGNORE_FILE_NAME,   # noqa: E501
+                       mode='rt',
+                       buffering=-1,
+                       encoding='utf-8',
+                       errors='strict',
+                       newline=None,
+                       closefd=True,
+                       opener=None) as src):
+                dst.writelines(src.readlines())
 
         else:
             shutil.copyfile(
-                src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EB_IGNORE_FILE_NAME,
-                dst=_EB_IGNORE_FILE_NAME)
-            assert os.path.isfile(_EB_IGNORE_FILE_NAME)
+                src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self._EB_IGNORE_FILE_NAME,
+                dst=self._EB_IGNORE_FILE_NAME)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Remove `.ebignore` file, if applicable."""
-        if not self._eb_ignore_exists:
-            os.remove(_EB_IGNORE_FILE_NAME)
-            assert not os.path.exists(path=_EB_IGNORE_FILE_NAME)
+        if self.eb_ignore_exists:
+            with open(self._EB_IGNORE_FILE_NAME,
+                      mode='wt',
+                      buffering=-1,
+                      encoding='utf-8',
+                      errors='strict',
+                      newline=None,
+                      closefd=True,
+                      opener=None) as eb_ignore_file:
+                eb_ignore_file.writelines(self.eb_ignore_content)
 
-
-class HandlePlatformHooks(AbstractContextManager):
-    """Handle `.platform/hooks/` files."""
-
-    def __enter__(self):
-        """Add `.platform/hooks/` files, if applicable."""
-        # pylint: disable=attribute-defined-outside-init
-        assert not os.path.exists(path=_PLATFORM_DIR_NAME)
-        shutil.copytree(
-            src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _PLATFORM_DIR_NAME,
-            dst=_PLATFORM_DIR_NAME,
-            symlinks=False,
-            ignore=None,
-            ignore_dangling_symlinks=False,
-            dirs_exist_ok=False)
-        assert os.path.isdir(_PLATFORM_DIR_NAME)
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        """Remove `.platform/hooks/` files, if applicable."""
-        shutil.rmtree(path=_PLATFORM_DIR_NAME,
-                      ignore_errors=False,
-                      onerror=None)
-        assert not os.path.exists(path=_PLATFORM_DIR_NAME)
+        else:
+            os.remove(path=self._EB_IGNORE_FILE_NAME)
 
 
 @click.command(name='init',
@@ -166,7 +176,9 @@ def deploy(aws_eb_env_name: Optional[str] = None,
     if not profile.strip():
         profile = 'default'
 
-    with HandleEBExtensions(), HandleEBIgnore(), HandlePlatformHooks():
+    with (ConfigFilesHandling(_EB_EXTENSIONS_DIR_NAME),
+          ConfigFilesHandling(_PLATFORM_DIR_NAME),
+          EBIgnoreHandling()):
         if aws_eb_env_name:
             run_cmd(command=f'eb deploy --profile {profile} {aws_eb_env_name}',
                     asgi=asgi)
