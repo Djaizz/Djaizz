@@ -185,6 +185,7 @@ Hpbandster = '^0.7.4'
 Tabulate = '^0.8.10'
 
 # ML Model Explainability & related
+# *** CausalNex = '^0.11.0'   # not yet Py3.9+-compatible
 LIME = '^0.2.0.1'
 SHAP = '^0.41.0'
 
