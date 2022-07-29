@@ -46,7 +46,7 @@ class ConfigFilesHandling(AbstractContextManager):
                 os.remove(path=path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))   # noqa: E501
 
         # remove empty directories
-        for path in paths:
+        for path in (paths + [self.config_dir_path]):
             if path.is_dir() and \
                     (not any((dir_path :=
                               path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))
@@ -57,14 +57,14 @@ class ConfigFilesHandling(AbstractContextManager):
 class EBIgnoreHandling(AbstractContextManager):
     """Handle `.ebignore` file."""
 
-    _EB_IGNORE_FILE_NAME: str = '.ebignore'
+    EB_IGNORE_FILE_NAME: str = '.ebignore'
 
     def __init__(self):
         """Initialize context manager."""
-        self.eb_ignore_exists: bool = Path(self._EB_IGNORE_FILE_NAME).exists()
+        self.eb_ignore_exists: bool = Path(self.EB_IGNORE_FILE_NAME).exists()
 
         if self.eb_ignore_exists:
-            with open(self._EB_IGNORE_FILE_NAME,
+            with open(self.EB_IGNORE_FILE_NAME,
                       mode='rt',
                       buffering=-1,
                       encoding='utf-8',
@@ -77,7 +77,7 @@ class EBIgnoreHandling(AbstractContextManager):
     def __enter__(self):
         """Add `.ebignore` file, if applicable."""
         if self.eb_ignore_exists:
-            with (open(self._EB_IGNORE_FILE_NAME,
+            with (open(self.EB_IGNORE_FILE_NAME,
                        mode='at',
                        buffering=-1,
                        encoding='utf-8',
@@ -85,7 +85,7 @@ class EBIgnoreHandling(AbstractContextManager):
                        newline=None,
                        closefd=True,
                        opener=None) as dst,
-                  open(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self._EB_IGNORE_FILE_NAME,   # noqa: E501
+                  open(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self.EB_IGNORE_FILE_NAME,   # noqa: E501
                        mode='rt',
                        buffering=-1,
                        encoding='utf-8',
@@ -97,13 +97,13 @@ class EBIgnoreHandling(AbstractContextManager):
 
         else:
             shutil.copyfile(
-                src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self._EB_IGNORE_FILE_NAME,
-                dst=self._EB_IGNORE_FILE_NAME)
+                src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self.EB_IGNORE_FILE_NAME,
+                dst=self.EB_IGNORE_FILE_NAME)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Remove `.ebignore` file, if applicable."""
         if self.eb_ignore_exists:
-            with open(self._EB_IGNORE_FILE_NAME,
+            with open(self.EB_IGNORE_FILE_NAME,
                       mode='wt',
                       buffering=-1,
                       encoding='utf-8',
@@ -114,7 +114,7 @@ class EBIgnoreHandling(AbstractContextManager):
                 eb_ignore_file.writelines(self.eb_ignore_content)
 
         else:
-            os.remove(path=self._EB_IGNORE_FILE_NAME)
+            os.remove(path=self.EB_IGNORE_FILE_NAME)
 
 
 @click.command(name='init',
