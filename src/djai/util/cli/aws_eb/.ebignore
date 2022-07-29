@@ -3,10 +3,18 @@
 # docs.amazonaws.cn/en_us/elasticbeanstalk/latest/dg/eb3-deploy.html
 
 
+# DOCKER
+# ======
+*Dockerfile*
+docker-compose.yml
+.dockerignore
+
+
 # GIT
 # ===
 .git/
 .gitignore
+.pre-commit-config.yaml
 
 
 # PYTHON & related
@@ -14,11 +22,16 @@
 __pycache__/
 pyproject.toml
 
+poetry.lock
+.ropeproject/
+.pytest_cache/
+
+
+# LINTING
+# =======
 .mypy_cache/
 .prospector.yaml
 .pylintrc
-
-.pytest_cache/
 
 
 # READMEs & likes
