@@ -6,4 +6,8 @@
 
 source /var/app/venv/*/bin/activate
 
-python -m pip install AWSCLI Boto3 --upgrade
+# install/upgrade base AWS deps
+python -m pip install AWSCLI BotoCore Boto3 --upgrade
+
+# install/upgrade higher-level AWS-dependent deps
+python -m pip install AIOBotoCore FSSpec S3FS --upgrade
