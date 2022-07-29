@@ -39,7 +39,7 @@ class ConfigFilesHandling(AbstractContextManager):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Remove config/extension files."""
-        paths: List[Path] = reversed(sorted(self.config_dir_path.rglob(pattern='*')))   # noqa: E501
+        paths: List[Path] = list(self.config_dir_path.rglob(pattern='*'))
 
         for path in paths:
             if path.is_file():

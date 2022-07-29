@@ -12,8 +12,11 @@ docker-compose.yml
 
 # GIT
 # ===
+.git
 .git/
 .gitignore
+.gitmodules
+
 .pre-commit-config.yaml
 
 
