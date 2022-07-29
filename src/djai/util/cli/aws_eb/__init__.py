@@ -119,7 +119,6 @@ def deploy(aws_eb_env_name: Optional[str] = None,
 
     if aws_eb_env_name:
         run_cmd(command=f'eb deploy --profile {profile} {aws_eb_env_name}',
-                copy_standard_files=True,
                 asgi=asgi)
 
     else:
@@ -144,7 +143,6 @@ def deploy(aws_eb_env_name: Optional[str] = None,
                          f' --vpc.ec2subnets {subnets}'
                          f' --vpc.elbsubnets {subnets} --vpc.elbpublic'
                          f' --instance_type {instance_type}'),
-                copy_standard_files=True,
                 asgi=asgi)
 
     shutil.rmtree(
