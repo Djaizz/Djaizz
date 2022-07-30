@@ -161,6 +161,9 @@ TorchAudio = '^0.12.0'
 TorchText = '^0.13.0'
 TorchVision = '^0.13.0'
 
+# Computer Vision
+OpenCV-Python = '^4.6.0'
+
 # Hugging Face & related
 DataSets = '^2.4.0'
 HuggingFace-Hub = '^0.8.1'
