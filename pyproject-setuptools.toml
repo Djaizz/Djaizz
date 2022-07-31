@@ -118,6 +118,7 @@ MetaFlow = '^2.7.2'
 NumBa = '^0.56.0'
 NumPy = '^1.21.6'   # let higher dependencies figure
 Pandas = '^1.4.3'
+Pandarallel = '^1.6.1'
 PyArrow = '^8.0.0'
 PySpark = '^3.3.0'
 Ray = '^1.13.0'
