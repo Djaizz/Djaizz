@@ -3,7 +3,7 @@
 
 [project]
 name = 'DjAI'
-version = '0.0.0.dev5'
+version = '0.0.0.dev6'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
 readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
@@ -138,8 +138,8 @@ Imbalanced-Learn = '^0.9.1'
 StatsModels = '^0.13.2'
 
 # SciKit-Learn & related
-Auto-SKLearn = '^0.14.7'
-SciKit-Learn = '>= 0.24.2'   # let Auto-SKLearn figure
+# *** Auto-SKLearn = '^0.14.7'    # depends on SciKit-Learn < 0.25.0
+SciKit-Learn = '^1.1.1'
 
 # TensorFlow & related
 TensorFlow = '^2.9.1'
