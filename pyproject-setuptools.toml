@@ -343,7 +343,7 @@ Uvicorn = '^0.18.2'
 
 # COMMAND-LINE INTERFACE (CLI)
 # ============================
-CLICK = '^7.1.2'   # let Streamlit figure
+CLICK = '>= 7.1.2'   # let higher dependencies figure
 Colored = '^1.4.3'
 
 
