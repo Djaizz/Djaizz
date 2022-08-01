@@ -204,9 +204,9 @@ def deploy(aws_eb_env_name: Optional[str] = None,
             # with good Networking performance and sufficient Memory
             # (note: Graviton (g) instances not compatible with DjAI deps)
             instance_type = input('AWS EC2 Instance Type '
-                                  '(default: c5n.2xlarge; min: c5n.large) = ')
+                                  '(default: c6i.xlarge; min: c6i.large) = ')
             if not instance_type.strip():
-                instance_type = 'c5n.2xlarge'
+                instance_type = 'c6i.xlarge'
 
             run_cmd(command=(f'eb create --profile {profile}'
                              f' --region {region}'
