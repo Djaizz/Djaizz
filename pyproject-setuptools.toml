@@ -3,7 +3,7 @@
 
 [project]
 name = 'DjAI'
-version = '0.0.0.dev4'
+version = '0.0.0.dev5'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
 readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
@@ -134,11 +134,12 @@ SciKit-Image = '^0.19.3'
 # MACHINE LEARNING / DEEP LEARNING & RELATED
 # ==========================================
 
+Imbalanced-Learn = '^0.9.1'
 StatsModels = '^0.13.2'
 
 # SciKit-Learn & related
 Auto-SKLearn = '^0.14.7'
-SciKit-Learn = '^0.24.2'   # let Auto-SKLearn figure
+SciKit-Learn = '>= 0.24.2'   # let Auto-SKLearn figure
 
 # TensorFlow & related
 TensorFlow = '^2.9.1'
@@ -196,11 +197,16 @@ MLFLow = '^1.27.0'
 SciKit-Fuzzy = '^0.4.2'
 
 
+# FILE SYSTEMS
+# ============
+FSSpec = '^2022.7.1'
+S3FS = '^2022.7.1'
+
+
 # MODEL REPOSITORY & RELATED
 # ==========================
 CloudPickle = '^2.1.0'
 JobLib = '^1.1.0'
-S3FS = '^2022.5.0'
 
 
 # DJANGO & RELATED APPLICATION DEVELOPMENT
