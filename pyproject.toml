@@ -3,7 +3,7 @@
 
 [tool.poetry]
 name = 'DjAI'
-version = '0.0.0.dev6'
+version = '0.0.0.dev7'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
 
@@ -122,15 +122,15 @@ Python = '>= 3.8, < 3.11'
 # ============================
 Dask = '^2022.7.1'
 Distributed = '^2022.7.1'
-MetaFlow = '^2.7.2'
+MetaFlow = '^2.7.4'
 NumBa = '^0.56.0'
 NumPy = '^1.21.6'   # let higher dependencies figure
 Pandas = '^1.4.3'
-Pandarallel = '^1.6.1'
-PyArrow = '^8.0.0'
+Pandarallel = '^1.6.2'
+PyArrow = '^9.0.0'
 PySpark = '^3.3.0'
 Ray = '^1.13.0'
-SciPy = '^1.8.1'   # let higher dependencies figure
+SciPy = '^1.9.0'
 
 Pillow = '^9.2.0'   # image processing
 # *** Pillow-SIMD = '^9.0.0'   # complex to install
@@ -221,7 +221,7 @@ JobLib = '^1.1.0'
 # ========================================
 
 # Django Core
-Django = '^4.0.6'
+Django = '^4.1'
 
 # Django Polymorphic Models
 Django-Polymorphic = '^3.1.0'
@@ -229,7 +229,7 @@ Django-Polymorphic = '^3.1.0'
 # Django Admin-related
 Django-Admin-HStore-Widget = '^1.2.0'
 Django-Admin-Relation-Links = '^0.2.5'
-Django-ForestAdmin = '^1.3.3'
+Django-ForestAdmin = '^1.3.4'
 Django-Grappelli = '^3.0.3'
 Django-Jazzmin = '^2.5.0'
 
@@ -259,7 +259,7 @@ GraphQL-Core = '^3.2.1'
 GraphQL-Relay = '^3.2.0'
 Py-GQL = '^0.6.1'
 SGQLC = '^16.0'
-Strawberry-GraphQL = '^0.121.1'
+Strawberry-GraphQL = '^0.123.3'
 
 # Django REST Framework & other API-related
 DjangoRESTFramework = '^3.13.1'
@@ -278,7 +278,7 @@ HAL-Codec = '^1.0.2'
 JSONHyperSchema-Codec = '^1.0.3'
 OpenAPI-Codec = '^1.3.2'
 
-JSONSchema = '^4.7.2'
+JSONSchema = '^4.9.1'
 Pydantic = '^1.9.1'
 
 HTTPie = '^3.2.1'
@@ -300,7 +300,7 @@ Kolo = '^1.8.0'
 # Django Extensions & Utilities
 Django-Annoying = '^0.10.6'
 Django-Choices = '^1.7.2'
-Django-Compressor = '^4.0'
+Django-Compressor = '^4.1'
 Django-Configurations = '^2.3.2'
 Django-Crispy-Forms = '^1.14.0'   # improved HTML display for filtering
 Django-Environ = '^0.9.0'
@@ -317,10 +317,10 @@ Dj-Util = {url = 'https://GitHub.com/Django-AI/Dj-Util/archive/main.zip'}
 Django-CORS-Headers = '^3.10.1'   # let higher dependencies figure
 
 # Application UIs
-Django-HTMX = '^1.12.0'
+Django-HTMX = '^1.12.1'
 
 Django-Plotly-Dash = '^1.6.5'   # compatible with other dependencies
-Dash-Bootstrap-Components = '^1.2.0'
+Dash-Bootstrap-Components = '^1.2.1'
 DPD-Static-Support = '^0.0.5'
 Django-Bootstrap4 = '^22.1'
 WhiteNoise = '^6.2.0'
@@ -385,7 +385,7 @@ Tqdm = '^4.64.0'
 
 
 [tool.poetry.dev-dependencies]
-Commitizen = '^2.29.2'
+Commitizen = '^2.29.3'
 Pre-Commit = '^2.20.0'
 
 
@@ -408,10 +408,10 @@ doc = [
 
 lint = [
   'Bandit >= 1.7.4',
-  'Flake8 >= 4.0.1',
+  'Flake8 >= 5.0.3',
   'MyPy >= 0.971',
   'Prospector >= 1.7.7',
-  'PyCodeStyle >= 2.8.0',
+  'PyCodeStyle >= 2.9.0',
   'PyDocStyle >= 6.1.1',
   'PyLama >= 8.3.8',
   'PyLint >= 2.14.5',
@@ -429,7 +429,7 @@ test = [
 viz = [
   'Altair >= 4.2.0',
   'Bokeh >= 2.4.3',
-  'Dash >= 2.6.0',
+  'Dash >= 2.6.1',
   'Dash-DAQ >= 0.5.0',
   'PlotLy >= 5.9.0',
   'PlotNine >= 0.9.0',
