@@ -185,7 +185,7 @@ GoogleTrans = '^4.0.0rc1'
 
 # Hyper-Parameter Tuning & related
 Bayesian-Optimization = '^1.2.0'
-ConfigSpace = '^0.4.21'   # let higher dependencies figure
+ConfigSpace = '>= 0.4.21'   # let higher dependencies figure
 Hpbandster = '^0.7.4'
 Tabulate = '^0.8.10'
 
@@ -269,7 +269,7 @@ CoreAPI = '^2.3.3'   # closely related to Django REST Framework
 CoreAPI-CLI = '^1.0.9'
 Markdown = '^3.4.1'   # Markdown support for the browsable API
 
-DjangoRESTFramework-JSONAPI = '^5.0.0'
+# DjangoRESTFramework-JSONAPI = '^5.0.0'   # requires Django < 4.1
 DRF-Nested-Routers = '^0.93.4'
 Django-PolyModels = '^1.7.0'
 Django-Typed-Models = '^0.11.1'
@@ -319,7 +319,7 @@ Django-CORS-Headers = '^3.10.1'   # let higher dependencies figure
 # Application UIs
 Django-HTMX = '^1.12.1'
 
-Django-Plotly-Dash = '^1.6.5'   # compatible with other dependencies
+Django-Plotly-Dash = '~1.6.6'   # compatible with Django 4.1
 Dash-Bootstrap-Components = '^1.2.1'
 DPD-Static-Support = '^0.0.5'
 Django-Bootstrap4 = '^22.1'
