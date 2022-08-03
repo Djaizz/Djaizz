@@ -370,6 +370,7 @@ Python-DotEnv = '^0.20.0'
 PyTZ = '^2022.1'
 Requests = '^2.25.1'   # let higher dependencies figure
 Tqdm = '^4.64.0'
+Werkzeug = '< 2.1'   # compatible with Dash
 
 
 # CLOUD
