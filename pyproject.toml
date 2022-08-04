@@ -185,7 +185,7 @@ GoogleTrans = '>= 4.0.0rc1'
 
 # Hyper-Parameter Tuning & related
 Bayesian-Optimization = '>= 1.2.0'
-ConfigSpace = '>= 0.5.0'   # let higher dependencies figure
+ConfigSpace = '>= 0.5.0'
 Hpbandster = '>= 0.7.4'
 Tabulate = '>= 0.8.10'
 
@@ -319,7 +319,7 @@ Django-CORS-Headers = '>= 3.10.1'   # let higher dependencies figure
 # Application UIs
 Django-HTMX = '>= 1.12.1'
 
-Django-Plotly-Dash = '~1.6.6'   # compatible with Django 4.1
+Django-Plotly-Dash = '>= 1.6.6'   # compatible with Django 4.1
 Dash-Bootstrap-Components = '>= 0.13.1'   # compatible with Django-Plotly-Dash 1.6
 DPD-Static-Support = '>= 0.0.5'
 Django-Bootstrap4 = '>= 22.1'
@@ -368,9 +368,9 @@ PSUtil = '>= 5.9.1'
 Python-DateUtil = '>= 2.8.2'
 Python-DotEnv = '>= 0.20.0'
 PyTZ = '>= 2022.1'
-Requests = '>= 2.28.1'   # let higher dependencies figure
+Requests = '>= 2.28.1'
 Tqdm = '>= 4.64.0'
-Werkzeug = '~2.0.3'   # compatible with Dash
+Werkzeug = '>= 2.2.1'   # TODO: check compatibility with Dash
 
 
 # CLOUD
@@ -409,10 +409,10 @@ doc = [
 
 lint = [
   'Bandit >= 1.7.4',
-  'Flake8 >= 5.0.3',
+  'Flake8 >= 5.0.4',
   'MyPy >= 0.971',
   'Prospector >= 1.7.7',
-  'PyCodeStyle >= 2.9.0',
+  'PyCodeStyle >= 2.9.1',
   'PyDocStyle >= 6.1.1',
   'PyLama >= 8.3.8',
   'PyLint >= 2.14.5',
