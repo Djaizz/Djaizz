@@ -344,7 +344,7 @@ Daphne = '^3.0.2'
 GUnicorn = '^20.1.0'
 H11 = '>= 0.9.0'   # let higher dependencies figure
 Hypercorn = '^0.13.2'
-Quart = '^0.18.0'
+# *** Quart = '^0.18.0'  # depends on Werkzeug >= 2.2.0
 Starlette = '^0.17.1'   # let higher dependencies figure
 Uvicorn = '^0.18.2'
 
@@ -370,7 +370,7 @@ Python-DotEnv = '^0.20.0'
 PyTZ = '^2022.1'
 Requests = '^2.25.1'   # let higher dependencies figure
 Tqdm = '^4.64.0'
-Werkzeug = '< 2.1'   # compatible with Dash
+Werkzeug = '~2.0.3'   # compatible with Dash
 
 
 # CLOUD
