@@ -16,8 +16,15 @@ from polymorphic.base import PolymorphicModelBase
 from polymorphic.models import PolymorphicModel
 
 from django_plotly_dash import DjangoDash
-from dash import dcc, html
+
+# pylint: disable=ungrouped-imports
+try:
+    from dash import dcc, html
+except ImportError:
+    import dash_core_components as dcc
+    import dash_html_components as html
 from dash.dependencies import Input, Output
+
 import dash_bootstrap_components as dbc
 
 from gradio.interface import Interface
