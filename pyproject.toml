@@ -3,7 +3,7 @@
 
 [project]
 name = 'DjAI'
-version = '0.0.0.dev14'
+version = '0.0.0.dev15'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
 readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
