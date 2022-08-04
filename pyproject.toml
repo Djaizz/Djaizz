@@ -295,8 +295,8 @@ dependencies = [
   'Django-Nested-InLines >= 0.1',
   'Django-Storages >= 1.12.3',
 
-  'Django-Query-Graph >= 0.0.0.dev0',
-  'Dj-Util >= 0.0.0.dev0',
+  'Django-Query-Graph >= 0.0.0.dev1',
+  'Dj-Util >= 0.0.0.dev1',
 
   # Django CORS Headers
   'Django-CORS-Headers >= 3.10.1',   # let higher dependencies figure
