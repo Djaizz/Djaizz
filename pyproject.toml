@@ -105,19 +105,19 @@ dependencies = [
 
   # DATA MANAGEMENT & PROCESSING
   # ============================
-  'Dask >= 2022.7.1',
-  'Distributed >= 2022.7.1',
-  'MetaFlow >= 2.7.4',
+  'Dask >= 2022.8.0',
+  'Distributed >= 2022.8.0',
+  'MetaFlow >= 2.7.6',
   'NumBa >= 0.56.0',
   'NumPy >= 1.22.4',   # let higher dependencies figure
   'Pandas >= 1.4.3',
-  'Pandarallel >= 1.6.2',
+  'Pandarallel >= 1.6.3',
   'PyArrow >= 9.0.0',
   'PySpark >= 3.3.0',
   'Ray >= 1.13.0',
   'SciPy >= 1.9.0',
 
-  'Pillow >= 9.2.0',   # image processing
+  'Pillow >= 9.2.0',
   # *** 'Pillow-SIMD >= 9.0.0',   # complex to install
   'SciKit-Image >= 0.19.3',
 
@@ -132,7 +132,7 @@ dependencies = [
 
   # SciKit-Learn & related
   # *** 'Auto-SKLearn >= 0.14.7',   # depends on SciKit-Learn < 0.25.0
-  'SciKit-Learn >= 1.1.1',
+  'SciKit-Learn >= 1.1.2',
 
   # TensorFlow & related
   'TensorFlow >= 2.9.1',
@@ -140,13 +140,13 @@ dependencies = [
   'TensorFlow-Hub >= 0.12.0',
 
   # Torch & related
-  'Torch >= 1.12.0',
+  'Torch >= 1.12.1',
   'Torch-Model-Archiver >= 0.6.0',
   'TorchServe >= 0.6.0',
 
-  'TorchAudio >= 0.12.0',
-  'TorchText >= 0.13.0',
-  'TorchVision >= 0.13.0',
+  'TorchAudio >= 0.12.1',
+  'TorchText >= 0.13.1',
+  'TorchVision >= 0.13.1',
 
   # Computer Vision
   'OpenCV-Python >= 4.6.0',
@@ -154,23 +154,23 @@ dependencies = [
   # Hugging Face & related
   'DataSets >= 2.4.0',
   'HuggingFace-Hub >= 0.8.1',
-  'Transformers >= 4.21.0',
+  'Transformers >= 4.21.1',
 
-  'SentencePiece >= 0.1.96',   # Translation
-  'TIMM >= 0.6.7',   # Object Detection
+  'SentencePiece >= 0.1.97',
+  'TIMM >= 0.6.7',
   # *** 'Torch-Scatter >= 2.0.9',   # Table Question Answering - requires Torch first
 
   # Topological Data Analysis (TDA) & related
-  'Giotto-TDA >= 0.5.1',
-  'GUDHI >= 3.5.0',
+  'Giotto-TDA >= 0.5.1; python_version < "3.10"',
+  'GUDHI >= 3.6.0',
 
   # Cloud AI/ML Services
-  'Google-Cloud-Translate >= 3.8.0',
+  'Google-Cloud-Translate >= 3.8.1',
   'GoogleTrans >= 4.0.0rc1',
 
   # Hyper-Parameter Tuning & related
   'Bayesian-Optimization >= 1.2.0',
-  'ConfigSpace >= 0.5.0',
+  'ConfigSpace >= 0.6.0',
   'Hpbandster >= 0.7.4',
   'Tabulate >= 0.8.10',
 
@@ -180,7 +180,7 @@ dependencies = [
   'SHAP >= 0.41.0',
 
   # ML Model Management
-  'MLFLow >= 1.27.0',
+  'MLFLow >= 1.28.0',
 
 
   # NON-ML MODELING
@@ -214,7 +214,7 @@ dependencies = [
   # Django Admin-related
   'Django-Admin-HStore-Widget >= 1.2.0',
   'Django-Admin-Relation-Links >= 0.2.5',
-  'Django-ForestAdmin >= 1.3.4',
+  'Django-ForestAdmin >= 1.3.5',
   'Django-Grappelli >= 3.0.3',
   'Django-Jazzmin >= 2.5.0',
 
@@ -244,15 +244,15 @@ dependencies = [
   'GraphQL-Relay >= 3.2.0',
   'Py-GQL >= 0.6.1',
   'SGQLC >= 16.0',
-  'Strawberry-GraphQL >= 0.123.3',
+  'Strawberry-GraphQL >= 0.126.0',
 
   # Django REST Framework & other API-related
   'DjangoRESTFramework >= 3.13.1',
   'DRFPasswordless >= 1.5.8',
-  'DRF-Writable-Nested >= 0.6.4',
-  'CoreAPI >= 2.3.3',   # closely related to Django REST Framework
+  'DRF-Writable-Nested >= 0.7.0',
+  'CoreAPI >= 2.3.3',
   'CoreAPI-CLI >= 1.0.9',
-  'Markdown >= 3.4.1',   # Markdown support for the browsable API
+  'Markdown >= 3.4.1',
 
   # DjangoRESTFramework-JSONAPI >= 5.0.0'   # requires Django < 4.1
   'DRF-Nested-Routers >= 0.93.4',
@@ -263,8 +263,8 @@ dependencies = [
   'JSONHyperSchema-Codec >= 1.0.3',
   'OpenAPI-Codec >= 1.3.2',
 
-  'JSONSchema >= 4.9.1',
-  'Pydantic >= 1.9.1',
+  'JSONSchema >= 4.12.1',
+  'Pydantic >= 1.9.2',
 
   'HTTPie >= 3.2.1',
 
@@ -277,7 +277,7 @@ dependencies = [
   'Rules >= 3.3',
 
   # Django Debugging & Query Profiling
-  'Django-Debug-Toolbar >= 3.5.0',
+  'Django-Debug-Toolbar >= 3.6.0',
   'Django-Query-Profiler >= 0.9',
   'Django-Silk >= 5.0.1',
   'Kolo >= 1.8.0',
@@ -287,13 +287,13 @@ dependencies = [
   'Django-Choices >= 1.7.2',
   'Django-Compressor >= 4.1',
   'Django-Configurations >= 2.3.2',
-  'Django-Crispy-Forms >= 1.14.0',   # improved HTML display for filtering
+  'Django-Crispy-Forms >= 1.14.0',
   'Django-Environ >= 0.9.0',
   'Django-Extensions >= 3.2.0',
   'Django-JSON-Widget >= 1.1.1',
   'Django-LocalFlavor >= 3.1',
   'Django-Nested-InLines >= 0.1',
-  'Django-Storages >= 1.12.3',
+  'Django-Storages >= 1.13.1',
 
   'Django-Query-Graph >= 0.0.0.dev1',
   'Dj-Util >= 0.0.0.dev1',
@@ -307,17 +307,17 @@ dependencies = [
   'Django-Plotly-Dash >= 1.6.6',   # compatible with Django 4.1
   'Dash-Bootstrap-Components >= 0.13.1',   # compatible with Django-Plotly-Dash 1.6
   'DPD-Static-Support >= 0.0.5',
-  'Django-Bootstrap4 >= 22.1',
+  'Django-Bootstrap4 >= 22.2',
   'WhiteNoise >= 6.2.0',
 
   'Gradio >= 3.0.24',   # compatible with other dependencies
 
-  'Streamlit >= 1.11.1',
-  'Watchdog >= 2.1.9',   # better performance for Streamlit
+  'Streamlit >= 1.12.0',
+  'Watchdog >= 2.1.9',
 
   # Database Adapters/Backends/Connectors/Drivers
   'MariaDB-DynCol >= 3.6.0',
-  'Django-MySQL >= 4.7.0',
+  'Django-MySQL >= 4.7.1',
   'MySQLClient >= 2.1.1',
   'MySQL-Connector-Python >= 8.0.30',
   'PsycoPG2-binary >= 2.9.3',
@@ -352,7 +352,7 @@ dependencies = [
   'PSUtil >= 5.9.1',
   'Python-DateUtil >= 2.8.2',
   'Python-DotEnv >= 0.20.0',
-  'PyTZ >= 2022.1',
+  'PyTZ >= 2022.2.1',
   'Requests >= 2.28.1',
   'Tqdm >= 4.64.0',
   'Werkzeug >= 2.0, < 2.1',   # github.com/plotly/dash/issues/1992
@@ -372,6 +372,10 @@ dependencies = [
 
 
 [project.optional-dependencies]
+dev = [
+  'Twine >= 4.0.1',
+]
+
 doc = [
   # Sphinx & related
   'Sphinx >= 5.1.1',
@@ -391,7 +395,7 @@ lint = [
   'Prospector >= 1.7.7',
   'PyCodeStyle >= 2.9.1',
   'PyDocStyle >= 6.1.1',
-  'PyLama >= 8.3.8',
+  'PyLama >= 8.4.1',
   'PyLint >= 2.14.5',
 
   'Black >= 22.6.0',
@@ -409,7 +413,7 @@ viz = [
   'Bokeh >= 2.4.3',
   'Dash >= 2.6.1',
   'Dash-DAQ >= 0.5.0',
-  'PlotLy >= 5.9.0',
+  'PlotLy >= 5.10.0',
   'PlotNine >= 0.9.0',
   'Seaborn >= 0.11.2',
 ]
@@ -432,7 +436,7 @@ Documentation = 'https://Django-AI.GitHub.io/DjAI'
 
 [build-system]
 requires = [
-  'SetUpTools >= 63.4.1',
+  'SetUpTools >= 65.1.0',
   'Wheel >= 0.37.1',
 ]
 build-backend = 'setuptools.build_meta'

@@ -4,11 +4,13 @@
 import click
 
 from .aws_eb import djai_aws_eb
+from .deps import capped_deps
 
 
 @click.group(name='djai',
              cls=click.Group,
-             commands={'aws-eb': djai_aws_eb},
+             commands={'aws-eb': djai_aws_eb,
+                       'capped-deps': capped_deps},
              invoke_without_command=False,
              no_args_is_help=True,
              subcommand_metavar='DJAI_SUB_COMMAND',
