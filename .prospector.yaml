@@ -1,5 +1,6 @@
 pylint:
   disable:
+    - django-not-configured
     - protected-access
     - redundant-keyword-arg
     - useless-suppression
