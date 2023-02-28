@@ -38,10 +38,10 @@ grep '^[A-Za-z].*' metadata/requirements/base.txt | sed 's/.*/"&"/' | \
 for DEP_GRP in build dev doc lint publish test viz
 do
   grep '^[A-Za-z].*' metadata/requirements/$DEP_GRP.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --group=$DEP_GRP \
-  --optional \
-  --lock \
-  --no-interaction \
-  --verbose
+    xargs poetry add \
+    --group=$DEP_GRP \
+    --optional \
+    --lock \
+    --no-interaction \
+    --verbose
 done
