@@ -112,7 +112,7 @@ exclude = []
 
 
 [tool.poetry.dependencies]
-Python = '>= 3.8, < 3.12, !=3.9.7'  # !=3.9.7 for Streamlit
+Python = '>= 3.8, != 3.9.7, < 3.12'  # != 3.9.7 for Streamlit
 dask = ">=2023.2.1"
 distributed = ">=2023.2.1"
 metaflow = ">=2.8.0"
@@ -128,7 +128,6 @@ pillow = ">=9.4.0"
 scikit-image = ">=0.19.3"
 kedro = {version = ">=0.18.5", markers = "python_version < \"3.11\""}
 imbalanced-learn = ">=0.10.1"
-statsmodels = ">=0.13.5"
 scikit-learn = ">=1.2.1"
 tensorflow = ">=2.12.0rc0"
 tensorflow-datasets = ">=4.8.3"
@@ -220,7 +219,7 @@ django-nested-inlines = ">=0.1"
 django-storages = ">=1.13.2"
 django-query-graph = ">=0.0.0.dev1"
 dj-util = ">=0.0.0.dev1"
-django-cors-headers = ">=3.14.0"
+django-cors-headers = ">=3.10"
 django-htmx = ">=1.14.0"
 gradio = ">=3.19.1"
 streamlit = ">=1.19.0"
