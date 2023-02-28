@@ -69,6 +69,7 @@ entry-points = {file = 'metadata/entry-points'}
 
 [tool.setuptools.dynamic.optional-dependencies]
 build = {file = 'metadata/requirements/build.txt'}
+dev = {file = 'metadata/requirements/dev.txt'}
 doc = {file = 'metadata/requirements/doc.txt'}
 lint = {file = 'metadata/requirements/lint.txt'}
 publish = {file = 'metadata/requirements/publish.txt'}
