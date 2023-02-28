@@ -7,8 +7,8 @@ from sys import version_info
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models.fields.json import JSONField
 
-from djai.data.apps import DjaizzDataModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+from djaizz.data.apps import DjaizzDataModuleConfig
+from djaizz.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import DataSet, _FileDataSetABC
 

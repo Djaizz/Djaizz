@@ -3,7 +3,7 @@
 
 from transformers.pipelines import pipeline
 
-from djai.model.models.ml.hugging_face import (
+from djaizz.model.models.ml.hugging_face import (
     PreTrainedHuggingFaceAudioClassifier,
     PreTrainedHuggingFaceImageClassifier,
     PreTrainedHuggingFaceMaskFiller,
@@ -19,7 +19,7 @@ from djai.model.models.ml.hugging_face import (
     PreTrainedHuggingFaceTranslator,
     PreTrainedHuggingFaceZeroShotClassifier,
 )
-from djai.util import full_qual_name
+from djaizz.util import full_qual_name
 
 
 def run():   # noqa: MC0001

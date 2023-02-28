@@ -23,7 +23,7 @@ class DjaizzDataModuleConfig(AppConfig):
     # This attribute defines which application the configuration applies to.
     # It must be set in all AppConfig subclasses.
     # It must be unique across a Django project.
-    name: str = 'djai.data'
+    name: str = 'djaizz.data'
 
     # AppConfig.label
     # Short name for the application, e.g. 'admin'

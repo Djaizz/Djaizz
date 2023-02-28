@@ -7,7 +7,7 @@ from django.contrib.admin.sites import site
 
 from silk.profiling.profiler import silk_profile
 
-from djai.model.models import (
+from djaizz.model.models import (
     GoogleTranslate,
     PreTrainedKerasImageNetClassifier,
     PreTrainedHuggingFaceTransformer,

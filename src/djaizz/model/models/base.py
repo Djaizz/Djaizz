@@ -32,8 +32,8 @@ from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
 from djutil.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
 
-from djai.model.apps import DjaizzModelModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
+from djaizz.model.apps import DjaizzModelModuleConfig
+from djaizz.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
 
 if version_info >= (3, 9):
     from collections.abc import Generator, Sequence

@@ -7,7 +7,7 @@ from django.contrib.admin.sites import site
 
 from silk.profiling.profiler import silk_profile
 
-from djai.data.models import (
+from djaizz.data.models import (
     DataSchema,
 )
 

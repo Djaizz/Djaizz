@@ -1,4 +1,4 @@
 [console_scripts]
-djaizz = djai.util.cli:djaizz
+djaizz = djaizz.util.cli:djaizz
 
 [gui_scripts]
