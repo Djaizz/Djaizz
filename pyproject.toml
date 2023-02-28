@@ -105,7 +105,7 @@ dynamic = ['dependencies']
 
 
 [tool.setuptools.dynamic]
-dependencies = {file = 'requirements.txt'}
+dependencies = {file = 'requirements/base.txt'}
 
 
 [project.optional-dependencies]
