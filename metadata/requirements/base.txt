@@ -210,7 +210,8 @@ Django-Query-Graph >= 0.0.0.dev1
 Dj-Util >= 0.0.0.dev1
 
 # Django CORS Headers
-Django-CORS-Headers >= 3.14.0
+Django-CORS-Headers >= 3.10
+  # let higher dependencies figure
 
 # Application UIs
 Django-HTMX >= 1.14.0
