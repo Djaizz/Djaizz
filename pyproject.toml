@@ -124,15 +124,15 @@ Documentation = 'https://Djaizz.GitHub.io/Djaizz'
 
 
 [tool.setuptools.dynamic]
-dependencies = {file = 'requirements/base.txt'}
+dependencies = {file = 'metadata/requirements/base.txt'}
 
 [tool.setuptools.dynamic.optional-dependencies]
-build = {file = 'requirements/build.txt'}
-doc = {file = 'requirements/doc.txt'}
-lint = {file = 'requirements/lint.txt'}
-publish = {file = 'requirements/publish.txt'}
-test = {file = 'requirements/test.txt'}
-viz = {file = 'requirements/viz.txt'}
+build = {file = 'metadata/requirements/build.txt'}
+doc = {file = 'metadata/requirements/doc.txt'}
+lint = {file = 'metadata/requirements/lint.txt'}
+publish = {file = 'metadata/requirements/publish.txt'}
+test = {file = 'metadata/requirements/test.txt'}
+viz = {file = 'metadata/requirements/viz.txt'}
 
 
 [build-system]
