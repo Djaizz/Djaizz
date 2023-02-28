@@ -250,9 +250,46 @@ requests = ">=2.28.2"
 tqdm = ">=4.64.1"
 
 
-[tool.poetry.dev-dependencies]
-Commitizen = '>= 2.42.1'
-Pre-Commit = '>= 3.1.1'
+[tool.poetry.group.build]
+optional = true
+
+[tool.poetry.group.build.dependencies]
+
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+
+
+[tool.poetry.group.doc]
+optional = true
+
+[tool.poetry.group.doc.dependencies]
+
+
+[tool.poetry.group.lint]
+optional = true
+
+[tool.poetry.group.lint.dependencies]
+
+
+[tool.poetry.group.publish]
+optional = true
+
+[tool.poetry.group.publish.dependencies]
+
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+
+
+[tool.poetry.group.viz]
+optional = true
+
+[tool.poetry.group.viz.dependencies]
 
 
 [tool.poetry.scripts]

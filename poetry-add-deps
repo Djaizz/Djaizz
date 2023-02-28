@@ -4,12 +4,6 @@
 python3 -m pip install Poetry 'Poetry-Core < 1.5' --upgrade --user
 
 
-grep '^[A-Za-z].*' metadata/requirements/base.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --lock \
-  --no-interaction \
-  --verbose
-
 # Options:
 #   -G, --group=GROUP          The group to add the dependency to. [default: "main"]
 #   -D, --dev                  Add as a development dependency. (Deprecated)
@@ -32,3 +26,73 @@ grep '^[A-Za-z].*' metadata/requirements/base.txt | sed 's/.*/"&"/' | \
 #       --no-cache             Disables Poetry source caches.
 #   -C, --directory=DIRECTORY  The working directory for the Poetry command (defaults to the current working directory).
 #+  -v|vv|vvv, --verbose       Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.
+
+# base/main deps
+grep '^[A-Za-z].*' metadata/requirements/base.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --lock \
+  --no-interaction \
+  --verbose
+
+# build deps
+grep '^[A-Za-z].*' metadata/requirements/build.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --group=build \
+  --optional \
+  --lock \
+  --no-interaction \
+  --verbose
+
+# dev deps
+grep '^[A-Za-z].*' metadata/requirements/dev.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --group=dev \
+  --optional \
+  --lock \
+  --no-interaction \
+  --verbose
+
+# doc deps
+grep '^[A-Za-z].*' metadata/requirements/doc.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --group=doc \
+  --optional \
+  --lock \
+  --no-interaction \
+  --verbose
+
+# lint deps
+grep '^[A-Za-z].*' metadata/requirements/lint.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --group=lint \
+  --optional \
+  --lock \
+  --no-interaction \
+  --verbose
+
+# publish deps
+grep '^[A-Za-z].*' metadata/requirements/publish.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --group=publish \
+  --optional \
+  --lock \
+  --no-interaction \
+  --verbose
+
+# test deps
+grep '^[A-Za-z].*' metadata/requirements/test.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --group=test \
+  --optional \
+  --lock \
+  --no-interaction \
+  --verbose
+
+# viz deps
+grep '^[A-Za-z].*' metadata/requirements/viz.txt | sed 's/.*/"&"/' | \
+  xargs poetry add \
+  --group=viz \
+  --optional \
+  --lock \
+  --no-interaction \
+  --verbose
