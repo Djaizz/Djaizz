@@ -34,65 +34,14 @@ grep '^[A-Za-z].*' metadata/requirements/base.txt | sed 's/.*/"&"/' | \
   --no-interaction \
   --verbose
 
-# build deps
-grep '^[A-Za-z].*' metadata/requirements/build.txt | sed 's/.*/"&"/' | \
+# optional deps
+for DEP_GRP in build dev doc lint publish test viz
+do
+  grep '^[A-Za-z].*' metadata/requirements/$DEP_GRP.txt | sed 's/.*/"&"/' | \
   xargs poetry add \
-  --group=build \
+  --group=$DEP_GRP \
   --optional \
   --lock \
   --no-interaction \
   --verbose
-
-# dev deps
-grep '^[A-Za-z].*' metadata/requirements/dev.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --group=dev \
-  --optional \
-  --lock \
-  --no-interaction \
-  --verbose
-
-# doc deps
-grep '^[A-Za-z].*' metadata/requirements/doc.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --group=doc \
-  --optional \
-  --lock \
-  --no-interaction \
-  --verbose
-
-# lint deps
-grep '^[A-Za-z].*' metadata/requirements/lint.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --group=lint \
-  --optional \
-  --lock \
-  --no-interaction \
-  --verbose
-
-# publish deps
-grep '^[A-Za-z].*' metadata/requirements/publish.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --group=publish \
-  --optional \
-  --lock \
-  --no-interaction \
-  --verbose
-
-# test deps
-grep '^[A-Za-z].*' metadata/requirements/test.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --group=test \
-  --optional \
-  --lock \
-  --no-interaction \
-  --verbose
-
-# viz deps
-grep '^[A-Za-z].*' metadata/requirements/viz.txt | sed 's/.*/"&"/' | \
-  xargs poetry add \
-  --group=viz \
-  --optional \
-  --lock \
-  --no-interaction \
-  --verbose
+done
