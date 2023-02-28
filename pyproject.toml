@@ -137,7 +137,7 @@ dependencies = [
   'SciKit-Learn >= 1.2.1',
 
   # TensorFlow & related
-  'TensorFlow >= 2.11.0',
+  'TensorFlow >= 2.12.0rc0',
   'TensorFlow-DataSets >= 4.8.3',
   'TensorFlow-Hub >= 0.12.0',
 
