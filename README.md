@@ -1,4 +1,4 @@
-# `DjAI`: Artificial Intelligence (AI) in Django Applications
+# `Djaizz`: Artificial Intelligence (AI) in Django Applications
 
 
 # Developer Note on Maintaining & Updating Dependencies
