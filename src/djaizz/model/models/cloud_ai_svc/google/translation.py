@@ -14,8 +14,8 @@ from gradio.interface import Interface
 from gradio.inputs import Textbox as TextboxInput, Dropdown as DropdownInput
 from gradio.outputs import Textbox as TextboxOutput
 
-from djai.model.apps import DjaizzModelModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+from djaizz.model.apps import DjaizzModelModuleConfig
+from djaizz.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .. import CloudAIService
 

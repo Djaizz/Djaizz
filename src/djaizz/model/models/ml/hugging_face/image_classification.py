@@ -14,8 +14,8 @@ from gradio.outputs import Label as LabelOutput
 
 from PIL.Image import Image
 
-from djai.model.apps import DjaizzModelModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+from djaizz.model.apps import DjaizzModelModuleConfig
+from djaizz.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import PreTrainedHuggingFaceTransformer
 

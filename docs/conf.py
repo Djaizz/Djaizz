@@ -1,4 +1,4 @@
-"""DjAI Sphinx Documentation Configurations."""
+"""Djaizz Sphinx Documentation Configurations."""
 
 
 # pylint: disable=invalid-name,redefined-builtin
@@ -18,7 +18,7 @@ import sys
 
 import django
 
-import djai
+import djaizz
 
 
 # -- Path setup --------------------------------------------------------------
@@ -35,14 +35,14 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-METADATA = metadata(distribution_name='DjAI')
+METADATA = metadata(distribution_name='Djaizz')
 
 project = METADATA['Name']
 author = METADATA['Author']
 copyright = f'{date.today().year}, {author}'
 
 # The full version, including alpha/beta/rc tags
-release = djai.__version__
+release = djaizz.__version__
 
 
 # -- General configuration ---------------------------------------------------

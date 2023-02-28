@@ -15,7 +15,7 @@ from django_plotly_dash.models import DashApp, StatelessApp
 from gradio.inputs import Dropdown
 from gradio.interface import Interface
 
-from djai.model.models import AIModel
+from djaizz.model.models import AIModel
 
 
 def model_ui(request: HttpRequest,

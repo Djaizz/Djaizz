@@ -23,10 +23,10 @@ requires-python = '>= 3.8'
 license = {file = 'LICENSE'}
 
 authors = [
-  {name = 'STEAM for Vietnam Foundation: AI & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
+  {name = 'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
 ]
 maintainers = [
-  {name = 'STEAM for Vietnam Foundation: AI & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
+  {name = 'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
 ]
 
 
@@ -51,6 +51,47 @@ Homepage = 'https://GitHub.com/Djaizz/Djaizz'
 Repository = 'https://GitHub.com/Djaizz/Djaizz'
 GitHub = 'https://GitHub.com/Djaizz/Djaizz'
 Documentation = 'https://Djaizz.GitHub.io/Djaizz'
+
+
+[tool.setuptools]
+# setuptools.pypa.io/en/latest/userguide/pyproject_config.html#setuptools-specific-configuration
+
+# platforms = []  # array
+
+zip-safe = true
+
+# eager-resources = []  # array
+
+py-modules = []
+
+# packages = []  # array or find directive
+
+# package-dir = {}  # table/inline-table, used when explicitly listing packages
+
+# namespace-packages = []  # array, deprecated
+
+package-data = {}  # table/inline-table
+
+include-package-data = true
+
+exclude-package-data = {}  # table/inline-table
+
+license-files = ['LICEN[CS]E*']  # array of glob patterns
+
+data-files = {}  # table/inline-table, discouraged
+
+# script-files = []  # array, deprecated
+
+provides = []  # array, ignored by pip
+
+obsoletes = []  # array, ignored by pip
+
+
+[tool.setuptools.packages.find]
+where = ['src']
+include = []
+exclude = []
+namespaces = true
 
 
 [tool.setuptools.dynamic]

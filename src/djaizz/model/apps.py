@@ -23,7 +23,7 @@ class DjaizzModelModuleConfig(AppConfig):
     # This attribute defines which application the configuration applies to.
     # It must be set in all AppConfig subclasses.
     # It must be unique across a Django project.
-    name: str = 'djai.model'
+    name: str = 'djaizz.model'
 
     # AppConfig.label
     # Short name for the application, e.g. 'admin'
@@ -71,7 +71,7 @@ class DjaizzModelModuleConfig(AppConfig):
     def ready(self) -> None:
         """Run tasks to initialize module."""
         # pylint: disable=import-outside-toplevel
-        from djai.model.scripts import (
+        from djaizz.model.scripts import (
             setup_google_cloud_ai_svcs,
             setup_pretrained_huggingface_models,
             setup_pretrained_keras_models,

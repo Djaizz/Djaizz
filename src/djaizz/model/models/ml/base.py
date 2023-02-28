@@ -7,7 +7,7 @@ from typing import Any
 
 from django.db.models.fields import CharField
 
-from djai.util import import_obj
+from djaizz.util import import_obj
 
 from ..base import _AIModelWithArtifactFilesABC
 

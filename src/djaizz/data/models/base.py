@@ -16,8 +16,8 @@ from polymorphic.models import PolymorphicModel
 
 from djutil.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
 
-from djai.data.apps import DjaizzDataModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN, dir_path_with_end_slash
+from djaizz.data.apps import DjaizzDataModuleConfig
+from djaizz.util import PGSQL_IDENTIFIER_MAX_LEN, dir_path_with_end_slash
 
 if version_info >= (3, 9):
     from collections.abc import Sequence

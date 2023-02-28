@@ -1,7 +1,7 @@
 """Set up Google Cloud AI Service models."""
 
 
-from djai.model.models.cloud_ai_svc.google import (
+from djaizz.model.models.cloud_ai_svc.google import (
     GoogleTranslate,
 )
 

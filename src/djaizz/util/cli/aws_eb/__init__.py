@@ -154,8 +154,7 @@ def init():
                 metavar='AWS_EB_ENV_NAME',
                 expose_value=True,
                 is_eager=False,
-                envvar=None,
-                autocompletion=None)
+                envvar=None)
 @click.option('--asgi',
               cls=click.Option,
               show_default=True,
@@ -233,5 +232,5 @@ def deploy(aws_eb_env_name: Optional[str] = None,
              add_help_option=True,
              hidden=False,
              deprecated=False)
-def djai_aws_eb():
+def djaizz_aws_eb():
     """Trigger Djaizz AWS Elastic Beanstalk from CLI."""

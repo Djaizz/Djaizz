@@ -18,8 +18,8 @@ from PIL import Image, ImageOps
 from tensorflow.keras.applications.imagenet_utils import \
     decode_predictions   # pylint: disable=no-name-in-module
 
-from djai.model.apps import DjaizzModelModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN, import_obj
+from djaizz.model.apps import DjaizzModelModuleConfig
+from djaizz.util import PGSQL_IDENTIFIER_MAX_LEN, import_obj
 
 from ....base import _PreTrainedMLModelABC
 
