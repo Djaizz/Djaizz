@@ -112,9 +112,6 @@ exclude = []
 
 
 [tool.poetry.dependencies]
-
-# PYTHON
-# ======
 Python = '>= 3.8, < 3.13'
 
 
