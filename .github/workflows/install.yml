@@ -29,5 +29,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Poetry-Install Package & Dependencies
+        run: poetry install --all-extras --no-interaction --verbose
+
       - name: Install Package & Dependencies
         run: ./install-editable-dev
