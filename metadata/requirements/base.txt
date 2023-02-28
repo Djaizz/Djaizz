@@ -76,7 +76,8 @@ Hpbandster >= 0.7.4
 Tabulate >= 0.9.0
 
 # ML Model Explainability & related
-CausalNex >= 0.11.0; python_version < '3.11'
+# CausalNex >= 0.11.0; python_version < '3.11'
+  # depends on outdated SciPy, SciKit-Learn
 LIME >= 0.2.0.1
 SHAP >= 0.41.0; python_version < '3.11'
 
@@ -117,7 +118,8 @@ Django-Polymorphic >= 3.1.0
 # Django Admin-related
 Django-Admin-HStore-Widget >= 1.2.1
 Django-Admin-Relation-Links >= 0.2.5
-Django-ForestAdmin >= 1.4.4; python_version < '3.11'
+# Django-ForestAdmin >= 1.4.4; python_version < '3.11'
+  # depends on outdated Pandas
 Django-Grappelli >= 3.0.4
 Django-Jazzmin >= 2.6.0
 
@@ -209,7 +211,8 @@ Django-Query-Graph >= 0.0.0.dev1
 Dj-Util >= 0.0.0.dev1
 
 # Django CORS Headers
-Django-CORS-Headers >= 3.14.0
+Django-CORS-Headers >= 3.10
+  # let higher dependencies figure
 
 # Application UIs
 Django-HTMX >= 1.14.0
