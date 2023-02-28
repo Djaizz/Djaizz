@@ -1,7 +1,7 @@
 # pylint: disable=invalid-name
 
 
-"""DjAI base DataSchema & DataSet classes."""
+"""Djaizz base DataSchema & DataSet classes."""
 
 
 import json.decoder
@@ -17,7 +17,7 @@ import model_utils.fields
 
 
 class Migration(migrations.Migration):
-    """Create DjAI base DataSchema & DataSet classes."""
+    """Create Djaizz base DataSchema & DataSet classes."""
 
     initial = True
 
