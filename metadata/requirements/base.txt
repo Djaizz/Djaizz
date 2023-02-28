@@ -76,7 +76,8 @@ Hpbandster >= 0.7.4
 Tabulate >= 0.9.0
 
 # ML Model Explainability & related
-CausalNex >= 0.11.0; python_version < '3.11'
+# CausalNex >= 0.11.0; python_version < '3.11'
+  # depends on outdated SciPy, SciKit-Learn
 LIME >= 0.2.0.1
 SHAP >= 0.41.0; python_version < '3.11'
 
