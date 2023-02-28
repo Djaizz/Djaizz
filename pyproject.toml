@@ -120,10 +120,11 @@ dependencies = [
   'SciPy >= 1.10.1',
 
   'Pillow >= 9.4.0',
-  # *** 'Pillow-SIMD >= 9.0.0',   # complex to install
+  # 'Pillow-SIMD >= 9.0.0',
+    # complex to install
   'SciKit-Image >= 0.19.3',
 
-  # 'Kedro >= 0.18.2; python_version < "3.11"',  # kedro 0.18.2 depends on fsspec<=2022.1 and >=2021.4
+  'Kedro >= 0.18.5; python_version < "3.11"',
 
 
   # MACHINE LEARNING / DEEP LEARNING & RELATED
@@ -133,7 +134,8 @@ dependencies = [
   'StatsModels >= 0.13.5',
 
   # SciKit-Learn & related
-  # 'Auto-SKLearn >= 0.15.0',  # depends on SciKit-Learn < 0.25.0
+  # 'Auto-SKLearn >= 0.15.0',
+    # depends on SciKit-Learn < 0.25.0
   'SciKit-Learn >= 1.2.1',
 
   # TensorFlow & related
@@ -160,14 +162,16 @@ dependencies = [
 
   'SentencePiece >= 0.1.97',
   'TIMM >= 0.6.12; python_version < "3.11"',
-  # *** 'Torch-Scatter >= 2.0.9',   # Table Question Answering - requires Torch first
+  # 'Torch-Scatter >= 2.1.0',
+    # Table Question Answering - requires Torch first
 
   # Topological Data Analysis (TDA) & related
   'Giotto-TDA >= 0.6.0; python_version < "3.11"',
   'GUDHI >= 3.7.1',
 
   # Cloud AI/ML Services
-  # LATER: 'Google-Cloud-Translate >= 3.10.1',
+  # 'Google-Cloud-Translate >= 3.10.1',
+    # conflicting/long-resolving dependencies
   'GoogleTrans >= 4.0.0rc1',
 
   # Hyper-Parameter Tuning & related
@@ -179,10 +183,11 @@ dependencies = [
   # ML Model Explainability & related
   'CausalNex >= 0.11.0; python_version < "3.11"',
   'LIME >= 0.2.0.1',
-  # 'SHAP >= 0.41.0',
+  'SHAP >= 0.41.0; python_version < "3.11"',
 
   # ML Model Management
-  # LATER: 'MLFLow >= 2.1.1',
+  # 'MLFLow >= 2.1.1',
+    # conflicting/long-resolving dependencies
 
 
   # NON-ML MODELING
@@ -195,7 +200,8 @@ dependencies = [
   # FILE SYSTEMS
   # ============
   'FSSpec >= 2023.1.0',
-  # LATER: 'S3FS >= 2023.1.0',
+  # 'S3FS >= 2023.1.0',
+    # conflicting/long-resolving dependencies
 
 
   # MODEL REPOSITORY & RELATED
@@ -216,7 +222,7 @@ dependencies = [
   # Django Admin-related
   'Django-Admin-HStore-Widget >= 1.2.1',
   'Django-Admin-Relation-Links >= 0.2.5',
-  # 'Django-ForestAdmin >= 1.3.5',
+  'Django-ForestAdmin >= 1.4.4; python_version < "3.11"',
   'Django-Grappelli >= 3.0.4',
   'Django-Jazzmin >= 2.6.0',
 
@@ -235,12 +241,17 @@ dependencies = [
   'GQL >= 3.4.0',
   'Graphene >= 3.2.1',
   'Graphene-Django >= 3.0.0',
-  # *** 'Graphene-Django-Extras >= 0.5.2',   # conflicting/long-resolving dependencies
+  # 'Graphene-Django-Extras >= 0.5.2',
+    # conflicting/long-resolving dependencies
   'Graphene-Django-Optimizer >= 0.9.1',
-  # *** 'Graphene-Django-Subscriptions >= 0.0.9',   # conflicting/long-resolving dependencies
-  # *** 'Graphene-Django-Tools >= 0.21.0',   # conflicting/long-resolving dependencies
-  # *** 'Graphene-Mongo >= 0.2.14',   # conflicting/long-resolving dependencies
-  # *** 'Graphene-SQLAlchemy >= 2.3.0',   # conflicting/long-resolving dependencies
+  # 'Graphene-Django-Subscriptions >= 0.0.9',
+    # conflicting/long-resolving dependencies
+  # 'Graphene-Django-Tools >= 0.21.0',
+    # conflicting/long-resolving dependencies
+  # 'Graphene-Mongo >= 0.2.14',
+    # conflicting/long-resolving dependencies
+  # 'Graphene-SQLAlchemy >= 2.3.0',
+    # conflicting/long-resolving dependencies
   'GraphQLClient >= 0.2.4',
   'GraphQL-Core >= 3.2.3',
   'GraphQL-Relay >= 3.2.0',
@@ -252,9 +263,11 @@ dependencies = [
   'DjangoRESTFramework >= 3.14.0',
   'DRFPasswordless >= 1.5.8',
   'DRF-Writable-Nested >= 0.6.4',
-  'CoreAPI >= 2.3.3',   # closely related to Django REST Framework
+  'CoreAPI >= 2.3.3',
+    # closely related to Django REST Framework
   'CoreAPI-CLI >= 1.0.9',
-  'Markdown >= 3.4.1',   # Markdown support for the browsable API
+  'Markdown >= 3.4.1',
+    # Markdown support for the browsable API
 
   'DjangoRESTFramework-JSONAPI >= 6.0.0',
   'DRF-Nested-Routers >= 0.93.4',
@@ -297,8 +310,8 @@ dependencies = [
   'Django-Nested-InLines >= 0.1',
   'Django-Storages >= 1.13.2',
 
-  # LATER: 'Django-Query-Graph >= 0.0.0.dev1',
-  # LATER: 'Dj-Util >= 0.0.0.dev1',
+  'Django-Query-Graph >= 0.0.0.dev1',
+  'Dj-Util >= 0.0.0.dev1',
 
   # Django CORS Headers
   'Django-CORS-Headers >= 3.14.0',
