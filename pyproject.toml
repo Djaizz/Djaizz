@@ -53,6 +53,13 @@ GitHub = 'https://GitHub.com/Djaizz/Djaizz'
 Documentation = 'https://Djaizz.GitHub.io/Djaizz'
 
 
+[tool.setuptools.packages.find]
+where = ['src']
+include = []
+exclude = []
+namespaces = true
+
+
 [tool.setuptools.dynamic]
 version = {file = 'metadata/version'}
 
