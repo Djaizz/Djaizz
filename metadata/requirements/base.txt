@@ -26,7 +26,8 @@ Kedro >= 0.18.5; python_version < '3.11'
 # ==========================================
 
 Imbalanced-Learn >= 0.10.1
-StatsModels >= 0.13.5
+# StatsModels >= 0.13.5
+  # depends on outdated SciPy?
 
 # SciKit-Learn & related
 # Auto-SKLearn >= 0.15.0
