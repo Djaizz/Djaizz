@@ -3,7 +3,7 @@
 
 from sys import version_info
 
-from djai.model.models import (
+from djaizz.model.models import (
     AIModel,
 
     CloudAIService,

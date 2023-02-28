@@ -86,8 +86,8 @@ from keras.applications.xception import (
     TF_WEIGHTS_PATH as XCEPTION_URL,
 )
 
-from djai.model.models.ml.keras import PreTrainedKerasImageNetClassifier
-from djai.util import full_qual_name
+from djaizz.model.models.ml.keras import PreTrainedKerasImageNetClassifier
+from djaizz.util import full_qual_name
 
 
 MODEL_SPECS = (

@@ -3,7 +3,7 @@
 
 from sys import version_info
 
-from djai.data.models import (
+from djaizz.data.models import (
     DataSchema, DataSet,
 
     InDBJSONDataSet, JSONDataSet,

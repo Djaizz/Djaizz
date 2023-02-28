@@ -12,8 +12,8 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Checkbox as CheckboxInput)
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
-from djai.model.apps import DjaizzModelModuleConfig
-from djai.util import PGSQL_IDENTIFIER_MAX_LEN
+from djaizz.model.apps import DjaizzModelModuleConfig
+from djaizz.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import PreTrainedHuggingFaceTransformer
 
