@@ -344,10 +344,13 @@ dependencies = [
   'Channels >= 4.0.0',
   'Daphne >= 4.0.0',
   'GUnicorn >= 20.1.0',
-  # LATER: 'H11 >= 0.9.0',   # let higher dependencies figure
+  # 'H11 >= 0.14.0',
+    # let higher dependencies figure
   'Hypercorn >= 0.14.3',
-  # *** 'Quart >= 0.18.0',   # depends on Werkzeug >= 2.2.0
-  # LATER: 'Starlette >= 0.19.1',   # let higher dependencies figure
+  # 'Quart >= 0.18.3',
+    # depends on Werkzeug >= 2.2.0
+  'Starlette >= 0.25.0',
+    # let higher dependencies figure
   'Uvicorn >= 0.20.0',
 
 
@@ -381,11 +384,13 @@ dependencies = [
 
   # AWS deps: to install separately as they are notoriously hard to install alongside others
   # --------
-  # *** 'AWSCLI ~= 1.21',
-  # *** 'Boto3 ~= 1.19',
+  # 'AWSCLI ~= 1.21',
+  # 'Boto3 ~= 1.19',
 
-  # *** 'AWSEBCLI ~= 3.2',   # too outdated
-  # *** 'AWSWrangler >= 0.0.8',   # too outdated
+  # 'AWSEBCLI ~= 3.2',
+    # too outdated
+  # 'AWSWrangler >= 0.0.8',
+    # too outdated
 ]
 
 
