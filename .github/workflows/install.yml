@@ -29,6 +29,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install Poetry
+        run: python3 -m pip install Poetry --upgrade --user
+
       - name: Poetry-Install Package & Dependencies
         run: poetry install --all-extras --no-interaction --verbose
 
