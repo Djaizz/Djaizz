@@ -1,4 +1,4 @@
-"""DjAI NumPyArray class."""
+"""Djaizz NumPyArray class."""
 
 
 from sys import version_info
@@ -16,7 +16,7 @@ __all__: Sequence[str] = ('NumPyArray',)
 
 class NumPyArray(_FileDataSetWithInDBJSONCacheABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI JSON DataSet class."""
+    """Djaizz JSON DataSet class."""
 
     class Meta(_FileDataSetWithInDBJSONCacheABC.Meta):
         # pylint: disable=too-few-public-methods

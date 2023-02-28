@@ -1,1 +1,1 @@
-"""DjAI Amazon AWS Cloud AI Service model classes."""
+"""Djaizz Amazon AWS Cloud AI Service model classes."""

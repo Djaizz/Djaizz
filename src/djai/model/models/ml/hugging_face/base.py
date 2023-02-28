@@ -1,10 +1,10 @@
-"""DjAI Pre-Trained Hugging Face Transformer Model class."""
+"""Djaizz Pre-Trained Hugging Face Transformer Model class."""
 
 
 from sys import version_info
 
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 
 from ..base import _PreTrainedMLModelABC
 
@@ -19,7 +19,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceTransformer',)
 
 class PreTrainedHuggingFaceTransformer(_PreTrainedMLModelABC):
     # pylint: disable=abstract-method
-    """DjAI Pre-Trained Hugging Face Transformer Model class."""
+    """Djaizz Pre-Trained Hugging Face Transformer Model class."""
 
     class Meta(_PreTrainedMLModelABC.Meta):
         # pylint: disable=too-few-public-methods
@@ -28,7 +28,7 @@ class PreTrainedHuggingFaceTransformer(_PreTrainedMLModelABC):
         verbose_name: str = 'Pre-Trained Hugging Face Transformer'
         verbose_name_plural: str = 'Pre-Trained Hugging Face Transformers'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

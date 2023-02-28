@@ -1,4 +1,4 @@
-"""DjAI Model URLs."""
+"""Djaizz Model URLs."""
 
 
 from functools import partial

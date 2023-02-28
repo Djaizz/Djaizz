@@ -1,1 +1,1 @@
-"""DjAI TensorFlow Data Sets."""
+"""Djaizz TensorFlow Data Sets."""

@@ -1,1 +1,1 @@
-"""DjAI Pre-Trained Torch Vision Semantic Segmenter Model class."""
+"""Djaizz Pre-Trained Torch Vision Semantic Segmenter Model class."""

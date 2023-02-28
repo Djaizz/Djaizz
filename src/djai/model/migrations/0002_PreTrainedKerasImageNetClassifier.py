@@ -1,7 +1,7 @@
 # pylint: disable=invalid-name
 
 
-"""DjAI PreTrainedKerasImageNetClassifier model class."""
+"""Djaizz PreTrainedKerasImageNetClassifier model class."""
 
 
 from django.db import migrations, models
@@ -9,7 +9,7 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-    """Create DjAI PreTrainedKerasImageNetClassifier model class."""
+    """Create Djaizz PreTrainedKerasImageNetClassifier model class."""
 
     dependencies = (('AIModel', '0001_AIModel'),)
 

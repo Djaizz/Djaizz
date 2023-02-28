@@ -1,4 +1,4 @@
-"""DjAI CSV DataSet class."""
+"""Djaizz CSV DataSet class."""
 
 
 from sys import version_info
@@ -16,7 +16,7 @@ __all__: Sequence[str] = ('CSVDataSet',)
 
 class CSVDataSet(_FileDataSetABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI CSV DataSet class."""
+    """Djaizz CSV DataSet class."""
 
     class Meta(_FileDataSetABC.Meta):
         # pylint: disable=too-few-public-methods

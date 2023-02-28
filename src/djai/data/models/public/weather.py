@@ -1,1 +1,1 @@
-"""DjAI Weather Channel Live API Data Source."""
+"""Djaizz Weather Channel Live API Data Source."""

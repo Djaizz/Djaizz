@@ -1,4 +1,4 @@
-"""DjAI Pre-Trained Hugging Face Model classes."""
+"""Djaizz Pre-Trained Hugging Face Model classes."""
 
 
 from sys import version_info

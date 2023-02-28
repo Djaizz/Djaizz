@@ -1,4 +1,4 @@
-"""DjAI Pre-Trained Hugging Face Text-to-Text Generator Model class."""
+"""Djaizz Pre-Trained Hugging Face Text-to-Text Generator Model class."""
 
 
 from sys import version_info
@@ -12,7 +12,7 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Checkbox as CheckboxInput)
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import PreTrainedHuggingFaceTransformer
@@ -33,7 +33,7 @@ Text2TextGenerationOutputType = Union[str, List[int]]
 class PreTrainedHuggingFaceText2TextGenerator(
         PreTrainedHuggingFaceTransformer):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI Pre-Trained Hugging Face Text-to-Text Generator Model class."""
+    """Djaizz Pre-Trained Hugging Face Text-to-Text Generator Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):
         # pylint: disable=too-few-public-methods
@@ -43,7 +43,7 @@ class PreTrainedHuggingFaceText2TextGenerator(
         verbose_name_plural: str = \
             'Pre-Trained Hugging Face Text-to-Text Generators'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

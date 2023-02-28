@@ -1,4 +1,4 @@
-"""DjAI base AIModel class."""
+"""Djaizz base AIModel class."""
 
 
 from abc import abstractmethod
@@ -32,7 +32,7 @@ from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
 from djutil.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
 
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, full_qual_name
 
 if version_info >= (3, 9):
@@ -46,7 +46,7 @@ __all__: Sequence[str] = 'AIModel', '_AIModelWithArtifactFilesABC'
 
 class AIModel(PolymorphicModel,
               _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC):
-    """DjAI base AIModel class."""
+    """Djaizz base AIModel class."""
 
     params: JSONField = \
         JSONField(
@@ -78,7 +78,7 @@ class AIModel(PolymorphicModel,
         verbose_name: str = 'AI Model'
         verbose_name_plural: str = 'AI Models'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

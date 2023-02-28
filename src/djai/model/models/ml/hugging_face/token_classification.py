@@ -1,4 +1,4 @@
-"""DjAI Pre-Trained Hugging Face Token Classifier Model class."""
+"""Djaizz Pre-Trained Hugging Face Token Classifier Model class."""
 
 
 from sys import version_info
@@ -11,7 +11,7 @@ from gradio.interface import Interface
 from gradio.inputs import Textbox as TextboxInput
 from gradio.outputs import JSON as JSONOutput   # noqa: N811
 
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import PreTrainedHuggingFaceTransformer
@@ -31,7 +31,7 @@ TokenClassificationOutputType = List[dict]
 
 class PreTrainedHuggingFaceTokenClassifier(PreTrainedHuggingFaceTransformer):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI Pre-Trained Hugging Face Token Classifier Model class."""
+    """Djaizz Pre-Trained Hugging Face Token Classifier Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):
         # pylint: disable=too-few-public-methods
@@ -40,7 +40,7 @@ class PreTrainedHuggingFaceTokenClassifier(PreTrainedHuggingFaceTransformer):
         verbose_name: str = 'Pre-Trained Hugging Face Token Classifier'
         verbose_name_plural: str = 'Pre-Trained Hugging Face Token Classifiers'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

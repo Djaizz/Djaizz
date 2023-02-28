@@ -2,7 +2,7 @@
 
 
 [tool.poetry]
-name = 'DjAI'
+name = 'Djaizz'
 version = '0.0.0.dev13'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
@@ -18,9 +18,9 @@ maintainers = [
 
 readme = 'README.md'
 
-homepage = 'https://GitHub.com/Django-AI/DjAI'
-repository = 'https://GitHub.com/Django-AI/DjAI'
-documentation = 'https://Django-AI.GitHub.io/DjAI'
+homepage = 'https://GitHub.com/Django-AI/Djaizz'
+repository = 'https://GitHub.com/Django-AI/Djaizz'
+documentation = 'https://Django-AI.GitHub.io/Djaizz'
 
 keywords = [
   'Django',
@@ -444,7 +444,7 @@ viz = [
 
 
 [tool.poetry.urls]
-GitHub = 'https://GitHub.com/Django-AI/DjAI'
+GitHub = 'https://GitHub.com/Django-AI/Djaizz'
 
 
 [build-system]

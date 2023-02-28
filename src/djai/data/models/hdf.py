@@ -1,4 +1,4 @@
-"""DjAI HDF DataSet class."""
+"""Djaizz HDF DataSet class."""
 
 
 from sys import version_info
@@ -16,7 +16,7 @@ __all__: Sequence[str] = ('HDFDataSet',)
 
 class HDFDataSet(_FileDataSetABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI HDF DataSet class."""
+    """Djaizz HDF DataSet class."""
 
     class Meta(_FileDataSetABC.Meta):
         # pylint: disable=too-few-public-methods

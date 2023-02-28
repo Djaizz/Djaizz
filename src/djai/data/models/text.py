@@ -1,4 +1,4 @@
-"""DjAI Text DataSet class."""
+"""Djaizz Text DataSet class."""
 
 
 from sys import version_info
@@ -16,7 +16,7 @@ __all__: Sequence[str] = ('TextDataSet',)
 
 class TextDataSet(_FileDataSetABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI Text DataSet class."""
+    """Djaizz Text DataSet class."""
 
     class Meta(_FileDataSetABC.Meta):
         # pylint: disable=too-few-public-methods

@@ -1,4 +1,4 @@
-"""DjAI AI Model Admin classes."""
+"""Djaizz AI Model Admin classes."""
 
 
 from django.contrib.admin.decorators import register

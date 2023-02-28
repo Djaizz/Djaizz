@@ -1,4 +1,4 @@
-"""DjAI Image DataSet class."""
+"""Djaizz Image DataSet class."""
 
 
 from sys import version_info
@@ -16,7 +16,7 @@ __all__: Sequence[str] = ('LiveAPIDataSource',)
 
 class LiveAPIDataSource(DataSet):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI Image DataSet class."""
+    """Djaizz Image DataSet class."""
 
     class Meta(DataSet.Meta):
         # pylint: disable=too-few-public-methods

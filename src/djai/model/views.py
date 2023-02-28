@@ -1,4 +1,4 @@
-"""DjAI Model Views."""
+"""Djaizz Model Views."""
 
 
 from inspect import isclass
@@ -60,7 +60,7 @@ def model_ui(request: HttpRequest,
          ._stateless_dash_app_instance) = dash_ui
 
         return render(
-            request=request, template_name='DjAI-Model-Dash-App.html',
+            request=request, template_name='Djaizz-Model-Dash-App.html',
             context={'django_dash_app':
                      DashApp.objects.get_or_create(
                         stateless_app=django_dash_stateless_app,

@@ -1,4 +1,4 @@
-"""DjAI Cloud AI Service model classes."""
+"""Djaizz Cloud AI Service model classes."""
 
 
 from sys import version_info

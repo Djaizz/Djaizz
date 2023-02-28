@@ -1,4 +1,4 @@
-"""DjAI SciKit-Learn Machine Learning Model class."""
+"""Djaizz SciKit-Learn Machine Learning Model class."""
 
 
 import pickle
@@ -19,7 +19,7 @@ __all__: Sequence[str] = ('SKLModel',)
 
 class SKLModel(_AIModelWithArtifactFilesABC):
     # pylint: disable=abstract-method
-    """DjAI SciKit-Learn Machine Learning Model class."""
+    """Djaizz SciKit-Learn Machine Learning Model class."""
 
     class Meta(_AIModelWithArtifactFilesABC.Meta):
         # pylint: disable=too-few-public-methods

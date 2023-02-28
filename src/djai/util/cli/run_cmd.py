@@ -1,4 +1,4 @@
-"""DjAI Run-Command Utilities."""
+"""Djaizz Run-Command Utilities."""
 
 
 from contextlib import AbstractContextManager

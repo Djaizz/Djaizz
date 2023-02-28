@@ -1,4 +1,4 @@
-"""DjAI URLs."""
+"""Djaizz URLs."""
 
 
 from sys import version_info

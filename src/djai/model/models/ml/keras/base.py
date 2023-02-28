@@ -1,4 +1,4 @@
-"""DjAI TensorFlow.Keras Deep Learning Model class."""
+"""Djaizz TensorFlow.Keras Deep Learning Model class."""
 
 
 from pathlib import Path
@@ -21,7 +21,7 @@ __all__: Sequence[str] = ('KerasModel',)
 
 class KerasModel(_AIModelWithArtifactFilesABC):
     # pylint: disable=abstract-method
-    """DjAI TensorFlow.Keras Deep Learning Model class."""
+    """Djaizz TensorFlow.Keras Deep Learning Model class."""
 
     class Meta(_AIModelWithArtifactFilesABC.Meta):
         # pylint: disable=too-few-public-methods

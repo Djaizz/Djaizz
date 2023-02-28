@@ -1,4 +1,4 @@
-"""DjAI Pre-Trained Hugging Face Zero-Shot Classifier Model class."""
+"""Djaizz Pre-Trained Hugging Face Zero-Shot Classifier Model class."""
 
 
 from sys import version_info
@@ -13,7 +13,7 @@ from gradio.inputs import (Textbox as TextboxInput,
                            Checkbox as CheckboxInput)
 from gradio.outputs import Label as LabelOutput
 
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import PreTrainedHuggingFaceTransformer
@@ -34,7 +34,7 @@ ZeroShotClassificationOutputType = Dict[str, float]
 class PreTrainedHuggingFaceZeroShotClassifier(
         PreTrainedHuggingFaceTransformer):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI Pre-Trained Hugging Face Zero-Shot Classifier Model class."""
+    """Djaizz Pre-Trained Hugging Face Zero-Shot Classifier Model class."""
 
     class Meta(PreTrainedHuggingFaceTransformer.Meta):
         # pylint: disable=too-few-public-methods
@@ -44,7 +44,7 @@ class PreTrainedHuggingFaceZeroShotClassifier(
         verbose_name_plural: str = \
             'Pre-Trained Hugging Face Zero-Shot Classifiers'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

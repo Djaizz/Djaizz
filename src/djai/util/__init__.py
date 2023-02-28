@@ -1,4 +1,4 @@
-"""DjAI Utilities."""
+"""Djaizz Utilities."""
 
 
 from importlib import import_module

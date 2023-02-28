@@ -2,7 +2,7 @@
 
 
 [project]
-name = 'DjAI'
+name = 'Djaizz'
 version = '0.0.0.dev16'
 
 description = 'Artificial Intelligence (AI) in Django Applications'

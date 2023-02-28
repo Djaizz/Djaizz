@@ -1,4 +1,4 @@
-"""DjAI Torch Deep Learning Model class."""
+"""Djaizz Torch Deep Learning Model class."""
 
 
 from sys import version_info
@@ -18,7 +18,7 @@ __all__: Sequence[str] = ('TorchModel',)
 
 class TorchModel(_AIModelWithArtifactFilesABC):
     # pylint: disable=abstract-method
-    """DjAI Torch Deep Learning Model class."""
+    """Djaizz Torch Deep Learning Model class."""
 
     class Meta(_AIModelWithArtifactFilesABC.Meta):
         # pylint: disable=too-few-public-methods
