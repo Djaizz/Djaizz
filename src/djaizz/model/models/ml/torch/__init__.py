@@ -1,4 +1,4 @@
-"""DjAI Torch Deep Learning Model classes."""
+"""Djaizz Torch Deep Learning Model classes."""
 
 
 from sys import version_info

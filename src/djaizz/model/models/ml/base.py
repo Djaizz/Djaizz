@@ -1,4 +1,4 @@
-"""DjAI Machine Learning Model base classes."""
+"""Djaizz Machine Learning Model base classes."""
 
 
 from sys import version_info

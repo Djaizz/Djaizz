@@ -1,1 +1,1 @@
-"""DjAI Kaggle Data Sets."""
+"""Djaizz Kaggle Data Sets."""

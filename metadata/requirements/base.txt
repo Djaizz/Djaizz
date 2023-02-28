@@ -1,0 +1,282 @@
+# DATA MANAGEMENT & PROCESSING
+# ============================
+
+Dask >= 2023.2.1
+Distributed >= 2023.2.1
+MetaFlow >= 2.8.0
+NumBa >= 0.56.4; python_version < '3.11'
+NumPy >= 1.23.5
+  # let higher dependencies figure
+Pandas >= 1.5.3
+Pandarallel >= 1.6.4
+PyArrow >= 11.0.0
+PySpark >= 3.3.2
+Ray >= 1.13.0; python_version < '3.11'
+SciPy >= 1.10.1
+
+Pillow >= 9.4.0
+# Pillow-SIMD >= 9.0.0
+  # complex to install
+SciKit-Image >= 0.19.3
+
+Kedro >= 0.18.5; python_version < '3.11'
+
+
+# MACHINE LEARNING / DEEP LEARNING & RELATED
+# ==========================================
+
+Imbalanced-Learn >= 0.10.1
+StatsModels >= 0.13.5
+
+# SciKit-Learn & related
+# Auto-SKLearn >= 0.15.0
+  # depends on SciKit-Learn < 0.25
+SciKit-Learn >= 1.2.1
+
+# TensorFlow & related
+TensorFlow >= 2.12.0rc0
+TensorFlow-DataSets >= 4.8.3
+TensorFlow-Hub >= 0.12.0
+
+# Torch & related
+Torch >= 1.13.1; python_version < '3.11'
+Torch-Model-Archiver >= 0.7.1
+TorchServe >= 0.7.1
+
+TorchAudio >= 0.13.1; python_version < '3.11'
+TorchText >= 0.14.1; python_version < '3.11'
+TorchVision >= 0.14.1; python_version < '3.11'
+
+# Computer Vision
+OpenCV-Python >= 4.7.0
+
+# Hugging Face & related
+DataSets >= 2.10.0
+HuggingFace-Hub >= 0.12.1
+Transformers >= 4.26.1
+
+SentencePiece >= 0.1.97
+TIMM >= 0.6.12; python_version < '3.11'
+# Torch-Scatter >= 2.1.0
+  # Table Question Answering - requires Torch first
+
+# Topological Data Analysis (TDA) & related
+Giotto-TDA >= 0.6.0; python_version < '3.11'
+GUDHI >= 3.7.1
+
+# Cloud AI/ML Services
+# Google-Cloud-Translate >= 3.10.1
+  # conflicting/slow-resolving dependencies
+GoogleTrans >= 4.0.0rc1
+
+# Hyper-Parameter Tuning & related
+Bayesian-Optimization >= 1.4.2
+ConfigSpace >= 0.6.1
+Hpbandster >= 0.7.4
+Tabulate >= 0.9.0
+
+# ML Model Explainability & related
+CausalNex >= 0.11.0; python_version < '3.11'
+LIME >= 0.2.0.1
+SHAP >= 0.41.0; python_version < '3.11'
+
+# ML Model Management
+# MLFLow >= 2.1.1
+  # conflicting/slow-resolving dependencies
+
+
+# NON-ML MODELING
+# ===============
+
+# Fuzzy Logic
+SciKit-Fuzzy >= 0.4.2
+
+
+# FILE SYSTEMS
+# ============
+FSSpec >= 2023.1.0
+# S3FS >= 2023.1.0
+  # conflicting/slow-resolving dependencies
+
+
+# MODEL REPOSITORY & RELATED
+# ==========================
+CloudPickle >= 2.2.1
+JobLib >= 1.2.0
+
+
+# DJANGO & RELATED APPLICATION DEVELOPMENT
+# ========================================
+
+# Django Core
+Django >= 4.1.7
+
+# Django Polymorphic Models
+Django-Polymorphic >= 3.1.0
+
+# Django Admin-related
+Django-Admin-HStore-Widget >= 1.2.1
+Django-Admin-Relation-Links >= 0.2.5
+Django-ForestAdmin >= 1.4.4; python_version < '3.11'
+Django-Grappelli >= 3.0.4
+Django-Jazzmin >= 2.6.0
+
+# Django-AutoComplete-Light & related
+Django-Autocomplete-Light >= 3.9.4
+Django-Generic-M2M >= 0.3.1
+Django-GM2M >= 1.1.1
+Django-QuerySetSequence >= 0.16
+Django-Tagging >= 0.5.0
+Django-Taggit >= 3.1.0
+
+# GraphQL
+Ariadne >= 0.18.1
+Django-GraphQL-Extensions >= 0.1.0
+Django-RESTQL >= 0.15.3
+GQL >= 3.4.0
+Graphene >= 3.2.1
+Graphene-Django >= 3.0.0
+# Graphene-Django-Extras >= 0.5.2
+  # conflicting/slow-resolving dependencies
+Graphene-Django-Optimizer >= 0.9.1
+# Graphene-Django-Subscriptions >= 0.0.9
+  # conflicting/slow-resolving dependencies
+# Graphene-Django-Tools >= 0.21.0
+  # conflicting/slow-resolving dependencies
+# Graphene-Mongo >= 0.2.14
+  # conflicting/slow-resolving dependencies
+# Graphene-SQLAlchemy >= 2.3.0
+  # conflicting/slow-resolving dependencies
+GraphQLClient >= 0.2.4
+GraphQL-Core >= 3.2.3
+GraphQL-Relay >= 3.2.0
+Py-GQL >= 0.6.1
+SGQLC >= 16.1
+Strawberry-GraphQL >= 0.159.0
+
+# Django REST Framework & other API-related
+DjangoRESTFramework >= 3.14.0
+DRFPasswordless >= 1.5.8
+DRF-Writable-Nested >= 0.6.4
+CoreAPI >= 2.3.3
+  # closely related to Django REST Framework
+CoreAPI-CLI >= 1.0.9
+Markdown >= 3.4.1
+  # Markdown support for the browsable API
+
+DjangoRESTFramework-JSONAPI >= 6.0.0
+DRF-Nested-Routers >= 0.93.4
+Django-PolyModels >= 1.7.0
+Django-Typed-Models >= 0.12.0
+
+HAL-Codec >= 1.0.2
+JSONHyperSchema-Codec >= 1.0.3
+OpenAPI-Codec >= 1.3.2
+
+JSONSchema >= 4.17.3
+Pydantic >= 1.10.5
+
+HTTPie >= 3.2.1
+
+# Django Filtering
+Django-Filter >= 22.1
+DjangoRESTFramework-Filters >= 1.0.0.dev2
+
+# Django Object-Level Permissions
+Django-Guardian >= 2.4.0
+Rules >= 3.3
+
+# Django Debugging & Query Profiling
+Django-Debug-Toolbar >= 3.8.1
+Django-Query-Profiler >= 0.9
+Django-Silk >= 5.0.3
+Kolo >= 2.4.2
+
+# Django Extensions & Utilities
+Django-Annoying >= 0.10.6
+Django-Choices >= 1.7.2
+Django-Compressor >= 4.3.1
+Django-Configurations >= 2.4
+Django-Crispy-Forms >= 2.0
+Django-Environ >= 0.9.0
+Django-Extensions >= 3.2.1
+Django-JSON-Widget >= 1.1.1
+Django-LocalFlavor >= 3.1
+Django-Nested-InLines >= 0.1
+Django-Storages >= 1.13.2
+
+Django-Query-Graph >= 0.0.0.dev1
+Dj-Util >= 0.0.0.dev1
+
+# Django CORS Headers
+Django-CORS-Headers >= 3.14.0
+
+# Application UIs
+Django-HTMX >= 1.14.0
+
+# Django-Plotly-Dash >= 2.1.3
+# Dash-Bootstrap-Components >= 1.4.0
+# DPD-Static-Support >= 0.0.5
+# Django-Bootstrap4 >= 22.3
+# WhiteNoise >= 6.4.0
+
+Gradio >= 3.19.1
+
+Streamlit >= 1.19.0
+Watchdog >= 2.3.0
+
+# Database Adapters/Backends/Connectors/Drivers
+MariaDB-DynCol >= 3.6.1
+Django-MySQL >= 4.9.0
+MySQLClient >= 2.1.1
+MySQL-Connector-Python >= 8.0.32
+PsycoPG2-binary >= 2.9.5
+
+# ASGI Web Servers & related
+ASGIRef >= 3.6.0
+Channels >= 4.0.0
+Daphne >= 4.0.0
+GUnicorn >= 20.1.0
+# H11 >= 0.14.0
+  # conflicting/slow-resolving dependencies
+Hypercorn >= 0.14.3
+Quart >= 0.18.3
+Starlette >= 0.25.0
+Uvicorn >= 0.20.0
+
+
+# COMMAND-LINE INTERFACE (CLI)
+# ============================
+CLICK >= 8.1.3
+Colored >= 1.4.4
+
+
+# JUPYTER
+# =======
+# LATER: Jupyter >= 1.0.0
+
+
+# MISC / OTHER
+# ============
+GitPython >= 3.1.31
+Ruamel.YAML >= 0.17.21
+PSUtil >= 5.9.4
+Python-DateUtil >= 2.8.2
+Python-DotEnv >= 1.0.0
+PyTZ >= 2022.7.1
+Requests >= 2.28.2
+Tqdm >= 4.64.1
+
+
+# CLOUD
+# =====
+
+# AWS deps: to install separately as they are notoriously hard to install alongside others
+# --------
+# AWSCLI ~= 1.21
+# Boto3 ~= 1.19
+
+# AWSEBCLI ~= 3.2
+# too outdated
+# AWSWrangler >= 0.0.8
+# too outdated

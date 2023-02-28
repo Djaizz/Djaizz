@@ -1,4 +1,4 @@
-"""DjAI Django views-related utilities."""
+"""Djaizz Django views-related utilities."""
 
 
 from sys import version_info

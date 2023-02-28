@@ -1,4 +1,4 @@
-"""DjAI base DataSchema & DataSet classes."""
+"""Djaizz base DataSchema & DataSet classes."""
 
 
 from abc import abstractmethod
@@ -16,7 +16,7 @@ from polymorphic.models import PolymorphicModel
 
 from djutil.models import _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC
 
-from djai.data.apps import DjAIDataModuleConfig
+from djai.data.apps import DjaizzDataModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, dir_path_with_end_slash
 
 if version_info >= (3, 9):
@@ -30,7 +30,7 @@ __all__: Sequence[str] = 'DataSchema', 'DataSet', '_FileDataSetABC'
 
 class DataSchema(PolymorphicModel,
                  _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC):
-    """DjAI DataSchema class."""
+    """Djaizz DataSchema class."""
 
     specs = \
         JSONField(
@@ -62,7 +62,7 @@ class DataSchema(PolymorphicModel,
         verbose_name: str = 'Data Schema'
         verbose_name_plural: str = 'Data Schemas'
 
-        db_table: str = (f'{DjAIDataModuleConfig.label}_'
+        db_table: str = (f'{DjaizzDataModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')
@@ -72,7 +72,7 @@ class DataSchema(PolymorphicModel,
 
 class DataSet(PolymorphicModel,
               _ModelWithUUIDPKAndOptionalUniqueNameAndTimestampsABC):
-    """DjAI base DataSet class."""
+    """Djaizz base DataSet class."""
 
     RELATED_NAME: str = 'data_sets'
     RELATED_QUERY_NAME: str = 'data_set'
@@ -129,7 +129,7 @@ class DataSet(PolymorphicModel,
         verbose_name: str = 'Data Set'
         verbose_name_plural: str = 'Data Sets'
 
-        db_table: str = (f'{DjAIDataModuleConfig.label}_'
+        db_table: str = (f'{DjaizzDataModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

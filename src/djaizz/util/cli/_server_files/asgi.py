@@ -1,5 +1,5 @@
 """
-ASGI config for DjAI project.
+ASGI config for Djaizz project.
 
 It exposes the ASGI callable as a module-level variable named ``application``
 

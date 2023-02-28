@@ -1,1 +1,1 @@
-"""DjAI Wolfram Alpha Cloud AI Service model classes."""
+"""Djaizz Wolfram Alpha Cloud AI Service model classes."""

@@ -1,4 +1,4 @@
-"""DjAI Pre-Trained TensorFlow.Keras Vision Model classes."""
+"""Djaizz Pre-Trained TensorFlow.Keras Vision Model classes."""
 
 
 from sys import version_info

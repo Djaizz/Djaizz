@@ -1,4 +1,4 @@
-"""DjAI base AIModel class & its subclasses."""
+"""Djaizz base AIModel class & its subclasses."""
 
 
 from sys import version_info

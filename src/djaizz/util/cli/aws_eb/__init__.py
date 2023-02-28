@@ -1,4 +1,4 @@
-"""DjAI AWS Elastic Beanstalk CLI."""
+"""Djaizz AWS Elastic Beanstalk CLI."""
 
 
 from contextlib import AbstractContextManager
@@ -120,26 +120,26 @@ class EBIgnoreHandling(AbstractContextManager):
 @click.command(name='init',
                cls=click.Command,
                context_settings=None,
-               help=('DjAI AWS Elastic Beanstalk CLI: '
+               help=('Djaizz AWS Elastic Beanstalk CLI: '
                      'Initialize Configuration >>>'),
-               epilog=('^^^ DjAI AWS Elastic Beanstalk CLI: '
+               epilog=('^^^ Djaizz AWS Elastic Beanstalk CLI: '
                        'Initialize Configuration'),
-               short_help='DjAI AWS-EB Init',
+               short_help='Djaizz AWS-EB Init',
                options_metavar='',
                add_help_option=True,
                hidden=False,
                deprecated=False)
 def init():
-    """Initialize DjAI AWS Elastic Beanstalk Configuration."""
+    """Initialize Djaizz AWS Elastic Beanstalk Configuration."""
     os.system(command='eb init')
 
 
 @click.command(name='deploy',
                cls=click.Command,
                context_settings=None,
-               help='DjAI AWS Elastic Beanstalk CLI: Deploy >>>',
-               epilog='^^^ DjAI AWS Elastic Beanstalk CLI: Deploy',
-               short_help='DjAI AWS-EB Deploy',
+               help='Djaizz AWS Elastic Beanstalk CLI: Deploy >>>',
+               epilog='^^^ Djaizz AWS Elastic Beanstalk CLI: Deploy',
+               short_help='Djaizz AWS-EB Deploy',
                options_metavar='[OPTIONS]',
                add_help_option=True,
                hidden=False,
@@ -181,7 +181,7 @@ def init():
               envvar=None)
 def deploy(aws_eb_env_name: Optional[str] = None,
            asgi: Optional[str] = None):
-    """Deploy DjAI onto AWS Elastic Beanstalk."""
+    """Deploy Djaizz onto AWS Elastic Beanstalk."""
     profile = input('AWS CLI Profile (if not default) = ')
     if not profile.strip():
         profile = 'default'
@@ -202,7 +202,7 @@ def deploy(aws_eb_env_name: Optional[str] = None,
             # AWS EC2 Instance Type: by default, pick a
             # Compute-optimized instance type
             # with good Networking performance and sufficient Memory
-            # (note: Graviton (g) instances not compatible with DjAI deps)
+            # (note: Graviton (g) instances not compatible with Djaizz deps)
             instance_type = input('AWS EC2 Instance Type '
                                   '(default: c6i.xlarge; min: c6i.large) = ')
             if not instance_type.strip():
@@ -226,12 +226,12 @@ def deploy(aws_eb_env_name: Optional[str] = None,
              no_args_is_help=True,
              subcommand_metavar='DJAI_AWS_EB_SUB_COMMAND',
              chain=False,
-             help='DjAI AWS Elastic Beanstalk CLI >>>',
-             epilog='^^^ DjAI AWS Elastic Beanstalk CLI',
-             short_help='DjAI AWS-EB CLI',
+             help='Djaizz AWS Elastic Beanstalk CLI >>>',
+             epilog='^^^ Djaizz AWS Elastic Beanstalk CLI',
+             short_help='Djaizz AWS-EB CLI',
              options_metavar='[OPTIONS]',
              add_help_option=True,
              hidden=False,
              deprecated=False)
 def djai_aws_eb():
-    """Trigger DjAI AWS Elastic Beanstalk from CLI."""
+    """Trigger Djaizz AWS Elastic Beanstalk from CLI."""

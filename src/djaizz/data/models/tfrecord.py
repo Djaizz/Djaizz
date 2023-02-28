@@ -1,4 +1,4 @@
-"""DjAI TFRecord DataSet class."""
+"""Djaizz TFRecord DataSet class."""
 
 
 from sys import version_info
@@ -16,7 +16,7 @@ __all__: Sequence[str] = ('TFRecordDataSet',)
 
 class TFRecordDataSet(_FileDataSetABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI TFRecord DataSet class."""
+    """Djaizz TFRecord DataSet class."""
 
     class Meta(_FileDataSetABC.Meta):
         # pylint: disable=too-few-public-methods

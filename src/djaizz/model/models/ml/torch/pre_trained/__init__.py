@@ -1,1 +1,1 @@
-"""DjAI Pre-Trained Torch Model classes."""
+"""Djaizz Pre-Trained Torch Model classes."""

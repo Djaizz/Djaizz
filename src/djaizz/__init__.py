@@ -1,4 +1,4 @@
-"""DjAI package."""
+"""Djaizz package."""
 
 
 from importlib.metadata import version
@@ -13,4 +13,4 @@ else:
 __all__: Sequence[str] = ('__version__',)
 
 
-__version__: str = version(distribution_name='DjAI')
+__version__: str = version(distribution_name='Djaizz')

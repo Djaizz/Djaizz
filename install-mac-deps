@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+brew install \
+  CMake \
+  MySQL-Client \
+  Pkg-Config \
+  SWIG

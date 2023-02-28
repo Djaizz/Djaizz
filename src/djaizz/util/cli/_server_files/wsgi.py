@@ -1,5 +1,5 @@
 """
-WSGI config for DjAI project.
+WSGI config for Djaizz project.
 
 It exposes the WSGI callable as a module-level variable named ``application``
 

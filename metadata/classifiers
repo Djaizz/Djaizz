@@ -1,0 +1,68 @@
+Development Status :: 3 - Alpha
+# Development Status :: 4 - Beta
+# Development Status :: 5 - Production/Stable
+# Development Status :: 6 - Mature
+Environment :: MacOS X
+Environment :: Win32 (MS Windows)
+Framework :: Dash
+Framework :: Django
+Framework :: Django :: 4.0
+Framework :: IPython
+Framework :: Jupyter
+Framework :: Jupyter :: JupyterLab
+Framework :: Jupyter :: JupyterLab :: 4
+Framework :: Kedro
+Framework :: Matplotlib
+Intended Audience :: Developers
+Intended Audience :: Education
+Intended Audience :: Financial and Insurance Industry
+Intended Audience :: Healthcare Industry
+Intended Audience :: Information Technology
+Intended Audience :: Legal Industry
+Intended Audience :: Manufacturing
+Intended Audience :: Science/Research
+Intended Audience :: System Administrators
+Intended Audience :: Telecommunications Industry
+Operating System :: MacOS
+Operating System :: MacOS :: MacOS X
+Operating System :: Microsoft
+Operating System :: Microsoft :: Windows
+Operating System :: Microsoft :: Windows :: Windows 7
+Operating System :: Microsoft :: Windows :: Windows 8
+Operating System :: Microsoft :: Windows :: Windows 8.1
+Operating System :: Microsoft :: Windows :: Windows 10
+Operating System :: OS Independent
+Operating System :: Other OS
+Operating System :: POSIX
+Operating System :: POSIX :: Linux
+Programming Language :: Python
+Programming Language :: Python :: 3
+Programming Language :: Python :: 3.8
+Programming Language :: Python :: 3.9
+Programming Language :: Python :: 3.10
+Programming Language :: Python :: 3.11
+Programming Language :: Python :: 3.12
+Topic :: Education
+Topic :: Home Automation
+Topic :: Scientific/Engineering
+Topic :: Scientific/Engineering :: Artificial Intelligence
+Topic :: Scientific/Engineering :: Astronomy
+Topic :: Scientific/Engineering :: Atmospheric Science
+Topic :: Scientific/Engineering :: Bio-Informatics
+Topic :: Scientific/Engineering :: Chemistry
+Topic :: Scientific/Engineering :: GIS
+Topic :: Scientific/Engineering :: Human Machine Interfaces
+Topic :: Scientific/Engineering :: Hydrology
+Topic :: Scientific/Engineering :: Image Processing
+Topic :: Scientific/Engineering :: Image Recognition
+Topic :: Scientific/Engineering :: Information Analysis
+Topic :: Scientific/Engineering :: Mathematics
+Topic :: Scientific/Engineering :: Medical Science Apps.
+Topic :: Scientific/Engineering :: Physics
+Topic :: Scientific/Engineering :: Visualization
+Topic :: Software Development
+Topic :: Software Development :: Libraries
+Topic :: Software Development :: Libraries :: Application Frameworks
+Topic :: Software Development :: Libraries :: Python Modules
+Topic :: Software Development :: User Interfaces
+Topic :: Software Development :: Widget Sets

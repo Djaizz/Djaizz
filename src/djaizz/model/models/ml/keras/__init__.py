@@ -1,4 +1,4 @@
-"""DjAI TensorFlow.Keras Deep Learning Model classes."""
+"""Djaizz TensorFlow.Keras Deep Learning Model classes."""
 
 
 from sys import version_info

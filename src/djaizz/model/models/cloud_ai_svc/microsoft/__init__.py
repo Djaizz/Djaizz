@@ -1,1 +1,1 @@
-"""DjAI Microsoft Azure Cloud AI Service model classes."""
+"""Djaizz Microsoft Azure Cloud AI Service model classes."""

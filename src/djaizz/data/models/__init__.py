@@ -1,4 +1,4 @@
-"""DjAI DataSet/DataSource Model classes."""
+"""Djaizz DataSet/DataSource Model classes."""
 
 
 from sys import version_info

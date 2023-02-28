@@ -1,1 +1,1 @@
-"""DjAI IBM Watson Cloud AI Service model classes."""
+"""Djaizz IBM Watson Cloud AI Service model classes."""

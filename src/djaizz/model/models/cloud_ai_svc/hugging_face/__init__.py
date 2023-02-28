@@ -1,1 +1,1 @@
-"""DjAI Hugging Face Cloud AI Service model classes."""
+"""Djaizz Hugging Face Cloud AI Service model classes."""

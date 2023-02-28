@@ -1,4 +1,4 @@
-"""DjAI PIP-related Utilities."""
+"""Djaizz PIP-related Utilities."""
 
 
 from sys import version_info

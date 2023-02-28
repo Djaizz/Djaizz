@@ -1,1 +1,1 @@
-"""DjAI Public DataSet classes."""
+"""Djaizz Public DataSet classes."""

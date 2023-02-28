@@ -1,9 +1,9 @@
-"""DjAI Cloud AI Service base model class."""
+"""Djaizz Cloud AI Service base model class."""
 
 
 from sys import version_info
 
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from ..base import AIModel
@@ -18,7 +18,7 @@ __all__: Sequence[str] = ('CloudAIService',)
 
 
 class CloudAIService(AIModel):   # pylint: disable=abstract-method
-    """DjAI Cloud AI Service model class."""
+    """Djaizz Cloud AI Service model class."""
 
     class Meta(AIModel.Meta):   # pylint: disable=too-few-public-methods
         """Django Model Class Metadata."""
@@ -26,7 +26,7 @@ class CloudAIService(AIModel):   # pylint: disable=abstract-method
         verbose_name: str = 'Cloud AI Service'
         verbose_name_plural: str = 'Cloud AI Services'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

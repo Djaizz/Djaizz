@@ -1,4 +1,4 @@
-"""DjAI Git-related Utilities."""
+"""Djaizz Git-related Utilities."""
 
 
 from pathlib import Path

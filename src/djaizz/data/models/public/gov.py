@@ -1,1 +1,1 @@
-"""DjAI Government Data Sets."""
+"""Djaizz Government Data Sets."""

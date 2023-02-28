@@ -1,7 +1,7 @@
 # pylint: disable=invalid-name
 
 
-"""DjAI base AIModel class."""
+"""Djaizz base AIModel class."""
 
 
 import json.decoder
@@ -16,7 +16,7 @@ import model_utils.fields
 
 
 class Migration(migrations.Migration):
-    """Create DjAI base AIModel class."""
+    """Create Djaizz base AIModel class."""
 
     initial = True
 

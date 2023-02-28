@@ -1,1 +1,1 @@
-"""DjAI Pre-Trained Torch Audio Pipeline Model classes."""
+"""Djaizz Pre-Trained Torch Audio Pipeline Model classes."""

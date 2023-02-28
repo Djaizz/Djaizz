@@ -12,3 +12,6 @@ poetry.lock
 # Visual Studio Code
 .vscode/*.log
 *.code-workspace
+
+# misc/other
+*.log

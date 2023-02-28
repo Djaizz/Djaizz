@@ -1,0 +1,7 @@
+Altair >= 4.2.2
+Bokeh >= 3.0.3
+Dash >= 2.8.1
+Dash-DAQ >= 0.5.0
+PlotLy >= 5.13.0
+PlotNine >= 0.10.1
+Seaborn >= 0.12.2

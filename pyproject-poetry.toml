@@ -2,7 +2,7 @@
 
 
 [tool.poetry]
-name = 'DjAI'
+name = 'Djaizz'
 version = '0.0.0.dev13'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
@@ -18,9 +18,9 @@ maintainers = [
 
 readme = 'README.md'
 
-homepage = 'https://GitHub.com/Django-AI/DjAI'
-repository = 'https://GitHub.com/Django-AI/DjAI'
-documentation = 'https://Django-AI.GitHub.io/DjAI'
+homepage = 'https://GitHub.com/Djaizz/Djaizz'
+repository = 'https://GitHub.com/Djaizz/Djaizz'
+documentation = 'https://Djaizz.GitHub.io/Djaizz'
 
 keywords = [
   'Django',
@@ -310,8 +310,8 @@ Django-LocalFlavor = '>= 3.1'
 Django-Nested-InLines = '>= 0.1'
 Django-Storages = '>= 1.13.1'
 
-Django-Query-Graph = {url = 'https://GitHub.com/Django-AI/Django-Query-Graph/archive/main.zip'}
-Dj-Util = {url = 'https://GitHub.com/Django-AI/Dj-Util/archive/main.zip'}
+Django-Query-Graph = {url = 'https://GitHub.com/Djaizz/Django-Query-Graph/archive/main.zip'}
+Dj-Util = {url = 'https://GitHub.com/Djaizz/Dj-Util/archive/main.zip'}
 
 # Django CORS Headers
 Django-CORS-Headers = '>= 3.10.1'   # let higher dependencies figure
@@ -444,7 +444,7 @@ viz = [
 
 
 [tool.poetry.urls]
-GitHub = 'https://GitHub.com/Django-AI/DjAI'
+GitHub = 'https://GitHub.com/Djaizz/Djaizz'
 
 
 [build-system]

@@ -1,4 +1,4 @@
-"""DjAI Google Cloud AI Translation Service model classes."""
+"""Djaizz Google Cloud AI Translation Service model classes."""
 
 
 from sys import version_info
@@ -14,7 +14,7 @@ from gradio.interface import Interface
 from gradio.inputs import Textbox as TextboxInput, Dropdown as DropdownInput
 from gradio.outputs import Textbox as TextboxOutput
 
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .. import CloudAIService
@@ -42,7 +42,7 @@ class GoogleTranslate(CloudAIService):
         verbose_name: str = 'Google Translate'
         verbose_name_plural: str = 'Google Translate'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

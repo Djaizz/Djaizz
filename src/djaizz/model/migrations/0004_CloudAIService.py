@@ -1,7 +1,7 @@
 # pylint: disable=invalid-name
 
 
-"""DjAI CloudAIService model class."""
+"""Djaizz CloudAIService model class."""
 
 
 from django.db import migrations, models
@@ -9,7 +9,7 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-    """Create DjAI CloudAIService model class."""
+    """Create Djaizz CloudAIService model class."""
 
     dependencies = (('AIModel', '0003_PreTrainedHuggingFaceTransformers'),)
 

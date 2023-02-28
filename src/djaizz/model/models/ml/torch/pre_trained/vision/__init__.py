@@ -1,1 +1,1 @@
-"""DjAI Pre-Trained Torch Vision Model classes."""
+"""Djaizz Pre-Trained Torch Vision Model classes."""

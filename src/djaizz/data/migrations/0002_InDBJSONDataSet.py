@@ -1,7 +1,7 @@
 # pylint: disable=invalid-name
 
 
-"""DjAI In-Database JSON DataSet class."""
+"""Djaizz In-Database JSON DataSet class."""
 
 
 import json.decoder
@@ -12,7 +12,7 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-    """Create DjAI In-Database JSON DataSet class."""
+    """Create Djaizz In-Database JSON DataSet class."""
 
     dependencies = (('AIData', '0001_DataSchema_DataSet'),)
 

@@ -1,1 +1,1 @@
-"""DjAI Torch Data Sets."""
+"""Djaizz Torch Data Sets."""

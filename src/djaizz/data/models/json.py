@@ -1,4 +1,4 @@
-"""DjAI JSON DataSet classes."""
+"""Djaizz JSON DataSet classes."""
 
 
 from json.decoder import JSONDecoder   # pylint: disable=import-error
@@ -7,7 +7,7 @@ from sys import version_info
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models.fields.json import JSONField
 
-from djai.data.apps import DjAIDataModuleConfig
+from djai.data.apps import DjaizzDataModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN
 
 from .base import DataSet, _FileDataSetABC
@@ -23,7 +23,7 @@ __all__: Sequence[str] = ('InDBJSONDataSet', 'JSONDataSet',
 
 
 class InDBJSONDataSet(DataSet):
-    """DjAI In-Database JSON DataSet class."""
+    """Djaizz In-Database JSON DataSet class."""
 
     in_db_json: JSONField = \
         JSONField(
@@ -54,7 +54,7 @@ class InDBJSONDataSet(DataSet):
         verbose_name: str = 'In-Database JSON Data Set'
         verbose_name_plural: str = 'In-Database JSON Data Sets'
 
-        db_table: str = (f'{DjAIDataModuleConfig.label}_'
+        db_table: str = (f'{DjaizzDataModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')
@@ -64,7 +64,7 @@ class InDBJSONDataSet(DataSet):
 
 class _FileDataSetWithInDBJSONCacheABC(InDBJSONDataSet, _FileDataSetABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI File DataSet with In-Database JSON Cache."""
+    """Djaizz File DataSet with In-Database JSON Cache."""
 
     class Meta(InDBJSONDataSet.Meta):
         # pylint: disable=too-few-public-methods
@@ -75,7 +75,7 @@ class _FileDataSetWithInDBJSONCacheABC(InDBJSONDataSet, _FileDataSetABC):
 
 class JSONDataSet(_FileDataSetWithInDBJSONCacheABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI JSON DataSet class."""
+    """Djaizz JSON DataSet class."""
 
     class Meta(_FileDataSetWithInDBJSONCacheABC.Meta):
         # pylint: disable=too-few-public-methods

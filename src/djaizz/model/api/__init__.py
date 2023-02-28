@@ -1,4 +1,4 @@
-"""DjAI Model Public API."""
+"""Djaizz Model Public API."""
 
 
 from sys import version_info

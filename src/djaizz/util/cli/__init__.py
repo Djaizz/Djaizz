@@ -1,4 +1,4 @@
-"""DjAI CLI."""
+"""Djaizz CLI."""
 
 
 import click
@@ -15,12 +15,12 @@ from .deps import capped_deps
              no_args_is_help=True,
              subcommand_metavar='DJAI_SUB_COMMAND',
              chain=False,
-             help='DjAI CLI >>>',
-             epilog='^^^ DjAI CLI',
-             short_help='DjAI CLI',
+             help='Djaizz CLI >>>',
+             epilog='^^^ Djaizz CLI',
+             short_help='Djaizz CLI',
              options_metavar='[OPTIONS]',
              add_help_option=True,
              hidden=False,
              deprecated=False)
 def djai():
-    """Trigger DjAI from CLI."""
+    """Trigger Djaizz from CLI."""

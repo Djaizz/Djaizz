@@ -1,4 +1,4 @@
-"""DjAI Model Module Config."""
+"""Djaizz Model Module Config."""
 
 
 from sys import version_info
@@ -11,12 +11,12 @@ else:
     from typing import Sequence
 
 
-__all__: Sequence[str] = ('DjAIModelModuleConfig',)
+__all__: Sequence[str] = ('DjaizzModelModuleConfig',)
 
 
 # docs.djangoproject.com/en/dev/ref/applications/#application-configuration
-class DjAIModelModuleConfig(AppConfig):
-    """DjAI Model Module Config."""
+class DjaizzModelModuleConfig(AppConfig):
+    """Djaizz Model Module Config."""
 
     # AppConfig.name
     # Full Python path to the application, e.g. 'django.contrib.admin'.
@@ -37,7 +37,7 @@ class DjAIModelModuleConfig(AppConfig):
     # AppConfig.verbose_name
     # Human-readable name for the application, e.g. “Administration”.
     # This attribute defaults to label.title().
-    verbose_name: str = 'DjAI: Models'
+    verbose_name: str = 'Djaizz: Models'
 
     # AppConfig.path
     # Filesystem path to the application directory,

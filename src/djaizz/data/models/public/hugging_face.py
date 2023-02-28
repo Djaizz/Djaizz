@@ -1,1 +1,1 @@
-"""DjAI Hugging Face Data Sets."""
+"""Djaizz Hugging Face Data Sets."""

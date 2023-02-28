@@ -1,4 +1,4 @@
-"""DjAI Data Admin."""
+"""Djaizz Data Admin."""
 
 
 from django.contrib.admin.decorators import register

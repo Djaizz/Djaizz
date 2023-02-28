@@ -1,0 +1,9 @@
+Bandit >= 1.7.4
+Flake8 >= 6.0.0
+MyPy >= 1.0.0
+# Prospector >= 1.8.4
+  # conflicts with other linting dependencies
+PyCodeStyle >= 2.10.0
+PyDocStyle >= 6.3.0
+PyLama >= 8.4.1
+PyLint >= 2.16.1

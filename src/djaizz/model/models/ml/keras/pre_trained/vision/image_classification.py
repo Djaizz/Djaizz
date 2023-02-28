@@ -1,4 +1,4 @@
-"""DjAI Pre-Trained Keras Image Classification Model class."""
+"""Djaizz Pre-Trained Keras Image Classification Model class."""
 
 
 from io import BytesIO
@@ -18,7 +18,7 @@ from PIL import Image, ImageOps
 from tensorflow.keras.applications.imagenet_utils import \
     decode_predictions   # pylint: disable=no-name-in-module
 
-from djai.model.apps import DjAIModelModuleConfig
+from djai.model.apps import DjaizzModelModuleConfig
 from djai.util import PGSQL_IDENTIFIER_MAX_LEN, import_obj
 
 from ....base import _PreTrainedMLModelABC
@@ -38,7 +38,7 @@ ImageClassificationOutputType = Dict[str, float]
 
 class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
     # pylint: disable=abstract-method,too-many-ancestors
-    """DjAI Pre-Trained Keras Image Classification Model class."""
+    """Djaizz Pre-Trained Keras Image Classification Model class."""
 
     preprocessor_module_and_qualname: CharField = \
         CharField(
@@ -69,7 +69,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
         verbose_name: str = 'Pre-Trained Keras ImageNet Classifier'
         verbose_name_plural: str = 'Pre-Trained Keras ImageNet Classifiers'
 
-        db_table: str = (f'{DjAIModelModuleConfig.label}_'
+        db_table: str = (f'{DjaizzModelModuleConfig.label}_'
                          f"{__qualname__.split(sep='.', maxsplit=1)[0]}")
         assert len(db_table) <= PGSQL_IDENTIFIER_MAX_LEN, \
             ValueError(f'*** "{db_table}" DB TABLE NAME TOO LONG ***')

@@ -1,1 +1,1 @@
-"""DjAI International Development Data Sets."""
+"""Djaizz International Development Data Sets."""
