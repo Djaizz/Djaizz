@@ -1,4 +1,5 @@
 # python.org/dev/peps/pep-0621
+# setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 
 
 [project]
@@ -101,63 +102,9 @@ classifiers = [
 ]
 
 
-dynamic = ['dependencies']
-
-
-[tool.setuptools.dynamic]
-dependencies = {file = 'requirements/base.txt'}
-
-
-[project.optional-dependencies]
-build = [
-  'Build >= 0.10.0',
-]
-
-doc = [
-  # Sphinx & related
-  'Sphinx >= 6.1.3',
-  'Sphinx-AutoBuild >= 2021.3.14',
-  'SphinxContrib-JSMath >= 1.0.1',
-
-  # Markdown
-  'CommonMark >= 0.9.1',
-  # 'MyST-Parser >= 0.18.1',
-    # depends on Sphinx < 6
-  'ReCommonMark >= 0.7.1',
-]
-
-lint = [
-  'Bandit >= 1.7.4',
-  'Flake8 >= 6.0.0',
-  'MyPy >= 1.0.0',
-  # 'Prospector >= 1.8.4',
-    # conflicts with other linting dependencies
-  'PyCodeStyle >= 2.10.0',
-  'PyDocStyle >= 6.3.0',
-  'PyLama >= 8.4.1',
-  'PyLint >= 2.16.1',
-]
-
-publish = [
-  'Twine >= 4.0.2',
-]
-
-test = [
-  'Nose >= 1.3.7',
-  'Nose2 >= 0.12.0',
-  'PyTest >= 7.2.1',
-  'PyTest-Cov >= 4.0.0',
-  'UnitTest2 >= 1.1.0',
-]
-
-viz = [
-  'Altair >= 4.2.2',
-  'Bokeh >= 3.0.3',
-  'Dash >= 2.8.1',
-  'Dash-DAQ >= 0.5.0',
-  'PlotLy >= 5.13.0',
-  'PlotNine >= 0.10.1',
-  'Seaborn >= 0.12.2',
+dynamic = [
+  'dependencies',
+  'optional-dependencies',
 ]
 
 
@@ -174,6 +121,18 @@ Homepage = 'https://GitHub.com/Djaizz/Djaizz'
 Repository = 'https://GitHub.com/Djaizz/Djaizz'
 GitHub = 'https://GitHub.com/Djaizz/Djaizz'
 Documentation = 'https://Djaizz.GitHub.io/Djaizz'
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = 'requirements/base.txt'}
+
+[tool.setuptools.dynamic.optional-dependencies]
+build = {file = 'requirements/build.txt'}
+doc = {file = 'requirements/doc.txt'}
+lint = {file = 'requirements/lint.txt'}
+publish = {file = 'requirements/publish.txt'}
+test = {file = 'requirements/test.txt'}
+viz = {file = 'requirements/viz.txt'}
 
 
 [build-system]
