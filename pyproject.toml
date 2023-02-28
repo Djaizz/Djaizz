@@ -110,8 +110,9 @@ dependencies = [
   'Dask >= 2023.2.1',
   'Distributed >= 2023.2.1',
   'MetaFlow >= 2.8.0',
-  # 'NumBa >= 0.56.0',
-  'NumPy >= 1.23.5',   # let higher dependencies figure
+  'NumBa >= 0.56.4; python_version < "3.11"',
+  'NumPy >= 1.23.5',
+    # let higher dependencies figure
   'Pandas >= 1.5.3',
   'Pandarallel >= 1.6.4',
   'PyArrow >= 11.0.0',
@@ -135,7 +136,7 @@ dependencies = [
 
   # SciKit-Learn & related
   # 'Auto-SKLearn >= 0.15.0',
-    # depends on SciKit-Learn < 0.25.0
+    # depends on SciKit-Learn < 0.25
   'SciKit-Learn >= 1.2.1',
 
   # TensorFlow & related
@@ -171,7 +172,7 @@ dependencies = [
 
   # Cloud AI/ML Services
   # 'Google-Cloud-Translate >= 3.10.1',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
   'GoogleTrans >= 4.0.0rc1',
 
   # Hyper-Parameter Tuning & related
@@ -187,7 +188,7 @@ dependencies = [
 
   # ML Model Management
   # 'MLFLow >= 2.1.1',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
 
 
   # NON-ML MODELING
@@ -201,7 +202,7 @@ dependencies = [
   # ============
   'FSSpec >= 2023.1.0',
   # 'S3FS >= 2023.1.0',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
 
 
   # MODEL REPOSITORY & RELATED
@@ -242,16 +243,16 @@ dependencies = [
   'Graphene >= 3.2.1',
   'Graphene-Django >= 3.0.0',
   # 'Graphene-Django-Extras >= 0.5.2',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
   'Graphene-Django-Optimizer >= 0.9.1',
   # 'Graphene-Django-Subscriptions >= 0.0.9',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
   # 'Graphene-Django-Tools >= 0.21.0',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
   # 'Graphene-Mongo >= 0.2.14',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
   # 'Graphene-SQLAlchemy >= 2.3.0',
-    # conflicting/long-resolving dependencies
+    # conflicting/slow-resolving dependencies
   'GraphQLClient >= 0.2.4',
   'GraphQL-Core >= 3.2.3',
   'GraphQL-Relay >= 3.2.0',
@@ -315,19 +316,17 @@ dependencies = [
 
   # Django CORS Headers
   'Django-CORS-Headers >= 3.14.0',
-    # let higher dependencies figure
 
   # Application UIs
   'Django-HTMX >= 1.14.0',
 
-  # LATER: 'Django-Plotly-Dash >= 1.6.6',   # compatible with Django 4.1
-  # LATER: 'Dash-Bootstrap-Components >= 0.13.1',   # compatible with Django-Plotly-Dash 1.6
-  # LATER: 'DPD-Static-Support >= 0.0.5',
-  # LATER: 'Django-Bootstrap4 >= 22.3',
-  # LATER: 'WhiteNoise >= 6.3.0',
+  # 'Django-Plotly-Dash >= 2.1.3',
+  # 'Dash-Bootstrap-Components >= 1.4.0',
+  # 'DPD-Static-Support >= 0.0.5',
+  # 'Django-Bootstrap4 >= 22.3',
+  # 'WhiteNoise >= 6.4.0',
 
   'Gradio >= 3.19.1',
-    # compatible with other dependencies
 
   'Streamlit >= 1.19.0',
   'Watchdog >= 2.3.0',
@@ -345,19 +344,16 @@ dependencies = [
   'Daphne >= 4.0.0',
   'GUnicorn >= 20.1.0',
   # 'H11 >= 0.14.0',
-    # let higher dependencies figure
+    # conflicting/slow-resolving dependencies
   'Hypercorn >= 0.14.3',
-  # 'Quart >= 0.18.3',
-    # depends on Werkzeug >= 2.2.0
+  'Quart >= 0.18.3',
   'Starlette >= 0.25.0',
-    # let higher dependencies figure
   'Uvicorn >= 0.20.0',
 
 
   # COMMAND-LINE INTERFACE (CLI)
   # ============================
   'CLICK >= 8.1.3',
-    # let higher dependencies figure
   'Colored >= 1.4.4',
 
 
@@ -376,7 +372,6 @@ dependencies = [
   'PyTZ >= 2022.7.1',
   'Requests >= 2.28.2',
   'Tqdm >= 4.64.1',
-  # LATER: 'Werkzeug >= 2.0, < 2.1',   # github.com/plotly/dash/issues/1992
 
 
   # CLOUD
@@ -407,7 +402,8 @@ doc = [
 
   # Markdown
   'CommonMark >= 0.9.1',
-  # 'MyST-Parser >= 0.18.1',  # depends on sphinx<6 and >=4
+  # 'MyST-Parser >= 0.18.1',
+    # depends on Sphinx < 6
   'ReCommonMark >= 0.7.1',
 ]
 
@@ -416,6 +412,7 @@ lint = [
   'Flake8 >= 6.0.0',
   'MyPy >= 1.0.0',
   # 'Prospector >= 1.8.4',
+    # conflicts with other linting dependencies
   'PyCodeStyle >= 2.10.0',
   'PyDocStyle >= 6.3.0',
   'PyLama >= 8.4.1',
