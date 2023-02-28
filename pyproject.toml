@@ -112,7 +112,7 @@ exclude = []
 
 
 [tool.poetry.dependencies]
-Python = '>= 3.11, < 3.12'
+Python = '>= 3.8, < 3.12'
 dask = ">=2023.2.1"
 distributed = ">=2023.2.1"
 metaflow = ">=2.8.0"
