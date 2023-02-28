@@ -320,6 +320,6 @@ GitHub = 'https://GitHub.com/Djaizz/Djaizz'
 
 [build-system]
 requires = [
-  'Poetry-Core >= 1.4, < 1.5',
+  'Poetry-Core >= 1.5.1',
 ]
 build-backend = 'poetry.core.masonry.api'
