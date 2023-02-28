@@ -3,7 +3,7 @@
 
 [tool.poetry]
 name = 'Djaizz'
-version = '0.0.0.dev13'
+version = '0.0.0.dev0'
 
 description = 'Artificial Intelligence (AI) in Django Applications'
 
@@ -449,6 +449,6 @@ GitHub = 'https://GitHub.com/Djaizz/Djaizz'
 
 [build-system]
 requires = [
-  'Poetry-Core >= 1.0.8',
+  'Poetry-Core >= 1.5.1',
 ]
 build-backend = 'poetry.core.masonry.api'
