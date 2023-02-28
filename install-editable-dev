@@ -3,4 +3,4 @@
 
 python3 -m pip install PEP517 PIP SetUpTools Wheel --upgrade
 
-python3 -m pip install -e ".[build, doc, lint, publish, test]" --upgrade --user
+python3 -m pip install -e ".[build, doc, lint, publish, test, viz]" --upgrade --user
