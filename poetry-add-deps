@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-python3 -m pip install Poetry 'Poetry-Core < 1.5' --upgrade --user
+python3 -m pip install Poetry --upgrade --user
 
 
 # Options:
