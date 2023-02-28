@@ -6,7 +6,6 @@ python3 -m pip install Poetry 'Poetry-Core < 1.5' --upgrade --user
 
 grep '^[A-Za-z].*' metadata/requirements/base.txt | sed 's/.*/"&"/' | \
   xargs poetry add \
-  --allow-prereleases \
   --dry-run \
   --lock \
   --no-interaction \
