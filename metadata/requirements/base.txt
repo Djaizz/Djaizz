@@ -243,7 +243,8 @@ PsycoPG2-binary >= 2.9.5
 ASGIRef >= 3.6.0
 Channels >= 2.4
   # let higher dependencies figure
-Daphne >= 4.0.0
+Daphne >= 2.5
+  # let higher dependencies figure
 GUnicorn >= 20.1.0
 # H11 >= 0.14.0
   # conflicting/slow-resolving dependencies
