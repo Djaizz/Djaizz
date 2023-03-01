@@ -1,39 +1,36 @@
-"""DjAI Dependencies."""
+"""Djaizz Dependencies."""
 
 
 from importlib.metadata import version
 from pprint import pprint
+from typing import Sequence  # Py3.9+: use built-ins/collections.abc
 
 import click
-# import corsheaders
-import django_plotly_dash
-import gradio
-import h11
-import numpy
-import starlette
+
+
+CAPPED_DEPS: Sequence[str] = ('Channels',
+                              'Daphne',
+                              'Dash-Bootstrap-Components',
+                              'Django-CORS-Headers',
+                              'Django-Plotly-Dash',
+                              'H11',
+                              'NumPy',
+                              'Quart')
 
 
 @click.command(name='capped-deps',
                cls=click.Command,
                context_settings=None,
-               help=('DjAI Capped Dependencies CLI >>>'),
-               epilog=('^^^ DjAI Capped Dependencies CLI'),
-               short_help='DjAI Capped Dependencies',
+               help=('Djaizz Capped Dependencies CLI >>>'),
+               epilog=('^^^ Djaizz Capped Dependencies CLI'),
+               short_help='Djaizz Capped Dependencies',
                options_metavar='',
                add_help_option=True,
                hidden=False,
                deprecated=False)
 def capped_deps():
-    """List DjAI's Capped Dependencies' Versions."""
-    pprint(object={
-           'CLICK': click.__version__,
-           # 'Django-Bootstrap-Components': ...,
-           'Django-CORS-Headers': version(distribution_name='Django-CORS-Headers'),   # noqa: E501
-           'Django-Plotly-Dash': django_plotly_dash.__version__,
-           'Gradio': gradio.__version__,
-           'H11': h11.__version__,
-           'NumPy': numpy.__version__,
-           'Starlette': starlette.__version__,
-           },
+    """List Djaizz's Capped Dependencies' Versions."""
+    pprint(object={dep_name: version(distribution_name=dep_name)
+                   for dep_name in CAPPED_DEPS},
            indent=2, width=80, depth=None, compact=False, sort_dicts=False,
            underscore_numbers=True)

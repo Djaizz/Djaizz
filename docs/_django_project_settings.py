@@ -59,8 +59,8 @@ INSTALLED_APPS = [
     'whitenoise',
 
     # DjAI Data & Model modules
-    'djai.data',
-    'djai.model',
+    'djaizz.data',
+    'djaizz.model',
 ]
 
 MIDDLEWARE = [
@@ -171,7 +171,7 @@ JAZZMIN_SETTINGS = dict(
     welcome_sign='Welcome to DjAI Admin',
 
     # Copyright on the footer
-    copyright='DjAI'
+    copyright='Djaizz'
 )
 
 # REST Framework
