@@ -6,7 +6,7 @@ from pprint import pprint
 
 import click
 # import corsheaders
-import django_plotly_dash
+# TODO: import django_plotly_dash
 import gradio
 import h11
 import numpy
@@ -29,7 +29,7 @@ def capped_deps():
            'CLICK': click.__version__,
            # 'Django-Bootstrap-Components': ...,
            'Django-CORS-Headers': version(distribution_name='Django-CORS-Headers'),   # noqa: E501
-           'Django-Plotly-Dash': django_plotly_dash.__version__,
+           # TODO: 'Django-Plotly-Dash': django_plotly_dash.__version__,
            'Gradio': gradio.__version__,
            'H11': h11.__version__,
            'NumPy': numpy.__version__,
