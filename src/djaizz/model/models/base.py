@@ -15,7 +15,7 @@ from django.utils.functional import classproperty
 from polymorphic.base import PolymorphicModelBase
 from polymorphic.models import PolymorphicModel
 
-# TODO: from django_plotly_dash import DjangoDash
+from django_plotly_dash import DjangoDash
 
 # pylint: disable=ungrouped-imports
 try:
@@ -150,7 +150,7 @@ class AIModel(PolymorphicModel,
                 }
 
     @classproperty
-    def dash_ui(cls):  # TODO: -> DjangoDash:  # noqa: N805
+    def dash_ui(cls) -> DjangoDash:   # noqa: N805
         # pylint: disable=no-self-argument
         """Return the AIModel class's Dash Interface."""
         app = DjangoDash(name=cls.__name__,
