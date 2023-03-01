@@ -171,7 +171,7 @@ JAZZMIN_SETTINGS = dict(
     welcome_sign='Welcome to DjAI Admin',
 
     # Copyright on the footer
-    copyright='DjAI'
+    copyright='Djaizz'
 )
 
 # REST Framework

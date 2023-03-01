@@ -5,7 +5,7 @@ Dask >= 2023.2.1
 Distributed >= 2023.2.1
 MetaFlow >= 2.8.0
 NumBa >= 0.56.4; python_version < '3.11'
-NumPy >= 1.23.5
+NumPy >= 1.23
   # let higher dependencies figure
 Pandas >= 1.5.3
 Pandarallel >= 1.6.4
