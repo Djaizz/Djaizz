@@ -218,12 +218,14 @@ Django-CORS-Headers >= 3.10
 # Application UIs
 Django-HTMX >= 1.14.0
 
-# Django-Plotly-Dash >= 2.1.3
-  # depends on outdated Django < 4
-# Dash-Bootstrap-Components >= 1.4.0
-# DPD-Static-Support >= 0.0.5
-# Django-Bootstrap4 >= 22.3
-# WhiteNoise >= 6.4.0
+Django-Plotly-Dash >= 1.7
+  # DPD >=2 depends on outdated Django < 4
+  # github.com/GibbsConsulting/django-plotly-dash/issues/403
+Dash-Bootstrap-Components >= 0.13
+  # compatible with Django-Plotly-Dash < 2
+DPD-Static-Support >= 0.0.5
+Django-Bootstrap4 >= 22.3
+WhiteNoise >= 6.4.0
 
 Gradio >= 3.19.1
 
@@ -239,8 +241,10 @@ PsycoPG2-binary >= 2.9.5
 
 # ASGI Web Servers & related
 ASGIRef >= 3.6.0
-Channels >= 4.0.0
-Daphne >= 4.0.0
+Channels >= 2.4
+  # let higher dependencies figure
+Daphne >= 2.5
+  # let higher dependencies figure
 GUnicorn >= 20.1.0
 # H11 >= 0.14.0
   # conflicting/slow-resolving dependencies
