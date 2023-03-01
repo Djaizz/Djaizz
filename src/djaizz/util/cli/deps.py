@@ -3,11 +3,20 @@
 
 from importlib.metadata import version
 from pprint import pprint
+from typing import Sequence  # Py3.9+: use built-ins/collections.abc
 
 import click
-# import corsheaders
-import django_plotly_dash
-import numpy
+
+
+CAPPED_DEPS: Sequence[str] = (
+    'Channels',
+    'Daphne',
+    'Dash-Bootstrap-Components',
+    'Django-CORS-Headers',
+    'Django-Plotly-Dash',
+    'NumPy',
+    'Quart',
+)
 
 
 @click.command(name='capped-deps',
@@ -22,11 +31,7 @@ import numpy
                deprecated=False)
 def capped_deps():
     """List Djaizz's Capped Dependencies' Versions."""
-    pprint(object={
-           # 'Django-Bootstrap-Components': ...,
-           'Django-CORS-Headers': version(distribution_name='Django-CORS-Headers'),  # noqa: E501
-           'Django-Plotly-Dash': django_plotly_dash.__version__,
-           'NumPy': numpy.__version__,
-           },
+    pprint(object={dep_name: version(distribution_name=dep_name)
+                   for dep_name in CAPPED_DEPS},
            indent=2, width=80, depth=None, compact=False, sort_dicts=False,
            underscore_numbers=True)
