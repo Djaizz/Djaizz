@@ -226,6 +226,9 @@ Dash-Bootstrap-Components >= 0.13
 DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 22.3
 WhiteNoise >= 6.4.0
+
+Flask >= 2.1, < 2.2
+  # github.com/localstack/localstack/issues/6587
 Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
