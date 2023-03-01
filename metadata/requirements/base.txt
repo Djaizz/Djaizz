@@ -226,6 +226,8 @@ Dash-Bootstrap-Components >= 0.13
 DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 22.3
 WhiteNoise >= 6.4.0
+Werkzeug >= 2.0, < 2.1
+  # github.com/plotly/dash/issues/1992
 
 Gradio >= 3.19.1
 
