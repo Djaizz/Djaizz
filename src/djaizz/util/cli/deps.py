@@ -8,15 +8,13 @@ from typing import Sequence  # Py3.9+: use built-ins/collections.abc
 import click
 
 
-CAPPED_DEPS: Sequence[str] = (
-    'Channels',
-    'Daphne',
-    'Dash-Bootstrap-Components',
-    'Django-CORS-Headers',
-    'Django-Plotly-Dash',
-    'NumPy',
-    'Quart',
-)
+CAPPED_DEPS: Sequence[str] = ('Channels',
+                              'Daphne',
+                              'Dash-Bootstrap-Components',
+                              'Django-CORS-Headers',
+                              'Django-Plotly-Dash',
+                              'NumPy',
+                              'Quart')
 
 
 @click.command(name='capped-deps',
