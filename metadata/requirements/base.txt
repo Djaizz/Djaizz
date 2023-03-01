@@ -207,8 +207,8 @@ Django-LocalFlavor >= 3.1
 Django-Nested-InLines >= 0.1
 Django-Storages >= 1.13.2
 
-Django-Query-Graph >= 0.0.0.dev1
-Dj-Util >= 0.0.0.dev1
+https://GitHub.com/Djaizz/Django-Query-Graph/archive/main.zip
+https://github.com/Djaizz/Dj-Util/archive/main.zip
 
 # Django CORS Headers
 Django-CORS-Headers >= 3.10
