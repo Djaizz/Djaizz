@@ -243,7 +243,8 @@ Daphne >= 4.0.0
 GUnicorn >= 20.1.0
 # H11 >= 0.14.0
   # conflicting/slow-resolving dependencies
-Hypercorn >= 0.14.3
+# Hypercorn >= 0.14.3
+  # Poetry error: no item named 'Hypercorn-0.14.3.dist-info/WHEEL' in archive
 Quart >= 0.18.3
 Starlette >= 0.25.0
 Uvicorn >= 0.20.0
