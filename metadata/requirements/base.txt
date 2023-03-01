@@ -250,8 +250,8 @@ Channels >= 2.4
 Daphne >= 2.5
   # let higher dependencies figure
 GUnicorn >= 20.1.0
-# H11 >= 0.14.0
-  # conflicting/slow-resolving dependencies
+H11 >= 0.9
+  # let higher dependencies figure
 Hypercorn >= 0.14.3
 Quart >= 0.17
   # let higher dependencies figure
@@ -267,7 +267,7 @@ Colored >= 1.4.4
 
 # JUPYTER
 # =======
-# LATER: Jupyter >= 1.0.0
+Jupyter >= 1.0.0
 
 
 # MISC / OTHER

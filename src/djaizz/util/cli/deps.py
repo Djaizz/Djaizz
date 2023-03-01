@@ -13,6 +13,7 @@ CAPPED_DEPS: Sequence[str] = ('Channels',
                               'Dash-Bootstrap-Components',
                               'Django-CORS-Headers',
                               'Django-Plotly-Dash',
+                              'H11',
                               'NumPy',
                               'Quart')
 
