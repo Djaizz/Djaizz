@@ -26,8 +26,7 @@ Kedro >= 0.18.5; python_version < '3.11'
 # ==========================================
 
 Imbalanced-Learn >= 0.10.1
-# StatsModels >= 0.13.5
-  # depends on outdated SciPy?
+StatsModels >= 0.13.5
 
 # SciKit-Learn & related
 # Auto-SKLearn >= 0.15.0
@@ -251,10 +250,9 @@ Channels >= 2.4
 Daphne >= 2.5
   # let higher dependencies figure
 GUnicorn >= 20.1.0
-# H11 >= 0.14.0
-  # conflicting/slow-resolving dependencies
-# Hypercorn >= 0.14.3
-  # Poetry error: no item named 'Hypercorn-0.14.3.dist-info/WHEEL' in archive
+H11 >= 0.9
+  # let higher dependencies figure
+Hypercorn >= 0.14.3
 Quart >= 0.17
   # let higher dependencies figure
 Starlette >= 0.25.0
@@ -269,7 +267,7 @@ Colored >= 1.4.4
 
 # JUPYTER
 # =======
-# LATER: Jupyter >= 1.0.0
+Jupyter >= 1.0.0
 
 
 # MISC / OTHER
