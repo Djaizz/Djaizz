@@ -220,10 +220,11 @@ Django-HTMX >= 1.14.0
 
 # Django-Plotly-Dash >= 2.1.3
   # depends on outdated Django < 4
-# Dash-Bootstrap-Components >= 1.4.0
-# DPD-Static-Support >= 0.0.5
-# Django-Bootstrap4 >= 22.3
-# WhiteNoise >= 6.4.0
+Dash >= 2.8.1
+Dash-Bootstrap-Components >= 1.4.0
+DPD-Static-Support >= 0.0.5
+Django-Bootstrap4 >= 22.3
+WhiteNoise >= 6.4.0
 
 Gradio >= 3.19.1
 
