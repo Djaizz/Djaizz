@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     # Django Plotly Dash & related
-    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    # TODO: 'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'dpd_static_support',
     'whitenoise',
 
@@ -89,10 +89,10 @@ MIDDLEWARE = [
 
     # Django Plotly Dash
     # - if the header and footer tags are in use:
-    'django_plotly_dash.middleware.BaseMiddleware',
+    # TODO: 'django_plotly_dash.middleware.BaseMiddleware',
     # - if assets are being served locally through the use of
     # the global serve_locally or on a per-app basis:
-    'django_plotly_dash.middleware.ExternalRedirectionMiddleware',
+    # TODO: 'django_plotly_dash.middleware.ExternalRedirectionMiddleware',
 ]
 
 ROOT_URLCONF = 'urls'
