@@ -252,7 +252,8 @@ GUnicorn >= 20.1.0
   # conflicting/slow-resolving dependencies
 # Hypercorn >= 0.14.3
   # Poetry error: no item named 'Hypercorn-0.14.3.dist-info/WHEEL' in archive
-Quart >= 0.18.3
+Quart >= 0.17
+  # let higher dependencies figure
 Starlette >= 0.25.0
 Uvicorn >= 0.20.0
 
