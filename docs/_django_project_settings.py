@@ -59,8 +59,8 @@ INSTALLED_APPS = [
     'whitenoise',
 
     # DjAI Data & Model modules
-    'djai.data',
-    'djai.model',
+    'djaizz.data',
+    'djaizz.model',
 ]
 
 MIDDLEWARE = [
