@@ -35,5 +35,5 @@ jobs:
       - name: Poetry-Install Package & Dependencies
         run: poetry install --all-extras --no-interaction --verbose
 
-      - name: Install Package & Dependencies
+      - name: PIP-Install Package & Dependencies
         run: ./install-editable-dev
