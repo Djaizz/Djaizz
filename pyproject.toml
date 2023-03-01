@@ -89,7 +89,7 @@ obsoletes = []  # array, ignored by pip
 
 [tool.setuptools.packages.find]
 where = ['src']
-include = []
+include = ['*']
 exclude = []
 namespaces = true
 
