@@ -9,8 +9,8 @@ from django.http.request import HttpRequest
 from django.http.response import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 
-# TODO: from django_plotly_dash.dash_wrapper import DjangoDash
-# TODO: from django_plotly_dash.models import DashApp, StatelessApp
+from django_plotly_dash.dash_wrapper import DjangoDash
+from django_plotly_dash.models import DashApp, StatelessApp
 
 from gradio.inputs import Dropdown
 from gradio.interface import Interface
