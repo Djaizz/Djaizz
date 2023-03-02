@@ -32,8 +32,14 @@ jobs:
       - name: Install Poetry
         run: python3 -m pip install Poetry --upgrade --user
 
-      - name: Poetry-Install Package & Dependencies
-        run: poetry install --all-extras --no-interaction --verbose
+      # - name: Poetry-Install Package & Dependencies
+      #   run: poetry install --all-extras --no-interaction --verbose
+      # *** Py 3.8: Installing dash-table (4.11.3)
+      #             ChefBuildError
+      #             Backend 'setuptools.build_meta:__legacy__' not available
+      # *** Py 3.11: Installing hypercorn (0.14.3)
+      #              KeyError
+      #              No 'Hypercorn-0.14.3.dist-info/WHEEL' in archive
 
       - name: PIP-Install Package & Dependencies
         run: ./install-editable-dev
