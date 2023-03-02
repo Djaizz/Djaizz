@@ -26,8 +26,8 @@ Kedro >= 0.18.5; python_version < '3.11'
 # ==========================================
 
 Imbalanced-Learn >= 0.10.1
-# StatsModels >= 0.13.5
-  # disable for Poetry because of resolution error
+StatsModels >= 0.13.5
+
 # SciKit-Learn & related
 # Auto-SKLearn >= 0.15.0
   # depends on SciKit-Learn < 0.25
@@ -253,8 +253,7 @@ Daphne >= 2.5
 GUnicorn >= 20.1.0
 H11 >= 0.9
   # let higher dependencies figure
-# Hypercorn >= 0.14.3
-  # disable for Poetry because of installation error
+Hypercorn >= 0.14.3
 Quart >= 0.17
   # let higher dependencies figure
 Starlette >= 0.25.0
