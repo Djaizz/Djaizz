@@ -3,6 +3,6 @@ Bokeh >= 3.0.3
 Dash >= 1.20
   # compatible with Django-Plotly-Dash < 2
 Dash-DAQ >= 0.5.0
-PlotLy >= 5.13.0
+PlotLy >= 5.13.1
 PlotNine >= 0.10.1
 Seaborn >= 0.12.2
