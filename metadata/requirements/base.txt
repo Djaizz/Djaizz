@@ -1,8 +1,10 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.2.1
-Distributed >= 2023.2.1
+Dask >= 2023.3.0
+Distributed >= 2023.3.0
+# Kedro >= 0.18.5; python_version < '3.11'
+  # depends on outdated FSSpec
 MetaFlow >= 2.8.0
 NumBa >= 0.56.4; python_version < '3.11'
 NumPy >= 1.23
@@ -11,15 +13,16 @@ Pandas >= 1.5.3
 Pandarallel >= 1.6.4
 PyArrow >= 11.0.0
 PySpark >= 3.3.2
-Ray >= 1.13.0; python_version < '3.11'
+Ray >= 2.3.0; python_version < '3.11'
 SciPy >= 1.10.1
 
 Pillow >= 9.4.0
 # Pillow-SIMD >= 9.0.0
   # complex to install
-SciKit-Image >= 0.19.3
+SciKit-Image >= 0.19
+  # >= 0.20 depends on outdated SciPy < 1.9
 
-Kedro >= 0.18.5; python_version < '3.11'
+XDF @ https://github.com/Djaizz/XDF/archive/main.zip
 
 
 # MACHINE LEARNING / DEEP LEARNING & RELATED
@@ -51,7 +54,7 @@ TorchVision >= 0.14.1; python_version < '3.11'
 OpenCV-Python >= 4.7.0
 
 # Hugging Face & related
-DataSets >= 2.10.0
+DataSets >= 2.10.1
 HuggingFace-Hub >= 0.12.1
 Transformers >= 4.26.1
 
@@ -95,7 +98,7 @@ SciKit-Fuzzy >= 0.4.2
 
 # FILE SYSTEMS
 # ============
-FSSpec >= 2023.1.0
+FSSpec >= 2023.3.0
 # S3FS >= 2023.1.0
   # conflicting/slow-resolving dependencies
 
@@ -159,7 +162,7 @@ Strawberry-GraphQL >= 0.159.0
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
 DRFPasswordless >= 1.5.8
-DRF-Writable-Nested >= 0.6.4
+DRF-Writable-Nested >= 0.7.0
 CoreAPI >= 2.3.3
   # closely related to Django REST Framework
 CoreAPI-CLI >= 1.0.9
@@ -200,14 +203,13 @@ Django-Choices >= 1.7.2
 Django-Compressor >= 4.3.1
 Django-Configurations >= 2.4
 Django-Crispy-Forms >= 2.0
-Django-Environ >= 0.9.0
+Django-Environ >= 0.10.0
 Django-Extensions >= 3.2.1
 Django-JSON-Widget >= 1.1.1
 Django-LocalFlavor >= 3.1
 Django-Nested-InLines >= 0.1
 Django-Storages >= 1.13.2
 
-# peps.python.org/pep-0508
 Django-Query-Graph @ https://GitHub.com/Djaizz/Django-Query-Graph/archive/main.zip
 Dj-Util @ https://github.com/Djaizz/Dj-Util/archive/main.zip
 
@@ -232,10 +234,10 @@ Flask >= 2.1, < 2.2
 Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
-Gradio >= 3.19.1
+Gradio >= 3.20.0
 
 Streamlit >= 1.19.0
-Watchdog >= 2.3.0
+Watchdog >= 2.3.1
 
 # Database Adapters/Backends/Connectors/Drivers
 MariaDB-DynCol >= 3.6.1
@@ -280,7 +282,7 @@ Python-DateUtil >= 2.8.2
 Python-DotEnv >= 1.0.0
 PyTZ >= 2022.7.1
 Requests >= 2.28.2
-Tqdm >= 4.64.1
+Tqdm >= 4.65.0
 
 
 # CLOUD
