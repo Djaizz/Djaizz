@@ -3,7 +3,8 @@
 
 Dask >= 2023.3.0
 Distributed >= 2023.3.0
-Kedro >= 0.18.5; python_version < '3.11'
+# Kedro >= 0.18.5; python_version < '3.11'
+  # depends on outdated FSSpec
 MetaFlow >= 2.8.0
 NumBa >= 0.56.4; python_version < '3.11'
 NumPy >= 1.23
