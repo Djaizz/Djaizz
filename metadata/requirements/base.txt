@@ -19,7 +19,8 @@ SciPy >= 1.10.1
 Pillow >= 9.4.0
 # Pillow-SIMD >= 9.0.0
   # complex to install
-SciKit-Image >= 0.20.0
+SciKit-Image >= 0.19
+  # >= 0.20 depends on outdated SciPy < 1.9
 
 XDF @ https://github.com/Djaizz/XDF/archive/main.zip
 
