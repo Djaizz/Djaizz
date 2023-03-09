@@ -41,8 +41,6 @@ dynamic = [
   'optional-dependencies',
 
   'entry-points',
-  'scripts',  # ?
-  'gui-scripts',  # ?
 ]
 
 
@@ -104,8 +102,6 @@ classifiers = {file = 'metadata/classifiers'}
 dependencies = {file = 'metadata/requirements/base.txt'}
 
 entry-points = {file = 'metadata/entry-points'}
-# scripts = {file = 'metadata/scripts'}
-# gui-scripts = {file = 'metadata/gui-scripts'}
 
 
 [tool.setuptools.dynamic.optional-dependencies]
@@ -120,7 +116,7 @@ viz = {file = 'metadata/requirements/viz.txt'}
 
 [build-system]
 requires = [
-  'SetUpTools >= 67.4.0',
+  'SetUpTools >= 67.6.0',
   'Wheel >= 0.38.4',
 ]
 build-backend = 'setuptools.build_meta'
