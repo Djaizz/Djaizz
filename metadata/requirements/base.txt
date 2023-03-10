@@ -38,6 +38,8 @@ SciKit-Learn >= 1.2.2
 
 # TensorFlow & related
 TensorFlow >= 2.12.0rc1
+TensorFlow-MacOS >= 2.11
+TensorFlow-Metal >= 0.7.1
 TensorFlow-DataSets >= 4.8.3
 TensorFlow-Hub >= 0.12.0
 
