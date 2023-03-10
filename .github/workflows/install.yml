@@ -31,6 +31,3 @@ jobs:
 
       - name: PIP-Install Package & Dependencies
         run: ./install-editable-dev
-
-      - name: Print Version-Capped Dependencies
-        run: djaizz capped-deps
