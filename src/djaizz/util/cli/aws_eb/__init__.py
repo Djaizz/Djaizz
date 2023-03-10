@@ -178,8 +178,31 @@ def init():
               expose_value=True,
               is_eager=False,
               envvar=None)
+@click.option('--gpu',
+              cls=click.Option,
+              show_default=True,
+              prompt=False,
+              confirmation_prompt=False,
+              hide_input=False,
+              is_flag=False,
+              # flag_value=...,
+              multiple=False,
+              count=False,
+              allow_from_autoenv=False,
+              type=bool,
+              help='Whether to use GPU',
+              show_choices=True,
+              default=False,
+              required=False,
+              callback=None,
+              nargs=None,
+              metavar='GPU',
+              expose_value=True,
+              is_eager=False,
+              envvar=None)
 def deploy(aws_eb_env_name: Optional[str] = None,
-           asgi: Optional[str] = None):
+           asgi: Optional[str] = None,
+           gpu: Optional[bool] = False):
     """Deploy Djaizz onto AWS Elastic Beanstalk."""
     profile = input('AWS CLI Profile (if not default) = ')
     if not profile.strip():
@@ -202,10 +225,17 @@ def deploy(aws_eb_env_name: Optional[str] = None,
             # Compute-optimized instance type
             # with good Networking performance and sufficient Memory
             # (note: Graviton (g) instances not compatible with Djaizz deps)
-            instance_type = input('AWS EC2 Instance Type '
-                                  '(default: c6i.xlarge; min: c6i.large) = ')
-            if not instance_type.strip():
-                instance_type = 'c6i.xlarge'
+            if gpu:
+                instance_type = input('AWS EC2 Instance Type '
+                                      '(default: g4dn.xlarge; min: g4dn.xlarge) = ')  # noqa: E501
+                if not instance_type.strip():
+                    instance_type = 'g4dn.xlarge'
+
+            else:
+                instance_type = input('AWS EC2 Instance Type '
+                                      '(default: g4dn.xlarge; min: g4dn.xlarge) = ')  # noqa: E501
+                if not instance_type.strip():
+                    instance_type = 'c6i.xlarge'
 
             run_cmd(command=(f'eb create --profile {profile}'
                              f' --region {region}'
