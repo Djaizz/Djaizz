@@ -184,7 +184,8 @@ JSONHyperSchema-Codec >= 1.0.3
 OpenAPI-Codec >= 1.3.2
 
 JSONSchema >= 4.17.3
-Pydantic >= 1.10.6
+Pydantic >= 1.7, < 1.8
+  # avoid ImportError: cannot import name 'Schema' from 'pydantic'
 
 HTTPie >= 3.2.1
 

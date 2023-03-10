@@ -16,6 +16,7 @@ CAPPED_DEPS: Sequence[str] = ('Channels',
                               'Django-Plotly-Dash',
                               'H11',
                               'NumPy',
+                              'Pydantic',
                               'Quart',
                               'SciKit-Image')
 
