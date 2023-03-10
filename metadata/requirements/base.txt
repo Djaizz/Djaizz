@@ -241,6 +241,8 @@ Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
 Gradio >= 3.20.1
+FastAPI ~= 0.44
+  # github.com/tiangolo/fastapi/issues/648#issuecomment-561275823
 
 Streamlit >= 1.20.0
 Watchdog >= 2.3.1
