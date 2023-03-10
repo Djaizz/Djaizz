@@ -10,7 +10,7 @@ from .deps import capped_deps
 @click.group(name='djaizz',
              cls=click.Group,
              commands={'aws-eb': djaizz_aws_eb,
-                       'capped-deps': capped_deps
+                       'capped-deps': capped_deps,
                        },
              invoke_without_command=False,
              no_args_is_help=True,
