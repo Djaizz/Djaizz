@@ -10,12 +10,14 @@ import click
 
 CAPPED_DEPS: Sequence[str] = ('Channels',
                               'Daphne',
+                              'Dash',
                               'Dash-Bootstrap-Components',
                               'Django-CORS-Headers',
                               'Django-Plotly-Dash',
                               'H11',
                               'NumPy',
-                              'Quart')
+                              'Quart',
+                              'SciKit-Image')
 
 
 @click.command(name='capped-deps',
