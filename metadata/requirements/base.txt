@@ -1,8 +1,8 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.3.0
-Distributed >= 2023.3.0
+Dask >= 2023.3.1
+Distributed >= 2023.3.1
 # Kedro >= 0.18.5; python_version < '3.11'
   # depends on outdated FSSpec
 MetaFlow >= 2.8.0
@@ -162,7 +162,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.1
-Strawberry-GraphQL >= 0.161.0
+Strawberry-GraphQL >= 0.162.0
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
