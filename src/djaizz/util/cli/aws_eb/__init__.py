@@ -36,10 +36,9 @@ class ConfigFilesHandling(AbstractContextManager):
             src=self.config_dir_path,
             dst=self.config_dir_name,
             symlinks=False,
-            ignore=(
-                None
-                if self.gpu
-                else ignore_patterns(f'**/{_INSTALL_NVIDIA_CUDA_SCRIPT_FILE_NAME}')),  # noqa: E501
+            ignore=(None
+                    if self.gpu
+                    else ignore_patterns(_INSTALL_NVIDIA_CUDA_SCRIPT_FILE_NAME)),  # noqa: E501
             ignore_dangling_symlinks=False,
             dirs_exist_ok=True)
 
