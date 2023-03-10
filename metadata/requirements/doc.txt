@@ -5,6 +5,5 @@ SphinxContrib-JSMath >= 1.0.1
 
 # Markdown
 CommonMark >= 0.9.1
-# MyST-Parser >= 0.18.1
-  # depends on Sphinx < 6
+MyST-Parser >= 1.0.0
 ReCommonMark >= 0.7.1
