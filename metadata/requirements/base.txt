@@ -240,6 +240,8 @@ Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
 Gradio >= 3.20.1
+Pydantic >= 1.7, < 1.8
+  # avoid ImportError: cannot import name 'Schema' from 'pydantic' 
 
 Streamlit >= 1.20.0
 Watchdog >= 2.3.1
