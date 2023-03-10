@@ -34,7 +34,7 @@ StatsModels >= 0.13.5
 # SciKit-Learn & related
 # Auto-SKLearn >= 0.15.0
   # depends on SciKit-Learn < 0.25
-SciKit-Learn >= 1.2.1
+SciKit-Learn >= 1.2.2
 
 # TensorFlow & related
 TensorFlow >= 2.12.0rc1
@@ -55,13 +55,16 @@ OpenCV-Python >= 4.7.0
 
 # Hugging Face & related
 DataSets >= 2.10.1
-HuggingFace-Hub >= 0.13.0
+HuggingFace-Hub >= 0.13.1
 Transformers >= 4.26.1
 
 SentencePiece >= 0.1.97
 TIMM >= 0.6.12; python_version < '3.11'
 # Torch-Scatter >= 2.1.0
   # Table Question Answering - requires Torch first
+
+# Fast AI
+FastAI >= 2.7.11; python_version < '3.11'
 
 # Topological Data Analysis (TDA) & related
 Giotto-TDA >= 0.6.0; python_version < '3.11'
@@ -236,7 +239,7 @@ Werkzeug >= 2.0, < 2.1
 
 Gradio >= 3.20.1
 
-Streamlit >= 1.19.0
+Streamlit >= 1.20.0
 Watchdog >= 2.3.1
 
 # Database Adapters/Backends/Connectors/Drivers
@@ -258,8 +261,8 @@ H11 >= 0.9
 Hypercorn >= 0.14.3
 Quart >= 0.17
   # let higher dependencies figure
-Starlette >= 0.25.0
-Uvicorn >= 0.20.0
+Starlette >= 0.26.0
+Uvicorn >= 0.21.0
 
 
 # COMMAND-LINE INTERFACE (CLI)
