@@ -47,7 +47,10 @@ class ConfigFilesHandling(AbstractContextManager):
         paths: List[Path] = list(self.config_dir_path.rglob(pattern='*'))
 
         for path in paths:
-            if path.is_file():
+            if path.is_file() and (
+                    True
+                    if self.gpu
+                    else (path.name != _INSTALL_NVIDIA_CUDA_SCRIPT_FILE_NAME)):
                 os.remove(path=path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))  # noqa: E501
 
         # remove empty directories
