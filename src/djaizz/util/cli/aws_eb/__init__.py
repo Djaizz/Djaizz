@@ -241,7 +241,7 @@ def deploy(aws_eb_env_name: Optional[str] = None,
 
             else:
                 instance_type = input('AWS EC2 Instance Type '
-                                      '(default: g4dn.xlarge; min: g4dn.xlarge) = ')  # noqa: E501
+                                      '(default: c6i.xlarge; min: c6i.large) = ')  # noqa: E501
                 if not instance_type.strip():
                     instance_type = 'c6i.xlarge'
 
