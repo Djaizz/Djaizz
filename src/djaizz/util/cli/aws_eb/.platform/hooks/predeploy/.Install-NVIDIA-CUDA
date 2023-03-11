@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 
-CUDA_INSTALLER_FILE_NAME=cuda_12.1.0_530.30.02_linux.run
+# developer.nvidia.com/cuda-toolkit-archive
+
+
+CUDA_INSTALLER_FILE_NAME=cuda_11.3.1_465.19.01_linux.run
+  # CUDA 11.3 is latest tested for Detectron2
+
 CUDA_INSTALL_DIR_PATH=/usr/local/cuda
 
 
@@ -15,7 +20,7 @@ if [ ! -d $CUDA_INSTALL_DIR_PATH ]; then
   cd /tmp
 
   # download & install CUDA 11.3
-  wget https://developer.download.nvidia.com/compute/cuda/12.1.0/local_installers/$CUDA_INSTALLER_FILE_NAME
+  wget https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/$CUDA_INSTALLER_FILE_NAME
 
   # --silent
   #   Performs an installation with no further user-input and minimal
