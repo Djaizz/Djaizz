@@ -1,4 +1,4 @@
-Bandit >= 1.7.4
+Bandit >= 1.7.5
 Flake8 >= 6.0.0
 MyPy >= 1.1.1
 # Prospector >= 1.9.0
