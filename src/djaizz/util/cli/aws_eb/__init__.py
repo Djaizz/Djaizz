@@ -18,7 +18,7 @@ _DJAI_AWS_EB_CLI_UTIL_DIR_PATH: Path = Path(__file__).parent
 
 _EB_EXTENSIONS_DIR_NAME: str = '.ebextensions'
 _PLATFORM_DIR_NAME: str = '.platform'
-_INSTALL_NVIDIA_CUDA_SCRIPT_FILE_NAME: str = '.Install-NVIDIA-CUDA'
+_INSTALL_CUDA_SCRIPT_NAME: str = '.Install-CUDA'
 
 
 class ConfigFilesHandling(AbstractContextManager):
@@ -38,7 +38,7 @@ class ConfigFilesHandling(AbstractContextManager):
             symlinks=False,
             ignore=(None
                     if self.gpu
-                    else ignore_patterns(_INSTALL_NVIDIA_CUDA_SCRIPT_FILE_NAME)),  # noqa: E501
+                    else ignore_patterns(_INSTALL_CUDA_SCRIPT_NAME)),
             ignore_dangling_symlinks=False,
             dirs_exist_ok=True)
 
@@ -47,10 +47,9 @@ class ConfigFilesHandling(AbstractContextManager):
         paths: List[Path] = list(self.config_dir_path.rglob(pattern='*'))
 
         for path in paths:
-            if path.is_file() and (
-                    True
-                    if self.gpu
-                    else (path.name != _INSTALL_NVIDIA_CUDA_SCRIPT_FILE_NAME)):
+            if path.is_file() and (True
+                                   if self.gpu
+                                   else (path.name != _INSTALL_CUDA_SCRIPT_NAME)):  # noqa: E501
                 os.remove(path=path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))  # noqa: E501
 
         # remove empty directories
