@@ -5,7 +5,7 @@ Dask >= 2023.3.1
 Distributed >= 2023.3.1
 # Kedro >= 0.18.5; python_version < '3.11'
   # depends on outdated FSSpec
-MetaFlow >= 2.8.0
+MetaFlow >= 2.8.1
 NumBa >= 0.56.4; python_version < '3.11'
 NumPy >= 1.23
   # let higher dependencies figure
@@ -41,24 +41,24 @@ TensorFlow >= 2.12.0rc1; (python_version >= '3.11') or (sys_platform != 'darwin'
 TensorFlow-MacOS >= 2.11.0; (python_version < '3.11') and (sys_platform == 'darwin')
 TensorFlow-Metal >= 0.7.1; (python_version < '3.11') and (sys_platform == 'darwin')
 TensorFlow-DataSets >= 4.8.3
-TensorFlow-Hub >= 0.12.0
+TensorFlow-Hub >= 0.13.0
 
 # Torch & related
-Torch >= 1.13.1; python_version < '3.11'
+Torch >= 2.0.0
 Torch-Model-Archiver >= 0.7.1
 TorchServe >= 0.7.1
 
-TorchAudio >= 0.13.1; python_version < '3.11'
-TorchText >= 0.14.1; python_version < '3.11'
-TorchVision >= 0.14.1; python_version < '3.11'
+TorchAudio >= 2.0.1
+TorchText >= 0.15.1
+TorchVision >= 0.15.1
 
 # Computer Vision
 OpenCV-Python >= 4.7.0
 
 # Hugging Face & related
 DataSets >= 2.10.1
-HuggingFace-Hub >= 0.13.1
-Transformers >= 4.26.1
+HuggingFace-Hub >= 0.13.2
+Transformers >= 4.27.1
 
 SentencePiece >= 0.1.97
 TIMM >= 0.6.12; python_version < '3.11'
@@ -144,7 +144,7 @@ Ariadne >= 0.18.1
 Django-GraphQL-Extensions >= 0.1.0
 Django-RESTQL >= 0.15.3
 GQL >= 3.4.0
-Graphene >= 3.2.1
+Graphene >= 3.2.2
 Graphene-Django >= 3.0.0
 # Graphene-Django-Extras >= 0.5.2
   # conflicting/slow-resolving dependencies
@@ -162,7 +162,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.1
-Strawberry-GraphQL >= 0.162.0
+Strawberry-GraphQL >= 0.164.0
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -177,7 +177,7 @@ Markdown >= 3.4.1
 DjangoRESTFramework-JSONAPI >= 6.0.0
 DRF-Nested-Routers >= 0.93.4
 Django-PolyModels >= 1.7.0
-Django-Typed-Models >= 0.12.0
+Django-Typed-Models >= 0.13.0
 
 HAL-Codec >= 1.0.2
 JSONHyperSchema-Codec >= 1.0.3
@@ -200,7 +200,7 @@ Rules >= 3.3
 Django-Debug-Toolbar >= 3.8.1
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
-Kolo >= 2.4.2
+Kolo >= 2.5.0
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
@@ -239,7 +239,7 @@ Flask >= 2.1, < 2.2
 Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
-Gradio >= 3.20.1
+Gradio >= 3.21.0
 FastAPI >= 0.94.1
 
 Streamlit >= 1.20.0
@@ -264,8 +264,8 @@ H11 >= 0.9
 Hypercorn >= 0.14.3
 Quart >= 0.17
   # let higher dependencies figure
-Starlette >= 0.26.0
-Uvicorn >= 0.21.0
+Starlette >= 0.26.1
+Uvicorn >= 0.21.1
 
 
 # COMMAND-LINE INTERFACE (CLI)
