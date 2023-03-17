@@ -51,8 +51,10 @@ TorchServe >= 0.7.1
 
 TorchAudio >= 2.0.1; python_version >= '3.11'
 TorchAudio >= 0.13, < 2; python_version < '3.11'
-TorchText >= 0.15.1
-TorchVision >= 0.15.1
+TorchText >= 0.15.1; python_version >= '3.11'
+TorchText >= 0.14, < 0.15; python_version >= '3.11'
+TorchVision >= 0.15.1; python_version >= '3.11'
+TorchVision >= 0.14, < 0.15; python_version >= '3.11'
 
 # Computer Vision
 OpenCV-Python >= 4.7.0
