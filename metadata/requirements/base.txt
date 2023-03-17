@@ -44,7 +44,8 @@ TensorFlow-DataSets >= 4.8.3
 TensorFlow-Hub >= 0.13.0
 
 # Torch & related
-Torch >= 2.0.0
+Torch >= 2.0.0; python_version >= '3.11'
+Torch >= 1.13, < 2; python_version < '3.11'
 Torch-Model-Archiver >= 0.7.1
 TorchServe >= 0.7.1
 
