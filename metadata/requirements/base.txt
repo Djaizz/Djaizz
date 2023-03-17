@@ -44,13 +44,17 @@ TensorFlow-DataSets >= 4.8.3
 TensorFlow-Hub >= 0.13.0
 
 # Torch & related
-Torch >= 2.0.0
+Torch >= 2.0.0; python_version >= '3.11'
+Torch >= 1.13, < 2; python_version < '3.11'
 Torch-Model-Archiver >= 0.7.1
 TorchServe >= 0.7.1
 
-TorchAudio >= 2.0.1
-TorchText >= 0.15.1
-TorchVision >= 0.15.1
+TorchAudio >= 2.0.1; python_version >= '3.11'
+TorchAudio >= 0.13, < 2; python_version < '3.11'
+TorchText >= 0.15.1; python_version >= '3.11'
+TorchText >= 0.14, < 0.15; python_version < '3.11'
+TorchVision >= 0.15.1; python_version >= '3.11'
+TorchVision >= 0.14, < 0.15; python_version < '3.11'
 
 # Computer Vision
 OpenCV-Python >= 4.7.0
@@ -66,8 +70,7 @@ TIMM >= 0.6.12; python_version < '3.11'
   # Table Question Answering - requires Torch first
 
 # Fast AI
-# FastAI >= 2.7.11; python_version < '3.11'
-  # depends on outdated Torch < 2
+FastAI >= 2.7.11; python_version < '3.11'
 
 # Topological Data Analysis (TDA) & related
 Giotto-TDA >= 0.6.0; python_version < '3.11'
