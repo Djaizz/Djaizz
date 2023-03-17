@@ -67,8 +67,7 @@ TIMM >= 0.6.12; python_version < '3.11'
   # Table Question Answering - requires Torch first
 
 # Fast AI
-# FastAI >= 2.7.11; python_version < '3.11'
-  # depends on outdated Torch < 2
+FastAI >= 2.7.11; python_version < '3.11'
 
 # Topological Data Analysis (TDA) & related
 Giotto-TDA >= 0.6.0; python_version < '3.11'
