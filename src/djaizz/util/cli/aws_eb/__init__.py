@@ -4,16 +4,31 @@
 from contextlib import AbstractContextManager
 import os
 from pathlib import Path
+from pprint import pprint
 from shutil import copyfile, copytree, ignore_patterns
 from typing import Optional
 from typing import List  # Py3.9+: use built-in
 
 import click
+from ruamel import yaml
 
 from ..run_cmd import run_cmd
 
 
 _DJAI_AWS_EB_CLI_UTIL_DIR_PATH: Path = Path(__file__).parent
+
+
+_EC2_INSTANCE_TYPES_FILE_NAME: str = 'EC2-Instance-Types.yml'
+
+with open(file=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EC2_INSTANCE_TYPES_FILE_NAME,
+          mode='rt',
+          buffering=-1,
+          encoding='utf-8',
+          errors='raise',
+          newline=None,
+          closefd=False,
+          opener=None) as f:
+    _EC2_INSTANCE_TYPES: dict = yaml.safe_load(stream=f, version=None)
 
 
 _EB_EXTENSIONS_DIR_NAME: str = '.ebextensions'
@@ -233,12 +248,28 @@ def deploy(aws_eb_env_name: Optional[str] = None,
             # with good Networking performance and sufficient Memory
             # (note: Graviton (g) instances not compatible with Djaizz deps)
             if gpu:
+                pprint(object=_EC2_INSTANCE_TYPES['gpu'],
+                       stream=None,
+                       indent=2,
+                       width=80,
+                       depth=None,
+                       compact=True,
+                       sort_dicts=False,
+                       underscore_numbers=False)
                 instance_type = input('AWS EC2 Instance Type '
                                       '(default: g4dn.xlarge; min: g4dn.xlarge) = ')  # noqa: E501
                 if not instance_type.strip():
                     instance_type = 'g4dn.xlarge'
 
             else:
+                pprint(object=_EC2_INSTANCE_TYPES['cpu'],
+                       stream=None,
+                       indent=2,
+                       width=80,
+                       depth=None,
+                       compact=True,
+                       sort_dicts=False,
+                       underscore_numbers=False)
                 instance_type = input('AWS EC2 Instance Type '
                                       '(default: c6i.xlarge; min: c6i.large) = ')  # noqa: E501
                 if not instance_type.strip():

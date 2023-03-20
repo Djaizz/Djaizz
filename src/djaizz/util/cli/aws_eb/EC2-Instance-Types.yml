@@ -1,0 +1,400 @@
+# aws.amazon.com/ec2/instance-types
+
+cpu:
+  curr-gen:
+    c4:
+      chip: intel
+      sizes:
+        c4.large:
+          cpus: 2
+          mem: 3.75
+
+        c4.xlarge:
+          cpus: 4
+          mem: 7.5
+
+        c4.2xlarge:
+          cpus: 8
+          mem: 15
+
+        c4.4xlarge:
+          cpus: 16
+          mem: 30
+
+        c4.8xlarge:
+          cpus: 36
+          mem: 60
+
+    c5:
+      chip: intel
+      sizes:
+        c5.large:
+          cpus: 2
+          mem: 4
+
+        c5.xlarge:
+          cpus: 4
+          mem: 8
+
+        c5.2xlarge:
+          cpus: 8
+          mem: 16
+
+        c5.4xlarge:
+          cpus: 16
+          mem: 32
+
+        c5.9xlarge:
+          cpus: 36
+          mem: 72
+
+        c5.12xlarge:
+          cpus: 48
+          mem: 96
+
+        c5.18xlarge:
+          cpus: 72
+          mem: 144
+
+        c5.24xlarge:
+          cpus: 96
+          mem: 192
+
+        c5.metal:
+          cpus: 96
+          mem: 192
+
+        c5d.large:
+          cpus: 2
+          mem: 4
+
+        c5d.xlarge:
+          cpus: 4
+          mem: 8
+
+        c5d.2xlarge:
+          cpus: 8
+          mem: 16
+
+        c5d.4xlarge:
+          cpus: 16
+          mem: 32
+
+        c5d.9xlarge:
+          cpus: 36
+          mem: 72
+
+        c5d.12xlarge:
+          cpus: 48
+          mem: 96
+
+        c5d.18xlarge:
+          cpus: 72
+          mem: 144
+
+        c5d.24xlarge:
+          cpus: 96
+          mem: 192
+
+        c5d.metal:
+          cpus: 96
+          mem: 192
+
+    c5n:
+      chip: intel
+      sizes:
+        c5n.large:
+          cpus: 2
+          mem: 5.25
+
+        c5n.xlarge:
+          cpus: 4
+          mem: 10.5
+
+        c5n.2xlarge:
+          cpus: 8
+          mem: 21
+
+        c5n.4xlarge:
+          cpus: 16
+          mem: 42
+
+        c5n.9xlarge:
+          cpus: 36
+          mem: 96
+
+        c5n.18xlarge:
+          cpus: 72
+          mem: 192
+
+        c5n.metal:
+          cpus: 72
+          mem: 192
+
+    c6i:
+      chip: intel
+      sizes:
+        c6i.large:
+          cpus: 2
+          mem: 4
+
+        c6i.xlarge:
+          cpus: 4
+          mem: 8
+
+        c6i.2xlarge:
+          cpus: 8
+          mem: 16
+
+        c6i.4xlarge:
+          cpus: 16
+          mem: 32
+
+        c6i.8xlarge:
+          cpus: 32
+          mem: 64
+
+        c6i.12xlarge:
+          cpus: 48
+          mem: 96
+
+        c6i.16xlarge:
+          cpus: 64
+          mem: 128
+
+        c6i.24xlarge:
+          cpus: 96
+          mem: 192
+
+        c6i.32xlarge:
+          cpus: 128
+          mem: 256
+
+        c6i.metal:
+          cpus: 128
+          mem: 256
+
+    c6a:
+      chip: amd
+      sizes:
+        c6a.large:
+          cpus: 2
+          mem: 4
+
+        c6a.xlarge:
+          cpus: 4
+          mem: 8
+
+        c6a.2xlarge:
+          cpus: 8
+          mem: 16
+
+        c6a.4xlarge:
+          cpus: 16
+          mem: 32
+
+        c6a.8xlarge:
+          cpus: 32
+          mem: 64
+
+        c6a.12xlarge:
+          cpus: 48
+          mem: 96
+
+        c6a.16xlarge:
+          cpus: 64
+          mem: 128
+
+        c6a.24xlarge:
+          cpus: 96
+          mem: 192
+
+        c6a.32xlarge:
+          cpus: 128
+          mem: 256
+
+        c6a.48xlarge:
+          cpus: 192
+          mem: 384
+
+        c6a.metal:
+          cpus: 192
+          mem: 384
+
+    c6g:
+      chip: graviton
+      sizes:
+        c6g.medium:
+          cpus: 1
+          mem: 2
+
+        c6g.large:
+          cpus: 2
+          mem: 4
+
+        c6g.xlarge:
+          cpus: 4
+          mem: 8
+
+        c6g.2xlarge:
+          cpus: 8
+          mem: 16
+
+        c6g.4xlarge:
+          cpus: 16
+          mem: 32
+
+        c6g.8xlarge:
+          cpus: 32
+          mem: 64
+
+        c6g.12xlarge:
+          cpus: 48
+          mem: 96
+
+        c6g.16xlarge:
+          cpus: 64
+          mem: 128
+
+        c6g.metal:
+          cpus: 64
+          mem: 128
+
+        c6gd.medium:
+          cpus: 1
+          mem: 2
+
+        c6gd.large:
+          cpus: 2
+          mem: 4
+
+        c6gd.xlarge:
+          cpus: 4
+          mem: 8
+
+        c6gd.2xlarge:
+          cpus: 8
+          mem: 16
+
+        c6gd.4xlarge:
+          cpus: 16
+          mem: 32
+
+        c6gd.8xlarge:
+          cpus: 32
+          mem: 64
+
+        c6gd.12xlarge:
+          cpus: 48
+          mem: 96
+
+        c6gd.16xlarge:
+          cpus: 64
+          mem: 128
+
+        c6gd.metal:
+          cpus: 64
+          mem: 128
+
+    c6gn:
+      chip: graviton
+      sizes:
+        c6gn.medium:
+          cpus: 1
+          mem: 2
+
+        c6gn.large:
+          cpus: 2
+          mem: 4
+
+        c6gn.xlarge:
+          cpus: 4
+          mem: 8
+
+        c6gn.2xlarge:
+          cpus: 8
+          mem: 16
+
+        c6gn.4xlarge:
+          cpus: 16
+          mem: 32
+
+        c6gn.8xlarge:
+          cpus: 32
+          mem: 64
+
+        c6gn.12xlarge:
+          cpus: 48
+          mem: 96
+
+        c6gn.16xlarge:
+          cpus: 64
+          mem: 128
+
+gpu:
+  curr-gen:
+    g3:
+      chip: intel
+      sizes:
+        g3.4xlarge:
+          gpus: 1
+          cpus: 16
+          mem: 122
+          gpu-mem: 8
+
+        g3.8xlarge:
+          gpus: 2
+          cpus: 32
+          mem: 244
+          gpu-mem: 16
+
+        g3.16xlarge:
+          gpus: 4
+          cpus: 64
+          mem: 488
+          gpu-mem: 32
+
+    g4dn:
+      chip: intel
+      sizes:
+        g4dn.xlarge:
+          gpus: 1
+          cpus: 4
+          mem: 16
+          gpu-mem: 16
+
+        g4dn.2xlarge:
+          gpus: 1
+          cpus: 8
+          mem: 32
+          gpu-mem: 16
+
+        g4dn.4xlarge:
+          gpus: 1
+          cpus: 16
+          mem: 64
+          gpu-mem: 16
+
+        g4dn.8xlarge:
+          gpus: 1
+          cpus: 32
+          mem: 128
+          gpu-mem: 16
+
+        g4dn.12xlarge:
+          gpus: 4
+          cpus: 48
+          mem: 192
+          gpu-mem: 64
+
+        g4dn.16xlarge:
+          gpus: 1
+          cpus: 64
+          mem: 256
+          gpu-mem: 16
+
+        g4dn.metal:
+          gpus: 8
+          cpus: 96
+          mem: 384
+          gpu-mem: 128
