@@ -282,7 +282,7 @@ def deploy(aws_eb_env_name: Optional[str] = None,
                              f' --vpc.ec2subnets {subnets}'
                              f' --vpc.elbsubnets {subnets} --vpc.elbpublic'
                              f' --instance_type {instance_type}'
-                             f' --timeout 20'),
+                             f' --timeout 30'),
                     asgi=asgi)
 
 
