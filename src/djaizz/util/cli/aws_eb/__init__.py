@@ -26,7 +26,7 @@ with open(file=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EC2_INSTANCE_TYPES_FILE_NAME,
           encoding='utf-8',
           errors='raise',
           newline=None,
-          closefd=False,
+          closefd=True,
           opener=None) as f:
     _EC2_INSTANCE_TYPES: dict = yaml.safe_load(stream=f, version=None)
 
