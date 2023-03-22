@@ -61,8 +61,8 @@ OpenCV-Python >= 4.7.0
 
 # Hugging Face & related
 DataSets >= 2.10.1
-HuggingFace-Hub >= 0.13.2
-Transformers >= 4.27.1
+HuggingFace-Hub >= 0.13.3
+Transformers >= 4.27.2
 
 SentencePiece >= 0.1.97
 TIMM >= 0.6.12; python_version < '3.11'
@@ -132,7 +132,7 @@ Django-Admin-HStore-Widget >= 1.2.1
 Django-Admin-Relation-Links >= 0.2.5
 # Django-ForestAdmin >= 1.4.5; python_version < '3.11'
   # depends on outdated Python < 3.11
-Django-Grappelli >= 3.0.4
+Django-Grappelli >= 3.0.5
 Django-Jazzmin >= 2.6.0
 
 # Django-AutoComplete-Light & related
@@ -166,7 +166,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.1
-Strawberry-GraphQL >= 0.164.0
+Strawberry-GraphQL >= 0.165.1
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -204,7 +204,7 @@ Rules >= 3.3
 Django-Debug-Toolbar >= 3.8.1
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
-Kolo >= 2.5.0
+Kolo >= 2.6.0
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
@@ -243,11 +243,11 @@ Flask >= 2.1, < 2.2
 Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
-Gradio >= 3.21.0
-FastAPI >= 0.94.1
+Gradio >= 3.23.0
+FastAPI >= 0.95.0
 
 Streamlit >= 1.20.0
-Watchdog >= 2.3.1
+Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
 MariaDB-DynCol >= 3.6.1
