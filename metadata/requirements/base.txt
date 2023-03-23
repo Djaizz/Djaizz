@@ -108,8 +108,6 @@ SciKit-Fuzzy >= 0.4.2
 # FILE SYSTEMS
 # ============
 FSSpec >= 2023.3.0
-# S3FS >= 2023.3.0
-  # conflicting/slow-resolving dependencies
 
 
 # MODEL REPOSITORY & RELATED
@@ -306,3 +304,5 @@ Tqdm >= 4.65.0
 
 # AWSEBCLI ~= 3.2
 # AWSWrangler >= 0.0.8
+
+S3FS >= 2023.3.0
