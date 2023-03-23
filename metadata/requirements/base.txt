@@ -306,3 +306,6 @@ Tqdm >= 4.65.0
 # AWSWrangler >= 0.0.8
 
 S3FS >= 2023.3.0
+
+# GCP deps
+GCSFS >= 2023.3.0
