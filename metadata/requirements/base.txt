@@ -300,12 +300,12 @@ Tqdm >= 4.65.0
 # Amazon Web Services (AWS)
 S3FS >= 2023.3.0
 
+# Microsoft Azure
+ADLFS >= 2023.1.0
+
 # Google Cloud Platform (GCP)
 GCSFS >= 2023.3.0
 GDriveFS >= 0.14.13
-
-# Microsoft Azure
-ADLFS >= 2023.1.0
 
 # Dropbox
 DropboxDriveFS >= 1.3.1
