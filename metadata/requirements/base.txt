@@ -62,7 +62,7 @@ OpenCV-Python >= 4.7.0
 # Hugging Face & related
 DataSets >= 2.10.1
 HuggingFace-Hub >= 0.13.3
-Transformers >= 4.27.2
+Transformers >= 4.27.3
 
 SentencePiece >= 0.1.97
 TIMM >= 0.6.12; python_version < '3.11'
@@ -173,7 +173,7 @@ DRF-Writable-Nested >= 0.7.0
 CoreAPI >= 2.3.3
   # closely related to Django REST Framework
 CoreAPI-CLI >= 1.0.9
-Markdown >= 3.4.1
+Markdown >= 3.4.3
   # Markdown support for the browsable API
 
 DjangoRESTFramework-JSONAPI >= 6.0.0
@@ -186,7 +186,7 @@ JSONHyperSchema-Codec >= 1.0.3
 OpenAPI-Codec >= 1.3.2
 
 JSONSchema >= 4.17.3
-Pydantic >= 1.10.6
+Pydantic >= 1.10.7
 
 HTTPie >= 3.2.1
 
