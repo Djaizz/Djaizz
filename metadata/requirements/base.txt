@@ -297,15 +297,11 @@ Tqdm >= 4.65.0
 # CLOUD
 # =====
 
-# AWS deps: to install separately as they are notoriously hard to install alongside others
-# --------
-# AWSCLI ~= 1.21
-# Boto3 ~= 1.19
-
-# AWSEBCLI ~= 3.2
-# AWSWrangler >= 0.0.8
-
+# Amazon Web Services (AWS)
 S3FS >= 2023.3.0
 
-# GCP deps
+# Google Cloud Platform (GCP)
 GCSFS >= 2023.3.0
+
+# Microsoft Azure
+ADLFS >= 2023.1.0
