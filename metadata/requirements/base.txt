@@ -13,7 +13,7 @@ Pandas >= 1.5.3
 Pandarallel >= 1.6.4
 PyArrow >= 11.0.0
 PySpark >= 3.3.2
-Ray >= 2.3.0; python_version < '3.11'
+Ray >= 2.3.1; python_version < '3.11'
 SciPy >= 1.10.1
 
 Pillow >= 9.4.0
@@ -142,7 +142,7 @@ Django-Tagging >= 0.5.0
 Django-Taggit >= 3.1.0
 
 # GraphQL
-Ariadne >= 0.18.1
+Ariadne >= 0.19.1
 Django-GraphQL-Extensions >= 0.1.0
 Django-RESTQL >= 0.15.3
 GQL >= 3.4.0
@@ -164,7 +164,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.1
-Strawberry-GraphQL >= 0.167.0
+Strawberry-GraphQL >= 0.168.1
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -191,7 +191,7 @@ Pydantic >= 1.10.7
 HTTPie >= 3.2.1
 
 # Django Filtering
-Django-Filter >= 22.1
+Django-Filter >= 23.1
 DjangoRESTFramework-Filters >= 1.0.0.dev2
 
 # Django Object-Level Permissions
