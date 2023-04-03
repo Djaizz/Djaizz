@@ -311,9 +311,3 @@ PyTZ >= 2023.3
 Requests >= 2.28.2
 Ruamel.YAML >= 0.17.21
 Tqdm >= 4.65.0
-
-
-# TEMP FIX
-# ========
-ORJSON >= 3.8.8, < 3.8.9
-  # github.com/ijl/orjson/issues/370
