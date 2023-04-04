@@ -178,7 +178,8 @@ CoreAPI-CLI >= 1.0.9
 Markdown >= 3.4.3
   # Markdown support for the browsable API
 
-DjangoRESTFramework-JSONAPI >= 6.0.0
+# DjangoRESTFramework-JSONAPI >= 6.0.0
+  # depends on outdated Django < 4.2
 DRF-Nested-Routers >= 0.93.4
 Django-PolyModels >= 1.7.0
 Django-Typed-Models >= 0.13.0
