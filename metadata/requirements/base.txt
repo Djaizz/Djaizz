@@ -166,7 +166,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.1
-Strawberry-GraphQL >= 0.168.1
+Strawberry-GraphQL >= 0.168.2
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -201,7 +201,7 @@ Django-Guardian >= 2.4.0
 Rules >= 3.3
 
 # Django Debugging & Query Profiling
-Django-Debug-Toolbar >= 3.8.1
+Django-Debug-Toolbar >= 4.0.0
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
 Kolo >= 2.6.0
@@ -246,7 +246,8 @@ Werkzeug >= 2.0, < 2.1
 Gradio >= 3.24.1
 FastAPI >= 0.95.0
 
-Streamlit >= 1.20.0
+# Streamlit >= 1.20.0
+  # depends on oudated Pandas < 2
 Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
