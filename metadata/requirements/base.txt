@@ -224,8 +224,7 @@ Django-Query-Graph @ https://GitHub.com/Djaizz/Django-Query-Graph/archive/main.z
 Dj-Util @ https://github.com/Djaizz/Dj-Util/archive/main.zip
 
 # Django CORS Headers
-Django-CORS-Headers >= 3.10
-  # let higher dependencies figure
+Django-CORS-Headers >= 3.14.0
 
 # Application UIs
 Django-HTMX >= 1.14.0
@@ -260,10 +259,8 @@ PsycoPG >= 3.1.8
 
 # ASGI Web Servers & related
 ASGIRef >= 3.6.0
-Channels >= 2.4
-  # let higher dependencies figure
-Daphne >= 2.5
-  # let higher dependencies figure
+Channels >= 4.0.0
+Daphne >= 4.0.0
 GUnicorn >= 20.1.0
 H11 >= 0.9
   # let higher dependencies figure
