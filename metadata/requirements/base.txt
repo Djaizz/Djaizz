@@ -247,7 +247,8 @@ Werkzeug >= 2.0, < 2.1
 Gradio >= 3.24.1
 FastAPI >= 0.95.0
 
-Streamlit >= 1.20.0
+# Streamlit >= 1.20.0
+  # depends on oudated Pandas < 2
 Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
