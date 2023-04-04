@@ -229,7 +229,7 @@ Django-CORS-Headers >= 3.10
 # Application UIs
 Django-HTMX >= 1.14.0
 
-Django-Plotly-Dash >= 1.6
+Django-Plotly-Dash >= 1.6, < 1.7
   # DPD >= 1.7 depends on outdated Django < 4
   # github.com/GibbsConsulting/django-plotly-dash/issues/403
 Dash-Bootstrap-Components >= 0.13
