@@ -256,6 +256,7 @@ MariaDB-DynCol >= 3.6.1
 Django-MySQL >= 4.9.0
 MySQLClient >= 2.1.1
 MySQL-Connector-Python >= 8.0.32
+PsycoPG >= 3.1.8
 PsycoPG2-binary >= 2.9.6
 
 # ASGI Web Servers & related
