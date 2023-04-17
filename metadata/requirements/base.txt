@@ -1,18 +1,18 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.3.2
-Distributed >= 2023.3.2
+Dask >= 2023.4.0
+Distributed >= 2023.4.0
 # Kedro >= 0.18.6; python_version < '3.11'
   # depends on outdated FSSpec
-MetaFlow >= 2.8.2
+MetaFlow >= 2.8.3
 NumBa >= 0.56.4; python_version < '3.11'
 NumPy >= 1.23
   # let higher dependencies figure
 Pandas >= 2.0.0
 Pandarallel >= 1.6.4
 PyArrow >= 11.0.0
-PySpark >= 3.3.2
+PySpark >= 3.4.0
 Ray >= 2.3.1; python_version < '3.11'
 SciPy >= 1.10.1
 
@@ -41,7 +41,7 @@ SciKit-Learn >= 1.2.2
 TensorFlow >= 2.12.0; (python_version >= '3.11') or (sys_platform != 'darwin')
 TensorFlow-MacOS >= 2.12.0; (python_version < '3.11') and (sys_platform == 'darwin')
 TensorFlow-Metal >= 0.8.0; (python_version < '3.11') and (sys_platform == 'darwin')
-TensorFlow-DataSets >= 4.8.3
+TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.13.0
 
 # Torch & related
@@ -62,10 +62,10 @@ OpenCV-Python >= 4.7.0
 
 # Hugging Face & related
 DataSets >= 2.11.0
-HuggingFace-Hub >= 0.13.3
-Transformers >= 4.27.4
+HuggingFace-Hub >= 0.13.4
+Transformers >= 4.28.1
 
-SentencePiece >= 0.1.97
+SentencePiece >= 0.1.98
 TIMM >= 0.6.13; python_version < '3.11'
 # Torch-Scatter >= 2.1.0
   # Table Question Answering - requires Torch first
@@ -75,7 +75,7 @@ FastAI >= 2.7.12; python_version < '3.11'
 
 # Topological Data Analysis (TDA) & related
 Giotto-TDA >= 0.6.0; python_version < '3.11'
-GUDHI >= 3.7.1
+GUDHI >= 3.8.0
 
 # Cloud AI/ML Services
 # Google-Cloud-Translate >= 3.10.1
@@ -109,7 +109,7 @@ SciKit-Fuzzy >= 0.4.2
 
 # FILE SYSTEMS
 # ============
-FSSpec >= 2023.3.0
+FSSpec >= 2023.4.0
 
 
 # MODEL REPOSITORY & RELATED
@@ -166,7 +166,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.1
-Strawberry-GraphQL >= 0.168.2
+Strawberry-GraphQL >= 0.171.1
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -211,7 +211,7 @@ Kolo >= 2.6.0
 Django-Annoying >= 0.10.6
 Django-Choices >= 1.7.2
 Django-Compressor >= 4.3.1
-Django-Configurations >= 2.4
+Django-Configurations >= 2.4.1
 Django-Crispy-Forms >= 2.0
 Django-Environ >= 0.10.0
 Django-Extensions >= 3.2.1
@@ -235,7 +235,7 @@ Django-Plotly-Dash >= 1.6, < 1.7
 Dash-Bootstrap-Components >= 0.13
   # compatible with Django-Plotly-Dash < 2
 DPD-Static-Support >= 0.0.5
-Django-Bootstrap4 >= 22.3
+Django-Bootstrap4 >= 23.1
 WhiteNoise >= 6.4.0
 
 Flask >= 2.1, < 2.2
@@ -243,8 +243,8 @@ Flask >= 2.1, < 2.2
 Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
-Gradio >= 3.24.1
-FastAPI >= 0.95.0
+Gradio >= 3.27.0
+FastAPI >= 0.95.1
 
 # Streamlit >= 1.20.0
   # depends on oudated Pandas < 2
@@ -256,6 +256,7 @@ Django-MySQL >= 4.9.0
 MySQLClient >= 2.1.1
 MySQL-Connector-Python >= 8.0.32
 PsycoPG >= 3.1.8
+PsycoPG2-binary >= 2.9.6
 
 # ASGI Web Servers & related
 ASGIRef >= 3.6.0
@@ -265,8 +266,8 @@ GUnicorn >= 20.1.0
 H11 >= 0.9
   # let higher dependencies figure
 Hypercorn >= 0.14.3
-Quart >= 0.17
-  # let higher dependencies figure
+Quart >= 0.17, < 0.18
+  # >= 0.18 depends of Werkzeug >= 2.2
 Starlette >= 0.26.1
 Uvicorn >= 0.21.1
 
@@ -286,13 +287,13 @@ Jupyter >= 1.0.0
 # =====
 
 # Amazon Web Services (AWS)
-S3FS >= 2023.3.0
+S3FS >= 2023.4.0
 
 # Microsoft Azure
 ADLFS >= 2023.1.0
 
 # Google Cloud Platform (GCP)
-GCSFS >= 2023.3.0
+GCSFS >= 2023.4.0
 GDriveFS >= 0.14.13
 
 # Dropbox
@@ -302,7 +303,7 @@ DropboxDriveFS >= 1.3.1
 # MISC / OTHER
 # ============
 GitPython >= 3.1.31
-Loguru >= 0.6.0
+Loguru >= 0.7.0
 PSUtil >= 5.9.4
 Python-DateUtil >= 2.8.2
 Python-DotEnv >= 1.0.0
