@@ -266,8 +266,8 @@ GUnicorn >= 20.1.0
 H11 >= 0.9
   # let higher dependencies figure
 Hypercorn >= 0.14.3
-Quart >= 0.18.4
-  # let higher dependencies figure
+Quart >= 0.17, < 0.18
+  # >= 0.18 depends of Werkzeug >= 2.2
 Starlette >= 0.26.1
 Uvicorn >= 0.21.1
 
