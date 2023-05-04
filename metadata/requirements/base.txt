@@ -30,6 +30,7 @@ XDF @ https://github.com/Djaizz/XDF/archive/main.zip
 # ==========================================
 
 Imbalanced-Learn >= 0.10.1
+PandasAI >= 0.2.2
 StatsModels >= 0.13.5
 
 # SciKit-Learn & related
@@ -244,6 +245,7 @@ Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
 Gradio >= 3.28.2
+Gradio-Tools >= 0.0.7
 FastAPI >= 0.95.1
 
 # Streamlit >= 1.20.0
