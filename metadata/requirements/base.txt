@@ -30,7 +30,7 @@ XDF @ https://github.com/Djaizz/XDF/archive/main.zip
 # ==========================================
 
 Imbalanced-Learn >= 0.10.1
-PandasAI >= 0.2.2
+PandasAI >= 0.2.2; python_version >= '3.9'
 StatsModels >= 0.13.5
 
 # SciKit-Learn & related
