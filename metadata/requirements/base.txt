@@ -3,9 +3,9 @@
 
 Dask >= 2023.4.1
 Distributed >= 2023.4.1
-# Kedro >= 0.18.6; python_version < '3.11'
+# Kedro >= 0.18.8; python_version < '3.11'
   # depends on outdated FSSpec
-MetaFlow >= 2.8.4
+MetaFlow >= 2.8.5
 NumBa >= 0.57.0; python_version < '3.11'
 NumPy >= 1.23
   # let higher dependencies figure
@@ -30,7 +30,6 @@ XDF @ https://github.com/Djaizz/XDF/archive/main.zip
 # ==========================================
 
 Imbalanced-Learn >= 0.10.1
-PandasAI >= 0.2.2; python_version >= '3.9'
 StatsModels >= 0.13.5
 
 # SciKit-Learn & related
@@ -46,16 +45,16 @@ TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.13.0
 
 # Torch & related
-Torch >= 2.0.0; python_version >= '3.11'
+Torch >= 2.0.1; python_version >= '3.11'
 Torch >= 1.13, < 2; python_version < '3.11'
 Torch-Model-Archiver >= 0.7.1
 TorchServe >= 0.7.1
 
-TorchAudio >= 2.0.1; python_version >= '3.11'
+TorchAudio >= 2.0.2; python_version >= '3.11'
 TorchAudio >= 0.13, < 2; python_version < '3.11'
-TorchText >= 0.15.1; python_version >= '3.11'
+TorchText >= 0.15.2; python_version >= '3.11'
 TorchText >= 0.14, < 0.15; python_version < '3.11'
-TorchVision >= 0.15.1; python_version >= '3.11'
+TorchVision >= 0.15.2; python_version >= '3.11'
 TorchVision >= 0.14, < 0.15; python_version < '3.11'
 
 # Computer Vision
@@ -97,7 +96,7 @@ SHAP >= 0.41.0; python_version < '3.11'
   # depends on NumBa
 
 # ML Model Management
-# MLFLow >= 2.1.1
+# MLFLow >= 2.3.1
   # conflicting/slow-resolving dependencies
 
 
@@ -108,9 +107,16 @@ SHAP >= 0.41.0; python_version < '3.11'
 SciKit-Fuzzy >= 0.4.2
 
 
+# LARGE FOUNDATIONAL MODELS & related
+# ===================================
+
+LangChain >= 0.0.163
+PandasAI >= 0.2.9; python_version >= '3.9'
+
+
 # FILE SYSTEMS
 # ============
-FSSpec >= 2023.4.0
+FSSpec >= 2023.5.0
 
 
 # MODEL REPOSITORY & RELATED
@@ -142,13 +148,13 @@ Django-Generic-M2M >= 0.3.1
 Django-GM2M >= 1.1.1
 Django-QuerySetSequence >= 0.16
 Django-Tagging >= 0.5.0
-Django-Taggit >= 3.1.0
+Django-Taggit >= 4.0.0
 
 # GraphQL
 Ariadne >= 0.19.1
 Django-GraphQL-Extensions >= 0.1.0
 Django-RESTQL >= 0.15.3
-GQL >= 3.4.0
+GQL >= 3.4.1
 Graphene >= 3.2.2
 Graphene-Django >= 3.0.2
 # Graphene-Django-Extras >= 0.5.2
@@ -167,7 +173,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.1
-Strawberry-GraphQL >= 0.176.3
+Strawberry-GraphQL >= 0.177.1
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -244,7 +250,7 @@ Flask >= 2.1, < 2.2
 Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
-Gradio >= 3.28.2
+Gradio >= 3.29.0
 Gradio-Tools >= 0.0.7
 FastAPI >= 0.95.1
 
@@ -289,13 +295,13 @@ Jupyter >= 1.0.0
 # =====
 
 # Amazon Web Services (AWS)
-S3FS >= 2023.4.0
+S3FS >= 2023.5.0
 
 # Microsoft Azure
 ADLFS >= 2023.4.0
 
 # Google Cloud Platform (GCP)
-GCSFS >= 2023.4.0
+GCSFS >= 2023.5.0
 GDriveFS >= 0.14.13
 
 # Dropbox
@@ -311,5 +317,5 @@ Python-DateUtil >= 2.8.2
 Python-DotEnv >= 1.0.0
 PyTZ >= 2023.3
 Requests >= 2.30.0
-Ruamel.YAML >= 0.17.22
+Ruamel.YAML >= 0.17.24
 Tqdm >= 4.65.0
