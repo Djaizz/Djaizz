@@ -110,8 +110,9 @@ SciKit-Fuzzy >= 0.4.2
 # LARGE FOUNDATIONAL MODELS & related
 # ===================================
 
-LangChain >= 0.0.163
-PandasAI >= 0.2.9; python_version >= '3.9'
+LangChain >= 0.0.170
+OpenAI >= 0.27.6
+PandasAI >= 0.2.11; python_version >= '3.9'
 
 
 # FILE SYSTEMS
