@@ -318,5 +318,5 @@ Python-DateUtil >= 2.8.2
 Python-DotEnv >= 1.0.0
 PyTZ >= 2023.3
 Requests >= 2.30.0
-Ruamel.YAML >= 0.17.24
+Ruamel.YAML >= 0.17.26
 Tqdm >= 4.65.0
