@@ -1,11 +1,11 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.4.1
-Distributed >= 2023.4.1
+Dask >= 2023.5.0
+Distributed >= 2023.5.0
 # Kedro >= 0.18.8; python_version < '3.11'
   # depends on outdated FSSpec
-MetaFlow >= 2.8.5
+MetaFlow >= 2.9.1
 NumBa >= 0.57.0; python_version < '3.11'
 NumPy >= 1.23
   # let higher dependencies figure
@@ -30,7 +30,7 @@ XDF @ https://github.com/Djaizz/XDF/archive/main.zip
 # ==========================================
 
 Imbalanced-Learn >= 0.10.1
-StatsModels >= 0.13.5
+StatsModels >= 0.14.0
 
 # SciKit-Learn & related
 # Auto-SKLearn >= 0.15.0
@@ -47,8 +47,8 @@ TensorFlow-Hub >= 0.13.0
 # Torch & related
 Torch >= 2.0.1; python_version >= '3.11'
 Torch >= 1.13, < 2; python_version < '3.11'
-Torch-Model-Archiver >= 0.7.1
-TorchServe >= 0.7.1
+Torch-Model-Archiver >= 0.8.0
+TorchServe >= 0.8.0
 
 TorchAudio >= 2.0.2; python_version >= '3.11'
 TorchAudio >= 0.13, < 2; python_version < '3.11'
@@ -63,7 +63,7 @@ OpenCV-Python >= 4.7.0
 # Hugging Face & related
 DataSets >= 2.12.0
 HuggingFace-Hub >= 0.14.1
-Transformers >= 4.28.1
+Transformers >= 4.29.2
 
 SentencePiece >= 0.1.99
 TIMM >= 0.6.13; python_version < '3.11'
@@ -110,9 +110,9 @@ SciKit-Fuzzy >= 0.4.2
 # LARGE FOUNDATIONAL MODELS & related
 # ===================================
 
-LangChain >= 0.0.170
+LangChain >= 0.0.172
 OpenAI >= 0.27.6
-PandasAI >= 0.2.11; python_version >= '3.9'
+PandasAI >= 0.2.13; python_version >= '3.9'
 
 
 # FILE SYSTEMS
@@ -144,7 +144,7 @@ Django-Grappelli >= 3.0.6
 Django-Jazzmin >= 2.6.0
 
 # Django-AutoComplete-Light & related
-Django-Autocomplete-Light >= 3.9.4
+Django-Autocomplete-Light >= 3.9.7
 Django-Generic-M2M >= 0.3.1
 Django-GM2M >= 1.1.1
 Django-QuerySetSequence >= 0.16
@@ -210,10 +210,10 @@ Django-Guardian >= 2.4.0
 Rules >= 3.3
 
 # Django Debugging & Query Profiling
-Django-Debug-Toolbar >= 4.0.0
+Django-Debug-Toolbar >= 4.1.0
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
-Kolo >= 2.8.0
+Kolo >= 2.9.0
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
@@ -232,7 +232,7 @@ Django-Query-Graph @ https://GitHub.com/Djaizz/Django-Query-Graph/archive/main.z
 Dj-Util @ https://github.com/Djaizz/Dj-Util/archive/main.zip
 
 # Django CORS Headers
-Django-CORS-Headers >= 3.14.0
+Django-CORS-Headers >= 4.0.0
 
 # Application UIs
 Django-HTMX >= 1.14.0
@@ -251,9 +251,9 @@ Flask >= 2.1, < 2.2
 Werkzeug >= 2.0, < 2.1
   # github.com/plotly/dash/issues/1992
 
-Gradio >= 3.29.0
-Gradio-Tools >= 0.0.7
-FastAPI >= 0.95.1
+Gradio >= 3.31.0
+Gradio-Tools >= 0.0.9
+FastAPI >= 0.95.2
 
 # Streamlit >= 1.20.0
   # depends on oudated Pandas < 2
@@ -277,7 +277,7 @@ H11 >= 0.9
 Hypercorn >= 0.14.3
 Quart >= 0.17, < 0.18
   # >= 0.18 depends of Werkzeug >= 2.2
-Starlette >= 0.26.1
+Starlette >= 0.27.0
 Uvicorn >= 0.22.0
 
 
