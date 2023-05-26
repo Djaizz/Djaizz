@@ -1,9 +1,9 @@
 """Djaizz Dependencies."""
 
 
+from collections.abc import Sequence
 from importlib.metadata import version
 from pprint import pprint
-from typing import Sequence  # Py3.9+: use built-ins/collections.abc
 
 import click
 

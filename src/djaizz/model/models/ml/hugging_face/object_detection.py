@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import Dict, List   # Py3.9+: use generic types
 from typing import Any, Union
 
 from django.utils.functional import classproperty
@@ -30,7 +29,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceObjectDetector',)
 
 
 ObjectDetectionInputType = Union[str, Image]
-ObjectDetectionOutputType = List[dict]
+ObjectDetectionOutputType = list[dict]
 
 
 class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
@@ -60,7 +59,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
         # pylint: disable=arguments-differ
         """Detect Objects from Image(s)."""
         if not isinstance(image_or_images, (str, Image, list)):
-            image_or_images: List[ObjectDetectionInputType] = \
+            image_or_images: list[ObjectDetectionInputType] = \
                 list(image_or_images)
 
         self.load()
@@ -75,11 +74,11 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
         BoundingBoxType = tuple[str, int, int, int, int]   # noqa: N806
 
         def _predict(self, img: Image, threshold: float = 0.9) \
-                -> tuple[Image, List[BoundingBoxType]]:
-            detected_objs: List[Dict[str, Any]] = \
+                -> tuple[Image, list[BoundingBoxType]]:
+            detected_objs: list[dict[str, Any]] = \
                 cls.predict(self, image_or_images=img, threshold=threshold)
 
-            bounding_boxes: List[BoundingBoxType] = []
+            bounding_boxes: list[BoundingBoxType] = []
             for i in detected_objs:
                 box_coords = i['box']
                 bounding_boxes.append((i['label'],
@@ -106,7 +105,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
 
                     SliderInput(minimum=.5, maximum=.9, step=.1, default=.9,
                                 label='Confidence Threshold')],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -119,7 +118,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
                                  label='Detected Objects'),
 
                      JSONOutput(label='Detected Objects')],
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -131,7 +130,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -222,7 +221,7 @@ class PreTrainedHuggingFaceObjectDetector(PreTrainedHuggingFaceTransformer):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

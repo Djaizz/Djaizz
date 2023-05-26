@@ -7,7 +7,6 @@ from pathlib import Path
 from pprint import pprint
 from shutil import copyfile, copytree, ignore_patterns
 from typing import Optional
-from typing import List  # Py3.9+: use built-in
 
 import click
 from ruamel import yaml
@@ -59,7 +58,7 @@ class ConfigFilesHandling(AbstractContextManager):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Remove config/extension files."""
-        paths: List[Path] = list(self.config_dir_path.rglob(pattern='*'))
+        paths: list[Path] = list(self.config_dir_path.rglob(pattern='*'))
 
         for path in paths:
             if path.is_file() and (True
@@ -94,7 +93,7 @@ class EBIgnoreHandling(AbstractContextManager):
                       newline=None,
                       closefd=True,
                       opener=None) as eb_ignore_file:
-                self.eb_ignore_content: List[str] = eb_ignore_file.readlines()
+                self.eb_ignore_content: list[str] = eb_ignore_file.readlines()
 
     def __enter__(self):
         """Add `.ebignore` file, if applicable."""

@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import List   # Py3.9+: use generic types
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -61,7 +60,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
                 padding: Union[bool, str] = False,
                 truncation: Union[bool, str] = False) \
             -> Union[TableQuestionAnswerOutputType,
-                     List[TableQuestionAnswerOutputType]]:
+                     list[TableQuestionAnswerOutputType]]:
         # pylint: disable=arguments-differ,too-many-arguments
         """Answer Question(s) on a Tabular Data Set."""
         self.load()
@@ -100,7 +99,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
                     CheckboxInput(default=False, label='Padding?'),
 
                     CheckboxInput(default=False, label='Truncation?')],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -109,7 +108,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
             # the number of parameters in fn.
 
             outputs=JSONOutput(label='Likely Answer(s)'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -121,7 +120,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -213,7 +212,7 @@ class PreTrainedHuggingFaceTableQuestionAnswerer(
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

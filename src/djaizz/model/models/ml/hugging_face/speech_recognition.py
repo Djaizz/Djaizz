@@ -4,7 +4,6 @@
 from sys import version_info
 from tempfile import NamedTemporaryFile
 from typing import Union
-from typing import List   # Py3.9+: use generic types
 
 from django.utils.functional import classproperty
 
@@ -56,14 +55,14 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
                     Union[SpeechRecognitionInputType,
                           Sequence[SpeechRecognitionInputType]]) \
             -> Union[SpeechRecognitionOutputType,
-                     List[SpeechRecognitionOutputType]]:
+                     list[SpeechRecognitionOutputType]]:
         # pylint: disable=arguments-differ
         """Recognize Speech(es)."""
         single_speech: bool = isinstance(speech_or_speeches, (numpy.ndarray,
                                                               str))
 
         if not (single_speech or isinstance(speech_or_speeches, list)):
-            speech_or_speeches: List[SpeechRecognitionInputType] = \
+            speech_or_speeches: list[SpeechRecognitionInputType] = \
                 list(speech_or_speeches)
 
         self.load()
@@ -89,7 +88,7 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
                               type='file',
                               label='Recorded Speech to Transcribe',
                               optional=False),
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -98,7 +97,7 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
             # the number of parameters in fn.
 
             outputs=TextboxOutput(type='str', label='Transcribed Text'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -110,7 +109,7 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -201,7 +200,7 @@ class PreTrainedHuggingFaceSpeechRecognizer(PreTrainedHuggingFaceTransformer):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

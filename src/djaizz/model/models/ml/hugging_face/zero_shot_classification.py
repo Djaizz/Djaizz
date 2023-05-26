@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import Dict, List   # Py3.9+: use generic types
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -28,7 +27,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceZeroShotClassifier',)
 
 
 ZeroShotClassificationInputType = str
-ZeroShotClassificationOutputType = Dict[str, float]
+ZeroShotClassificationOutputType = dict[str, float]
 
 
 class PreTrainedHuggingFaceZeroShotClassifier(
@@ -55,17 +54,17 @@ class PreTrainedHuggingFaceZeroShotClassifier(
                 text_or_texts:
                     Union[ZeroShotClassificationInputType,
                           Sequence[ZeroShotClassificationInputType]],
-                candidate_labels: List[str],
+                candidate_labels: list[str],
                 hypothesis_template: str = 'This example is {}.',
                 multi_label: bool = False) \
             -> Union[ZeroShotClassificationOutputType,
-                     List[ZeroShotClassificationOutputType]]:
+                     list[ZeroShotClassificationOutputType]]:
         # pylint: disable=arguments-differ
         """Zero-Shot Classification of Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: List[ZeroShotClassificationInputType] = \
+            text_or_texts: list[ZeroShotClassificationInputType] = \
                 list(text_or_texts)
 
         self.load()
@@ -117,7 +116,7 @@ class PreTrainedHuggingFaceZeroShotClassifier(
                                  label='Hypothesis Format'),
 
                     CheckboxInput(default=False, label='Multi-Label?')],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -128,7 +127,7 @@ class PreTrainedHuggingFaceZeroShotClassifier(
             outputs=LabelOutput(num_top_classes=10,
                                 type='auto',
                                 label='Label Probabilities'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -140,7 +139,7 @@ class PreTrainedHuggingFaceZeroShotClassifier(
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -232,7 +231,7 @@ class PreTrainedHuggingFaceZeroShotClassifier(
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

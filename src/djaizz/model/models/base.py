@@ -5,7 +5,6 @@ from abc import abstractmethod
 from json.decoder import JSONDecoder
 from sys import version_info
 from typing import Any, Optional
-from typing import Dict, List   # Py3.9+: use generic types
 
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models.fields import CharField
@@ -104,13 +103,13 @@ class AIModel(PolymorphicModel,
             yield from subclass._subclasses
 
     @classproperty
-    def subclasses(cls) -> List[PolymorphicModelBase]:   # noqa: N805
+    def subclasses(cls) -> list[PolymorphicModelBase]:   # noqa: N805
         # pylint: disable=no-self-argument
         """List of AIModel class's subclasses."""
         return list(cls._subclasses)
 
     @classproperty
-    def subclass_names(cls) -> List[str]:   # noqa: N805
+    def subclass_names(cls) -> list[str]:   # noqa: N805
         # pylint: disable=no-self-argument
         """List of AIModel class's subclasses' names."""
         return [s.__name__
@@ -118,7 +117,7 @@ class AIModel(PolymorphicModel,
                 ]
 
     @classproperty
-    def subclasses_by_name(cls) -> Dict[str, PolymorphicModelBase]:   # noqa: E501,N805
+    def subclasses_by_name(cls) -> dict[str, PolymorphicModelBase]:   # noqa: E501,N805
         # pylint: disable=no-self-argument
         """Return AIModel class's subclass-by-name dictionary.
 
@@ -130,7 +129,7 @@ class AIModel(PolymorphicModel,
                 }
 
     @classproperty
-    def subclass_full_qual_names(cls) -> List[str]:   # noqa: N805
+    def subclass_full_qual_names(cls) -> list[str]:   # noqa: N805
         # pylint: disable=no-self-argument
         """List of AIModel class's subclasses' fully-qualified names."""
         return [full_qual_name(s)
@@ -138,7 +137,7 @@ class AIModel(PolymorphicModel,
                 ]
 
     @classproperty
-    def subclasses_by_full_qual_name(cls) -> Dict[str, PolymorphicModelBase]:   # noqa: E501,N805
+    def subclasses_by_full_qual_name(cls) -> dict[str, PolymorphicModelBase]:   # noqa: E501,N805
         # pylint: disable=no-self-argument
         """Return AIModel class's subclass-by-fully-qualified name dict.
 
@@ -393,7 +392,7 @@ class AIModel(PolymorphicModel,
             # (Callable) - the function to wrap an interface around.
 
             inputs=[],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -402,7 +401,7 @@ class AIModel(PolymorphicModel,
             # the number of parameters in fn.
 
             outputs=JSONOutput(label='AI Model Output'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -414,7 +413,7 @@ class AIModel(PolymorphicModel,
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -506,7 +505,7 @@ class AIModel(PolymorphicModel,
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

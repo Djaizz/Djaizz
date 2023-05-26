@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import List   # Py3.9+: use generic types
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -61,14 +60,14 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
                 max_seq_len: int = 384,
                 max_question_len: int = 64,
                 handle_impossible_answer: bool = False) \
-            -> Union[QuestionAnswerOutputType, List[QuestionAnswerOutputType]]:
+            -> Union[QuestionAnswerOutputType, list[QuestionAnswerOutputType]]:
         # pylint: disable=arguments-differ,too-many-arguments
         """Answer Question(s) based on Text(s)."""
         if not isinstance(question, (str, list)):
-            question: List[QuestionAnswerInputType] = list(question)
+            question: list[QuestionAnswerInputType] = list(question)
 
         if not isinstance(context, (str, list)):
-            context: List[QuestionAnswerInputType] = list(context)
+            context: list[QuestionAnswerInputType] = list(context)
 
         self.load()
 
@@ -125,7 +124,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
                     CheckboxInput(default=False,
                                   label='Handle Impossible Answer?')],
 
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -134,7 +133,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
             # the number of parameters in fn.
 
             outputs=JSONOutput(label='Likely Answer(s)'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -146,7 +145,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -238,7 +237,7 @@ class PreTrainedHuggingFaceQuestionAnswerer(PreTrainedHuggingFaceTransformer):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

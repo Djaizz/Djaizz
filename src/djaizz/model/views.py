@@ -3,7 +3,6 @@
 
 from inspect import isclass
 from typing import Literal, Union
-from typing import List   # Py3.9+: use generic types
 
 from django.http.request import HttpRequest
 from django.http.response import Http404, HttpResponse, HttpResponseRedirect
@@ -44,7 +43,7 @@ def model_ui(request: HttpRequest,
                           model_class_or_instance_name_or_uuid +
                           ' NOT FOUND ***') from ai_model_does_not_exist
 
-        model_names_or_uuids: List[str] = model.names_or_uuids
+        model_names_or_uuids: list[str] = model.names_or_uuids
 
     if ui_type == 'dash':
         if not isinstance(dash_ui := model.dash_ui, DjangoDash):
@@ -110,7 +109,7 @@ def model_ui(request: HttpRequest,
                 # from Google Colab, prints the errors in the cell output.
 
                 auth=None,
-                # (Callable, Union[Tuple[str, str], List[Tuple[str, str]]]) -
+                # (Callable, Union[tuple[str, str], list[tuple[str, str]]]) -
                 # If provided, username and password
                 # (or list of username-password tuples)
                 # required to access interface.

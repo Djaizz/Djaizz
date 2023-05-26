@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import List   # Py3.9+: use generic types
 from typing import Optional, Union
 
 from django.utils.functional import classproperty
@@ -27,7 +26,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceTextGenerator',)
 
 
 TextGenerationInputType = str
-TextGenerationOutputType = Union[str, List[int]]
+TextGenerationOutputType = Union[str, list[int]]
 
 
 class PreTrainedHuggingFaceTextGenerator(PreTrainedHuggingFaceTransformer):
@@ -57,13 +56,13 @@ class PreTrainedHuggingFaceTextGenerator(PreTrainedHuggingFaceTransformer):
                 clean_up_tokenization_spaces: bool = True,
                 prefix: Optional[str] = None,
                 **generate_kwargs) \
-            -> Union[TextGenerationOutputType, List[TextGenerationOutputType]]:
+            -> Union[TextGenerationOutputType, list[TextGenerationOutputType]]:
         # pylint: disable=arguments-differ,too-many-arguments
         """Generate Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: List[TextGenerationInputType] = list(text_or_texts)
+            text_or_texts: list[TextGenerationInputType] = list(text_or_texts)
 
         self.load()
 
@@ -125,7 +124,7 @@ class PreTrainedHuggingFaceTextGenerator(PreTrainedHuggingFaceTransformer):
                                  numeric=False,
                                  type='str',
                                  label='Generated Text Prefix')],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -134,7 +133,7 @@ class PreTrainedHuggingFaceTextGenerator(PreTrainedHuggingFaceTransformer):
             # the number of parameters in fn.
 
             outputs=JSONOutput(label='Generated Text'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -146,7 +145,7 @@ class PreTrainedHuggingFaceTextGenerator(PreTrainedHuggingFaceTransformer):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -238,7 +237,7 @@ class PreTrainedHuggingFaceTextGenerator(PreTrainedHuggingFaceTransformer):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

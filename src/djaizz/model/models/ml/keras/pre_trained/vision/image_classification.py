@@ -4,7 +4,6 @@
 from io import BytesIO
 from sys import version_info
 from typing import Union
-from typing import Dict, List   # Py3.9+: use generic types
 
 from django.db.models.fields import CharField
 from django.utils.functional import classproperty
@@ -33,7 +32,7 @@ __all__: Sequence[str] = ('PreTrainedKerasImageNetClassifier',)
 
 
 ImageClassificationInputType = Union[str, BytesIO, Image.Image, numpy.ndarray]
-ImageClassificationOutputType = Dict[str, float]
+ImageClassificationOutputType = dict[str, float]
 
 
 class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
@@ -117,14 +116,14 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
                                        Sequence[ImageClassificationInputType]],
                 n_labels: int = 5) \
             -> Union[ImageClassificationOutputType,
-                     List[ImageClassificationOutputType]]:
+                     list[ImageClassificationOutputType]]:
         # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_img: bool = isinstance(image_or_images, (str, BytesIO,
                                                         Image.Image,
                                                         numpy.ndarray))
 
-        imgs: List[ImageClassificationInputType] = ([image_or_images]
+        imgs: list[ImageClassificationInputType] = ([image_or_images]
                                                     if single_img
                                                     else image_or_images)
 
@@ -143,7 +142,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             self.native_obj.predict(x=preprocessed_fitted_img_batch_arr)
 
         # decode predictions & return JSON-serializable dict
-        decoded_preds: List[Dict[str, float]] = [{tup[1]: float(tup[2])
+        decoded_preds: list[dict[str, float]] = [{tup[1]: float(tup[2])
                                                   for tup in decoded_pred}
                                                  for decoded_pred in
                                                  decode_predictions(
@@ -171,7 +170,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
 
                     SliderInput(minimum=3, maximum=10, step=1, default=5,
                                 label=('No. of ImageNet Labels to Return'))],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -182,7 +181,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             outputs=LabelOutput(num_top_classes=10,
                                 type='auto',
                                 label='Likely ImageNet Labels'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -194,7 +193,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -285,7 +284,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,
