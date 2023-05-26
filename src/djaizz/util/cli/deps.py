@@ -8,9 +8,7 @@ from typing import Sequence  # Py3.9+: use built-ins/collections.abc
 import click
 
 
-CAPPED_DEPS: Sequence[str] = ('Channels',
-                              'Daphne',
-                              'Dash',
+CAPPED_DEPS: Sequence[str] = ('Dash',
                               'Dash-Bootstrap-Components',
                               'Django-CORS-Headers',
                               'Django-Plotly-Dash',

@@ -1,2 +1,2 @@
-Commitizen >= 2.42.1
-Pre-Commit >= 3.1.1
+Commitizen >= 3.2.2
+Pre-Commit >= 3.3.2

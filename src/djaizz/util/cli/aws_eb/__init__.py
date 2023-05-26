@@ -4,11 +4,13 @@
 from contextlib import AbstractContextManager
 import os
 from pathlib import Path
-import shutil
+from pprint import pprint
+from shutil import copyfile, copytree, ignore_patterns
 from typing import Optional
-from typing import List   # Py3.9+: use built-in
+from typing import List  # Py3.9+: use built-in
 
 import click
+from ruamel import yaml
 
 from ..run_cmd import run_cmd
 
@@ -16,34 +18,54 @@ from ..run_cmd import run_cmd
 _DJAI_AWS_EB_CLI_UTIL_DIR_PATH: Path = Path(__file__).parent
 
 
+_EC2_INSTANCE_TYPES_FILE_NAME: str = 'EC2-Instance-Types.yml'
+
+with open(file=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / _EC2_INSTANCE_TYPES_FILE_NAME,
+          mode='rt',
+          buffering=-1,
+          encoding='utf-8',
+          errors='raise',
+          newline=None,
+          closefd=True,
+          opener=None) as f:
+    _EC2_INSTANCE_TYPES: dict = yaml.safe_load(stream=f, version=None)
+
+
 _EB_EXTENSIONS_DIR_NAME: str = '.ebextensions'
 _PLATFORM_DIR_NAME: str = '.platform'
+_INSTALL_CUDA_SCRIPT_NAME: str = '.Install-CUDA'
 
 
 class ConfigFilesHandling(AbstractContextManager):
     """Handle config/extension files, e.g., `.ebextensions`/`.platform`."""
 
-    def __init__(self, config_dir_name: str, /):
+    def __init__(self, config_dir_name: str, /, *, gpu: Optional[bool] = False):  # noqa: E501
         """Initialize context manager."""
         self.config_dir_name: str = config_dir_name
-        self.config_dir_path: Path = _DJAI_AWS_EB_CLI_UTIL_DIR_PATH / config_dir_name   # noqa: E501
+        self.config_dir_path: Path = _DJAI_AWS_EB_CLI_UTIL_DIR_PATH / config_dir_name  # noqa: E501
+        self.gpu: bool = gpu
 
     def __enter__(self):
         """Add config/extension files."""
-        shutil.copytree(src=self.config_dir_path,
-                        dst=self.config_dir_name,
-                        symlinks=False,
-                        ignore=None,
-                        ignore_dangling_symlinks=False,
-                        dirs_exist_ok=True)
+        copytree(
+            src=self.config_dir_path,
+            dst=self.config_dir_name,
+            symlinks=False,
+            ignore=(None
+                    if self.gpu
+                    else ignore_patterns(_INSTALL_CUDA_SCRIPT_NAME)),
+            ignore_dangling_symlinks=False,
+            dirs_exist_ok=True)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Remove config/extension files."""
         paths: List[Path] = list(self.config_dir_path.rglob(pattern='*'))
 
         for path in paths:
-            if path.is_file():
-                os.remove(path=path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))   # noqa: E501
+            if path.is_file() and (True
+                                   if self.gpu
+                                   else (path.name != _INSTALL_CUDA_SCRIPT_NAME)):  # noqa: E501
+                os.remove(path=path.relative_to(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH))  # noqa: E501
 
         # remove empty directories
         for path in (paths + [self.config_dir_path]):
@@ -85,7 +107,7 @@ class EBIgnoreHandling(AbstractContextManager):
                        newline=None,
                        closefd=True,
                        opener=None) as dst,
-                  open(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self.EB_IGNORE_FILE_NAME,   # noqa: E501
+                  open(_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self.EB_IGNORE_FILE_NAME,  # noqa: E501
                        mode='rt',
                        buffering=-1,
                        encoding='utf-8',
@@ -96,7 +118,7 @@ class EBIgnoreHandling(AbstractContextManager):
                 dst.writelines(src.readlines())
 
         else:
-            shutil.copyfile(
+            copyfile(
                 src=_DJAI_AWS_EB_CLI_UTIL_DIR_PATH / self.EB_IGNORE_FILE_NAME,
                 dst=self.EB_IGNORE_FILE_NAME)
 
@@ -178,15 +200,38 @@ def init():
               expose_value=True,
               is_eager=False,
               envvar=None)
+@click.option('--gpu',
+              cls=click.Option,
+              show_default=True,
+              prompt=False,
+              confirmation_prompt=False,
+              hide_input=False,
+              is_flag=True,
+              flag_value=True,
+              multiple=False,
+              count=False,
+              allow_from_autoenv=False,
+              type=bool,
+              help='Whether to use GPU',
+              show_choices=True,
+              default=False,
+              required=False,
+              callback=None,
+              nargs=None,
+              metavar='GPU',
+              expose_value=True,
+              is_eager=False,
+              envvar=None)
 def deploy(aws_eb_env_name: Optional[str] = None,
-           asgi: Optional[str] = None):
+           asgi: Optional[str] = None,
+           gpu: Optional[bool] = False):
     """Deploy Djaizz onto AWS Elastic Beanstalk."""
     profile = input('AWS CLI Profile (if not default) = ')
     if not profile.strip():
         profile = 'default'
 
     with (ConfigFilesHandling(_EB_EXTENSIONS_DIR_NAME),
-          ConfigFilesHandling(_PLATFORM_DIR_NAME),
+          ConfigFilesHandling(_PLATFORM_DIR_NAME, gpu=gpu),
           EBIgnoreHandling()):
         if aws_eb_env_name:
             run_cmd(command=f'eb deploy --profile {profile} {aws_eb_env_name}',
@@ -202,10 +247,33 @@ def deploy(aws_eb_env_name: Optional[str] = None,
             # Compute-optimized instance type
             # with good Networking performance and sufficient Memory
             # (note: Graviton (g) instances not compatible with Djaizz deps)
-            instance_type = input('AWS EC2 Instance Type '
-                                  '(default: c6i.xlarge; min: c6i.large) = ')
-            if not instance_type.strip():
-                instance_type = 'c6i.xlarge'
+            if gpu:
+                pprint(object=_EC2_INSTANCE_TYPES['gpu'],
+                       stream=None,
+                       indent=2,
+                       width=80,
+                       depth=None,
+                       compact=True,
+                       sort_dicts=False,
+                       underscore_numbers=False)
+                instance_type = input('AWS EC2 Instance Type '
+                                      '(default: g4dn.xlarge; min: g4dn.xlarge) = ')  # noqa: E501
+                if not instance_type.strip():
+                    instance_type = 'g4dn.xlarge'
+
+            else:
+                pprint(object=_EC2_INSTANCE_TYPES['cpu'],
+                       stream=None,
+                       indent=2,
+                       width=80,
+                       depth=None,
+                       compact=True,
+                       sort_dicts=False,
+                       underscore_numbers=False)
+                instance_type = input('AWS EC2 Instance Type '
+                                      '(default: c6i.xlarge; min: c6i.large) = ')  # noqa: E501
+                if not instance_type.strip():
+                    instance_type = 'c6i.xlarge'
 
             run_cmd(command=(f'eb create --profile {profile}'
                              f' --region {region}'
@@ -214,7 +282,7 @@ def deploy(aws_eb_env_name: Optional[str] = None,
                              f' --vpc.ec2subnets {subnets}'
                              f' --vpc.elbsubnets {subnets} --vpc.elbpublic'
                              f' --instance_type {instance_type}'
-                             f' --timeout 20'),
+                             f' --timeout 30'),
                     asgi=asgi)
 
 

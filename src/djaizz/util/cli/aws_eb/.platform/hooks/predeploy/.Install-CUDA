@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+
+
+# developer.nvidia.com/cuda-toolkit-archive
+
+
+CUDA_INSTALLER_FILE_NAME=cuda_11.3.1_465.19.01_linux.run
+  # CUDA 11.3 is latest tested for Detectron2
+
+CUDA_INSTALL_DIR_PATH=/usr/local/cuda
+
+
+# install kernel files
+sudo yum install -y kernel-devel-$(uname -r)
+
+
+# install CUDA if not yet installed
+if [ ! -d $CUDA_INSTALL_DIR_PATH ]; then
+  # go to temp dir
+  cd /tmp
+
+  # download & install CUDA 11.3
+  wget https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/$CUDA_INSTALLER_FILE_NAME
+
+  # --silent
+  #   Performs an installation with no further user-input and minimal
+  #   command-line output based on the options provided below. Silent
+  #   installations are useful for scripting the installation of CUDA.
+  #   Using this option implies acceptance of the EULA. The following flags
+  #   can be used to customize the actions taken during installation. At
+  #   least one of --driver, --uninstall, --toolkit, and --samples must
+  #   be passed if running with non-root permissions.
+
+  # --driver
+  #   Install the CUDA Driver.
+
+  # --toolkit
+  #   Install the CUDA Toolkit.
+
+  # --toolkitpath=<path>
+  #   Install the CUDA Toolkit to the <path> directory. If this flag is not
+  #   provided, the default path of /usr/local/cuda-10.2 is used.
+
+  # --samples
+  #   Install the CUDA Samples.
+
+  # --samplespath=<path>
+  #   Install the CUDA Samples to the <path> directory. If this flag is not
+  #   provided, the default path of /root/NVIDIA_CUDA-10.2_Samples is used.
+
+  # --librarypath=<path>
+  #   Install libraries to the <path> directory. If this flag is not provided,
+  #   the default path of your distribution is used. This flag only applies to
+  #   libraries installed outside of the CUDA Toolkit path.
+
+  # --installpath=<path>
+  #   Install everything to the <path> directory. This flag sets the same values
+  #   as the toolkitpath, samplespath, and librarypath options.
+
+  # --extract=<path>
+  #   Extracts driver runfile and the raw files of the toolkit and samples to
+  #   <path>.
+  #   This is especially useful when one wants to install the driver using one or
+  #   more of the command-line options provided by the driver installer which
+  #   are not exposed in this installer.
+
+  # --override
+  #   Ignores compiler version checks which would prevent installation.
+
+  # --no-opengl-libs
+  #   Prevents the driver installation from installing NVIDIA's GL libraries.
+  #   Useful for systems where the display is driven by a non-NVIDIA GPU.
+  #   In such systems, NVIDIA's GL libraries could prevent X from loading
+  #   properly.
+
+  # --no-man-page
+  #   Do not install the man pages under /usr/share/man.
+
+  # --kernel-source-path=<path>
+  #   Tells the driver installation to use <path> as the kernel source directory
+  #   when building the NVIDIA kernel module. Required for systems where the
+  #   kernel source is installed to a non-standard location.
+
+  # --run-nvidia-xconfig
+  #   Tells the driver installation to run nvidia-xconfig to update the system
+  #   X configuration file so that the NVIDIA X driver is used. The pre-existing
+  #   X configuration file will be backed up.
+  #   This option should not be used on systems that require a custom
+  #   X configuration, or on systems where a non-NVIDIA GPU is rendering the
+  #   display.
+
+  # --no-drm
+  #   Do not install the nvidia-drm kernel module. This kernel module provides
+  #   several features, including X11 autoconfiguration, support for PRIME, and
+  #   DRM-KMS. The latter is used to support modesetting on windowing systems
+  #   that run independently of X11. The '--no-drm' option should only be used
+  #   to work around failures to build or install the nvidia-drm kernel module
+  #   on systems that do not need these features.
+
+  # --tmpdir=<path>
+  #   Performs any temporary actions within <path> instead of /tmp. Useful in
+  #   cases where /tmp cannot be used (doesn't exist, is full, is mounted with
+  #   'noexec', etc.).
+
+  sudo sh $CUDA_INSTALLER_FILE_NAME \
+    --silent \
+    --driver \
+    --toolkit \
+    --installpath=$CUDA_INSTALL_DIR_PATH \
+    --no-man-page
+fi
