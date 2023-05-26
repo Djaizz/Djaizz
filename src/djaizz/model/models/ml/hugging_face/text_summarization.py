@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import List   # Py3.9+: use generic types
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -27,7 +26,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceTextSummarizer',)
 
 
 TextSummarizationInputType = str
-TextSummarizationOutputType = Union[str, List[int]]
+TextSummarizationOutputType = Union[str, list[int]]
 
 
 class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
@@ -56,13 +55,13 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
                 clean_up_tokenization_spaces: bool = True,
                 **generate_kwargs) \
             -> Union[TextSummarizationOutputType,
-                     List[TextSummarizationOutputType]]:
+                     list[TextSummarizationOutputType]]:
         # pylint: disable=arguments-differ
         """Summarize Text(s)."""
         single_text: bool = isinstance(text_or_texts, str)
 
         if not (single_text or isinstance(text_or_texts, list)):
-            text_or_texts: List[TextSummarizationInputType] = \
+            text_or_texts: list[TextSummarizationInputType] = \
                 list(text_or_texts)
 
         self.load()
@@ -109,7 +108,7 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
                     CheckboxInput(default=False, label='Return Tensors?'),
 
                     CheckboxInput(default=True, label='Clean Up Spaces?')],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -118,7 +117,7 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
             # the number of parameters in fn.
 
             outputs=JSONOutput(label='Summary Text'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -130,7 +129,7 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -221,7 +220,7 @@ class PreTrainedHuggingFaceTextSummarizer(PreTrainedHuggingFaceTransformer):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

@@ -3,7 +3,6 @@
 
 from sys import version_info
 from typing import Optional
-from typing import Dict, List   # Py3.9+: use generic types
 
 from pip._internal.operations.freeze import (   # pylint: disable=import-error
     freeze)
@@ -17,9 +16,9 @@ else:
 __all__: Sequence[str] = ('get_python_dependencies',)
 
 
-def get_python_dependencies() -> Dict[str, Optional[str]]:
+def get_python_dependencies() -> dict[str, Optional[str]]:
     """Get Python Dependencies."""
-    deps_and_vers_dict: Dict[str, Optional[str]] = {}
+    deps_and_vers_dict: dict[str, Optional[str]] = {}
 
     for dep_and_ver_str in freeze(requirement=None,
                                   local_only=False,
@@ -28,7 +27,7 @@ def get_python_dependencies() -> Dict[str, Optional[str]]:
                                   isolated=False,
                                   exclude_editable=False,
                                   skip=()):
-        dep_and_ver_tuple: List[str] = dep_and_ver_str.split('==')
+        dep_and_ver_tuple: list[str] = dep_and_ver_str.split('==')
 
         if len(dep_and_ver_tuple) == 2:
             deps_and_vers_dict[dep_and_ver_tuple[0]] = dep_and_ver_tuple[1]

@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import Dict, List   # Py3.9+: use generic types
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -29,7 +28,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceImageClassifier',)
 
 
 ImageClassificationInputType = Union[str, Image]
-ImageClassificationOutputType = Dict[str, float]
+ImageClassificationOutputType = dict[str, float]
 
 
 class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
@@ -55,13 +54,13 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
                                        Sequence[ImageClassificationInputType]],
                 n_labels: int = 5) \
             -> Union[ImageClassificationOutputType,
-                     List[ImageClassificationOutputType]]:
+                     list[ImageClassificationOutputType]]:
         # pylint: disable=arguments-differ
         """Classify Image(s)."""
         single_img: bool = isinstance(image_or_images, (str, Image))
 
         if not (single_img or isinstance(image_or_images, list)):
-            image_or_images: List[ImageClassificationInputType] = \
+            image_or_images: list[ImageClassificationInputType] = \
                 list(image_or_images)
 
         self.load()
@@ -92,7 +91,7 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
 
                     SliderInput(minimum=3, maximum=10, step=1, default=5,
                                 label='No. of Labels to Return')],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -103,7 +102,7 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
             outputs=LabelOutput(num_top_classes=10,
                                 type='auto',
                                 label='Likely ImageNet Classes'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -115,7 +114,7 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -206,7 +205,7 @@ class PreTrainedHuggingFaceImageClassifier(PreTrainedHuggingFaceTransformer):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,

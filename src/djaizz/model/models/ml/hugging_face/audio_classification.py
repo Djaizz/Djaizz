@@ -2,7 +2,6 @@
 
 
 from sys import version_info
-from typing import Dict, List   # Py3.9+: use generic types
 from typing import Union
 
 from django.utils.functional import classproperty
@@ -29,7 +28,7 @@ __all__: Sequence[str] = ('PreTrainedHuggingFaceAudioClassifier',)
 
 
 AudioClassificationInputType = Union[numpy.ndarray, str]
-AudioClassificationOutputType = Dict[str, float]
+AudioClassificationOutputType = dict[str, float]
 
 
 class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
@@ -56,13 +55,13 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
                           Sequence[AudioClassificationInputType]],
                 n_labels: int = 5) \
             -> Union[AudioClassificationOutputType,
-                     List[AudioClassificationOutputType]]:
+                     list[AudioClassificationOutputType]]:
         # pylint: disable=arguments-differ
         """Classify Audio(s)."""
         single_audio: bool = isinstance(audio_or_audios, (numpy.ndarray, str))
 
         if not (single_audio or isinstance(audio_or_audios, list)):
-            audio_or_audios: List[AudioClassificationInputType] = \
+            audio_or_audios: list[AudioClassificationInputType] = \
                 list(audio_or_audios)
 
         self.load()
@@ -81,7 +80,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
         def _predict(self,
                      sampling_rate_and_double_channel_audio_array:
                      tuple[int, numpy.ndarray],
-                     n_labels: int = 5) -> Dict[str, float]:
+                     n_labels: int = 5) -> dict[str, float]:
             _sampling_rate, double_channel_audio_array = \
                 sampling_rate_and_double_channel_audio_array
 
@@ -102,7 +101,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
 
                     SliderInput(minimum=3, maximum=10, step=1, default=5,
                                 label='No. of Labels to Return')],
-            # (Union[str, List[Union[str, InputComponent]]]) -
+            # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
             # Components can either be passed as instantiated objects,
@@ -113,7 +112,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
             outputs=LabelOutput(num_top_classes=10,
                                 type='auto',
                                 label='Audio Classification'),
-            # (Union[str, List[Union[str, OutputComponent]]]) -
+            # (Union[str, list[Union[str, OutputComponent]]]) -
             # a single Gradio output component,
             # or list of Gradio output components.
             # Components can either be passed as instantiated objects,
@@ -125,7 +124,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
             # (bool) - whether to print detailed information during launch.
 
             examples=None,
-            # (Union[List[List[Any]], str]) - sample inputs for the function;
+            # (Union[list[list[Any]], str]) - sample inputs for the function;
             # if provided, appears below the UI components and can be used
             # to populate the interface.
             # Should be nested list, in which the outer list consists of
@@ -214,7 +213,7 @@ class PreTrainedHuggingFaceAudioClassifier(PreTrainedHuggingFaceTransformer):
             # to flag an input and output.
 
             flagging_options=None,
-            # (List[str]) - if not None, provides options a user must select
+            # (list[str]) - if not None, provides options a user must select
             # when flagging.
 
             encrypt=False,
