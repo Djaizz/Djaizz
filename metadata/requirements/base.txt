@@ -132,7 +132,7 @@ Django-Polymorphic >= 3.1.0
 # Django Admin-related
 Django-Admin-HStore-Widget >= 1.2.1
 Django-Admin-Relation-Links >= 0.2.5
-Django-ForestAdmin >= 1.4.11; python_version < '3.11'
+Django-ForestAdmin >= 1.4.11; python_version < '3.11'  # TODO
 Django-Grappelli >= 3.0.6
 Django-Jazzmin >= 2.6.0
 
