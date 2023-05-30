@@ -90,8 +90,7 @@ LIME >= 0.2.0.1
 SHAP >= 0.41.0
 
 # ML Model Management
-# MLFLow >= 2.3.2
-  # conflicting/slow-resolving dependencies
+MLFLow >= 2.3.2
 
 
 # NON-ML MODELING
