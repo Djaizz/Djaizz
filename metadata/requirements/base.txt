@@ -1,15 +1,15 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.5.0
-Distributed >= 2023.5.0
+Dask >= 2023.5.1
+Distributed >= 2023.5.1
 # Kedro >= 0.18.8; python_version < '3.11'
   # depends on outdated FSSpec
 MetaFlow >= 2.9.2
 NumBa >= 0.57.0; python_version < '3.11'
 NumPy >= 1.23
   # let higher dependencies figure
-Pandas >= 2.0.1
+Pandas >= 2.0.2
 Pandarallel >= 1.6.5
 PyArrow >= 12.0.0
 PySpark >= 3.4.0
@@ -78,7 +78,7 @@ Giotto-TDA >= 0.6.0; python_version < '3.11'
 GUDHI >= 3.8.0
 
 # Cloud AI/ML Services
-# Google-Cloud-Translate >= 3.10.1
+# Google-Cloud-Translate >= 3.11.1
   # conflicting/slow-resolving dependencies
 GoogleTrans >= 4.0.0rc1
 
@@ -89,14 +89,14 @@ Hpbandster >= 0.7.4
 Tabulate >= 0.9.0
 
 # ML Model Explainability & related
-# CausalNex >= 0.11.0; python_version < '3.11'
+CausalNex >= 0.12.0; python_version < '3.11'
   # depends on outdated SciPy, SciKit-Learn
 LIME >= 0.2.0.1
 SHAP >= 0.41.0; python_version < '3.11'
   # depends on NumBa
 
 # ML Model Management
-# MLFLow >= 2.3.1
+# MLFLow >= 2.3.2
   # conflicting/slow-resolving dependencies
 
 
@@ -110,9 +110,10 @@ SciKit-Fuzzy >= 0.4.2
 # LARGE FOUNDATIONAL MODELS & related
 # ===================================
 
-LangChain >= 0.0.178
+AutoGPT >= 0.0.1.dev0
+LangChain >= 0.0.186
 OpenAI >= 0.27.7
-PandasAI >= 0.2.14; python_version >= '3.9'
+PandasAI >= 0.3.0
 
 
 # FILE SYSTEMS
@@ -138,7 +139,7 @@ Django-Polymorphic >= 3.1.0
 # Django Admin-related
 Django-Admin-HStore-Widget >= 1.2.1
 Django-Admin-Relation-Links >= 0.2.5
-# Django-ForestAdmin >= 1.4.5; python_version < '3.11'
+# Django-ForestAdmin >= 1.4.11; python_version < '3.11'
   # depends on outdated Python < 3.11
 Django-Grappelli >= 3.0.6
 Django-Jazzmin >= 2.6.0
@@ -157,7 +158,7 @@ Django-GraphQL-Extensions >= 0.1.0
 Django-RESTQL >= 0.15.3
 GQL >= 3.4.1
 Graphene >= 3.2.2
-Graphene-Django >= 3.0.2
+Graphene-Django >= 3.1.1
 # Graphene-Django-Extras >= 0.5.2
   # conflicting/slow-resolving dependencies
 Graphene-Django-Optimizer >= 0.9.1
@@ -318,5 +319,5 @@ Python-DateUtil >= 2.8.2
 Python-DotEnv >= 1.0.0
 PyTZ >= 2023.3
 Requests >= 2.31.0
-Ruamel.YAML >= 0.17.26
+Ruamel.YAML >= 0.17.30
 Tqdm >= 4.65.0
