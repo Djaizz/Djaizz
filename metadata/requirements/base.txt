@@ -73,7 +73,8 @@ Giotto-TDA >= 0.6.0; python_version < '3.11'  # TODO
 GUDHI >= 3.8.0
 
 # Cloud AI/ML Services
-Google-Cloud-Translate >= 3.11.1
+# Google-Cloud-Translate >= 3.11.1
+  # conflicting/slow-resolving dependencies
 GoogleTrans >= 4.0.0rc1
 
 # Hyper-Parameter Tuning & related
