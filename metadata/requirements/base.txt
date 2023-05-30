@@ -3,8 +3,7 @@
 
 Dask >= 2023.5.1
 Distributed >= 2023.5.1
-# Kedro >= 0.18.8; python_version < '3.11'
-  # depends on outdated FSSpec
+Kedro >= 0.18.8; python_version < '3.11'
 MetaFlow >= 2.9.2
 NumBa >= 0.57.0; python_version < '3.11'
 NumPy >= 1.23
@@ -45,17 +44,13 @@ TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.13.0
 
 # Torch & related
-Torch >= 2.0.1; python_version >= '3.11'
-Torch >= 1.13, < 2; python_version < '3.11'
+Torch >= 2.0.1
 Torch-Model-Archiver >= 0.8.0
 TorchServe >= 0.8.0
 
-TorchAudio >= 2.0.2; python_version >= '3.11'
-TorchAudio >= 0.13, < 2; python_version < '3.11'
-TorchText >= 0.15.2; python_version >= '3.11'
-TorchText >= 0.14, < 0.15; python_version < '3.11'
-TorchVision >= 0.15.2; python_version >= '3.11'
-TorchVision >= 0.14, < 0.15; python_version < '3.11'
+TorchAudio >= 2.0.2
+TorchText >= 0.15.2
+TorchVision >= 0.15.2
 
 # Computer Vision
 OpenCV-Python >= 4.7.0
