@@ -239,7 +239,8 @@ WhiteNoise >= 6.4.0
 
 Flask >= 2.2
   # let higher dependencies figure
-Werkzeug >= 2.3.4
+Werkzeug >= 2.2
+  # let higher dependencies figure
 
 Gradio >= 3.33.1
 Gradio-Tools >= 0.0.9
