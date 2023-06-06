@@ -13,7 +13,7 @@ global:
   application_name: Djaizz
   branch: null
   default_ec2_keyname: null
-  default_platform: Python 3.8 running on 64bit Amazon Linux 2
+  default_platform: Python 3.11 running on 64bit Amazon Linux 2023
   default_region: us-west-1
   include_git_submodules: true
   instance_profile: null
