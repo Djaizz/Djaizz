@@ -237,7 +237,8 @@ DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.1
 WhiteNoise >= 6.4.0
 
-Flask >= 2.3.2
+Flask >= 2.2
+  # let higher dependencies figure
 Werkzeug >= 2.3.4
 
 Gradio >= 3.33.1
