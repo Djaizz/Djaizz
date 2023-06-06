@@ -7,24 +7,24 @@ CUDA_INSTALL_DIR_PATH=/usr/local/cuda
 source /var/app/venv/*/bin/activate
 
 
-if [ -d $CUDA_INSTALL_DIR_PATH ]
+# if [ -d $CUDA_INSTALL_DIR_PATH ]
 
-then
-  python -m pip install Torch==1.10.2+cu113 \
-    --find-links https://download.pytorch.org/whl/torch
+# then
+#   python -m pip install Torch==1.10.2+cu113 \
+#     --find-links https://download.pytorch.org/whl/torch
 
-  python -m pip install TorchVision==0.11.3+cu113 \
-    --find-links https://download.pytorch.org/whl/torchvision
+#   python -m pip install TorchVision==0.11.3+cu113 \
+#     --find-links https://download.pytorch.org/whl/torchvision
 
-  python -m pip install Detectron2 \
-    --find-links https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+#   python -m pip install Detectron2 \
+#     --find-links https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
 
-else
-  python -m pip install \
-    "Torch >= 1.10, < 1.11" \
-    "TorchVision >= 0.11, < 0.12"
+# else
+#   python -m pip install \
+#     "Torch >= 1.10, < 1.11" \
+#     "TorchVision >= 0.11, < 0.12"
 
-  python -m pip install Detectron2 \
-    --find-links https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.10/index.html
+#   python -m pip install Detectron2 \
+#     --find-links https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.10/index.html
 
-fi
+# fi
