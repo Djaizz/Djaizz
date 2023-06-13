@@ -2,7 +2,7 @@
 # ============================
 
 Dask >= 2023.6.0
-Distributed >= 2023.76.0
+Distributed >= 2023.6.0
 Kedro >= 0.18.10; python_version < '3.11'
 MetaFlow >= 2.9.4
 NumBa >= 0.57.0
