@@ -76,6 +76,7 @@ Documentation = 'https://Djaizz.GitHub.io/Djaizz'
 # SETUPTOOLS-SPECIFIC CONFIG
 # ==========================
 # setuptools.pypa.io/en/latest/userguide/pyproject_config.html#setuptools-specific-configuration
+
 [tool.setuptools]
 
 # platforms = []  # array
