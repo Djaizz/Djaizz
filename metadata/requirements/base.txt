@@ -223,7 +223,7 @@ Django-Nested-InLines >= 0.1
 Django-Storages >= 1.13.2
 
 Django-Query-Graph >= 23.6.14
-Dj-Util >= 23.6.14
+Dju >= 23.6.14
 
 # Django CORS Headers
 Django-CORS-Headers >= 4.1.0
