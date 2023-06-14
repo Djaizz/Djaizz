@@ -1,8 +1,13 @@
-# python.org/dev/peps/pep-0621
-# setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+# peps.python.org/pep-0621
+# packaging.python.org/en/latest/specifications/declaring-project-metadata
 
 
 [project]
+
+
+# GENERAL INFO
+# ============
+
 name = 'Djaizz'
 
 keywords = [
@@ -18,9 +23,9 @@ keywords = [
 
 readme = {file = 'README.md', content-type = 'text/markdown', charset = 'UTF-8'}
 
-requires-python = '>= 3.11'
 
-license = {file = 'LICENSE'}
+# AUTHOR(S)/MAINTAINER(S) & LICENSE
+# =================================
 
 authors = [
   {name = 'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
@@ -29,20 +34,37 @@ maintainers = [
   {name = 'STEAM for Vietnam Foundation: AI, IoT & Robotics Educational Initiative', email = 'Edu.AI@STEAMforVietNam.org'}
 ]
 
+license = {file = 'LICENSE'}
+
+
+# PYTHON VERSION REQUIREMENT
+# ==========================
+
+requires-python = '>= 3.11'
+
+
+# DYNAMIC METADATA
+# ================
 
 dynamic = [
+  # version
   'version',
 
+  # description & trove classifiers
   'description',
-
   'classifiers',
 
+  # dependencies
   'dependencies',
   'optional-dependencies',
 
+  # entry points / scripts
   'entry-points',
 ]
 
+
+# URLs
+# ====
 
 [project.urls]
 Homepage = 'https://GitHub.com/Djaizz/Djaizz'
@@ -51,8 +73,11 @@ GitHub = 'https://GitHub.com/Djaizz/Djaizz'
 Documentation = 'https://Djaizz.GitHub.io/Djaizz'
 
 
-[tool.setuptools]
+# SETUPTOOLS-SPECIFIC CONFIG
+# ==========================
 # setuptools.pypa.io/en/latest/userguide/pyproject_config.html#setuptools-specific-configuration
+
+[tool.setuptools]
 
 # platforms = []  # array
 
@@ -93,17 +118,21 @@ namespaces = true
 
 
 [tool.setuptools.dynamic]
+
+# version
 version = {file = 'metadata/version'}
 
+# description & trove classifiers
 description = {file = 'metadata/description'}
-
 classifiers = {file = 'metadata/classifiers'}
 
+# dependencies
 dependencies = {file = 'metadata/requirements/base.txt'}
 
+# entry points / scripts
 entry-points = {file = 'metadata/entry-points'}
 
-
+# optional depedendencies
 [tool.setuptools.dynamic.optional-dependencies]
 build = {file = 'metadata/requirements/build.txt'}
 dev = {file = 'metadata/requirements/dev.txt'}
@@ -113,6 +142,10 @@ publish = {file = 'metadata/requirements/publish.txt'}
 test = {file = 'metadata/requirements/test.txt'}
 viz = {file = 'metadata/requirements/viz.txt'}
 
+
+# BUILD SYSTEM
+# (SetUpTools)
+# ============
 
 [build-system]
 requires = [
