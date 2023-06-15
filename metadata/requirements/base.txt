@@ -39,7 +39,7 @@ SciKit-Learn >= 1.2.2
 # TensorFlow & related
 TensorFlow >= 2.12.0; sys_platform != 'darwin'
 TensorFlow-MacOS >= 2.12.0; sys_platform == 'darwin'
-TensorFlow-Metal >= 1.0.1; sys_platform == 'darwin'
+TensorFlow-Metal >= 1.0.0; sys_platform == 'darwin'
 TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.13.0
 
