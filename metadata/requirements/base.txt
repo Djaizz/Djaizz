@@ -313,7 +313,7 @@ Ruamel.YAML >= 0.17.31
 Tqdm >= 4.65.0
 
 
-# TODO: why are these indirect dependencies installed outdated if not explicit?
-# =============================================================================
+# INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
+# ====================================================================
 FastAPI >= 0.97.0
 Pydantic >= 1.10.9
