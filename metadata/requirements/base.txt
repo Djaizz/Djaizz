@@ -260,7 +260,8 @@ H11 >= 0.9
   # let higher dependencies figure
 Hypercorn >= 0.14.3
 Quart >= 0.18.4
-Starlette >= 0.28.0
+Starlette >= 0.27
+  # let higher dependencies figure
 Uvicorn >= 0.22.0
 
 

@@ -11,7 +11,8 @@ import click
 CAPPED_DEPS: Sequence[str] = ('Dash',
                               'H11',
                               'NumPy',
-                              'Pandas')
+                              'Pandas',
+                              'Starlette')
 
 
 @click.command(name='capped-deps',
