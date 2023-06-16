@@ -1,2 +1,3 @@
 Commitizen >= 3.3.0
 Pre-Commit >= 3.3.3
+PyWatchman >= 1.4.1
