@@ -4,7 +4,7 @@
 Dask >= 2023.6.0
 Distributed >= 2023.6.0
 Kedro >= 0.18.10; python_version < '3.11'
-MetaFlow >= 2.9.4
+MetaFlow >= 2.9.5
 NumBa >= 0.57.0
 NumPy >= 1.23
   # let higher dependencies figure
@@ -105,9 +105,9 @@ SciKit-Fuzzy >= 0.4.2
 # ===================================
 
 AutoGPT >= 0.0.1.dev0
-LangChain >= 0.0.200
+LangChain >= 0.0.201
 OpenAI >= 0.27.8
-PandasAI >= 0.5.2
+PandasAI >= 0.5.3
 
 
 # FILE SYSTEMS
@@ -168,7 +168,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.2
-Strawberry-GraphQL >= 0.185.1
+Strawberry-GraphQL >= 0.186.0
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -237,7 +237,7 @@ DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.1
 WhiteNoise >= 6.4.0
 
-Gradio >= 3.34.0
+Gradio >= 3.35.2
 Gradio-Tools >= 0.0.9
 
 Streamlit >= 1.23.1
