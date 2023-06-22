@@ -245,12 +245,12 @@ Django-Environ >= 0.10.0
 # Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
-# MariaDB-DynCol >= 3.6.1
-# Django-MySQL >= 4.10.0
-# MySQLClient >= 2.1.1
-# MySQL-Connector-Python >= 8.0.33
-# PsycoPG >= 3.1.9
-# PsycoPG2-binary >= 2.9.6
+MariaDB-DynCol >= 3.6.1
+Django-MySQL >= 4.10.0
+MySQLClient >= 2.1.1
+MySQL-Connector-Python >= 8.0.33
+PsycoPG >= 3.1.9
+PsycoPG2-binary >= 2.9.6
 
 # ASGI Web Servers & related
 # ASGIRef >= 3.7.2
