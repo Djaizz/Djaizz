@@ -75,7 +75,7 @@
 # Cloud AI/ML Services
 # Google-Cloud-Translate >= 3.11.1
   # conflicting/slow-resolving dependencies
-# GoogleTrans >= 4.0.0rc1
+GoogleTrans >= 4.0.0rc1
 
 # Hyper-Parameter Tuning & related
 # Bayesian-Optimization >= 1.4.3
