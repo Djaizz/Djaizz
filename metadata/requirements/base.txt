@@ -299,20 +299,19 @@ PsycoPG2-binary >= 2.9.6
 # ReactPy-Django >= 3.1.0
 # ReactPy-Jupyter >= 0.9.5
   # very buggy
-# Packaging >= 23.1  # required by React-Jupyter
 
 
 # MISC / OTHER
 # ============
-# GitPython >= 3.1.31
-# Loguru >= 0.7.0
-# PSUtil >= 5.9.5
-# Python-DateUtil >= 2.8.2
-# Python-DotEnv >= 1.0.0
-# PyTZ >= 2023.3
-# Requests >= 2.31.0
-# Ruamel.YAML >= 0.17.32
-# Tqdm >= 4.65.0
+GitPython >= 3.1.31
+Loguru >= 0.7.0
+PSUtil >= 5.9.5
+Python-DateUtil >= 2.8.2
+Python-DotEnv >= 1.0.0
+PyTZ >= 2023.3
+Requests >= 2.31.0
+Ruamel.YAML >= 0.17.32
+Tqdm >= 4.65.0
 
 
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
