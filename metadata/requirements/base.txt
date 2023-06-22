@@ -252,17 +252,17 @@ PsycoPG >= 3.1.9
 PsycoPG2-binary >= 2.9.6
 
 # ASGI Web Servers & related
-# ASGIRef >= 3.7.2
-# Channels >= 4.0.0
-# Daphne >= 4.0.0
-# GUnicorn >= 20.1.0
-# H11 >= 0.9
+ASGIRef >= 3.7.2
+Channels >= 4.0.0
+Daphne >= 4.0.0
+GUnicorn >= 20.1.0
+H11 >= 0.9
   # let higher dependencies figure
-# Hypercorn >= 0.14.3
-# Quart >= 0.18.4
-# Starlette >= 0.27
+Hypercorn >= 0.14.3
+Quart >= 0.18.4
+Starlette >= 0.27
   # let higher dependencies figure
-# Uvicorn >= 0.22.0
+Uvicorn >= 0.22.0
 
 
 # COMMAND-LINE INTERFACE (CLI)
