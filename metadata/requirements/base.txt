@@ -296,7 +296,7 @@ DropboxDriveFS >= 1.3.1
 # REACT JAVASCRIPT
 # ================
 ReactPy >= 1.0.1
-# ReactPy-Django >= 3.1.0
+ReactPy-Django >= 3.1.0
 # ReactPy-Jupyter >= 0.9.5
   # very buggy
 
