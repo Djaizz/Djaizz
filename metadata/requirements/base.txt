@@ -237,8 +237,8 @@ DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.1
 WhiteNoise >= 6.5.0
 
-# Gradio >= 3.35.2
-# Gradio-Tools >= 0.0.9
+Gradio >= 3.35.2
+Gradio-Tools >= 0.0.9
 
 # Streamlit >= 1.23.1
 # Watchdog >= 3.0.0
