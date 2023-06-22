@@ -125,16 +125,16 @@
 # ========================================
 
 # Django Core
-# Django >= 4.2.2
+Django >= 4.2.2
 
 # Django Polymorphic Models
-# Django-Polymorphic >= 3.1.0
+Django-Polymorphic >= 3.1.0
 
 # Django Admin-related
-# Django-Admin-HStore-Widget >= 1.2.1
-# Django-Admin-Relation-Links >= 0.2.5
-# Django-ForestAdmin >= 1.5.0; python_version < '3.11'  # TODO
-# Django-Grappelli >= 3.0.6
+Django-Admin-HStore-Widget >= 1.2.1
+Django-Admin-Relation-Links >= 0.2.5
+Django-ForestAdmin >= 1.5.0; python_version < '3.11'  # TODO
+Django-Grappelli >= 3.0.6
 Django-Jazzmin >= 2.6.0
 
 # Django-AutoComplete-Light & related
@@ -171,72 +171,71 @@ Django-Taggit >= 4.0.0
 # Strawberry-GraphQL >= 0.187.3
 
 # Django REST Framework & other API-related
-# DjangoRESTFramework >= 3.14.0
-# DRFPasswordless >= 1.5.8
-# DRF-Writable-Nested >= 0.7.0
-# CoreAPI >= 2.3.3
+DjangoRESTFramework >= 3.14.0
+DRFPasswordless >= 1.5.8
+DRF-Writable-Nested >= 0.7.0
+CoreAPI >= 2.3.3
   # closely related to Django REST Framework
-# CoreAPI-CLI >= 1.0.9
-# Markdown >= 3.4.3
+CoreAPI-CLI >= 1.0.9
+Markdown >= 3.4.3
   # Markdown support for the browsable API
 
 # DjangoRESTFramework-JSONAPI >= 6.0.0
   # depends on outdated Django < 4.2
-# DRF-Nested-Routers >= 0.93.4
-# Django-PolyModels >= 1.8.0
-# Django-Typed-Models >= 0.13.0
+DRF-Nested-Routers >= 0.93.4
+Django-PolyModels >= 1.8.0
+Django-Typed-Models >= 0.13.0
 
-# HAL-Codec >= 1.0.2
-# JSONHyperSchema-Codec >= 1.0.3
-# OpenAPI-Codec >= 1.3.2
+HAL-Codec >= 1.0.2
+JSONHyperSchema-Codec >= 1.0.3
+OpenAPI-Codec >= 1.3.2
 
-# JSONSchema >= 4.17.3
-# Pyrsistent >= 0.19.3  # required by JSONSchema
-# Pydantic >= 1.10.9
+JSONSchema >= 4.17.3
+Pydantic >= 1.10.9
 
 # HTTPie >= 3.2.2
 
 # Django Filtering
-# Django-Filter >= 23.2
-# DjangoRESTFramework-Filters >= 1.0.0.dev2
+Django-Filter >= 23.2
+DjangoRESTFramework-Filters >= 1.0.0.dev2
 
 # Django Object-Level Permissions
-# Django-Guardian >= 2.4.0
-# Rules >= 3.3
+Django-Guardian >= 2.4.0
+Rules >= 3.3
 
 # Django Debugging & Query Profiling
-# Django-Debug-Toolbar >= 4.1.0
-# Django-Query-Profiler >= 0.9
-# Django-Silk >= 5.0.3
-# Kolo >= 2.10.0
+Django-Debug-Toolbar >= 4.1.0
+Django-Query-Profiler >= 0.9
+Django-Silk >= 5.0.3
+Kolo >= 2.10.0
 
 # Django Extensions & Utilities
-# Django-Annoying >= 0.10.6
-# Django-Choices >= 1.7.2
-# Django-Compressor >= 4.3.1
+Django-Annoying >= 0.10.6
+Django-Choices >= 1.7.2
+Django-Compressor >= 4.3.1
 Django-Configurations >= 2.4.1
-# Django-Crispy-Forms >= 2.0
+Django-Crispy-Forms >= 2.0
 Django-Environ >= 0.10.0
-# Django-Extensions >= 3.2.3
-# Django-JSON-Widget >= 1.1.1
-# Django-LocalFlavor >= 4.0
-# Django-Nested-InLines >= 0.1
-# Django-Storages >= 1.13.2
+Django-Extensions >= 3.2.3
+Django-JSON-Widget >= 1.1.1
+Django-LocalFlavor >= 4.0
+Django-Nested-InLines >= 0.1
+Django-Storages >= 1.13.2
 
-# Django-Query-Graph >= 23.6.14
-# Dju >= 23.6.14
+Django-Query-Graph >= 23.6.14
+Dju >= 23.6.14
 
 # Django CORS Headers
-# Django-CORS-Headers >= 4.1.0
+Django-CORS-Headers >= 4.1.0
 
 # Application UIs
-# Django-HTMX >= 1.15.0
+Django-HTMX >= 1.15.0
 
-# Django-Plotly-Dash >= 2.2.1
-# Dash-Bootstrap-Components >= 1.4.1
-# DPD-Static-Support >= 0.0.5
-# Django-Bootstrap4 >= 23.1
-# WhiteNoise >= 6.5.0
+Django-Plotly-Dash >= 2.2.1
+Dash-Bootstrap-Components >= 1.4.1
+DPD-Static-Support >= 0.0.5
+Django-Bootstrap4 >= 23.1
+WhiteNoise >= 6.5.0
 
 # Gradio >= 3.35.2
 # Gradio-Tools >= 0.0.9
