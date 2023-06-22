@@ -241,7 +241,7 @@ Gradio >= 3.35.2
 Gradio-Tools >= 0.0.9
 
 Streamlit >= 1.23.1
-# Watchdog >= 3.0.0
+Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
 MariaDB-DynCol >= 3.6.1
@@ -273,7 +273,7 @@ Colored >= 2.1.1
 
 # JUPYTER
 # =======
-# Jupyter >= 1.0.0
+Jupyter >= 1.0.0
 
 
 # CLOUD
