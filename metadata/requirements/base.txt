@@ -135,7 +135,7 @@
 # Django-Admin-Relation-Links >= 0.2.5
 # Django-ForestAdmin >= 1.5.0; python_version < '3.11'  # TODO
 # Django-Grappelli >= 3.0.6
-# Django-Jazzmin >= 2.6.0
+Django-Jazzmin >= 2.6.0
 
 # Django-AutoComplete-Light & related
 Django-Autocomplete-Light >= 3.9.7
