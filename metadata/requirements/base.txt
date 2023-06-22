@@ -154,7 +154,7 @@ Graphene >= 3.2.2
 Graphene-Django >= 3.1.2
 # Graphene-Django-Extras >= 0.5.2
   # conflicting/slow-resolving dependencies
-# Graphene-Django-Optimizer >= 0.9.1
+Graphene-Django-Optimizer >= 0.9.1
 # Graphene-Django-Subscriptions >= 0.0.9
   # conflicting/slow-resolving dependencies
 # Graphene-Django-Tools >= 0.21.0
