@@ -146,12 +146,12 @@ Django-Tagging >= 0.5.0
 Django-Taggit >= 4.0.0
 
 # GraphQL
-# Ariadne >= 0.20.0
-# Django-GraphQL-Extensions >= 0.1.0
-# Django-RESTQL >= 0.15.3
-# GQL >= 3.4.1
-# Graphene >= 3.2.2
-# Graphene-Django >= 3.1.2
+Ariadne >= 0.20.0
+Django-GraphQL-Extensions >= 0.1.0
+Django-RESTQL >= 0.15.3
+GQL >= 3.4.1
+Graphene >= 3.2.2
+Graphene-Django >= 3.1.2
 # Graphene-Django-Extras >= 0.5.2
   # conflicting/slow-resolving dependencies
 # Graphene-Django-Optimizer >= 0.9.1
@@ -163,12 +163,12 @@ Django-Taggit >= 4.0.0
   # conflicting/slow-resolving dependencies
 # Graphene-SQLAlchemy >= 2.3.0
   # conflicting/slow-resolving dependencies
-# GraphQLClient >= 0.2.4
-# GraphQL-Core >= 3.2.3
-# GraphQL-Relay >= 3.2.0
-# Py-GQL >= 0.6.1
-# SGQLC >= 16.2
-# Strawberry-GraphQL >= 0.187.3
+GraphQLClient >= 0.2.4
+GraphQL-Core >= 3.2.3
+GraphQL-Relay >= 3.2.0
+Py-GQL >= 0.6.1
+SGQLC >= 16.2
+Strawberry-GraphQL >= 0.187.3
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
