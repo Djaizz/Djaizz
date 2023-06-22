@@ -138,12 +138,12 @@
 # Django-Jazzmin >= 2.6.0
 
 # Django-AutoComplete-Light & related
-# Django-Autocomplete-Light >= 3.9.7
-# Django-Generic-M2M >= 0.3.1
-# Django-GM2M >= 1.1.1
-# Django-QuerySetSequence >= 0.16
-# Django-Tagging >= 0.5.0
-# Django-Taggit >= 4.0.0
+Django-Autocomplete-Light >= 3.9.7
+Django-Generic-M2M >= 0.3.1
+Django-GM2M >= 1.1.1
+Django-QuerySetSequence >= 0.16
+Django-Tagging >= 0.5.0
+Django-Taggit >= 4.0.0
 
 # GraphQL
 # Ariadne >= 0.20.0
