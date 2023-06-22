@@ -193,7 +193,7 @@ OpenAPI-Codec >= 1.3.2
 JSONSchema >= 4.17.3
 Pydantic >= 1.10.9
 
-# HTTPie >= 3.2.2
+HTTPie >= 3.2.2
 
 # Django Filtering
 Django-Filter >= 23.2
