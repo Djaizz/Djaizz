@@ -240,7 +240,7 @@ WhiteNoise >= 6.5.0
 Gradio >= 3.35.2
 Gradio-Tools >= 0.0.9
 
-# Streamlit >= 1.23.1
+Streamlit >= 1.23.1
 # Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
@@ -316,5 +316,5 @@ Tqdm >= 4.65.0
 
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
 # ====================================================================
-# FastAPI >= 0.97.0
-# Pydantic >= 1.10.9
+FastAPI >= 0.97.0
+Pydantic >= 1.10.9
