@@ -214,7 +214,7 @@
 # Django-Annoying >= 0.10.6
 # Django-Choices >= 1.7.2
 # Django-Compressor >= 4.3.1
-# Django-Configurations >= 2.4.1
+Django-Configurations >= 2.4.1
 # Django-Crispy-Forms >= 2.0
 # Django-Environ >= 0.10.0
 # Django-Extensions >= 3.2.3
