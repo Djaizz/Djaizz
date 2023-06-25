@@ -1,5 +1,5 @@
 Altair >= 5.0.1
-Bokeh >= 3.1.1
+Bokeh >= 3.2.0
 Dash >= 2.9
   # let higher dependencies figure
 Dash-DAQ >= 0.5.0

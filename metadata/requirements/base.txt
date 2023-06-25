@@ -4,15 +4,15 @@
 Dask >= 2023.6.0
 Distributed >= 2023.6.0
 Kedro >= 0.18.10; python_version < '3.11'
-MetaFlow >= 2.9.5
-NumBa >= 0.57.0
+MetaFlow >= 2.9.6
+NumBa >= 0.57.1
 NumPy >= 1.23
   # let higher dependencies figure
 Pandas >= 1.5
   # let higher dependencies figure
 Pandarallel >= 1.6.5
 PyArrow >= 12.0.1
-PySpark >= 3.4.0
+PySpark >= 3.4.1
 Ray >= 2.5.1; python_version < '3.11'
 SciPy >= 1.10.1
 
@@ -56,7 +56,7 @@ TorchVision >= 0.15.2
 OpenCV-Python >= 4.7.0
 
 # Hugging Face & related
-DataSets >= 2.13.0
+DataSets >= 2.13.1
 HuggingFace-Hub >= 0.15.1
 Transformers >= 4.30.2
 
@@ -84,7 +84,7 @@ Hpbandster >= 0.7.4
 Tabulate >= 0.9.0
 
 # ML Model Explainability & related
-CausalNex >= 0.12.0; python_version < '3.11'
+CausalNex >= 0.12.1; python_version < '3.11'
   # depends on outdated SciPy, SciKit-Learn
 LIME >= 0.2.0.1
 SHAP >= 0.41.0
@@ -105,9 +105,11 @@ SciKit-Fuzzy >= 0.4.2
 # ===================================
 
 AutoGPT >= 0.0.1.dev0
-LangChain >= 0.0.208
+GPT-Engineer >= 0.0.6
+LangChain >= 0.0.214
+Llama-Index >= 0.6.32
 OpenAI >= 0.27.8
-PandasAI >= 0.6.2
+PandasAI >= 0.6.3
 
 
 # FILE SYSTEMS
@@ -167,8 +169,8 @@ GraphQLClient >= 0.2.4
 GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
-SGQLC >= 16.2
-Strawberry-GraphQL >= 0.187.3
+SGQLC >= 16.3
+Strawberry-GraphQL >= 0.189.0
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -207,7 +209,7 @@ Rules >= 3.3
 Django-Debug-Toolbar >= 4.1.0
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
-Kolo >= 2.10.0
+Kolo >= 2.11.0
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
@@ -246,7 +248,7 @@ Watchdog >= 3.0.0
 # Database Adapters/Backends/Connectors/Drivers
 MariaDB-DynCol >= 3.6.1
 Django-MySQL >= 4.10.0
-MySQLClient >= 2.1.1
+MySQLClient >= 2.2.0
 MySQL-Connector-Python >= 8.0.33
 PsycoPG >= 3.1.9
 PsycoPG2-binary >= 2.9.6
@@ -268,7 +270,7 @@ Uvicorn >= 0.22.0
 # COMMAND-LINE INTERFACE (CLI)
 # ============================
 CLICK >= 8.1.3
-Colored >= 2.1.1
+Colored >= 2.2.0
 
 
 # JUPYTER
@@ -296,7 +298,7 @@ DropboxDriveFS >= 1.3.1
 # REACT JAVASCRIPT
 # ================
 ReactPy >= 1.0.1
-ReactPy-Django >= 3.1.0
+ReactPy-Django >= 3.2.0
 # ReactPy-Jupyter >= 0.9.5
   # very buggy
 
@@ -316,5 +318,5 @@ Tqdm >= 4.65.0
 
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
 # ====================================================================
-FastAPI >= 0.97.0
+FastAPI >= 0.98.0
 Pydantic >= 1.10.9
