@@ -10,8 +10,10 @@ import click
 
 CAPPED_DEPS: Sequence[str] = ('Dash',
                               'H11',
+                              'MyPy',
                               'NumPy',
                               'Pandas',
+                              'PyTest',
                               'Starlette')
 
 
