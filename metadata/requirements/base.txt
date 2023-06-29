@@ -309,8 +309,7 @@ GitPython >= 3.1.31
 Loguru >= 0.7.0
 PSUtil >= 5.9.5
 Python-DateUtil >= 2.8.2
-Python-DotEnv >= 0.21
-  # let higher dependencies figure
+Python-DotEnv >= 1.0.0
 PyTZ >= 2023.3
 Requests >= 2.31.0
 Ruamel.YAML >= 0.17.32
