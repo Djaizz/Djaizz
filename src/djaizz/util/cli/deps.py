@@ -13,6 +13,7 @@ CAPPED_DEPS: Sequence[str] = ('Dash',
                               'MyPy',
                               'NumPy',
                               'Pandas',
+                              'Python-DotEnv',
                               'PyTest',
                               'Starlette')
 
