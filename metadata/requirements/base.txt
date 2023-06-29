@@ -105,7 +105,8 @@ SciKit-Fuzzy >= 0.4.2
 # ===================================
 
 AutoGPT >= 0.0.1.dev0
-GPT-Engineer >= 0.0.7
+# GPT-Engineer >= 0.0.7
+  # conflicting dependencies
 LangChain >= 0.0.218
 Llama-Index >= 0.6.35
 OpenAI >= 0.27.8
