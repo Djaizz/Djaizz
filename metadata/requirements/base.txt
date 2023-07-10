@@ -320,4 +320,5 @@ Tqdm >= 4.65.0
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
 # ====================================================================
 FastAPI >= 0.100.0
-Pydantic >= 2.0.2
+Pydantic >= 1.10
+  # let higher dependencies figure
