@@ -194,7 +194,8 @@ JSONHyperSchema-Codec >= 1.0.3
 OpenAPI-Codec >= 1.3.2
 
 JSONSchema >= 4.18.0
-Pydantic >= 2.0.2
+Pydantic >= 1.10
+  # let higher dependencies figure
 
 HTTPie >= 3.2.2
 
@@ -320,5 +321,3 @@ Tqdm >= 4.65.0
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
 # ====================================================================
 FastAPI >= 0.100.0
-Pydantic >= 1.10
-  # let higher dependencies figure
