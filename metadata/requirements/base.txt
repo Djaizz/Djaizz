@@ -16,7 +16,8 @@ PySpark >= 3.4.1
 Ray >= 2.5.1; python_version < '3.11'
 SciPy >= 1.11.1
 
-Pillow >= 10.0.0
+Pillow >= 9.5.0
+  # let higher dependencies figure
 # Pillow-SIMD >= 9.0.0
   # complex to install
 PyCOCOTools >= 2.0.6
