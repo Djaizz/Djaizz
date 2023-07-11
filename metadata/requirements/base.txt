@@ -74,7 +74,7 @@ Giotto-TDA >= 0.6.0; python_version < '3.11'  # TODO
 GUDHI >= 3.8.0
 
 # Cloud AI/ML Services
-# Google-Cloud-Translate >= 3.11.1
+# Google-Cloud-Translate >= 3.11.2
   # conflicting/slow-resolving dependencies
 GoogleTrans >= 4.0.0rc1
 
@@ -111,7 +111,7 @@ AutoGPT >= 0.0.1.dev0
 LangChain >= 0.0.229
 Llama-Index >= 0.7.4
 OpenAI >= 0.27.8
-PandasAI >= 0.6.7
+PandasAI >= 0.6.8
 
 
 # FILE SYSTEMS
@@ -308,7 +308,7 @@ ReactPy-Django >= 3.2.1
 
 # MISC / OTHER
 # ============
-GitPython >= 3.1.31
+GitPython >= 3.1.32
 Loguru >= 0.7.0
 PSUtil >= 5.9.5
 Python-DateUtil >= 2.8.2
