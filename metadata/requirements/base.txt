@@ -4,7 +4,7 @@
 Dask >= 2023.7.0
 Distributed >= 2023.7.0
 Kedro >= 0.18.11; python_version < '3.11'
-MetaFlow >= 2.9.8
+MetaFlow >= 2.9.9
 NumBa >= 0.57.1
 NumPy >= 1.23
   # let higher dependencies figure
@@ -108,7 +108,7 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.229
+LangChain >= 0.0.230
 Llama-Index >= 0.7.4
 OpenAI >= 0.27.8
 PandasAI >= 0.6.8
