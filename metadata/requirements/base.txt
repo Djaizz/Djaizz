@@ -4,7 +4,7 @@
 Dask >= 2023.7.0
 Distributed >= 2023.7.0
 Kedro >= 0.18.11; python_version < '3.11'
-MetaFlow >= 2.9.8
+MetaFlow >= 2.9.9
 NumBa >= 0.57.1
 NumPy >= 1.23
   # let higher dependencies figure
@@ -39,7 +39,7 @@ SciKit-Learn >= 1.3.0
 
 # TensorFlow & related
 TensorFlow >= 2.13.0; sys_platform != 'darwin'
-TensorFlow-MacOS >= 2.13.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
+TensorFlow-MacOS >= 2.12.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
 TensorFlow-Metal >= 1.0.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
 TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.13.0
@@ -74,7 +74,7 @@ Giotto-TDA >= 0.6.0; python_version < '3.11'  # TODO
 GUDHI >= 3.8.0
 
 # Cloud AI/ML Services
-# Google-Cloud-Translate >= 3.11.1
+# Google-Cloud-Translate >= 3.11.2
   # conflicting/slow-resolving dependencies
 GoogleTrans >= 4.0.0rc1
 
@@ -108,10 +108,10 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.229
+LangChain >= 0.0.230
 Llama-Index >= 0.7.4
 OpenAI >= 0.27.8
-PandasAI >= 0.6.7
+PandasAI >= 0.6.8
 
 
 # FILE SYSTEMS
@@ -308,7 +308,7 @@ ReactPy-Django >= 3.2.1
 
 # MISC / OTHER
 # ============
-GitPython >= 3.1.31
+GitPython >= 3.1.32
 Loguru >= 0.7.0
 PSUtil >= 5.9.5
 Python-DateUtil >= 2.8.2
