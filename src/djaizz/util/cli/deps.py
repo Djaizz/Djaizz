@@ -14,7 +14,8 @@ CAPPED_DEPS: Sequence[str] = ('Dash',
                               'Pandas',
                               'Pillow',
                               'Pydantic',
-                              'Starlette')
+                              'Starlette',
+                              'TensorFlow')
 
 
 @click.command(name='capped-deps',
