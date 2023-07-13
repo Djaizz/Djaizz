@@ -1,7 +1,6 @@
 Bandit >= 1.7.5
 Flake8 >= 6.0.0
-MyPy >= 1.3
-  # let higher dependencies figure
+MyPy >= 1.4.1
 # Prospector >= 1.10.2
   # conflicts with other linting dependencies
 PyCodeStyle >= 2.10.0

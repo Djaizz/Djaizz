@@ -37,12 +37,15 @@ StatsModels >= 0.14.0
   # depends on SciKit-Learn < 0.25
 SciKit-Learn >= 1.3.0
 
+# Keras & related
+Keras-Core >= 0.1.0
+
 # TensorFlow & related
 TensorFlow >= 2.13.0; sys_platform != 'darwin'
 TensorFlow-MacOS >= 2.12.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
 TensorFlow-Metal >= 1.0.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
 TensorFlow-DataSets >= 4.9.2
-TensorFlow-Hub >= 0.13.0
+TensorFlow-Hub >= 0.14.0
 
 # Torch & related
 Torch >= 2.0.1
@@ -108,10 +111,10 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.230
-Llama-Index >= 0.7.4
+LangChain >= 0.0.232
+Llama-Index >= 0.7.7
 OpenAI >= 0.27.8
-PandasAI >= 0.6.8
+PandasAI >= 0.6.10
 
 
 # FILE SYSTEMS
@@ -137,7 +140,7 @@ Django-Polymorphic >= 3.1.0
 # Django Admin-related
 Django-Admin-HStore-Widget >= 1.2.1
 Django-Admin-Relation-Links >= 0.2.5
-Django-ForestAdmin >= 1.5.0; python_version < '3.11'  # TODO
+Django-ForestAdmin >= 1.6.0; python_version < '3.11'  # TODO
 Django-Grappelli >= 3.0.6
 Django-Jazzmin >= 2.6.0
 
@@ -194,7 +197,7 @@ HAL-Codec >= 1.0.2
 JSONHyperSchema-Codec >= 1.0.3
 OpenAPI-Codec >= 1.3.2
 
-JSONSchema >= 4.18.0
+JSONSchema >= 4.18.3
 Pydantic >= 1.10
   # let higher dependencies figure
 
@@ -212,7 +215,7 @@ Rules >= 3.3
 Django-Debug-Toolbar >= 4.1.0
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
-Kolo >= 2.12.1
+Kolo >= 2.12.2
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
@@ -272,8 +275,8 @@ Uvicorn >= 0.22.0
 
 # COMMAND-LINE INTERFACE (CLI)
 # ============================
-CLICK >= 8.1.4
-Colored >= 2.2.2
+CLICK >= 8.1.5
+Colored >= 2.2.3
 
 
 # JUPYTER
