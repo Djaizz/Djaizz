@@ -51,7 +51,8 @@ TensorFlow-MacOS >= 2.12.0; (sys_platform == 'darwin') and (platform_release > '
 TensorFlow-Metal >= 1.0.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
 TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.14.0
-TensorFlow-Text >= 2.13.0rc0
+TensorFlow-Text >= 2.12
+  # let higher dependencies figure
 
 # Torch & related
 Torch >= 2.0.1
@@ -74,6 +75,11 @@ SentencePiece >= 0.1.99
 TIMM >= 0.9.2
 # Torch-Scatter >= 2.1.1
   # Table Question Answering - requires Torch first
+
+
+# Meta LLaMA 2
+LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
+
 
 # Fast AI
 FastAI >= 2.7.12
