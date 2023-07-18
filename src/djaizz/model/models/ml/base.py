@@ -1,7 +1,7 @@
 """Djaizz Machine Learning Model base classes."""
 
 
-from sys import version_info
+from collections.abc import Sequence
 from typing import Any
 
 from django.db.models.fields import CharField
@@ -9,11 +9,6 @@ from django.db.models.fields import CharField
 from djaizz.util import import_obj
 
 from ..base import _AIModelWithArtifactFilesABC
-
-if version_info >= (3, 9):
-    from collections.abc import Sequence
-else:
-    from typing import Sequence
 
 
 __all__: Sequence[str] = ('_PreTrainedMLModelABC',)

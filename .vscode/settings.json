@@ -13,37 +13,4 @@
     "reportMissingImports" : "none",
     "reportUndefinedVariable" : "none",
   },
-
-  "python.linting.enabled": true,
-
-  "python.linting.pylintEnabled": true,
-  "python.linting.pylintArgs": [
-    "--disable", "fixme",
-    "--disable", "no-member",
-    "--disable", "protected-access",
-    "--disable", "redundant-keyword-arg",
-  ],
-
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": [
-  ],
-
-  "python.linting.mypyEnabled": false,
-
-  "python.linting.pydocstyleEnabled": true,
-
-  "python.linting.pycodestyleEnabled": true,
-  "python.linting.pycodestyleArgs": [
-  ],
-
-  "python.linting.prospectorEnabled": true,
-
-  "python.linting.pylamaEnabled": true,
-  "python.linting.pylamaArgs": [
-  ],
-
-  "python.linting.banditEnabled": true,
-  "python.linting.banditArgs": [
-    "--skip=B101",
-  ],
 }
