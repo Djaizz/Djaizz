@@ -75,6 +75,11 @@ TIMM >= 0.9.2
 # Torch-Scatter >= 2.1.1
   # Table Question Answering - requires Torch first
 
+
+# Meta Llama 2
+https://GitHub.com/FacebookResearch/Llama/archive/main.zip
+
+
 # Fast AI
 FastAI >= 2.7.12
 
