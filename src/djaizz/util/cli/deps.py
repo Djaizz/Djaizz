@@ -9,13 +9,14 @@ import click
 
 
 CAPPED_DEPS: Sequence[str] = ('Dash',
-                              'Dash-Bootstrap-Components',
-                              'Django-CORS-Headers',
-                              'Django-Plotly-Dash',
                               'H11',
                               'NumPy',
-                              'Quart',
-                              'SciKit-Image')
+                              'Pandas',
+                              'Pillow',
+                              'Pydantic',
+                              'Starlette',
+                              'TensorFlow',
+                              'TensorFlow-Text')
 
 
 @click.command(name='capped-deps',

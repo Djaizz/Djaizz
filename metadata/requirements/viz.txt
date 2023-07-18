@@ -1,8 +1,8 @@
-Altair >= 5.0.0
-Bokeh >= 3.1.1
-Dash >= 1.20
-  # compatible with Django-Plotly-Dash < 2
+Altair >= 5.0.1
+Bokeh >= 3.2.0
+Dash >= 2.9
+  # let higher dependencies figure
 Dash-DAQ >= 0.5.0
-PlotLy >= 5.14.1
+PlotLy >= 5.15.0
 PlotNine >= 0.12.1
 Seaborn >= 0.12.2

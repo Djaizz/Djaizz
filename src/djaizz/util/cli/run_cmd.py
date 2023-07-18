@@ -53,7 +53,7 @@ class SGIFilesHandling(AbstractContextManager):
         self.asgi: Optional[str] = asgi
 
         if self.asgi:
-            self.agsi_py_missing: bool = not Path(self.ASGI_PY_FILE_NAME).exists()   # noqa: E501
+            self.asgi_py_missing: bool = not Path(self.ASGI_PY_FILE_NAME).exists()   # noqa: E501
             self.procfile_missing: bool = not Path(self.PROCFILE_NAME).exists()
 
         else:
@@ -62,7 +62,7 @@ class SGIFilesHandling(AbstractContextManager):
     def __enter__(self):
         """Add `asgi.py`/`wsgi.py` file & Procfile, if applicable."""
         if self.asgi:
-            if self.agsi_py_missing:
+            if self.asgi_py_missing:
                 shutil.copyfile(src=self.ASGI_PY_FILE_SRC_PATH,
                                 dst=self.ASGI_PY_FILE_NAME,
                                 follow_symlinks=False)

@@ -11,3 +11,6 @@ python -m pip install AWSCLI BotoCore Boto3 --upgrade
 
 # install/upgrade higher-level AWS-dependent deps
 python -m pip install AIOBotoCore FSSpec S3FS --upgrade
+
+# TEMP FIX: stackoverflow.com/questions/75887656/botocore-package-in-lambda-python-3-9-runtime-return-error-cannot-import-name
+python -m pip install BotoCore --upgrade
