@@ -125,6 +125,7 @@ AutoGPT >= 0.0.1.dev0
   # conflicting dependencies
 LangChain >= 0.0.235
 Llama-Index >= 0.7.10
+Llama-Hub >= 0.0.12
 OpenAI >= 0.27.8
 PandasAI >= 0.6.12
 
