@@ -51,7 +51,8 @@ TensorFlow-MacOS >= 2.12.0; (sys_platform == 'darwin') and (platform_release > '
 TensorFlow-Metal >= 1.0.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
 TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.14.0
-TensorFlow-Text >= 2.13.0rc0
+TensorFlow-Text >= 2.12
+  # let higher dependencies figure
 
 # Torch & related
 Torch >= 2.0.1
