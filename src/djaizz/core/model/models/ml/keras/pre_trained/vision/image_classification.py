@@ -169,7 +169,7 @@ class PreTrainedKerasImageNetClassifier(_PreTrainedMLModelABC):
                                optional=False),
 
                     SliderInput(minimum=3, maximum=10, step=1, default=5,
-                                label=('No. of ImageNet Labels to Return'))],
+                                label='No. of ImageNet Labels to Return')],
             # (Union[str, list[Union[str, InputComponent]]]) -
             # a single Gradio input component,
             # or list of Gradio input components.
