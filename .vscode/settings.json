@@ -13,4 +13,8 @@
     "reportMissingImports" : "none",
     "reportUndefinedVariable" : "none",
   },
+
+  "python.linting.pydocstyleEnabled": true,
+  "python.linting.pydocstyleArgs": [
+  ],
 }
