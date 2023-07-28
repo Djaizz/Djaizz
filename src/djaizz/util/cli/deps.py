@@ -9,6 +9,7 @@ import click
 
 
 CAPPED_DEPS: Sequence[str] = ('Dash',
+                              'GUnicorn',
                               'H11',
                               'NumPy',
                               'Pandas',
