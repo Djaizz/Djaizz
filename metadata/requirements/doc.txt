@@ -1,10 +1,9 @@
 # Sphinx & related
-Sphinx >= 7.0.1
+Sphinx >= 7.1.1
 Sphinx-AutoBuild >= 2021.3.14
 SphinxContrib-JSMath >= 1.0.1
 
 # Markdown
 CommonMark >= 0.9.1
-# MyST-Parser >= 2.0.0
-  # conflicting dependencies
+MyST-Parser >= 2.0.0
 ReCommonMark >= 0.7.1

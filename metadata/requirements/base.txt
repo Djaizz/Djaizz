@@ -1,8 +1,8 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.7.0
-Distributed >= 2023.7.0
+Dask >= 2023.7.1
+Distributed >= 2023.7.1
 Kedro >= 0.18.11; python_version < '3.11'
 MetaFlow >= 2.9.11
 NumBa >= 0.57.1
@@ -13,7 +13,7 @@ Pandas >= 1.5
 Pandarallel >= 1.6.5
 PyArrow >= 12.0.1
 PySpark >= 3.4.1
-Ray >= 2.5.1; python_version < '3.11'
+Ray >= 2.6.1
 SciPy >= 1.11.1
 
 Pillow >= 9.5.0
@@ -38,7 +38,7 @@ StatsModels >= 0.14.0
 SciKit-Learn >= 1.3.0
 
 # Keras & related
-Keras-Core >= 0.1.2
+Keras-Core >= 0.1.3
 Keras-CV >= 0.6.1
 Keras-NLP >= 0.6.0
 Keras-Tuner >= 1.3.5
@@ -67,7 +67,7 @@ TorchVision >= 0.15.2
 OpenCV-Python >= 4.8.0
 
 # Hugging Face & related
-DataSets >= 2.13.1
+DataSets >= 2.14.1
 HuggingFace-Hub >= 0.16.4
 Transformers >= 4.31.0
 
@@ -101,8 +101,7 @@ LIME >= 0.2.0.1
 SHAP >= 0.42.1
 
 # ML Model Management
-# MLFLow >= 2.4.2
-  # depends on outdated PyArrow < 12
+MLFLow >= 2.5.0
 
 
 # NON-ML MODELING
@@ -118,11 +117,11 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.237
-Llama-Index >= 0.7.10
-Llama-Hub >= 0.0.12
+LangChain >= 0.0.246
+Llama-Index >= 0.7.13
+Llama-Hub >= 0.0.15
 OpenAI >= 0.27.8
-PandasAI >= 0.6.12
+PandasAI >= 0.8.0
 
 # Meta LLaMA 2
 LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
@@ -154,7 +153,8 @@ Django-Polymorphic >= 3.1.0
 # Django Admin-related
 Django-Admin-HStore-Widget >= 1.2.1
 Django-Admin-Relation-Links >= 0.2.5
-Django-ForestAdmin >= 1.6.0; python_version < '3.11'  # TODO
+Django-ForestAdmin >= 1.6.3; python_version < '3.11'
+  # depends on outdated Pandas < 1.5
 Django-Grappelli >= 3.0.6
 Django-Jazzmin >= 2.6.0
 
@@ -171,7 +171,7 @@ Ariadne >= 0.20.1
 Django-GraphQL-Extensions >= 0.1.0
 Django-RESTQL >= 0.15.3
 GQL >= 3.4.1
-Graphene >= 3.2.2
+Graphene >= 3.3
 Graphene-Django >= 3.1.3
 # Graphene-Django-Extras >= 1.0.0
   # conflicting/slow-resolving dependencies
@@ -189,7 +189,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.3
-Strawberry-GraphQL >= 0.195.2
+Strawberry-GraphQL >= 0.196.1
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -198,7 +198,7 @@ DRF-Writable-Nested >= 0.7.0
 CoreAPI >= 2.3.3
   # closely related to Django REST Framework
 CoreAPI-CLI >= 1.0.9
-Markdown >= 3.4.3
+Markdown >= 3.4.4
   # Markdown support for the browsable API
 
 # DjangoRESTFramework-JSONAPI >= 6.0.0
@@ -229,11 +229,11 @@ Rules >= 3.3
 Django-Debug-Toolbar >= 4.1.0
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
-Kolo >= 2.12.4
+Kolo >= 2.13.0
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
-Django-Choices >= 1.7.2
+Django-Choices >= 2.0.0
 Django-Compressor >= 4.4
 Django-Configurations >= 2.4.1
 Django-Crispy-Forms >= 2.0
@@ -259,10 +259,10 @@ DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.2
 WhiteNoise >= 6.5.0
 
-Gradio >= 3.37.0
+Gradio >= 3.39.0
 Gradio-Tools >= 0.0.9
 
-Streamlit >= 1.24.1
+Streamlit >= 1.25.0
 Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
@@ -277,7 +277,8 @@ PsycoPG2-binary >= 2.9.6
 ASGIRef >= 3.7.2
 Channels >= 4.0.0
 Daphne >= 4.0.0
-GUnicorn >= 21.2.0
+GUnicorn >= 20.1.0
+  # let higher dependencies figure
 H11 >= 0.9
   # let higher dependencies figure
 Hypercorn >= 0.14.4
@@ -338,4 +339,4 @@ Tqdm >= 4.65.0
 
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
 # ====================================================================
-FastAPI >= 0.100.0
+FastAPI >= 0.100.1
