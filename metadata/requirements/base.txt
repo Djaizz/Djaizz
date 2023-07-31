@@ -126,8 +126,9 @@ PandasAI >= 0.8.0
 # Meta LLaMA 2
 LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
 
-# Open SSM
+# Open SSM & related
 OpenSSM @ https://GitHub.com/Aitomatic/OpenSSM/archive/main.zip
+H1st @ https://GitHub.com/H1st-AI/H1st/archive/oracle-pmfp.zip
 
 
 # FILE SYSTEMS
