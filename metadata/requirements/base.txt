@@ -67,7 +67,7 @@ TorchVision >= 0.15.2
 OpenCV-Python >= 4.8.0
 
 # Hugging Face & related
-DataSets >= 2.14.1
+DataSets >= 2.14.2
 HuggingFace-Hub >= 0.16.4
 Transformers >= 4.31.0
 
@@ -117,17 +117,19 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.246
-Llama-Index >= 0.7.13
-Llama-Hub >= 0.0.15
+LangChain >= 0.0.248
+Llama-Index >= 0.7.16
+Llama-Hub >= 0.0.16
 OpenAI >= 0.27.8
-PandasAI >= 0.8.0
+PandasAI >= 0.8.1
 
 # Meta LLaMA 2
 LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
 
-# Open SSM
+# Open SSM & related
 OpenSSM @ https://GitHub.com/Aitomatic/OpenSSM/archive/main.zip
+Aitomatic-Contrib @ https://GitHub.com/Aitomatic/Contrib/archive/main.zip
+H1st @ https://GitHub.com/H1st-AI/H1st/archive/oracle-pmfp.zip
 
 
 # FILE SYSTEMS
@@ -189,7 +191,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.3
-Strawberry-GraphQL >= 0.196.1
+Strawberry-GraphQL >= 0.198.0
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -277,7 +279,7 @@ PsycoPG2-binary >= 2.9.6
 ASGIRef >= 3.7.2
 Channels >= 4.0.0
 Daphne >= 4.0.0
-GUnicorn >= 20.1.0
+GUnicorn >= 20.1
   # let higher dependencies figure
 H11 >= 0.9
   # let higher dependencies figure
@@ -285,7 +287,7 @@ Hypercorn >= 0.14.4
 Quart >= 0.18.4
 Starlette >= 0.27
   # let higher dependencies figure
-Uvicorn >= 0.23.1
+Uvicorn >= 0.23.2
 
 
 # COMMAND-LINE INTERFACE (CLI)
