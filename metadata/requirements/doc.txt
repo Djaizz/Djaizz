@@ -1,5 +1,5 @@
 # Sphinx & related
-Sphinx >= 7.1.1
+Sphinx >= 7.1.2
 Sphinx-AutoBuild >= 2021.3.14
 SphinxContrib-JSMath >= 1.0.1
 
