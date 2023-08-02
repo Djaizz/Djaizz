@@ -117,8 +117,8 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.249
-Llama-Index >= 0.7.16
+LangChain >= 0.0.250
+Llama-Index >= 0.7.17
 Llama-Hub >= 0.0.16
 OpenAI >= 0.27.8
 PandasAI >= 0.8.1
