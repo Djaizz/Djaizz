@@ -1,2 +1,5 @@
-CUDF >= 0.6.1
-CUML >= 0.6.1
+# NVIDIA RAPIDS AI
+# (requires Conda)
+# ================
+# CUDF >= 0.6.1
+# CUML >= 0.6.1
