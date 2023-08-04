@@ -341,4 +341,4 @@ Tqdm >= 4.65.0
 
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
 # ====================================================================
-FastAPI >= 0.100.1
+FastAPI >= 0.101.0
