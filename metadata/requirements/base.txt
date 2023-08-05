@@ -15,6 +15,7 @@ PyArrow >= 12.0.1
 PySpark >= 3.4.1
 Ray >= 2.6.2
 SciPy >= 1.11.1
+Sparse >= 0.14.0
 
 Pillow >= 9.5.0
   # let higher dependencies figure
