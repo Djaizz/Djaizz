@@ -54,7 +54,7 @@ TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.14.0
 TensorFlow-Text >= 2.12
   # let higher dependencies figure
-TFX >= 1.13.0
+TFX >= 0.23
   # let higher dependencies figure
 
 # Torch & related
