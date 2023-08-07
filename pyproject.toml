@@ -137,6 +137,7 @@ entry-points = {file = 'metadata/entry-points'}
 build = {file = 'metadata/requirements/build.txt'}
 dev = {file = 'metadata/requirements/dev.txt'}
 doc = {file = 'metadata/requirements/doc.txt'}
+gpu = {file = 'metadata/requirements/gpu.txt'}
 lint = {file = 'metadata/requirements/lint.txt'}
 publish = {file = 'metadata/requirements/publish.txt'}
 test = {file = 'metadata/requirements/test.txt'}
@@ -150,6 +151,6 @@ viz = {file = 'metadata/requirements/viz.txt'}
 [build-system]
 requires = [
   'SetUpTools >= 68.0.0',
-  'Wheel >= 0.40.0',
+  'Wheel >= 0.41.0',
 ]
 build-backend = 'setuptools.build_meta'
