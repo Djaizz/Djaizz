@@ -1,6 +1,8 @@
 # NVIDIA RAPIDS AI
-# (requires Conda)
 # ================
 # CUDF >= 0.6.1
+  # requires Conda
 # CUML >= 0.6.1
-CUPy >= 12.1.0
+  # requires Conda
+# CUPy >= 12.1.0
+  # requires actual GPU

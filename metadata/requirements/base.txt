@@ -54,6 +54,8 @@ TensorFlow-DataSets >= 4.9.2
 TensorFlow-Hub >= 0.14.0
 TensorFlow-Text >= 2.12
   # let higher dependencies figure
+TFX >= 1.13.0
+  # let higher dependencies figure
 
 # Torch & related
 Torch >= 2.0.1
@@ -93,6 +95,7 @@ GoogleTrans >= 4.0.0rc1
 Bayesian-Optimization >= 1.4.3
 ConfigSpace >= 0.7.2
 Hpbandster >= 0.7.4
+HyperOpt >= 0.2.7
 Tabulate >= 0.9.0
 
 # ML Model Explainability & related
@@ -103,6 +106,9 @@ SHAP >= 0.42.1
 
 # ML Model Management
 MLFLow >= 2.5.0
+
+# misc / other
+AutoNet >= 0.2.0
 
 
 # NON-ML MODELING
