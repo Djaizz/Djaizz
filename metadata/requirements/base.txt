@@ -1,8 +1,8 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.8.0
-Distributed >= 2023.8.0
+Dask >= 2023.8.1
+Distributed >= 2023.8.1
 Kedro >= 0.18.12; python_version < '3.11'
 MetaFlow >= 2.9.11
 NumBa >= 0.57.1
@@ -14,7 +14,7 @@ Pandarallel >= 1.6.5
 PyArrow >= 12.0.1
 PySpark >= 3.4.1
 Ray >= 2.6.3
-SciPy >= 1.11.1
+SciPy >= 1.11.2
 Sparse >= 0.14.0
 
 Pillow >= 9.5.0
@@ -124,11 +124,12 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.265
-Llama-Index >= 0.8.2
-Llama-Hub >= 0.0.22
+LangChain >= 0.0.266
+  # let higher dependencies figure
+Llama-Index >= 0.8.5
+Llama-Hub >= 0.0.24
 OpenAI >= 0.27.8
-PandasAI >= 0.8.4
+PandasAI >= 1.0.8
 
 # Meta LLaMA 2
 LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
@@ -238,7 +239,7 @@ Rules >= 3.3
 Django-Debug-Toolbar >= 4.2.0
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.3
-Kolo >= 2.13.1
+Kolo >= 2.13.2
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
@@ -262,7 +263,7 @@ Django-CORS-Headers >= 4.2.0
 # Application UIs
 Django-HTMX >= 1.16.0
 
-Django-Plotly-Dash >= 2.2.1
+Django-Plotly-Dash >= 2.2.2
 Dash-Bootstrap-Components >= 1.4.2
 DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.2
@@ -299,7 +300,7 @@ Uvicorn >= 0.23.2
 
 # COMMAND-LINE INTERFACE (CLI)
 # ============================
-CLICK >= 8.1.6
+CLICK >= 8.1.7
 Colored >= 2.2.3
 
 
@@ -328,7 +329,7 @@ DropboxDriveFS >= 1.3.1
 # REACT JAVASCRIPT
 # ================
 ReactPy >= 1.0.2
-ReactPy-Django >= 3.3.2
+ReactPy-Django >= 3.4.0
 # ReactPy-Jupyter >= 0.9.5
   # very buggy
 
