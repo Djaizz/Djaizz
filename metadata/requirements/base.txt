@@ -128,6 +128,8 @@ LangChain >= 0.0.266
   # let higher dependencies figure
 Llama-Index >= 0.8.5
 Llama-Hub >= 0.0.24
+NLTK >= 3.8.1
+PyPDF >= 3.15.2
 OpenAI >= 0.27.8
 PandasAI >= 1.0.8
 
