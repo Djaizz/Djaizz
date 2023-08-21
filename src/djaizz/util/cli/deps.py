@@ -4,21 +4,22 @@
 from collections.abc import Sequence
 from importlib.metadata import version
 from pprint import pprint
+from typing import LiteralString
 
 import click
 
 
-CAPPED_DEPS: Sequence[str] = ('Dash',
-                              'GUnicorn',
-                              'H11',
-                              'NumPy',
-                              'Pandas',
-                              'Pillow',
-                              'Pydantic',
-                              'Starlette',
-                              'TensorFlow',
-                              'TensorFlow-Text',
-                              'TFX')
+CAPPED_DEPS: Sequence[LiteralString] = ('Dash',
+                                        'GUnicorn',
+                                        'H11',
+                                        'LangChain',
+                                        'NumPy',
+                                        'Pandas',
+                                        'Pillow',
+                                        'Pydantic',
+                                        'Starlette',
+                                        'TensorFlow',
+                                        'TensorFlow-Text')
 
 
 @click.command(name='capped-deps',
