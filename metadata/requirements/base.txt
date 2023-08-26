@@ -105,7 +105,8 @@ LIME >= 0.2.0.1
 SHAP >= 0.42.1
 
 # ML Model Management
-MLFLow >= 2.6.0
+# MLFLow >= 2.6.0
+  # depends on outdated PyArrow < 13
 
 # misc / other
 AutoNet >= 0.2.0
