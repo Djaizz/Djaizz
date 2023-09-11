@@ -150,7 +150,7 @@ viz = {file = 'metadata/requirements/viz.txt'}
 
 [build-system]
 requires = [
-  'SetUpTools >= 68.1.2',
-  'Wheel >= 0.41.1',
+  'SetUpTools >= 68.2.1',
+  'Wheel >= 0.41.2',
 ]
 build-backend = 'setuptools.build_meta'
