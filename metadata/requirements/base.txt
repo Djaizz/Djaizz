@@ -143,12 +143,11 @@ LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
 # Open SSM & related
 OpenSSM-dev[cv] >= 0.1.6.28
 Aitomatic-Contrib @ https://GitHub.com/Aitomatic/Contrib/archive/main.zip
-H1st @ https://GitHub.com/H1st-AI/H1st/archive/oracle-pmfp.zip
 
 
 # FILE SYSTEMS
 # ============
-FSSpec >= 2023.9.0
+FSSpec >= 2023.6.0  # TODO: check/fix why 2023.9.0 causes resolution conflict
 
 
 # MODEL REPOSITORY & RELATED
@@ -319,13 +318,13 @@ Jupyter >= 1.0.0
 # =====
 
 # Amazon Web Services (AWS)
-S3FS >= 2023.9.0
+S3FS >= 2023.6.0  # TODO: check/fix why 2023.9.0 causes resolution conflict
 
 # Microsoft Azure
 ADLFS >= 2023.8.0
 
 # Google Cloud Platform (GCP)
-GCSFS >= 2023.9.0
+GCSFS >= 2023.6.0  # TODO: check/fix why 2023.9.0 causes resolution conflict
 GDriveFS >= 0.14.13
 
 # Dropbox
