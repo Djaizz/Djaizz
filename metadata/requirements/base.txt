@@ -148,7 +148,7 @@ Aitomatic-Contrib @ https://GitHub.com/Aitomatic/Contrib/archive/main.zip
 
 # FILE SYSTEMS
 # ============
-FSSpec >= 2023.9.2
+FSSpec >= 2023.6.0  # TODO: check/fix why 2023.9.0 causes resolution conflict
 
 
 # MODEL REPOSITORY & RELATED
@@ -319,13 +319,13 @@ Jupyter >= 1.0.0
 # =====
 
 # Amazon Web Services (AWS)
-S3FS >= 2023.9.2
+S3FS >= 2023.6.0  # TODO: check/fix why 2023.9.0 causes resolution conflict
 
 # Microsoft Azure
-ADLFS >= 2023.9.0
+ADLFS >= 2023.8.0  # TODO: check/fix why 2023.9.0 causes resolution conflict
 
 # Google Cloud Platform (GCP)
-GCSFS >= 2023.9.2
+GCSFS >= 2023.6.0  # TODO: check/fix why 2023.9.0 causes resolution conflict
 GDriveFS >= 0.14.13
 
 # Dropbox
