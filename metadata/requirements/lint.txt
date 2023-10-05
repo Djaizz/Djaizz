@@ -6,7 +6,7 @@ MyPy >= 1.5.1
 PyCodeStyle >= 2.11.0
 PyDocStyle[TOML] >= 6.3.0
 PyLama >= 8.4.1
-PyLint >= 2.17.7
+PyLint >= 3.0.0
 
 # ReactPy
 ReactPy-Flake8 >= 0.7.0

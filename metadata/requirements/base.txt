@@ -22,7 +22,7 @@ Pillow >= 9.5.0
 # Pillow-SIMD >= 9.0.0
   # complex to install
 PyCOCOTools >= 2.0.7
-SciKit-Image >= 0.21.0
+SciKit-Image >= 0.22.0
 
 XDF >= 23.6.14
 
@@ -42,29 +42,29 @@ SciKit-Learn >= 1.3.1
 Keras-Core >= 0.1.7
 Keras-CV >= 0.6.4
 Keras-NLP >= 0.6.2
-Keras-Tuner >= 1.4.3
+Keras-Tuner >= 1.4.4
 AutoKeras >= 1.1.0
 
 # TensorFlow & related
-TensorFlow >= 2.12; sys_platform != 'darwin'
+TensorFlow >= 2.14; sys_platform != 'darwin'
   # let higher dependencies figure
-TensorFlow-MacOS >= 2.12.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
-TensorFlow-Metal >= 1.0.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
+TensorFlow-MacOS >= 2.14.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
+TensorFlow-Metal >= 1.1.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
 TensorFlow-DataSets >= 4.9.3
 TensorFlow-Hub >= 0.14.0
-TensorFlow-Text >= 2.12
+TensorFlow-Text >= 2.13
   # let higher dependencies figure
 # TFX >= 0.23
   # depends on outdated dependencies
 
 # Torch & related
-Torch >= 2.0.1
+Torch >= 2.1.0
 Torch-Model-Archiver >= 0.8.2
 TorchServe >= 0.8.2
 
-TorchAudio >= 2.0.2
-TorchText >= 0.15.2
-TorchVision >= 0.15.2
+TorchAudio >= 2.1.0
+TorchText >= 0.16.0
+TorchVision >= 0.16.0
 
 # Computer Vision
 OpenCV-Python >= 4.8.1
@@ -72,7 +72,7 @@ OpenCV-Python >= 4.8.1
 # Hugging Face & related
 DataSets >= 2.14.5
 HuggingFace-Hub >= 0.17.3
-Transformers >= 4.33.3
+Transformers >= 4.34.0
 
 SentencePiece >= 0.1.99
 TIMM >= 0.9.7
@@ -125,9 +125,9 @@ SciKit-Fuzzy >= 0.4.2
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.7
   # conflicting dependencies
-LangChain >= 0.0.305
+LangChain >= 0.0.308
   # let higher dependencies figure
-Llama-Index >= 0.8.37
+Llama-Index >= 0.8.39
 Llama-Hub >= 0.0.34
 NLTK >= 3.8.1
 Docx2Txt >= 0.8
@@ -135,15 +135,15 @@ PyPDF >= 3.16.2
 PyCryptodome >= 3.19.0
 OpenAI >= 0.27.10
   # let higher dependencies figure
-# PandasAI >= 1.2.8
+# PandasAI >= 1.2.10
   # conflicting dependencies
 
 # Meta LLaMA 2
 LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
 
-# Open SSM & related
+# OpenSSA/SSM & related
 OpenSSM-dev[cv] >= 0.1.6.28
-Aitomatic-Contrib @ https://GitHub.com/Aitomatic/Contrib/archive/main.zip
+Aitomatic-Contrib >= 23.10.4.0
 
 
 # FILE SYSTEMS
@@ -161,7 +161,7 @@ JobLib >= 1.3.2
 # ========================================
 
 # Django Core
-Django >= 4.2.5
+Django >= 4.2.6
 
 # Django Polymorphic Models
 Django-Polymorphic >= 3.1.0
@@ -205,7 +205,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.3
-Strawberry-GraphQL >= 0.209.2
+Strawberry-GraphQL >= 0.209.5
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -260,8 +260,8 @@ Django-LocalFlavor >= 4.0
 Django-Nested-InLines >= 0.1
 Django-Storages >= 1.14.1
 
-Django-Query-Graph >= 23.6.14
-Dju >= 23.6.14
+Django-Query-Graph >= 23.10.4.0
+Dju >= 23.10.4.0
 
 # Django CORS Headers
 Django-CORS-Headers >= 4.2.0
@@ -275,10 +275,10 @@ DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.2
 WhiteNoise >= 6.5.0
 
-Gradio >= 3.45.2
+Gradio >= 3.46.1
 Gradio-Tools >= 0.0.9
 
-Streamlit >= 1.27.1
+Streamlit >= 1.27.2
 Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
@@ -287,7 +287,7 @@ Django-MySQL >= 4.11.0
 # MySQLClient >= 2.2.0
 MySQL-Connector-Python >= 8.1.0
 PsycoPG >= 3.1.12
-PsycoPG2-binary >= 2.9.8
+PsycoPG2-binary >= 2.9.9
 
 # ASGI Web Servers & related
 ASGIRef >= 3.7.2
@@ -298,7 +298,7 @@ GUnicorn >= 20.1
 H11 >= 0.9
   # let higher dependencies figure
 Hypercorn >= 0.14.4
-Quart >= 0.19.1
+Quart >= 0.19.3
 Starlette >= 0.27
   # let higher dependencies figure
 Uvicorn >= 0.23.2
