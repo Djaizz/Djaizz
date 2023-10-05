@@ -75,7 +75,8 @@ OpenCV-Python >= 4.8.1
 
 # Hugging Face & related
 DataSets >= 2.14.5
-HuggingFace-Hub >= 0.17.3
+HuggingFace-Hub >= 0.16.4
+  # let higher dependencies figure
 Transformers >= 4.34.0
 
 SentencePiece >= 0.1.99

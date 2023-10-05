@@ -12,6 +12,7 @@ import click
 CAPPED_DEPS: Sequence[LiteralString] = ('Dash',
                                         'GUnicorn',
                                         'H11',
+                                        'HuggingFace-Hub',
                                         'LangChain',
                                         'NumPy',
                                         'OpenAI',
