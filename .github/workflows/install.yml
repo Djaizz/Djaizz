@@ -28,4 +28,4 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: PIP-Install Package & Dependencies
-        run: ./install-editable-dev
+        run: make install-editable

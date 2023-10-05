@@ -1,4 +1,4 @@
-Altair >= 5.1.1
+Altair >= 5.1.2
 Bokeh >= 3.2.2
 Dash >= 2.9
   # let higher dependencies figure

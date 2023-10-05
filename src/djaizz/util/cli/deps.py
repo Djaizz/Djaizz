@@ -12,6 +12,7 @@ import click
 CAPPED_DEPS: Sequence[LiteralString] = ('Dash',
                                         'GUnicorn',
                                         'H11',
+                                        'HuggingFace-Hub',
                                         'LangChain',
                                         'NumPy',
                                         'OpenAI',
@@ -20,7 +21,11 @@ CAPPED_DEPS: Sequence[LiteralString] = ('Dash',
                                         'Pydantic',
                                         'Starlette',
                                         'TensorFlow',
-                                        'TensorFlow-Text')
+                                        'TensorFlow-Text',
+                                        'Torch',
+                                        'TorchAudio',
+                                        'TorchText',
+                                        'TorchVision')
 
 
 @click.command(name='capped-deps',
