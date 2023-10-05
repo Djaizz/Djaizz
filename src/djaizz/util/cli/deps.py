@@ -20,7 +20,8 @@ CAPPED_DEPS: Sequence[LiteralString] = ('Dash',
                                         'Pydantic',
                                         'Starlette',
                                         'TensorFlow',
-                                        'TensorFlow-Text')
+                                        'TensorFlow-Text',
+                                        'Torch')
 
 
 @click.command(name='capped-deps',
