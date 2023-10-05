@@ -114,7 +114,7 @@ SciKit-Fuzzy >= 0.4.2
 
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.9  # conflicting dependencies
-LangChain >= 0.0.309  # let higher dependencies figure
+LangChain >= 0.0.309
 Llama-Index >= 0.8.40
 Llama-Hub >= 0.0.34
 NLTK >= 3.8.1
