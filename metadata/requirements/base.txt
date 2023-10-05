@@ -58,12 +58,12 @@ TensorFlow-Text >= 2.14.0rc0
   # depends on outdated dependencies
 
 # Torch & related
-Torch >= 2.0.1
+Torch
   # let higher dependencies figure
 Torch-Model-Archiver >= 0.8.2
 TorchServe >= 0.8.2
 
-TorchAudio >= 2.0.2
+TorchAudio
   # let higher dependencies figure
 TorchText >= 0.16.0
 TorchVision >= 0.16.0
