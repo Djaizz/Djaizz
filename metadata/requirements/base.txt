@@ -49,7 +49,7 @@ TensorFlow >= 2.14.0; sys_platform != 'darwin'
 TensorFlow-DataSets >= 4.9.3
 TensorFlow-Hub >= 0.14.0
 TensorFlow-Text >= 2.14.0rc0
-TFX >= 1.14.0; sys_platform != 'darwin'
+# TFX >= 1.14.0
 
 # Torch & related
 Torch >= 2.0.1  # let higher dependencies figure
