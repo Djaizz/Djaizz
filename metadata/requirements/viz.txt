@@ -1,7 +1,6 @@
 Altair >= 5.1.2
 Bokeh >= 3.2.2
-Dash >= 2.9
-  # let higher dependencies figure
+Dash >= 2.9  # let higher dependencies figure
 Dash-DAQ >= 0.5.0
 PlotLy >= 5.17.0
 PlotNine >= 0.12.3

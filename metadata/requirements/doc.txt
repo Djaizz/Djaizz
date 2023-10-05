@@ -1,7 +1,7 @@
 # MkDocs & related
 MkDocs >= 1.5.3
 MkDocs-Custommill >= 1.3.0
-MkDocs-Material >= 9.4.3
+MkDocs-Material >= 9.4.4
 MkDocs-Windmill >= 1.0.5
 MkDocStrings[Crystal, Python] >= 0.23.0
 
@@ -12,6 +12,5 @@ SphinxContrib-JSMath >= 1.0.1
 
 # Markdown (MD) & ReStructured Text (RST)
 CommonMark >= 0.9.1
-# MyST-Parser >= 2.0.0
-  # conflicting dependencies
+# MyST-Parser >= 2.0.0  # conflicting dependencies
 ReCommonMark >= 0.7.1
