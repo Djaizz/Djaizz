@@ -65,8 +65,10 @@ TorchServe >= 0.8.2
 
 TorchAudio
   # let higher dependencies figure
-TorchText >= 0.16.0
-TorchVision >= 0.16.0
+TorchText >= 0.15.2
+  # let higher dependencies figure
+TorchVision >= 0.15.2
+  # let higher dependencies figure
 
 # Computer Vision
 OpenCV-Python >= 4.8.1
