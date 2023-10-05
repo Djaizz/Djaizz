@@ -63,7 +63,8 @@ Torch >= 2.0.1
 Torch-Model-Archiver >= 0.8.2
 TorchServe >= 0.8.2
 
-TorchAudio >= 2.1.0
+TorchAudio >= 2.0.2
+  # let higher dependencies figure
 TorchText >= 0.16.0
 TorchVision >= 0.16.0
 

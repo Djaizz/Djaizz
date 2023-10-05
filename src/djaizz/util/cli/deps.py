@@ -21,7 +21,8 @@ CAPPED_DEPS: Sequence[LiteralString] = ('Dash',
                                         'Starlette',
                                         'TensorFlow',
                                         'TensorFlow-Text',
-                                        'Torch')
+                                        'Torch',
+                                        'TorchAudio')
 
 
 @click.command(name='capped-deps',
