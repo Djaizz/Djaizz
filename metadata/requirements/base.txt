@@ -134,11 +134,7 @@ Aitomatic-Contrib >= 23.10.4.0
 
 # FILE SYSTEMS
 # ============
-<<<<<<< HEAD
 FSSpec >= 2023.9.2
-=======
-FSSpec >= 2023.6.0  # TODO: check/fix why 2023.9 causes resolution conflict
->>>>>>> b4e96482cfd44ed0deec142273e55e4cfc2f45fd
 
 
 # MODEL REPOSITORY & RELATED
