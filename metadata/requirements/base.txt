@@ -64,7 +64,7 @@ TorchVision >= 0.15.2  # let higher dependencies figure
 OpenCV-Python >= 4.8.1
 
 # Hugging Face & related
-DataSets >= 2.14.5
+# DataSets >= 2.14.5  # depends on outdated FSSpec < 2023.9.0
 HuggingFace-Hub >= 0.16.4  # let higher dependencies figure
 Transformers >= 4.34.1
 
