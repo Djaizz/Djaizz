@@ -6,7 +6,7 @@ Distributed >= 2023.10.0
 Kedro >= 0.18.14
 MetaFlow >= 2.10.3
 NumBa >= 0.58.1
-NumPy >= 1.23  # let higher dependencies figure
+NumPy >= 1.26  # let higher dependencies figure
 Pandas >= 1.5  # let higher dependencies figure
 Pandarallel >= 1.6.5
 PyArrow >= 13.0.0
@@ -52,20 +52,20 @@ TensorFlow-Text >= 2.14.0
 # TFX >= 1.14.0
 
 # Torch & related
-Torch >= 2.0.1  # let higher dependencies figure
+Torch >= 2.0  # let higher dependencies figure
 Torch-Model-Archiver >= 0.9.0
 TorchServe >= 0.9.0
 
-TorchAudio >= 2.0.2  # let higher dependencies figure
-TorchText >= 0.15.2  # let higher dependencies figure
-TorchVision >= 0.15.2  # let higher dependencies figure
+TorchAudio >= 2.0  # let higher dependencies figure
+TorchText >= 0.15  # let higher dependencies figure
+TorchVision >= 0.15  # let higher dependencies figure
 
 # Computer Vision
 OpenCV-Python >= 4.8.1
 
 # Hugging Face & related
 # DataSets >= 2.14.5  # depends on outdated FSSpec < 2023.9.0
-HuggingFace-Hub >= 0.16.4  # let higher dependencies figure
+HuggingFace-Hub >= 0.16  # let higher dependencies figure
 Transformers >= 4.34.1
 
 SentencePiece >= 0.1.99
@@ -114,14 +114,14 @@ SciKit-Fuzzy >= 0.4.2
 
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.9  # conflicting dependencies
-LangChain >= 0.0.318
+LangChain >= 0.0.319
 Llama-Index >= 0.8.47
 Llama-Hub >= 0.0.38
 NLTK >= 3.8.1
 Docx2Txt >= 0.8
 PyPDF >= 3.16.4
 PyCryptodome >= 3.19.0
-OpenAI >= 0.27.10  # let higher dependencies figure
+OpenAI >= 0.27  # let higher dependencies figure
 # PandasAI >= 1.2.10  # conflicting dependencies
 
 # Meta LLaMA 2
@@ -251,7 +251,7 @@ DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.2
 WhiteNoise >= 6.6.0
 
-Gradio >= 3.50.1
+Gradio >= 3.50.2
 Gradio-Tools >= 0.0.9
 
 Streamlit >= 1.27.2
@@ -297,10 +297,12 @@ Jupyter >= 1.0.0
 S3FS >= 2023.9.2
 
 # Microsoft Azure
-ADLFS >= 2023.9.0
+ADLFS >= 2023.10.0
 
 # Google Cloud Platform (GCP)
 GCSFS >= 2023.9.2
+
+# Google Drive
 GDriveFS >= 0.14.13
 
 # Dropbox
