@@ -60,6 +60,8 @@ dynamic = [
 
   # entry points / scripts
   'entry-points',
+  'scripts',
+  'gui-scripts',
 ]
 
 
@@ -150,7 +152,7 @@ viz = {file = 'metadata/requirements/viz.txt'}
 
 [build-system]
 requires = [
-  'SetUpTools >= 68.2.2',
-  'Wheel >= 0.41.2',
+  'SetUpTools >= 69.0.2',
+  'Wheel >= 0.42.0',
 ]
 build-backend = 'setuptools.build_meta'

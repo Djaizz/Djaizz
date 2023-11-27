@@ -1,11 +1,11 @@
 Bandit >= 1.7.5
 Flake8 >= 6.1.0
-MyPy >= 1.6.1
-# Prospector >= 1.10.2  # conflicts with other linting dependencies
+MyPy >= 1.7.1
+# Prospector >= 1.10.3  # conflicts with other linting dependencies
 PyCodeStyle >= 2.11.1
 PyDocStyle[TOML] >= 6.3.0
 PyLama >= 8.4.1
-PyLint >= 3.0.1
+PyLint >= 3.0.2
 
 # ReactPy
 ReactPy-Flake8 >= 0.7.0
