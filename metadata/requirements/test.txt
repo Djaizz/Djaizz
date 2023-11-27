@@ -1,5 +1,5 @@
 Nose >= 1.3.7
 Nose2 >= 0.14.0
-PyTest >= 7.4.2
+PyTest >= 7.4.3
 PyTest-Cov >= 4.1.0
 UnitTest2 >= 1.1.0

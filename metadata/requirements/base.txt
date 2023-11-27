@@ -1,21 +1,21 @@
 # DATA MANAGEMENT & PROCESSING
 # ============================
 
-Dask >= 2023.10.0
-Distributed >= 2023.10.0
+Dask >= 2023.11.0
+Distributed >= 2023.11.0
 Kedro >= 0.18.14
-MetaFlow >= 2.10.3
+MetaFlow >= 2.10.7
 NumBa >= 0.58.1
-NumPy >= 1.26  # let higher dependencies figure
+NumPy >= 1.26.2
 Pandas >= 1.5  # let higher dependencies figure
 Pandarallel >= 1.6.5
-PyArrow >= 13.0.0
+PyArrow >= 14.0.1
 PySpark >= 3.5.0
-Ray >= 2.7.1
-SciPy >= 1.11.3
+Ray >= 2.8.0
+SciPy >= 1.11.4
 Sparse >= 0.14.0
 
-Pillow >= 9.5.0  # let higher dependencies figure
+Pillow >= 9.5  # let higher dependencies figure
 # Pillow-SIMD >= 9.0.0  # complex to install
 PyCOCOTools >= 2.0.7
 SciKit-Image >= 0.22.0
@@ -31,24 +31,24 @@ StatsModels >= 0.14.0
 
 # SciKit-Learn & related
 # Auto-SKLearn >= 0.15.0  # depends on SciKit-Learn < 0.25
-SciKit-Learn >= 1.3.1
+SciKit-Learn >= 1.3.2
 
 # Keras & related
 Keras-Core >= 0.1.7
-Keras-CV >= 0.6.4
-Keras-NLP >= 0.6.2
-Keras-Tuner >= 1.4.5
+Keras-CV >= 0.7.1
+Keras-NLP >= 0.6.3
+Keras-Tuner >= 1.4.6
 AutoKeras >= 1.1.0
 
 # TensorFlow & related
-TensorFlow >= 2.14.0; sys_platform != 'darwin'
+TensorFlow >= 2.15.0; sys_platform != 'darwin'
 # TensorFlow-MacOS >= 2.12.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
   # conflicting dependencies
 # TensorFlow-Metal >= 1.0.0; (sys_platform == 'darwin') and (platform_release > '20.6.0')
   # conflicting dependencies
 TensorFlow-DataSets >= 4.9.3
 TensorFlow-Hub >= 0.15.0
-TensorFlow-Text >= 2.14.0
+TensorFlow-Text >= 2.15.0
 # TFX >= 1.14.0
 
 # Torch & related
@@ -66,10 +66,10 @@ OpenCV-Python >= 4.8.1
 # Hugging Face & related
 # DataSets >= 2.14.5  # depends on outdated FSSpec < 2023.9.0
 HuggingFace-Hub >= 0.16  # let higher dependencies figure
-Transformers >= 4.34.1
+Transformers >= 4.35.2
 
 SentencePiece >= 0.1.99
-TIMM >= 0.9.7
+TIMM >= 0.9.12
 # Torch-Scatter >= 2.1.1  # Table Question Answering - requires Torch first
 
 # Fast AI
@@ -81,7 +81,7 @@ GUDHI >= 3.8.0
 
 # Cloud AI/ML Services
 # Google-Cloud-Translate >= 3.11.2  # conflicting/slow-resolving dependencies
-GoogleTrans >= 4.0.0rc1
+# GoogleTrans >= 4.0.0rc1  # depends on outdated HTTPX
 
 # Hyper-Parameter Tuning & related
 Bayesian-Optimization >= 1.4.3
@@ -114,27 +114,27 @@ SciKit-Fuzzy >= 0.4.2
 
 AutoGPT >= 0.0.1.dev0
 # GPT-Engineer >= 0.0.9  # conflicting dependencies
-LangChain >= 0.0.319
-Llama-Index >= 0.8.47
-Llama-Hub >= 0.0.38
+LangChain >= 0.0.341
+Llama-Index >= 0.9.8
+Llama-Hub >= 0.0.48
 NLTK >= 3.8.1
 Docx2Txt >= 0.8
-PyPDF >= 3.16.4
+PyPDF >= 3.17.1
 PyCryptodome >= 3.19.0
-OpenAI >= 0.27  # let higher dependencies figure
+OpenAI >= 1.3.5
 # PandasAI >= 1.2.10  # conflicting dependencies
 
 # Meta LLaMA 2
 LLaMA @ https://GitHub.com/FacebookResearch/LLaMA/archive/main.zip
 
 # OpenSSA/SSM & related
-OpenSSM-dev[cv] >= 0.1.6.29
-Aitomatic-Contrib >= 23.10.4.0
+OpenSSA-dev[cv] >= 0.1.6.3
+Aitomatic-Contrib >= 23.11.26
 
 
 # FILE SYSTEMS
 # ============
-FSSpec >= 2023.9.2
+FSSpec >= 2023.10.0
 
 
 # MODEL REPOSITORY & RELATED
@@ -147,7 +147,7 @@ JobLib >= 1.3.2
 # ========================================
 
 # Django Core
-Django >= 4.2.6
+Django >= 4.2.7
 
 # Django Polymorphic Models
 Django-Polymorphic >= 3.1.0
@@ -165,10 +165,10 @@ Django-Generic-M2M >= 0.3.1
 Django-GM2M >= 1.1.1
 Django-QuerySetSequence >= 0.17
 Django-Tagging >= 0.5.0
-Django-Taggit >= 4.0.0
+Django-Taggit >= 5.0.1
 
 # GraphQL
-Ariadne >= 0.20.1
+Ariadne >= 0.21
 Django-GraphQL-Extensions >= 0.1.0
 Django-RESTQL >= 0.15.3
 GQL >= 3.4.1
@@ -185,7 +185,7 @@ GraphQL-Core >= 3.2.3
 GraphQL-Relay >= 3.2.0
 Py-GQL >= 0.6.1
 SGQLC >= 16.3
-Strawberry-GraphQL >= 0.209.7
+Strawberry-GraphQL >= 0.215.1
 
 # Django REST Framework & other API-related
 DjangoRESTFramework >= 3.14.0
@@ -193,24 +193,24 @@ DRFPasswordless >= 1.5.9
 DRF-Writable-Nested >= 0.7.0
 CoreAPI >= 2.3.3  # closely related to Django REST Framework
 CoreAPI-CLI >= 1.0.9
-Markdown >= 3.5  # Markdown support for the browsable API
+Markdown >= 3.5.1  # Markdown support for the browsable API
 
 # DjangoRESTFramework-JSONAPI >= 6.0.0  # depends on outdated Django < 4.2
 DRF-Nested-Routers >= 0.93.4
 Django-PolyModels >= 1.8.0
-Django-Typed-Models >= 0.13.0
+Django-Typed-Models >= 0.14.0
 
 HAL-Codec >= 1.0.2
 JSONHyperSchema-Codec >= 1.0.3
 OpenAPI-Codec >= 1.3.2
 
-JSONSchema >= 4.19.1
+JSONSchema >= 4.20.0
 Pydantic >= 1.10  # let higher dependencies figure
 
 HTTPie >= 3.2.2
 
 # Django Filtering
-Django-Filter >= 23.3
+Django-Filter >= 23.4
 DjangoRESTFramework-Filters >= 1.0.0.dev2
 
 # Django Object-Level Permissions
@@ -221,13 +221,13 @@ Rules >= 3.3
 Django-Debug-Toolbar >= 4.2.0
 Django-Query-Profiler >= 0.9
 Django-Silk >= 5.0.4
-Kolo >= 2.15.1
+Kolo >= 2.17.0
 
 # Django Extensions & Utilities
 Django-Annoying >= 0.10.6
 Django-Choices >= 2.0.0
 Django-Compressor >= 4.4
-Django-Configurations >= 2.4.1
+Django-Configurations >= 2.5
 Django-Crispy-Forms >= 2.1
 Django-Environ >= 0.11.2
 Django-Extensions >= 3.2.3
@@ -236,14 +236,14 @@ Django-LocalFlavor >= 4.0
 Django-Nested-InLines >= 0.1
 Django-Storages >= 1.14.2
 
-Django-Query-Graph >= 23.10.4.0
-Dju >= 23.10.4.0
+Django-Query-Graph >= 23.11.27.0
+Dju >= 23.11.27.0
 
 # Django CORS Headers
-Django-CORS-Headers >= 4.3.0
+Django-CORS-Headers >= 4.3.1
 
 # Application UIs
-Django-HTMX >= 1.17.0
+Django-HTMX >= 1.17.2
 
 Django-Plotly-Dash >= 2.2.2
 Dash-Bootstrap-Components >= 1.5.0
@@ -251,10 +251,10 @@ DPD-Static-Support >= 0.0.5
 Django-Bootstrap4 >= 23.2
 WhiteNoise >= 6.6.0
 
-Gradio >= 3.50.2
+Gradio >= 4.7.1
 Gradio-Tools >= 0.0.9
 
-Streamlit >= 1.27.2
+Streamlit >= 1.28.2
 Watchdog >= 3.0.0
 
 # Database Adapters/Backends/Connectors/Drivers
@@ -263,8 +263,8 @@ Django-MySQL >= 4.12.0
 # MySQLClient >= 2.2.0
   # MacOS: Exception: Can not find valid pkg-config name.
   # Specify MYSQLCLIENT_CFLAGS and MYSQLCLIENT_LDFLAGS env vars manually
-MySQL-Connector-Python >= 8.1.0
-PsycoPG >= 3.1.12
+MySQL-Connector-Python >= 8.2.0
+PsycoPG >= 3.1.13
 PsycoPG2-binary >= 2.9.9
 
 # ASGI Web Servers & related
@@ -273,10 +273,10 @@ Channels >= 4.0.0
 Daphne >= 4.0.0
 GUnicorn >= 20.1  # let higher dependencies figure
 H11 >= 0.9  # let higher dependencies figure
-Hypercorn >= 0.14.4
-Quart >= 0.19.3
+Hypercorn >= 0.15.0
+Quart >= 0.19.4
 Starlette >= 0.27  # let higher dependencies figure
-Uvicorn >= 0.23.2
+Uvicorn >= 0.24.0
 
 
 # COMMAND-LINE INTERFACE (CLI)
@@ -294,13 +294,13 @@ Jupyter >= 1.0.0
 # =====
 
 # Amazon Web Services (AWS)
-S3FS >= 2023.9.2
+S3FS >= 2023.10.0
 
 # Microsoft Azure
 ADLFS >= 2023.10.0
 
 # Google Cloud Platform (GCP)
-GCSFS >= 2023.9.2
+GCSFS >= 2023.10.0
 
 # Google Drive
 GDriveFS >= 0.14.13
@@ -325,10 +325,10 @@ Python-DateUtil >= 2.8.2
 Python-DotEnv >= 1.0.0
 PyTZ >= 2023.3
 Requests >= 2.31.0
-Ruamel.YAML >= 0.17.39
+Ruamel.YAML >= 0.18.5
 Tqdm >= 4.66.1
 
 
 # INDIRECT DEPENDENCIES: explicitly specify to avoid outdated versions
 # ====================================================================
-FastAPI >= 0.104.0
+FastAPI >= 0.104.1
