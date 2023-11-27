@@ -81,7 +81,7 @@ GUDHI >= 3.8.0
 
 # Cloud AI/ML Services
 # Google-Cloud-Translate >= 3.11.2  # conflicting/slow-resolving dependencies
-GoogleTrans >= 4.0.0rc1
+# GoogleTrans >= 4.0.0rc1  # depends on outdated HTTPX
 
 # Hyper-Parameter Tuning & related
 Bayesian-Optimization >= 1.4.3
